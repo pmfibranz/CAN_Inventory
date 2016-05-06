@@ -87,7 +87,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\CatNSubCat.vb" />
     <Compile Include="classes\DB_Access.vb" />
     <Compile Include="classes\ReportManager.vb" />
     <Compile Include="forms\frmAddUser.Designer.vb">

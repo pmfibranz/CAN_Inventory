@@ -10,7 +10,9 @@ Public Class DB_Access
     End Sub
 
     'Constructor that creates and/or verifies path to database
-    Sub New(ByRef lblStatus As Object, ByRef pmtFindDB As OpenFileDialog)
+    Sub New(ByRef lblStatus As Object)
+        Dim pmtFindDB As New OpenFileDialog()
+        Dim dr As DialogResult
         Dim provider As String = "Provider=Microsoft.Jet.OLEDB.4.0;"
         Dim path(1) As String
         Dim dataSrc As String = ""
@@ -29,14 +31,14 @@ Public Class DB_Access
                 path = IO.File.ReadAllLines(SYS_PATH)
 
             Else
-
+                dr = pmtFindDB.ShowDialog()
                 ' Creates bin file
-                If pmtFindDB.ShowDialog() = DialogResult.OK Then
+                If dr = DialogResult.OK Then
 
                     File.WriteAllText(SYS_PATH, pmtFindDB.FileName())
+                    path(0) = pmtFindDB.FileName()
 
-                    pmtFindDB.Reset()
-                ElseIf pmtFindDB.ShowDialog() = DialogResult.Cancel Then
+                ElseIf dr = DialogResult.Cancel Then
                     Application.Exit()
                 End If
             End If
@@ -46,12 +48,19 @@ Public Class DB_Access
 
             'Updates File with new path if old path fails to open
             While DBValidate() = False
-                If pmtFindDB.ShowDialog() = DialogResult.OK Then
+                dr = pmtFindDB.ShowDialog()
+
+                If dr = DialogResult.OK Then
 
                     File.WriteAllText(SYS_PATH, pmtFindDB.FileName())
+                    path(0) = pmtFindDB.FileName()
 
                     dataSrc = "Data Source='" + path(0) + "'"
                     dBasePath = provider + dataSrc
+
+                ElseIf dr = DialogResult.Cancel Then
+                    Application.Exit()
+
                 Else
                     lblStatus.Text = "Failure in Updating System Info File"
                 End If
@@ -77,8 +86,8 @@ Public Class DB_Access
                 db.Close()
                 Return True
             Catch ex As Exception
-                statusLabel.Text = "Failed to Connect to Database"
-                statusLabel.Text += vbNewLine + "Please contact the system administrator"
+                statusLabel.Text = "Failed to Connect to Database!"
+                statusLabel.Text += " Please contact the system administrator"
             End Try
 
         End Using
@@ -110,6 +119,28 @@ Public Class DB_Access
         Return True
     End Function
 
+    'Retrieves data based on passed query and returns a DataSet
+    Function DataGet(query As String) As DataSet
+        Dim connect As OleDbConnection
+        Dim adapt As OleDbDataAdapter
+        Dim data As New DataSet
+
+        connect = New OleDbConnection(dBasePath)
+        Try
+            connect.Open()
+            adapt = New OleDbDataAdapter(query, connect)
+            adapt.Fill(data)
+            adapt.Dispose()
+            connect.Close()
+
+        Catch ex As Exception
+            statusLabel.Text = "Failed to retrieve data."
+        End Try
+        Return data
+
+    End Function
+
+
     'Builds Query 
     Function QueryBuilder(ByRef table As String, ByVal data As String, Optional ByVal where As String = "") As String
         Dim query As String
@@ -124,44 +155,6 @@ Public Class DB_Access
         Debug.Print(query)
         Return query
     End Function
-
-
-    ''Updates the user list as new users are added
-    'Public Function UpdateUserList(ByRef list() As CAN_User) As Integer
-    '    Dim i As Integer = 0
-    '    Using db As New OleDbConnection(GetDB_Path())
-    '        Dim query As String
-    '        Dim cmd As OleDbCommand
-    '        Dim reader As OleDbDataReader
-    '        query = QueryBuilder("users", "*", "(((users.active)=True))")
-
-    '        Try
-    '            db.Open()
-    '            cmd = New OleDbCommand(query, db)
-    '            reader = cmd.ExecuteReader()
-
-    '            While reader.Read()
-    '                ReDim Preserve list(i + 1)
-    '                list(i).id = reader(0).ToString()
-    '                list(i).username = reader(1).ToString()
-    '                list(i).firstName = reader(2).ToString()
-    '                list(i).lastName = reader(3).ToString()
-    '                list(i).active = reader(4).ToString()
-
-    '                i += 1
-
-    '            End While
-    '            db.Close()
-
-    '        Catch ex As Exception
-    '            If db.State = ConnectionState.Open Then
-    '                db.Close()
-    '            End If
-
-    '        End Try
-    '    End Using
-    '    Return i
-    'End Function
 
     Function GetDB_Path() As String
         Return dBasePath

@@ -7,12 +7,12 @@ Public Class frmMain
     Public dbAccess As DB_Access
     Public userHand As New UserHandling()
 
+    '-------------- Form General ----------------
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim pmtFindDB As New OpenFileDialog()
         Dim listCount As Integer = 0
 
-        dbAccess = New DB_Access(lblStatus, pmtFindDB)
+        dbAccess = New DB_Access(lblStatus)
 
         UpdateUserCombo()
 
@@ -26,23 +26,21 @@ Public Class frmMain
         dtpDFromDate.MaxDate = Now()
         dtpDFromDate.Value = Now.AddMonths(-1)
 
-        'Occational error MaxDate Issue ****************
+
         dtpDToDate.MaxDate = Now()
-        dtpDToDate.Value = Now()
+        dtpDToDate.Value = dtpDToDate.MaxDate
 
 
 
     End Sub
+
+    '-------------- Menu Strip ----------------
 
     Private Sub tsiAddUser_Click(sender As Object, e As EventArgs) Handles tsiAddUser.Click
         Dim addU As New frmAddUser()
 
         addU.Show()
 
-    End Sub
-
-    Private Sub cbxUserSelect_DropDown(sender As Object, e As EventArgs) Handles cbxUserSelect.DropDown
-        cbxUserSelect.ForeColor = Color.Black
     End Sub
 
     Private Sub cbxUserSelect_Leave(sender As Object, e As EventArgs) Handles cbxUserSelect.Leave
@@ -79,7 +77,7 @@ Public Class frmMain
         newCont.Show()
     End Sub
 
-    Private Sub AddBenefactorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddBenefactorToolStripMenuItem.Click
+    Private Sub tsiAddDonor_Click(sender As Object, e As EventArgs) Handles tsiAddDonor.Click
         Dim newBen As New frmNewBenefactor()
 
         newBen.Show()
@@ -90,6 +88,21 @@ Public Class frmMain
 
         newBaseItem.Show()
     End Sub
+
+
+    '-------------- Dashboard Tab ---------------
+
+
+
+    '-------------- Inventory Trans Tab ---------
+
+
+
+    '-------------- Item Manager Tab ------------
+
+
+
+    '-------------- Reports Tab -----------------
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
         pnlInventory.Visible = False
@@ -121,3 +134,9 @@ Public Class frmMain
 
 End Class
 
+
+'-------------- Contacts Tab ----------------
+
+
+
+'-------------- Settings Tab ----------------

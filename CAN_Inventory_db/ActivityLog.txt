@@ -1,7 +1,22 @@
-﻿5/4/16 - Update:
+﻿5/5/16 - Update:
+Able to fill categories combo box from database using DataSet() (will also impliment into user handling)
+Both Categories and Sub-Categories are working within the form.
+Also repaired an issue with the initial setting of the database path. 
+
+- 4.25 hours
+-------------------------------
+5/4/16 - Update: 
 Started working on frmNewBaseItem and CatNSubCat class for handling the update of the
 category and sub-category combo boxes. Will be called from main and category and
 sub-category data will be pulled by the various forms from main.
 
 Included initial count field to popout new base item form.
+
+Established GitHub Repository for collaboration with Rich Beyers
+
+- 2 hours
 -------------------------------
+
+Prior to 5/4/16
+
+- Approx 17 hours 

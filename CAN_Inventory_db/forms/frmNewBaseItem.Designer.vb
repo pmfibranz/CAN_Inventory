@@ -81,6 +81,7 @@ Partial Class frmNewBaseItem
         '
         'cbxSubCat
         '
+        Me.cbxSubCat.Enabled = False
         Me.cbxSubCat.FormattingEnabled = True
         Me.cbxSubCat.Location = New System.Drawing.Point(203, 208)
         Me.cbxSubCat.Name = "cbxSubCat"

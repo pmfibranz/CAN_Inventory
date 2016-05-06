@@ -6,18 +6,41 @@ Public Class frmNewBaseItem
 
     Private Sub frmNewBaseItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim ds As New DataSet()
+        Dim dsCat As New DataSet()
+        Dim dsFac As New DataSet()
+        Dim dsProg As New DataSet()
         Dim query As String
 
         ready = False
+
+        ' Fills Category combo box
         query = frmMain.dbAccess.QueryBuilder("categories", "*", "(((categories.active)=True))")
+        dsCat = frmMain.dbAccess.DataGet(query)
 
-        ds = frmMain.dbAccess.DataGet(query)
-
-        cbxCategory.DataSource = ds.Tables(0)
+        cbxCategory.DataSource = dsCat.Tables(0)
         cbxCategory.ValueMember = "id"
         cbxCategory.DisplayMember = "category"
         cbxCategory.SelectedIndex = -1              ' Sets default selected item to empty
+
+
+        ' Fills Facility combo box
+        query = frmMain.dbAccess.QueryBuilder("facilities", "id, facility, active", "(((facilities.active)=True))")
+        dsFac = frmMain.dbAccess.DataGet(query)
+
+        cbxFacility.DataSource = dsFac.Tables(0)
+        cbxFacility.ValueMember = "id"
+        cbxFacility.DisplayMember = "facility"
+        cbxFacility.SelectedIndex = -1              ' Sets default selected item to empty
+
+        ' Fills program combo box
+        query = frmMain.dbAccess.QueryBuilder("programs", "id, program, active", "(((programs.active)=True))")
+        dsProg = frmMain.dbAccess.DataGet(query)
+
+        cbxProgram.DataSource = dsProg.Tables(0)
+        cbxProgram.ValueMember = "id"
+        cbxProgram.DisplayMember = "program"
+        cbxProgram.SelectedIndex = -1              ' Sets default selected item to empty
+
         ready = True
 
     End Sub
@@ -72,6 +95,72 @@ Public Class frmNewBaseItem
                     cbxSubCat.DisplayMember = "sub_category"
                     cbxSubCat.SelectedIndex = -1              ' Sets default selected item to empty
                     cbxSubCat.Enabled = True
+                    ready = True
+                End If
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub cbxFacility_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxFacility.SelectedIndexChanged
+        Try
+            If ready = True Then
+                If cbxFacility.SelectedValue = -1 Then
+                    cbxLocation.Enabled = False
+                Else
+                    Dim ds As New DataSet()
+                    Dim query As String
+                    Dim sqlCriteria As String
+                    ready = False
+
+                    sqlCriteria = "(((locations.facility_id)=" + cbxFacility.SelectedValue.ToString() +
+                        ") AND ((locations.active)=True))"
+
+                    query = frmMain.dbAccess.QueryBuilder("locations", "*", sqlCriteria)
+
+                    ds = frmMain.dbAccess.DataGet(query)
+                    cbxLocation.DataSource = ds.Tables(0)
+                    cbxLocation.ValueMember = "id"
+                    cbxLocation.DisplayMember = "location"
+                    cbxLocation.SelectedIndex = -1              ' Sets default selected item to empty
+                    cbxLocation.Enabled = True
+
+                    ready = True
+                End If
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub cbxBin_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxBin.SelectedIndexChanged
+        Try
+            If ready = True Then
+                If cbxLocation.SelectedValue = -1 Then
+                    cbxBin.Enabled = False
+                Else
+                    Dim ds As New DataSet()
+                    Dim query As String
+                    Dim sqlCriteria As String
+                    ready = False
+
+                    sqlCriteria = "(((bins.location_id)=" + cbxLocation.SelectedValue.ToString() +
+                        ") AND ((bins.active)=True))"
+
+                    query = frmMain.dbAccess.QueryBuilder("bins", "*", sqlCriteria)
+
+                    ds = frmMain.dbAccess.DataGet(query)
+                    cbxBin.DataSource = ds.Tables(0)
+                    cbxBin.ValueMember = "id"
+                    cbxBin.DisplayMember = "bin"
+                    cbxBin.SelectedIndex = -1              ' Sets default selected item to empty
+                    cbxBin.Enabled = True
+
                     ready = True
                 End If
             End If

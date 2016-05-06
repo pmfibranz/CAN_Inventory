@@ -1,4 +1,13 @@
-﻿5/5/16 - Update:
+﻿5/6/16 - Update:
+All frmNewBaseItem combo boxes will fill with the appropriate content. Also put together plan
+for adjusting database table structure to allow for a single transaction to have multiple
+inventory items. The inventory items will use the base item as template but allow for 
+changes to the facility, location, bin, program, condition, value.
+
+- 2 hours
+-------------------------------
+
+5/5/16 - Update:
 Able to fill categories combo box from database using DataSet() (will also impliment into user handling)
 Both Categories and Sub-Categories are working within the form.
 Also repaired an issue with the initial setting of the database path. 

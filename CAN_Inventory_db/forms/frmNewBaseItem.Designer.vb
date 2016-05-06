@@ -121,6 +121,7 @@ Partial Class frmNewBaseItem
         '
         'cbxBin
         '
+        Me.cbxBin.Enabled = False
         Me.cbxBin.FormattingEnabled = True
         Me.cbxBin.Location = New System.Drawing.Point(286, 325)
         Me.cbxBin.Name = "cbxBin"
@@ -129,6 +130,7 @@ Partial Class frmNewBaseItem
         '
         'cbxLocation
         '
+        Me.cbxLocation.Enabled = False
         Me.cbxLocation.FormattingEnabled = True
         Me.cbxLocation.Location = New System.Drawing.Point(141, 325)
         Me.cbxLocation.Name = "cbxLocation"

@@ -59,7 +59,7 @@ Partial Class frmNewBaseItem
         Me.nbxLwQty.Location = New System.Drawing.Point(203, 255)
         Me.nbxLwQty.Name = "nbxLwQty"
         Me.nbxLwQty.Size = New System.Drawing.Size(82, 20)
-        Me.nbxLwQty.TabIndex = 38
+        Me.nbxLwQty.TabIndex = 6
         '
         'lblLwQty
         '
@@ -77,7 +77,7 @@ Partial Class frmNewBaseItem
         Me.txtName.Location = New System.Drawing.Point(109, 9)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(264, 26)
-        Me.txtName.TabIndex = 36
+        Me.txtName.TabIndex = 1
         '
         'cbxSubCat
         '
@@ -86,7 +86,7 @@ Partial Class frmNewBaseItem
         Me.cbxSubCat.Location = New System.Drawing.Point(203, 208)
         Me.cbxSubCat.Name = "cbxSubCat"
         Me.cbxSubCat.Size = New System.Drawing.Size(170, 21)
-        Me.cbxSubCat.TabIndex = 35
+        Me.cbxSubCat.TabIndex = 4
         '
         'cbxCategory
         '
@@ -94,14 +94,14 @@ Partial Class frmNewBaseItem
         Me.cbxCategory.Location = New System.Drawing.Point(17, 208)
         Me.cbxCategory.Name = "cbxCategory"
         Me.cbxCategory.Size = New System.Drawing.Size(165, 21)
-        Me.cbxCategory.TabIndex = 34
+        Me.cbxCategory.TabIndex = 3
         '
         'txtDefValue
         '
         Me.txtDefValue.Location = New System.Drawing.Point(17, 254)
         Me.txtDefValue.Name = "txtDefValue"
         Me.txtDefValue.Size = New System.Drawing.Size(131, 20)
-        Me.txtDefValue.TabIndex = 33
+        Me.txtDefValue.TabIndex = 5
         '
         'txtDescript
         '
@@ -109,7 +109,7 @@ Partial Class frmNewBaseItem
         Me.txtDescript.Multiline = True
         Me.txtDescript.Name = "txtDescript"
         Me.txtDescript.Size = New System.Drawing.Size(356, 111)
-        Me.txtDescript.TabIndex = 32
+        Me.txtDescript.TabIndex = 2
         '
         'cbxProgram
         '
@@ -117,7 +117,7 @@ Partial Class frmNewBaseItem
         Me.cbxProgram.Location = New System.Drawing.Point(12, 368)
         Me.cbxProgram.Name = "cbxProgram"
         Me.cbxProgram.Size = New System.Drawing.Size(121, 21)
-        Me.cbxProgram.TabIndex = 30
+        Me.cbxProgram.TabIndex = 11
         '
         'cbxBin
         '
@@ -126,7 +126,7 @@ Partial Class frmNewBaseItem
         Me.cbxBin.Location = New System.Drawing.Point(286, 325)
         Me.cbxBin.Name = "cbxBin"
         Me.cbxBin.Size = New System.Drawing.Size(91, 21)
-        Me.cbxBin.TabIndex = 29
+        Me.cbxBin.TabIndex = 10
         '
         'cbxLocation
         '
@@ -135,7 +135,7 @@ Partial Class frmNewBaseItem
         Me.cbxLocation.Location = New System.Drawing.Point(141, 325)
         Me.cbxLocation.Name = "cbxLocation"
         Me.cbxLocation.Size = New System.Drawing.Size(139, 21)
-        Me.cbxLocation.TabIndex = 28
+        Me.cbxLocation.TabIndex = 9
         '
         'cbxFacility
         '
@@ -143,7 +143,7 @@ Partial Class frmNewBaseItem
         Me.cbxFacility.Location = New System.Drawing.Point(12, 325)
         Me.cbxFacility.Name = "cbxFacility"
         Me.cbxFacility.Size = New System.Drawing.Size(123, 21)
-        Me.cbxFacility.TabIndex = 31
+        Me.cbxFacility.TabIndex = 8
         '
         'PictureBox7
         '
@@ -271,7 +271,7 @@ Partial Class frmNewBaseItem
         Me.btnCancel.Location = New System.Drawing.Point(299, 419)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancel.TabIndex = 17
+        Me.btnCancel.TabIndex = 13
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
@@ -282,7 +282,7 @@ Partial Class frmNewBaseItem
         Me.btnAddItem.Location = New System.Drawing.Point(200, 419)
         Me.btnAddItem.Name = "btnAddItem"
         Me.btnAddItem.Size = New System.Drawing.Size(93, 23)
-        Me.btnAddItem.TabIndex = 16
+        Me.btnAddItem.TabIndex = 12
         Me.btnAddItem.Text = "Add Base Item"
         Me.btnAddItem.UseVisualStyleBackColor = True
         '
@@ -307,7 +307,7 @@ Partial Class frmNewBaseItem
         Me.nbxInitQty.Location = New System.Drawing.Point(312, 255)
         Me.nbxInitQty.Name = "nbxInitQty"
         Me.nbxInitQty.Size = New System.Drawing.Size(61, 20)
-        Me.nbxInitQty.TabIndex = 41
+        Me.nbxInitQty.TabIndex = 7
         '
         'frmNewBaseItem
         '

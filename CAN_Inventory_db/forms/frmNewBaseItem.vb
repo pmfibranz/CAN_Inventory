@@ -45,32 +45,7 @@ Public Class frmNewBaseItem
 
     End Sub
 
-    Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
-        If txtName.Text = "" Or cbxCategory.SelectedItem = "" Or cbxSubCat.SelectedItem = "" Then
-            ' Requires Item Name, Category, and Sub-Category
-            ' other fields can be added at a later time
-            lblStatus.Text = "Required Information Missing!"
-            If txtName.Text = "" Then
-                lblName.ForeColor = Color.Red
-            End If
-            If cbxCategory.SelectedItem = "" Then
-                lblCategory.ForeColor = Color.Red
-            End If
-            If cbxSubCat.SelectedItem = "" Then
-                lblSubCat.ForeColor = Color.Red
-            End If
-        Else
-            Dim data(1) As String
-            data(0) = "items.item_name , items.item_desc , items.def_value , items.unit_count , " +
-                "items.low_qty , items.times_accessed , items.active , "
-            data(1) = "'" + txtName.Text + "' , '" + txtDescript.Text + "' , '" + txtDefValue.Text + "' , '" +
-                nbxInitQty.Text + "' , '" + nbxLwQty.Value + "' , 0 , True"
-            If frmMain.dbAccess.DataPush("items", data) = False Then
-                lblStatus.Text = "Item Creation Failure"
-            End If
 
-        End If
-    End Sub
 
 
     Private Sub cbxCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxCategory.SelectedIndexChanged
@@ -138,7 +113,7 @@ Public Class frmNewBaseItem
         End Try
     End Sub
 
-    Private Sub cbxBin_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxBin.SelectedIndexChanged
+    Private Sub cbxLocation_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxLocation.SelectedIndexChanged
         Try
             If ready = True Then
                 If cbxLocation.SelectedValue = -1 Then
@@ -170,4 +145,118 @@ Public Class frmNewBaseItem
 
         End Try
     End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
+        If txtName.Text = "" Or cbxCategory.SelectedValue = Nothing Or cbxSubCat.SelectedValue = Nothing Then
+            ' Requires Item Name, Category, and Sub-Category
+            ' other fields can be added at a later time
+            lblStatus.Text = "Required Information Missing!"
+            If txtName.Text = "" Then
+                lblName.ForeColor = Color.Red
+            End If
+            If cbxCategory.SelectedValue = Nothing Then
+                lblCategory.ForeColor = Color.Red
+            End If
+            If cbxSubCat.SelectedValue = Nothing Then
+                lblSubCat.ForeColor = Color.Red
+            End If
+        Else
+
+            Try
+                Dim data(1) As String
+                Dim itemID As Integer
+                Dim transID As Integer
+
+
+
+
+                data(0) = "item_name , item_desc , sub_category_id , def_bin_id , def_program_id , " +
+                    "def_value , low_qty , times_accessed , active "
+                data(1) = "'" + txtName.Text + "' , '" +
+                                txtDescript.Text + "' , " +
+                                cbxSubCat.SelectedValue.ToString() + " , " +
+                                blankFiller(cbxBin) + " , " +
+                                blankFiller(cbxProgram) + " , " +
+                                blankFiller(txtDefValue, "Money") + " , " +
+                                blankFiller(nbxLwQty) + " , 0 , True"
+
+                itemID = frmMain.dbAccess.DataPush("items", data)
+
+                If itemID = -1 Then
+                    Throw New System.Exception("Item Creation Failure")
+                End If
+
+                If nbxInitQty.Value > 0 Then
+                    data(0) = "trans_type , donor_thanked , user_id , trans_date , "
+                    data(1) = "'Initial' , " +
+                              " 'Yes' , " +
+                              Convert.ToString(frmMain.userHand.GetCurrentUsrID()) + ", " +
+                              Convert.ToString(DateTime.Now())
+
+                    transID = frmMain.dbAccess.DataPush("transactions", data)
+
+                    If transID = -1 Then
+                        Throw New System.Exception("Transaction Creation Failure")
+                    End If
+
+                    data(0) = "transaction_id , item_id , bin_id , program_id , quantity , comment , specific_value"
+                    data(1) = transID + " , " +
+                              itemID + " , " +
+                              cbxBin.SelectedValue + " , " +
+                              cbxProgram.SelectedValue + " , " +
+                              nbxInitQty.Value + " , " +
+                              "'Initial Quantity of Item' , " +
+                              txtDefValue.Text
+
+
+
+                    If frmMain.dbAccess.DataPush("inventory", data) = -1 Then
+                        Throw New System.Exception("Inventory Item Creation Failure")
+                    End If
+
+                    Me.Close()
+                End If
+            Catch ex As Exception
+                lblStatus.Text = ex.Message
+            End Try
+
+
+
+
+        End If
+    End Sub
+
+    Function blankFiller(field As Object, Optional format As String = "") As String
+        Dim t As Type = field.GetType()
+
+        If t.Equals(GetType(TextBox)) And format = "Money" Then
+            If field.Text = "" Then
+                Return "0.00"
+            End If
+
+        ElseIf t.Equals(GetType(TextBox)) And format = "Text" Then
+            If field.Text = "" Then
+                Return ""
+            End If
+
+        ElseIf t.Equals(GetType(NumericUpDown)) Then
+            If field.Value = Nothing Then
+                Return "0"
+            End If
+
+        ElseIf t.Equals(GetType(ComboBox)) Then
+            If field.SelectedValue = Nothing Then
+                Return "0"
+            End If
+
+        Else
+            Throw New System.Exception("Could not handle data type: From Empty Field Filler")
+        End If
+
+    End Function
 End Class
+

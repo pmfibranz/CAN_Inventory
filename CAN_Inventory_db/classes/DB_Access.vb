@@ -95,24 +95,29 @@ Public Class DB_Access
     End Function
 
     'Sends data to the database
-    Function DataPush(table As String, data() As String) As Boolean
+    Function DataPush(table As String, data() As String) As Integer
         Using db As New OleDb.OleDbConnection(dBasePath)
             Dim cmd As OleDb.OleDbCommand
             Dim query As String
+            Dim query2 As String
+            Dim newId As Integer
 
             Try
-                query = "INSERT INTO " + table + "(" + data(0) + ") VALUES(" + data(1) + ")"
+                query = "INSERT INTO " + table + "(" + data(0) + ") VALUES(" + data(1) + "); "
+                query2 = "SELECT @@Identity;"
                 Debug.Print(query)
                 db.Open()
                 cmd = New OleDbCommand(query, db)
                 cmd.ExecuteNonQuery()
+                cmd.CommandText = query2
+                newId = cmd.ExecuteScalar()
                 db.Close()
-                Return True
+                Return newId
             Catch ex As Exception
                 If db.State = ConnectionState.Open Then
                     db.Close()
                 End If
-                Return False
+                Return -1
             End Try
 
         End Using

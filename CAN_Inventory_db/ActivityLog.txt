@@ -1,10 +1,21 @@
-﻿5/6/16 - Update:
+﻿5/9/16 - Update:
+Wrote code to handle pushing the new base item to the database and creating an new transaction and 
+inventory item for that base item if an initial quanitity is entered. Was able to verify that the 
+push of the base item worked but will need to continue on with the creation and push of the transaction and
+inventory item. Also created a function to handle blank entries for the fields not required to submit. 
+
+- 3 hours
+-------------------------------
+
+5/6/16 - Update:
 All frmNewBaseItem combo boxes will fill with the appropriate content. Also put together plan
 for adjusting database table structure to allow for a single transaction to have multiple
 inventory items. The inventory items will use the base item as template but allow for 
 changes to the facility, location, bin, program, condition, value.
 
-- 2 hours
+Made adjustments to table structure, fixed required field validation for frmNewBaseItem
+
+- 3 hours
 -------------------------------
 
 5/5/16 - Update:

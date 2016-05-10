@@ -78,6 +78,10 @@ Public Class UserHandling
         Return currentUser
     End Function
 
+    Public Function GetCurrentUsrID() As Integer
+        Return currentUser.id
+    End Function
+
     Public Function GetUserCount() As Integer
         Return userCount
     End Function

@@ -1,4 +1,11 @@
-﻿5/9/16 - Update:
+﻿5/11/16 - Update:
+New base item form will now successfully add a the new base item and if an initial amount is entered will
+create a new transaction and inventory item for that base item. 
+
+- 2 hours
+-------------------------------
+
+5/9/16 - Update:
 Wrote code to handle pushing the new base item to the database and creating an new transaction and 
 inventory item for that base item if an initial quanitity is entered. Was able to verify that the 
 push of the base item worked but will need to continue on with the creation and push of the transaction and

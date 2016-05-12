@@ -174,11 +174,13 @@ Public Class frmNewBaseItem
 
 
 
-                data(0) = "item_name , item_desc , sub_category_id , def_bin_id , def_program_id , " +
-                    "def_value , low_qty , times_accessed , active "
+                data(0) = "item_name , item_desc , sub_category_id , def_facility_id , def_location_id , " +
+                    "def_bin_id , def_program_id , def_value , low_qty , times_accessed , active "
                 data(1) = "'" + txtName.Text + "' , '" +
                                 txtDescript.Text + "' , " +
                                 cbxSubCat.SelectedValue.ToString() + " , " +
+                                blankFiller(cbxFacility) + " , " +
+                                blankFiller(cbxLocation) + " , " +
                                 blankFiller(cbxBin) + " , " +
                                 blankFiller(cbxProgram) + " , " +
                                 blankFiller(txtDefValue, "Money") + " , " +
@@ -191,11 +193,15 @@ Public Class frmNewBaseItem
                 End If
 
                 If nbxInitQty.Value > 0 Then
-                    data(0) = "trans_type , donor_thanked , user_id , trans_date , "
+                    Dim TrDate As Date
+
+                    TrDate = DateTime.Now()
+
+                    data(0) = "trans_type , donor_thanked , user_id , trans_date "
                     data(1) = "'Initial' , " +
-                              " 'Yes' , " +
-                              Convert.ToString(frmMain.userHand.GetCurrentUsrID()) + ", " +
-                              Convert.ToString(DateTime.Now())
+                              " -1 , " +
+                              Convert.ToString(frmMain.userHand.GetCurrentUsrID()) + ", '" +
+                              TrDate + "'"
 
                     transID = frmMain.dbAccess.DataPush("transactions", data)
 
@@ -204,13 +210,13 @@ Public Class frmNewBaseItem
                     End If
 
                     data(0) = "transaction_id , item_id , bin_id , program_id , quantity , comment , specific_value"
-                    data(1) = transID + " , " +
-                              itemID + " , " +
-                              cbxBin.SelectedValue + " , " +
-                              cbxProgram.SelectedValue + " , " +
-                              nbxInitQty.Value + " , " +
+                    data(1) = transID.ToString() + " , " +
+                              itemID.ToString() + " , " +
+                              blankFiller(cbxBin) + " , " +
+                              blankFiller(cbxProgram) + " , " +
+                              blankFiller(nbxInitQty) + " , " +
                               "'Initial Quantity of Item' , " +
-                              txtDefValue.Text
+                              blankFiller(txtDefValue, "Money")
 
 
 
@@ -237,22 +243,22 @@ Public Class frmNewBaseItem
             If field.Text = "" Then
                 Return "0.00"
             End If
-
+            Return field.Text()
         ElseIf t.Equals(GetType(TextBox)) And format = "Text" Then
             If field.Text = "" Then
                 Return ""
             End If
-
+            Return field.Text()
         ElseIf t.Equals(GetType(NumericUpDown)) Then
             If field.Value = Nothing Then
                 Return "0"
             End If
-
+            Return field.Value.ToString()
         ElseIf t.Equals(GetType(ComboBox)) Then
             If field.SelectedValue = Nothing Then
                 Return "0"
             End If
-
+            Return field.SelectedValue.ToString()
         Else
             Throw New System.Exception("Could not handle data type: From Empty Field Filler")
         End If

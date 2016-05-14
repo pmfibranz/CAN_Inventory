@@ -151,6 +151,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="classes\UserHandling.vb" />
+    <Compile Include="usercontrols\uclSettings.Designer.vb">
+      <DependentUpon>uclSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\uclSettings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="forms\frmAddUser.resx">
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmSplashScr.resx">
       <DependentUpon>frmSplashScr.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\uclSettings.resx">
+      <DependentUpon>uclSettings.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

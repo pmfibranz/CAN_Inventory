@@ -30,7 +30,14 @@ Public Class frmMain
         dtpDToDate.MaxDate = Now()
         dtpDToDate.Value = dtpDToDate.MaxDate
 
+        '-------------- Settings Tab ----------------
+        Dim settingsTab As New uclSettings
+        With settingsTab
+            .Name = "settingsTab"
+            .Location = New Point(5, 10)
+        End With
 
+        Me.tbpSettings.Controls.Add(settingsTab)
 
     End Sub
 
@@ -132,6 +139,7 @@ Public Class frmMain
         pnlTransReport.Visible = True
     End Sub
 
+
 End Class
 
 
@@ -139,4 +147,3 @@ End Class
 
 
 
-'-------------- Settings Tab ----------------

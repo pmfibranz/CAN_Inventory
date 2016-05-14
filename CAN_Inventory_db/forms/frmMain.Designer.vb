@@ -23,11 +23,11 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 1")
-        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Category 1", New System.Windows.Forms.TreeNode() {TreeNode6})
-        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 1")
-        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 2")
-        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Category 2", New System.Windows.Forms.TreeNode() {TreeNode8, TreeNode9})
+        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 1")
+        Dim TreeNode17 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Category 1", New System.Windows.Forms.TreeNode() {TreeNode16})
+        Dim TreeNode18 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 1")
+        Dim TreeNode19 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 2")
+        Dim TreeNode20 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Category 2", New System.Windows.Forms.TreeNode() {TreeNode18, TreeNode19})
         Me.menTopStrip = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddNewBaseItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -310,19 +310,6 @@ Partial Class frmMain
         Me.DataGridView7 = New System.Windows.Forms.DataGridView()
         Me.DataGridView6 = New System.Windows.Forms.DataGridView()
         Me.tbpSettings = New System.Windows.Forms.TabPage()
-        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
-        Me.Label92 = New System.Windows.Forms.Label()
-        Me.ComboBox22 = New System.Windows.Forms.ComboBox()
-        Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
-        Me.ListBox6 = New System.Windows.Forms.ListBox()
-        Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
-        Me.TextBox37 = New System.Windows.Forms.TextBox()
-        Me.Label91 = New System.Windows.Forms.Label()
-        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
-        Me.ListBox5 = New System.Windows.Forms.ListBox()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
-        Me.TextBox36 = New System.Windows.Forms.TextBox()
         Me.menTopStrip.SuspendLayout()
         Me.stsSatusBar.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -366,9 +353,6 @@ Partial Class frmMain
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tbpSettings.SuspendLayout()
-        Me.GroupBox11.SuspendLayout()
-        Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
         '
         'menTopStrip
@@ -409,25 +393,25 @@ Partial Class frmMain
         'tsiAddUser
         '
         Me.tsiAddUser.Name = "tsiAddUser"
-        Me.tsiAddUser.Size = New System.Drawing.Size(152, 22)
+        Me.tsiAddUser.Size = New System.Drawing.Size(150, 22)
         Me.tsiAddUser.Text = "Add &User"
         '
         'AddContactToolStripMenuItem
         '
         Me.AddContactToolStripMenuItem.Name = "AddContactToolStripMenuItem"
-        Me.AddContactToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AddContactToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.AddContactToolStripMenuItem.Text = "Add &Contact"
         '
         'tsiAddDonor
         '
         Me.tsiAddDonor.Name = "tsiAddDonor"
-        Me.tsiAddDonor.Size = New System.Drawing.Size(152, 22)
+        Me.tsiAddDonor.Size = New System.Drawing.Size(150, 22)
         Me.tsiAddDonor.Text = "Add &Donor"
         '
         'AddBaseItemToolStripMenuItem
         '
         Me.AddBaseItemToolStripMenuItem.Name = "AddBaseItemToolStripMenuItem"
-        Me.AddBaseItemToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AddBaseItemToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.AddBaseItemToolStripMenuItem.Text = "Add Base &Item"
         '
         'ToolStripMenuItem3
@@ -1499,17 +1483,17 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.TreeView1.Location = New System.Drawing.Point(3, 23)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode6.Name = "Node1"
-        TreeNode6.Text = "Sub-Category 1"
-        TreeNode7.Name = "Node0"
-        TreeNode7.Text = "Category 1"
-        TreeNode8.Name = "Node3"
-        TreeNode8.Text = "Sub-Category 1"
-        TreeNode9.Name = "Node4"
-        TreeNode9.Text = "Sub-Category 2"
-        TreeNode10.Name = "Node2"
-        TreeNode10.Text = "Category 2"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode10})
+        TreeNode16.Name = "Node1"
+        TreeNode16.Text = "Sub-Category 1"
+        TreeNode17.Name = "Node0"
+        TreeNode17.Text = "Category 1"
+        TreeNode18.Name = "Node3"
+        TreeNode18.Text = "Sub-Category 1"
+        TreeNode19.Name = "Node4"
+        TreeNode19.Text = "Sub-Category 2"
+        TreeNode20.Name = "Node2"
+        TreeNode20.Text = "Category 2"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode17, TreeNode20})
         Me.TreeView1.Size = New System.Drawing.Size(177, 569)
         Me.TreeView1.TabIndex = 7
         '
@@ -3347,140 +3331,12 @@ Partial Class frmMain
         '
         'tbpSettings
         '
-        Me.tbpSettings.Controls.Add(Me.GroupBox11)
-        Me.tbpSettings.Controls.Add(Me.Label91)
-        Me.tbpSettings.Controls.Add(Me.GroupBox10)
         Me.tbpSettings.Location = New System.Drawing.Point(4, 22)
         Me.tbpSettings.Name = "tbpSettings"
         Me.tbpSettings.Size = New System.Drawing.Size(1089, 601)
         Me.tbpSettings.TabIndex = 2
         Me.tbpSettings.Text = "Settings"
         Me.tbpSettings.UseVisualStyleBackColor = True
-        '
-        'GroupBox11
-        '
-        Me.GroupBox11.Controls.Add(Me.Label92)
-        Me.GroupBox11.Controls.Add(Me.ComboBox22)
-        Me.GroupBox11.Controls.Add(Me.LinkLabel6)
-        Me.GroupBox11.Controls.Add(Me.ListBox6)
-        Me.GroupBox11.Controls.Add(Me.LinkLabel5)
-        Me.GroupBox11.Controls.Add(Me.TextBox37)
-        Me.GroupBox11.Location = New System.Drawing.Point(8, 237)
-        Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Size = New System.Drawing.Size(186, 218)
-        Me.GroupBox11.TabIndex = 2
-        Me.GroupBox11.TabStop = False
-        Me.GroupBox11.Text = "Item Sub-Categories"
-        '
-        'Label92
-        '
-        Me.Label92.AutoSize = True
-        Me.Label92.Location = New System.Drawing.Point(4, 26)
-        Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(52, 13)
-        Me.Label92.TabIndex = 5
-        Me.Label92.Text = "Category:"
-        '
-        'ComboBox22
-        '
-        Me.ComboBox22.FormattingEnabled = True
-        Me.ComboBox22.Location = New System.Drawing.Point(57, 23)
-        Me.ComboBox22.Name = "ComboBox22"
-        Me.ComboBox22.Size = New System.Drawing.Size(122, 21)
-        Me.ComboBox22.TabIndex = 4
-        '
-        'LinkLabel6
-        '
-        Me.LinkLabel6.AutoSize = True
-        Me.LinkLabel6.Location = New System.Drawing.Point(3, 198)
-        Me.LinkLabel6.Name = "LinkLabel6"
-        Me.LinkLabel6.Size = New System.Drawing.Size(92, 13)
-        Me.LinkLabel6.TabIndex = 3
-        Me.LinkLabel6.TabStop = True
-        Me.LinkLabel6.Text = "Remove Selected"
-        '
-        'ListBox6
-        '
-        Me.ListBox6.FormattingEnabled = True
-        Me.ListBox6.Location = New System.Drawing.Point(7, 87)
-        Me.ListBox6.Name = "ListBox6"
-        Me.ListBox6.Size = New System.Drawing.Size(173, 108)
-        Me.ListBox6.TabIndex = 2
-        '
-        'LinkLabel5
-        '
-        Me.LinkLabel5.AutoSize = True
-        Me.LinkLabel5.Location = New System.Drawing.Point(153, 63)
-        Me.LinkLabel5.Name = "LinkLabel5"
-        Me.LinkLabel5.Size = New System.Drawing.Size(26, 13)
-        Me.LinkLabel5.TabIndex = 1
-        Me.LinkLabel5.TabStop = True
-        Me.LinkLabel5.Text = "Add"
-        '
-        'TextBox37
-        '
-        Me.TextBox37.Location = New System.Drawing.Point(7, 60)
-        Me.TextBox37.Name = "TextBox37"
-        Me.TextBox37.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox37.TabIndex = 0
-        '
-        'Label91
-        '
-        Me.Label91.AutoSize = True
-        Me.Label91.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label91.Location = New System.Drawing.Point(9, 10)
-        Me.Label91.Name = "Label91"
-        Me.Label91.Size = New System.Drawing.Size(83, 25)
-        Me.Label91.TabIndex = 1
-        Me.Label91.Text = "Settings"
-        '
-        'GroupBox10
-        '
-        Me.GroupBox10.Controls.Add(Me.LinkLabel4)
-        Me.GroupBox10.Controls.Add(Me.ListBox5)
-        Me.GroupBox10.Controls.Add(Me.LinkLabel3)
-        Me.GroupBox10.Controls.Add(Me.TextBox36)
-        Me.GroupBox10.Location = New System.Drawing.Point(8, 44)
-        Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(186, 187)
-        Me.GroupBox10.TabIndex = 0
-        Me.GroupBox10.TabStop = False
-        Me.GroupBox10.Text = "Item Categories"
-        '
-        'LinkLabel4
-        '
-        Me.LinkLabel4.AutoSize = True
-        Me.LinkLabel4.Location = New System.Drawing.Point(3, 156)
-        Me.LinkLabel4.Name = "LinkLabel4"
-        Me.LinkLabel4.Size = New System.Drawing.Size(92, 13)
-        Me.LinkLabel4.TabIndex = 3
-        Me.LinkLabel4.TabStop = True
-        Me.LinkLabel4.Text = "Remove Selected"
-        '
-        'ListBox5
-        '
-        Me.ListBox5.FormattingEnabled = True
-        Me.ListBox5.Location = New System.Drawing.Point(6, 45)
-        Me.ListBox5.Name = "ListBox5"
-        Me.ListBox5.Size = New System.Drawing.Size(173, 108)
-        Me.ListBox5.TabIndex = 2
-        '
-        'LinkLabel3
-        '
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.Location = New System.Drawing.Point(153, 22)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(26, 13)
-        Me.LinkLabel3.TabIndex = 1
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "Add"
-        '
-        'TextBox36
-        '
-        Me.TextBox36.Location = New System.Drawing.Point(6, 19)
-        Me.TextBox36.Name = "TextBox36"
-        Me.TextBox36.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox36.TabIndex = 0
         '
         'frmMain
         '
@@ -3560,12 +3416,6 @@ Partial Class frmMain
         Me.GroupBox3.PerformLayout()
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tbpSettings.ResumeLayout(False)
-        Me.tbpSettings.PerformLayout()
-        Me.GroupBox11.ResumeLayout(False)
-        Me.GroupBox11.PerformLayout()
-        Me.GroupBox10.ResumeLayout(False)
-        Me.GroupBox10.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3853,17 +3703,4 @@ Partial Class frmMain
     Friend WithEvents TextBox35 As TextBox
     Friend WithEvents Label90 As Label
     Friend WithEvents DataGridView11 As DataGridView
-    Friend WithEvents GroupBox11 As GroupBox
-    Friend WithEvents LinkLabel6 As LinkLabel
-    Friend WithEvents ListBox6 As ListBox
-    Friend WithEvents LinkLabel5 As LinkLabel
-    Friend WithEvents TextBox37 As TextBox
-    Friend WithEvents Label91 As Label
-    Friend WithEvents GroupBox10 As GroupBox
-    Friend WithEvents LinkLabel4 As LinkLabel
-    Friend WithEvents ListBox5 As ListBox
-    Friend WithEvents LinkLabel3 As LinkLabel
-    Friend WithEvents TextBox36 As TextBox
-    Friend WithEvents Label92 As Label
-    Friend WithEvents ComboBox22 As ComboBox
 End Class

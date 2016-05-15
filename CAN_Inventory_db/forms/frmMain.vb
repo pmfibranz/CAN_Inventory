@@ -85,7 +85,7 @@ Public Class frmMain
     End Sub
 
     Private Sub tsiAddDonor_Click(sender As Object, e As EventArgs) Handles tsiAddDonor.Click
-        Dim newBen As New frmNewBenefactor()
+        Dim newBen As New frmNewDonor()
 
         newBen.Show()
     End Sub

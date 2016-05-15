@@ -1,4 +1,13 @@
-﻿5/13/16 - Update:
+﻿5/14/16 - Update:
+Constructed subs used to remove(set inactive) the selected items in the category and sub-category listbox on 
+the settings tab.
+
+Changed out hand prints for pinwheels
+
+- 3.5 hours
+------------------------------
+
+5/13/16 - Update:
 Discovered User controls setup a user control panel and loaded it into the settings tab. This will be 
 especially helpful when dealing with duplicate forms and even just to better organize code. Will likely
 implement into previously completed sections.

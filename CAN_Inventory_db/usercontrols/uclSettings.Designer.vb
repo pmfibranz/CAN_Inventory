@@ -25,7 +25,7 @@ Partial Class uclSettings
         Me.gbxItemSubCat = New System.Windows.Forms.GroupBox()
         Me.lblCat4Sub = New System.Windows.Forms.Label()
         Me.cbxCat4Sub = New System.Windows.Forms.ComboBox()
-        Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
+        Me.lnkRmvSubCat = New System.Windows.Forms.LinkLabel()
         Me.lbxSubCat = New System.Windows.Forms.ListBox()
         Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
         Me.txtNewSubCat = New System.Windows.Forms.TextBox()
@@ -43,11 +43,11 @@ Partial Class uclSettings
         '
         Me.gbxItemSubCat.Controls.Add(Me.lblCat4Sub)
         Me.gbxItemSubCat.Controls.Add(Me.cbxCat4Sub)
-        Me.gbxItemSubCat.Controls.Add(Me.LinkLabel6)
+        Me.gbxItemSubCat.Controls.Add(Me.lnkRmvSubCat)
         Me.gbxItemSubCat.Controls.Add(Me.lbxSubCat)
         Me.gbxItemSubCat.Controls.Add(Me.LinkLabel5)
         Me.gbxItemSubCat.Controls.Add(Me.txtNewSubCat)
-        Me.gbxItemSubCat.Location = New System.Drawing.Point(12, 237)
+        Me.gbxItemSubCat.Location = New System.Drawing.Point(12, 300)
         Me.gbxItemSubCat.Name = "gbxItemSubCat"
         Me.gbxItemSubCat.Size = New System.Drawing.Size(186, 218)
         Me.gbxItemSubCat.TabIndex = 5
@@ -71,21 +71,22 @@ Partial Class uclSettings
         Me.cbxCat4Sub.Size = New System.Drawing.Size(122, 21)
         Me.cbxCat4Sub.TabIndex = 4
         '
-        'LinkLabel6
+        'lnkRmvSubCat
         '
-        Me.LinkLabel6.AutoSize = True
-        Me.LinkLabel6.Location = New System.Drawing.Point(3, 198)
-        Me.LinkLabel6.Name = "LinkLabel6"
-        Me.LinkLabel6.Size = New System.Drawing.Size(92, 13)
-        Me.LinkLabel6.TabIndex = 3
-        Me.LinkLabel6.TabStop = True
-        Me.LinkLabel6.Text = "Remove Selected"
+        Me.lnkRmvSubCat.AutoSize = True
+        Me.lnkRmvSubCat.Location = New System.Drawing.Point(3, 198)
+        Me.lnkRmvSubCat.Name = "lnkRmvSubCat"
+        Me.lnkRmvSubCat.Size = New System.Drawing.Size(92, 13)
+        Me.lnkRmvSubCat.TabIndex = 3
+        Me.lnkRmvSubCat.TabStop = True
+        Me.lnkRmvSubCat.Text = "Remove Selected"
         '
         'lbxSubCat
         '
         Me.lbxSubCat.FormattingEnabled = True
         Me.lbxSubCat.Location = New System.Drawing.Point(7, 87)
         Me.lbxSubCat.Name = "lbxSubCat"
+        Me.lbxSubCat.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.lbxSubCat.Size = New System.Drawing.Size(173, 108)
         Me.lbxSubCat.TabIndex = 2
         '
@@ -122,7 +123,7 @@ Partial Class uclSettings
         Me.gbxItemCat.Controls.Add(Me.lbxCategories)
         Me.gbxItemCat.Controls.Add(Me.lnkAddCat)
         Me.gbxItemCat.Controls.Add(Me.txtNewCat)
-        Me.gbxItemCat.Location = New System.Drawing.Point(12, 44)
+        Me.gbxItemCat.Location = New System.Drawing.Point(12, 84)
         Me.gbxItemCat.Name = "gbxItemCat"
         Me.gbxItemCat.Size = New System.Drawing.Size(186, 187)
         Me.gbxItemCat.TabIndex = 3
@@ -144,6 +145,7 @@ Partial Class uclSettings
         Me.lbxCategories.FormattingEnabled = True
         Me.lbxCategories.Location = New System.Drawing.Point(6, 45)
         Me.lbxCategories.Name = "lbxCategories"
+        Me.lbxCategories.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.lbxCategories.Size = New System.Drawing.Size(173, 108)
         Me.lbxCategories.TabIndex = 2
         '
@@ -185,7 +187,7 @@ Partial Class uclSettings
     Friend WithEvents gbxItemSubCat As GroupBox
     Friend WithEvents lblCat4Sub As Label
     Friend WithEvents cbxCat4Sub As ComboBox
-    Friend WithEvents LinkLabel6 As LinkLabel
+    Friend WithEvents lnkRmvSubCat As LinkLabel
     Friend WithEvents lbxSubCat As ListBox
     Friend WithEvents LinkLabel5 As LinkLabel
     Friend WithEvents txtNewSubCat As TextBox

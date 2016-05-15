@@ -64,6 +64,7 @@
 
     End Sub
 
+    'Settings Panel Load Sub
     Sub SettingsControlLoad()
         Dim dsCat As New DataSet()
         Dim dsCat2 As New DataSet()
@@ -71,7 +72,7 @@
 
         ready = False
 
-        ' Fills Category combo box
+
         query = frmMain.dbAccess.QueryBuilder("categories", "*", "(((categories.active)=True))")
         dsCat = frmMain.dbAccess.DataGet(query)
 
@@ -110,5 +111,40 @@
                 frmMain.lblStatus.Text = ex.Message()
             End Try
         End If
+    End Sub
+
+    Private Sub lnkRmvCat_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkRmvCat.LinkClicked
+        Dim where(0) As String
+        Dim i As Integer = 0
+        Dim numSel As Integer
+
+        numSel = lbxCategories.SelectedItems.Count()
+        ReDim Preserve where(numSel - 1)
+
+        For Each item As DataRowView In lbxCategories.SelectedItems
+
+            frmMain.dbAccess.SetInactive("categories", item(0).ToString())
+            i += 1
+        Next
+
+        SettingsControlLoad()
+
+    End Sub
+
+    Private Sub lnkRmvSubCat_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkRmvSubCat.LinkClicked
+        Dim where(0) As String
+        Dim i As Integer = 0
+        Dim numSel As Integer
+
+        numSel = lbxSubCat.SelectedItems.Count()
+        ReDim Preserve where(numSel - 1)
+
+        For Each item As DataRowView In lbxSubCat.SelectedItems
+
+            frmMain.dbAccess.SetInactive("sub_categories", item(0).ToString())
+            i += 1
+        Next
+
+        SubCatListLoad()
     End Sub
 End Class

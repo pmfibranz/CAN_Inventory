@@ -113,10 +113,10 @@
     <Compile Include="forms\frmNewBaseItem.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmNewBenefactor.Designer.vb">
-      <DependentUpon>frmNewBenefactor.vb</DependentUpon>
+    <Compile Include="forms\frmNewDonor.Designer.vb">
+      <DependentUpon>frmNewDonor.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmNewBenefactor.vb">
+    <Compile Include="forms\frmNewDonor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frmNewContact.Designer.vb">
@@ -171,8 +171,8 @@
     <EmbeddedResource Include="forms\frmNewBaseItem.resx">
       <DependentUpon>frmNewBaseItem.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmNewBenefactor.resx">
-      <DependentUpon>frmNewBenefactor.vb</DependentUpon>
+    <EmbeddedResource Include="forms\frmNewDonor.resx">
+      <DependentUpon>frmNewDonor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmNewContact.resx">
       <DependentUpon>frmNewContact.vb</DependentUpon>
@@ -222,6 +222,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ActivityLog.txt" />
+    <None Include="image_rsc\pinwheel_dash.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

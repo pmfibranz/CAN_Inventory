@@ -93,6 +93,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property pinwheel_dash() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("pinwheel_dash", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property splash_graphic() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("splash_graphic", resourceCulture)

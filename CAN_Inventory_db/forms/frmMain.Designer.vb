@@ -22,12 +22,12 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim TreeNode31 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 1")
+        Dim TreeNode32 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Category 1", New System.Windows.Forms.TreeNode() {TreeNode31})
+        Dim TreeNode33 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 1")
+        Dim TreeNode34 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 2")
+        Dim TreeNode35 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Category 2", New System.Windows.Forms.TreeNode() {TreeNode33, TreeNode34})
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 1")
-        Dim TreeNode17 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Category 1", New System.Windows.Forms.TreeNode() {TreeNode16})
-        Dim TreeNode18 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 1")
-        Dim TreeNode19 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 2")
-        Dim TreeNode20 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Category 2", New System.Windows.Forms.TreeNode() {TreeNode18, TreeNode19})
         Me.menTopStrip = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddNewBaseItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,7 +44,6 @@ Partial Class frmMain
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tbpDashboard = New System.Windows.Forms.TabPage()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -60,7 +59,6 @@ Partial Class frmMain
         Me.btnQAddContact = New System.Windows.Forms.Button()
         Me.btnQItemSearch = New System.Windows.Forms.Button()
         Me.btnQTrans = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tbpInvTrans = New System.Windows.Forms.TabPage()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.gbxTItems = New System.Windows.Forms.GroupBox()
@@ -76,14 +74,11 @@ Partial Class frmMain
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.pbxTLwQuant = New System.Windows.Forms.PictureBox()
         Me.ComboBox7 = New System.Windows.Forms.ComboBox()
         Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.ComboBox5 = New System.Windows.Forms.ComboBox()
         Me.ComboBox8 = New System.Windows.Forms.ComboBox()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.pnlTags = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -146,7 +141,6 @@ Partial Class frmMain
         Me.ComboBox10 = New System.Windows.Forms.ComboBox()
         Me.ComboBox11 = New System.Windows.Forms.ComboBox()
         Me.ComboBox13 = New System.Windows.Forms.ComboBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label44 = New System.Windows.Forms.Label()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.Label47 = New System.Windows.Forms.Label()
@@ -310,20 +304,21 @@ Partial Class frmMain
         Me.DataGridView7 = New System.Windows.Forms.DataGridView()
         Me.DataGridView6 = New System.Windows.Forms.DataGridView()
         Me.tbpSettings = New System.Windows.Forms.TabPage()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.pbxTLwQuant = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.menTopStrip.SuspendLayout()
         Me.stsSatusBar.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.tbpDashboard.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpInvTrans.SuspendLayout()
         Me.gbxTItems.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTags.SuspendLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -332,7 +327,6 @@ Partial Class frmMain
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpReports.SuspendLayout()
         Me.gbxReportType.SuspendLayout()
         Me.pnlBenefactor.SuspendLayout()
@@ -353,6 +347,12 @@ Partial Class frmMain
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menTopStrip
@@ -496,15 +496,6 @@ Partial Class frmMain
         Me.tbpDashboard.TabIndex = 0
         Me.tbpDashboard.Text = "Dashboard"
         Me.tbpDashboard.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.CAN_Inventory_db.My.Resources.Resources.dash_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 15)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(243, 108)
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
         '
         'Label5
         '
@@ -650,16 +641,6 @@ Partial Class frmMain
         Me.btnQTrans.TabIndex = 0
         Me.btnQTrans.Text = "Quick Transaction"
         Me.btnQTrans.UseVisualStyleBackColor = True
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = Global.CAN_Inventory_db.My.Resources.Resources.dash_base_hand
-        Me.PictureBox2.Location = New System.Drawing.Point(-4, 407)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(288, 194)
-        Me.PictureBox2.TabIndex = 6
-        Me.PictureBox2.TabStop = False
         '
         'tbpInvTrans
         '
@@ -866,15 +847,6 @@ Partial Class frmMain
         Me.TextBox4.Size = New System.Drawing.Size(365, 137)
         Me.TextBox4.TabIndex = 8
         '
-        'pbxTLwQuant
-        '
-        Me.pbxTLwQuant.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pbxTLwQuant.Location = New System.Drawing.Point(345, 12)
-        Me.pbxTLwQuant.Name = "pbxTLwQuant"
-        Me.pbxTLwQuant.Size = New System.Drawing.Size(26, 35)
-        Me.pbxTLwQuant.TabIndex = 7
-        Me.pbxTLwQuant.TabStop = False
-        '
         'ComboBox7
         '
         Me.ComboBox7.FormattingEnabled = True
@@ -914,26 +886,6 @@ Partial Class frmMain
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(123, 21)
         Me.ComboBox4.TabIndex = 5
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Location = New System.Drawing.Point(6, 272)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(365, 6)
-        Me.PictureBox4.TabIndex = 4
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Location = New System.Drawing.Point(6, 168)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(365, 6)
-        Me.PictureBox3.TabIndex = 4
-        Me.PictureBox3.TabStop = False
         '
         'Label17
         '
@@ -1483,17 +1435,17 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.TreeView1.Location = New System.Drawing.Point(3, 23)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode16.Name = "Node1"
-        TreeNode16.Text = "Sub-Category 1"
-        TreeNode17.Name = "Node0"
-        TreeNode17.Text = "Category 1"
-        TreeNode18.Name = "Node3"
-        TreeNode18.Text = "Sub-Category 1"
-        TreeNode19.Name = "Node4"
-        TreeNode19.Text = "Sub-Category 2"
-        TreeNode20.Name = "Node2"
-        TreeNode20.Text = "Category 2"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode17, TreeNode20})
+        TreeNode31.Name = "Node1"
+        TreeNode31.Text = "Sub-Category 1"
+        TreeNode32.Name = "Node0"
+        TreeNode32.Text = "Category 1"
+        TreeNode33.Name = "Node3"
+        TreeNode33.Text = "Sub-Category 1"
+        TreeNode34.Name = "Node4"
+        TreeNode34.Text = "Sub-Category 2"
+        TreeNode35.Name = "Node2"
+        TreeNode35.Text = "Category 2"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode32, TreeNode35})
         Me.TreeView1.Size = New System.Drawing.Size(177, 569)
         Me.TreeView1.TabIndex = 7
         '
@@ -1621,17 +1573,6 @@ Partial Class frmMain
         Me.ComboBox13.Name = "ComboBox13"
         Me.ComboBox13.Size = New System.Drawing.Size(123, 21)
         Me.ComboBox13.TabIndex = 5
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox7.BackgroundImage = Global.CAN_Inventory_db.My.Resources.Resources.horiz_divider
-        Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox7.Location = New System.Drawing.Point(6, 296)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(365, 6)
-        Me.PictureBox7.TabIndex = 4
-        Me.PictureBox7.TabStop = False
         '
         'Label44
         '
@@ -3338,6 +3279,65 @@ Partial Class frmMain
         Me.tbpSettings.Text = "Settings"
         Me.tbpSettings.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.CAN_Inventory_db.My.Resources.Resources.dash_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 15)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(243, 108)
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = Global.CAN_Inventory_db.My.Resources.Resources.pinwheel_dash
+        Me.PictureBox2.Location = New System.Drawing.Point(7, 408)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(281, 187)
+        Me.PictureBox2.TabIndex = 6
+        Me.PictureBox2.TabStop = False
+        '
+        'pbxTLwQuant
+        '
+        Me.pbxTLwQuant.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pbxTLwQuant.Location = New System.Drawing.Point(345, 12)
+        Me.pbxTLwQuant.Name = "pbxTLwQuant"
+        Me.pbxTLwQuant.Size = New System.Drawing.Size(26, 35)
+        Me.pbxTLwQuant.TabIndex = 7
+        Me.pbxTLwQuant.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox4.Location = New System.Drawing.Point(6, 272)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(365, 6)
+        Me.PictureBox4.TabIndex = 4
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Location = New System.Drawing.Point(6, 168)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(365, 6)
+        Me.PictureBox3.TabIndex = 4
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox7.BackgroundImage = Global.CAN_Inventory_db.My.Resources.Resources.horiz_divider
+        Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox7.Location = New System.Drawing.Point(6, 296)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(365, 6)
+        Me.PictureBox7.TabIndex = 4
+        Me.PictureBox7.TabStop = False
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3358,18 +3358,13 @@ Partial Class frmMain
         Me.TabControl1.ResumeLayout(False)
         Me.tbpDashboard.ResumeLayout(False)
         Me.tbpDashboard.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbpInvTrans.ResumeLayout(False)
         Me.tbpInvTrans.PerformLayout()
         Me.gbxTItems.ResumeLayout(False)
         Me.gbxTItems.PerformLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTags.ResumeLayout(False)
         Me.pnlTags.PerformLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3381,7 +3376,6 @@ Partial Class frmMain
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbpReports.ResumeLayout(False)
         Me.tbpReports.PerformLayout()
         Me.gbxReportType.ResumeLayout(False)
@@ -3416,6 +3410,12 @@ Partial Class frmMain
         Me.GroupBox3.PerformLayout()
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

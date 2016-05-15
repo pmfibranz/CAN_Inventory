@@ -161,10 +161,39 @@ Public Class DB_Access
         Return query
     End Function
 
+    Function SetInactive(ByRef table As String, ByVal where As String) As Boolean
+        Dim query As String
+
+        query = "UPDATE " + table + " SET active=False  WHERE id=" + where + " ;"
+
+        Debug.Print(query)
+
+        Return PassUpdate(query)
+    End Function
+
     Function GetDB_Path() As String
         Return dBasePath
     End Function
 
+    Function PassUpdate(query As String) As Boolean
+        Dim connect As OleDbConnection
+        Dim cmd As OleDbCommand
+
+        connect = New OleDbConnection(dBasePath)
+
+        Try
+            connect.Open()
+            cmd = New OleDbCommand(query, connect)
+            cmd.ExecuteNonQuery()
+            connect.Close()
+
+            Return True
+        Catch ex As Exception
+            statusLabel.Text = "Failed to remove data."
+        End Try
+
+        Return False
+    End Function
 
 End Class
 

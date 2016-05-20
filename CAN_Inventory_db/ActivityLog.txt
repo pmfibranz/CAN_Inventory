@@ -1,4 +1,12 @@
-﻿5/14/16 - Update:
+﻿5/20/16 - Update:
+Started adding location manager section to settings. Can load facility data and location data is still being 
+tweeked. Want to pull out sections of initial load sub in to seperate subs that can be called throughout the use
+of the panel to aboid refreshing the entire panel at once when updating data to some of the components.
+
+- 2 hours
+------------------------------
+
+5/14/16 - Update:
 Constructed subs used to remove(set inactive) the selected items in the category and sub-category listbox on 
 the settings tab.
 

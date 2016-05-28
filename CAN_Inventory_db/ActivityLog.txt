@@ -1,4 +1,14 @@
-﻿5/20/16 - Update:
+﻿5/27/16 - Update:
+Basic functionality of the facility, location, and bin settings are operational. I have added for the facility
+address, which may be handy for report creation to include location in header. 
+
+Issues to address next will be to adjust tab index for settings form and makeing sure that the listboxes clear
+when the combobox controling it changes. also continue on with programing Item Conditions section.
+
+- 3 hours
+------------------------------
+
+5/20/16 - Update:
 Started adding location manager section to settings. Can load facility data and location data is still being 
 tweeked. Want to pull out sections of initial load sub in to seperate subs that can be called throughout the use
 of the panel to aboid refreshing the entire panel at once when updating data to some of the components.

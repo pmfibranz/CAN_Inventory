@@ -103,7 +103,7 @@ Public Class DB_Access
             Dim newId As Integer
 
             Try
-                query = "INSERT INTO " + table + "(" + data(0) + ") VALUES(" + data(1) + "); "
+                query = "INSERT INTO " + table + " (" + data(0) + ") VALUES(" + data(1) + "); "
                 query2 = "SELECT @@Identity;"
                 Debug.Print(query)
                 db.Open()

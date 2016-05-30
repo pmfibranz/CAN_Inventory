@@ -339,6 +339,9 @@
             LocationListLoad(cbxLocationB, cbxFacilityB)
             cbxLocationB.SelectedIndex = -1
             cbxLocationB.Enabled = True
+            txtAddBin.Enabled = False
+            lbxBins.Enabled = False
+            lbxBins.DataSource = Nothing
             ready = True
         End If
     End Sub
@@ -358,6 +361,58 @@
         End If
 
     End Sub
+
+    'Conditions Group --------------------------------------------------------
+
+    '----------------Add Button---------------------------------------------
+    Private Sub lnkAddCondition_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkAddCondition.LinkClicked
+        Dim data(1) As String
+        Dim condID As Integer
+
+
+        If txtAddCondition.Text <> "" Then
+            Try
+                data(0) = "condition , active "
+                data(1) = "'" + txtAddCondition.Text + "' , True"
+
+                condID = frmMain.dbAccess.DataPush("conditions", data)
+
+                If condID = -1 Then
+                    Throw New System.Exception("Condition Creation Failure")
+                End If
+
+                'Reset Form
+                txtAddCondition.Clear()
+
+                ConditionListLoad(lbxConditions)
+                lbxConditions.SelectedIndex = -1
+
+            Catch ex As Exception
+                frmMain.lblStatus.Text = ex.Message()
+            End Try
+
+        End If
+    End Sub
+
+    '----------------Remove Selected Button---------------------------------------------
+    Private Sub lnkRmvCondtion_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkRmvCondtion.LinkClicked
+        Dim where(0) As String
+        Dim i As Integer = 0
+        Dim numSel As Integer
+
+        numSel = lbxConditions.SelectedItems.Count()
+        ReDim Preserve where(numSel - 1)
+
+        For Each item As DataRowView In lbxConditions.SelectedItems
+
+            frmMain.dbAccess.SetInactive("conditions", item(0).ToString())
+            i += 1
+        Next
+
+        ConditionListLoad(lbxConditions)
+        lbxConditions.SelectedIndex = -1
+    End Sub
+
 
 
 
@@ -383,6 +438,10 @@
 
         FacilityListLoad(cbxFacilityB)
         cbxFacilityB.SelectedIndex = -1
+
+        'Condtions
+        ConditionListLoad(lbxConditions)
+        lbxConditions.SelectedIndex = -1
 
 
         ready = True
@@ -513,5 +572,25 @@
         ready = True
     End Sub
 
+    'Loads Conditions Listbox
+    Sub ConditionListLoad(ob As Object)
+        Dim dsCondition As New DataSet()
+        Dim query As String
+
+        Try
+            ready = False
+            query = frmMain.dbAccess.QueryBuilder("conditions", "*", "(((conditions.active)=True))")
+            dsCondition = frmMain.dbAccess.DataGet(query)
+
+            ob.DataSource = dsCondition.Tables(0)
+            ob.ValueMember = "id"
+            ob.DisplayMember = "condition"
+
+        Catch ex As Exception
+            frmMain.lblStatus.Text = ex.Message()
+        End Try
+
+        ready = True
+    End Sub
 
 End Class

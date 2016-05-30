@@ -36,6 +36,17 @@ Partial Class uclSettings
         Me.lnkAddCat = New System.Windows.Forms.LinkLabel()
         Me.txtNewCat = New System.Windows.Forms.TextBox()
         Me.gbxFacilities = New System.Windows.Forms.GroupBox()
+        Me.cbxFacState = New System.Windows.Forms.ComboBox()
+        Me.lblFacState = New System.Windows.Forms.Label()
+        Me.lblFacZip = New System.Windows.Forms.Label()
+        Me.lblFacCity = New System.Windows.Forms.Label()
+        Me.lblFacAdd2 = New System.Windows.Forms.Label()
+        Me.lblFacAdd1 = New System.Windows.Forms.Label()
+        Me.lblFacility = New System.Windows.Forms.Label()
+        Me.txtFacZip = New System.Windows.Forms.TextBox()
+        Me.txtFacCity = New System.Windows.Forms.TextBox()
+        Me.txtFacAdd2 = New System.Windows.Forms.TextBox()
+        Me.txtFacAdd1 = New System.Windows.Forms.TextBox()
         Me.lnkAddFacility = New System.Windows.Forms.LinkLabel()
         Me.lnkRmvFacility = New System.Windows.Forms.LinkLabel()
         Me.lbxFacilities = New System.Windows.Forms.ListBox()
@@ -56,17 +67,6 @@ Partial Class uclSettings
         Me.lnkRmvBin = New System.Windows.Forms.LinkLabel()
         Me.lbxBins = New System.Windows.Forms.ListBox()
         Me.txtAddBin = New System.Windows.Forms.TextBox()
-        Me.txtFacAdd1 = New System.Windows.Forms.TextBox()
-        Me.lblFacility = New System.Windows.Forms.Label()
-        Me.lblFacAdd1 = New System.Windows.Forms.Label()
-        Me.txtFacAdd2 = New System.Windows.Forms.TextBox()
-        Me.lblFacAdd2 = New System.Windows.Forms.Label()
-        Me.txtFacCity = New System.Windows.Forms.TextBox()
-        Me.lblFacCity = New System.Windows.Forms.Label()
-        Me.lblFacState = New System.Windows.Forms.Label()
-        Me.cbxFacState = New System.Windows.Forms.ComboBox()
-        Me.txtFacZip = New System.Windows.Forms.TextBox()
-        Me.lblFacZip = New System.Windows.Forms.Label()
         Me.gbxConditions = New System.Windows.Forms.GroupBox()
         Me.lnkRmvCondtion = New System.Windows.Forms.LinkLabel()
         Me.lbxConditions = New System.Windows.Forms.ListBox()
@@ -234,6 +234,96 @@ Partial Class uclSettings
         Me.gbxFacilities.TabIndex = 6
         Me.gbxFacilities.TabStop = False
         Me.gbxFacilities.Text = "Facilities"
+        '
+        'cbxFacState
+        '
+        Me.cbxFacState.FormattingEnabled = True
+        Me.cbxFacState.Location = New System.Drawing.Point(356, 101)
+        Me.cbxFacState.Name = "cbxFacState"
+        Me.cbxFacState.Size = New System.Drawing.Size(51, 21)
+        Me.cbxFacState.TabIndex = 7
+        '
+        'lblFacState
+        '
+        Me.lblFacState.AutoSize = True
+        Me.lblFacState.Location = New System.Drawing.Point(319, 104)
+        Me.lblFacState.Name = "lblFacState"
+        Me.lblFacState.Size = New System.Drawing.Size(35, 13)
+        Me.lblFacState.TabIndex = 6
+        Me.lblFacState.Text = "State:"
+        '
+        'lblFacZip
+        '
+        Me.lblFacZip.AutoSize = True
+        Me.lblFacZip.Location = New System.Drawing.Point(187, 130)
+        Me.lblFacZip.Name = "lblFacZip"
+        Me.lblFacZip.Size = New System.Drawing.Size(25, 13)
+        Me.lblFacZip.TabIndex = 5
+        Me.lblFacZip.Text = "Zip:"
+        '
+        'lblFacCity
+        '
+        Me.lblFacCity.AutoSize = True
+        Me.lblFacCity.Location = New System.Drawing.Point(187, 104)
+        Me.lblFacCity.Name = "lblFacCity"
+        Me.lblFacCity.Size = New System.Drawing.Size(27, 13)
+        Me.lblFacCity.TabIndex = 5
+        Me.lblFacCity.Text = "City:"
+        '
+        'lblFacAdd2
+        '
+        Me.lblFacAdd2.AutoSize = True
+        Me.lblFacAdd2.Location = New System.Drawing.Point(187, 78)
+        Me.lblFacAdd2.Name = "lblFacAdd2"
+        Me.lblFacAdd2.Size = New System.Drawing.Size(57, 13)
+        Me.lblFacAdd2.TabIndex = 5
+        Me.lblFacAdd2.Text = "Address 2:"
+        '
+        'lblFacAdd1
+        '
+        Me.lblFacAdd1.AutoSize = True
+        Me.lblFacAdd1.Location = New System.Drawing.Point(187, 52)
+        Me.lblFacAdd1.Name = "lblFacAdd1"
+        Me.lblFacAdd1.Size = New System.Drawing.Size(57, 13)
+        Me.lblFacAdd1.TabIndex = 5
+        Me.lblFacAdd1.Text = "Address 1:"
+        '
+        'lblFacility
+        '
+        Me.lblFacility.AutoSize = True
+        Me.lblFacility.Location = New System.Drawing.Point(187, 26)
+        Me.lblFacility.Name = "lblFacility"
+        Me.lblFacility.Size = New System.Drawing.Size(73, 13)
+        Me.lblFacility.TabIndex = 5
+        Me.lblFacility.Text = "Facility Name:"
+        '
+        'txtFacZip
+        '
+        Me.txtFacZip.Location = New System.Drawing.Point(218, 127)
+        Me.txtFacZip.Name = "txtFacZip"
+        Me.txtFacZip.Size = New System.Drawing.Size(74, 20)
+        Me.txtFacZip.TabIndex = 4
+        '
+        'txtFacCity
+        '
+        Me.txtFacCity.Location = New System.Drawing.Point(219, 101)
+        Me.txtFacCity.Name = "txtFacCity"
+        Me.txtFacCity.Size = New System.Drawing.Size(97, 20)
+        Me.txtFacCity.TabIndex = 4
+        '
+        'txtFacAdd2
+        '
+        Me.txtFacAdd2.Location = New System.Drawing.Point(250, 75)
+        Me.txtFacAdd2.Name = "txtFacAdd2"
+        Me.txtFacAdd2.Size = New System.Drawing.Size(157, 20)
+        Me.txtFacAdd2.TabIndex = 4
+        '
+        'txtFacAdd1
+        '
+        Me.txtFacAdd1.Location = New System.Drawing.Point(250, 49)
+        Me.txtFacAdd1.Name = "txtFacAdd1"
+        Me.txtFacAdd1.Size = New System.Drawing.Size(157, 20)
+        Me.txtFacAdd1.TabIndex = 4
         '
         'lnkAddFacility
         '
@@ -434,96 +524,6 @@ Partial Class uclSettings
         Me.txtAddBin.Name = "txtAddBin"
         Me.txtAddBin.Size = New System.Drawing.Size(156, 20)
         Me.txtAddBin.TabIndex = 0
-        '
-        'txtFacAdd1
-        '
-        Me.txtFacAdd1.Location = New System.Drawing.Point(250, 49)
-        Me.txtFacAdd1.Name = "txtFacAdd1"
-        Me.txtFacAdd1.Size = New System.Drawing.Size(157, 20)
-        Me.txtFacAdd1.TabIndex = 4
-        '
-        'lblFacility
-        '
-        Me.lblFacility.AutoSize = True
-        Me.lblFacility.Location = New System.Drawing.Point(187, 26)
-        Me.lblFacility.Name = "lblFacility"
-        Me.lblFacility.Size = New System.Drawing.Size(73, 13)
-        Me.lblFacility.TabIndex = 5
-        Me.lblFacility.Text = "Facility Name:"
-        '
-        'lblFacAdd1
-        '
-        Me.lblFacAdd1.AutoSize = True
-        Me.lblFacAdd1.Location = New System.Drawing.Point(187, 52)
-        Me.lblFacAdd1.Name = "lblFacAdd1"
-        Me.lblFacAdd1.Size = New System.Drawing.Size(57, 13)
-        Me.lblFacAdd1.TabIndex = 5
-        Me.lblFacAdd1.Text = "Address 1:"
-        '
-        'txtFacAdd2
-        '
-        Me.txtFacAdd2.Location = New System.Drawing.Point(250, 75)
-        Me.txtFacAdd2.Name = "txtFacAdd2"
-        Me.txtFacAdd2.Size = New System.Drawing.Size(157, 20)
-        Me.txtFacAdd2.TabIndex = 4
-        '
-        'lblFacAdd2
-        '
-        Me.lblFacAdd2.AutoSize = True
-        Me.lblFacAdd2.Location = New System.Drawing.Point(187, 78)
-        Me.lblFacAdd2.Name = "lblFacAdd2"
-        Me.lblFacAdd2.Size = New System.Drawing.Size(57, 13)
-        Me.lblFacAdd2.TabIndex = 5
-        Me.lblFacAdd2.Text = "Address 2:"
-        '
-        'txtFacCity
-        '
-        Me.txtFacCity.Location = New System.Drawing.Point(219, 101)
-        Me.txtFacCity.Name = "txtFacCity"
-        Me.txtFacCity.Size = New System.Drawing.Size(97, 20)
-        Me.txtFacCity.TabIndex = 4
-        '
-        'lblFacCity
-        '
-        Me.lblFacCity.AutoSize = True
-        Me.lblFacCity.Location = New System.Drawing.Point(187, 104)
-        Me.lblFacCity.Name = "lblFacCity"
-        Me.lblFacCity.Size = New System.Drawing.Size(27, 13)
-        Me.lblFacCity.TabIndex = 5
-        Me.lblFacCity.Text = "City:"
-        '
-        'lblFacState
-        '
-        Me.lblFacState.AutoSize = True
-        Me.lblFacState.Location = New System.Drawing.Point(319, 104)
-        Me.lblFacState.Name = "lblFacState"
-        Me.lblFacState.Size = New System.Drawing.Size(35, 13)
-        Me.lblFacState.TabIndex = 6
-        Me.lblFacState.Text = "State:"
-        '
-        'cbxFacState
-        '
-        Me.cbxFacState.FormattingEnabled = True
-        Me.cbxFacState.Location = New System.Drawing.Point(356, 101)
-        Me.cbxFacState.Name = "cbxFacState"
-        Me.cbxFacState.Size = New System.Drawing.Size(51, 21)
-        Me.cbxFacState.TabIndex = 7
-        '
-        'txtFacZip
-        '
-        Me.txtFacZip.Location = New System.Drawing.Point(218, 127)
-        Me.txtFacZip.Name = "txtFacZip"
-        Me.txtFacZip.Size = New System.Drawing.Size(74, 20)
-        Me.txtFacZip.TabIndex = 4
-        '
-        'lblFacZip
-        '
-        Me.lblFacZip.AutoSize = True
-        Me.lblFacZip.Location = New System.Drawing.Point(187, 130)
-        Me.lblFacZip.Name = "lblFacZip"
-        Me.lblFacZip.Size = New System.Drawing.Size(25, 13)
-        Me.lblFacZip.TabIndex = 5
-        Me.lblFacZip.Text = "Zip:"
         '
         'gbxConditions
         '

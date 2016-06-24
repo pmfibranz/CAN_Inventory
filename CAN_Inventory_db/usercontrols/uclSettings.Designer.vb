@@ -72,12 +72,31 @@ Partial Class uclSettings
         Me.lbxConditions = New System.Windows.Forms.ListBox()
         Me.lnkAddCondition = New System.Windows.Forms.LinkLabel()
         Me.txtAddCondition = New System.Windows.Forms.TextBox()
+        Me.gbxPrograms = New System.Windows.Forms.GroupBox()
+        Me.lnkRmvProg = New System.Windows.Forms.LinkLabel()
+        Me.lbxProgs = New System.Windows.Forms.ListBox()
+        Me.lnkAddProg = New System.Windows.Forms.LinkLabel()
+        Me.txtAddProg = New System.Windows.Forms.TextBox()
+        Me.gbxUserMaint = New System.Windows.Forms.GroupBox()
+        Me.lblUserLN = New System.Windows.Forms.Label()
+        Me.lblUserFN = New System.Windows.Forms.Label()
+        Me.lblUserName = New System.Windows.Forms.Label()
+        Me.txtUserLN = New System.Windows.Forms.TextBox()
+        Me.txtUserFN = New System.Windows.Forms.TextBox()
+        Me.lnkRmvUser = New System.Windows.Forms.LinkLabel()
+        Me.lbxUserMaint = New System.Windows.Forms.ListBox()
+        Me.lnkResetUser = New System.Windows.Forms.LinkLabel()
+        Me.lnkAddUser = New System.Windows.Forms.LinkLabel()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.lnkUpdateUser = New System.Windows.Forms.LinkLabel()
         Me.gbxItemSubCat.SuspendLayout()
         Me.gbxItemCat.SuspendLayout()
         Me.gbxFacilities.SuspendLayout()
         Me.gbxLocations.SuspendLayout()
         Me.gbxBins.SuspendLayout()
         Me.gbxConditions.SuspendLayout()
+        Me.gbxPrograms.SuspendLayout()
+        Me.gbxUserMaint.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxItemSubCat
@@ -88,7 +107,7 @@ Partial Class uclSettings
         Me.gbxItemSubCat.Controls.Add(Me.lbxSubCat)
         Me.gbxItemSubCat.Controls.Add(Me.lnkAddSubCat)
         Me.gbxItemSubCat.Controls.Add(Me.txtNewSubCat)
-        Me.gbxItemSubCat.Location = New System.Drawing.Point(12, 305)
+        Me.gbxItemSubCat.Location = New System.Drawing.Point(4, 287)
         Me.gbxItemSubCat.Name = "gbxItemSubCat"
         Me.gbxItemSubCat.Size = New System.Drawing.Size(186, 218)
         Me.gbxItemSubCat.TabIndex = 5
@@ -168,7 +187,7 @@ Partial Class uclSettings
         Me.gbxItemCat.Controls.Add(Me.lbxCategories)
         Me.gbxItemCat.Controls.Add(Me.lnkAddCat)
         Me.gbxItemCat.Controls.Add(Me.txtNewCat)
-        Me.gbxItemCat.Location = New System.Drawing.Point(12, 84)
+        Me.gbxItemCat.Location = New System.Drawing.Point(4, 67)
         Me.gbxItemCat.Name = "gbxItemCat"
         Me.gbxItemCat.Size = New System.Drawing.Size(186, 187)
         Me.gbxItemCat.TabIndex = 3
@@ -228,7 +247,7 @@ Partial Class uclSettings
         Me.gbxFacilities.Controls.Add(Me.lnkRmvFacility)
         Me.gbxFacilities.Controls.Add(Me.lbxFacilities)
         Me.gbxFacilities.Controls.Add(Me.txtAddFacility)
-        Me.gbxFacilities.Location = New System.Drawing.Point(250, 84)
+        Me.gbxFacilities.Location = New System.Drawing.Point(222, 67)
         Me.gbxFacilities.Name = "gbxFacilities"
         Me.gbxFacilities.Size = New System.Drawing.Size(412, 178)
         Me.gbxFacilities.TabIndex = 6
@@ -369,7 +388,7 @@ Partial Class uclSettings
         Me.gbxLocations.Controls.Add(Me.lnkRmvLocation)
         Me.gbxLocations.Controls.Add(Me.lbxLocations)
         Me.gbxLocations.Controls.Add(Me.txtAddLocation)
-        Me.gbxLocations.Location = New System.Drawing.Point(250, 305)
+        Me.gbxLocations.Location = New System.Drawing.Point(214, 287)
         Me.gbxLocations.Name = "gbxLocations"
         Me.gbxLocations.Size = New System.Drawing.Size(200, 218)
         Me.gbxLocations.TabIndex = 7
@@ -443,7 +462,7 @@ Partial Class uclSettings
         Me.gbxBins.Controls.Add(Me.lnkRmvBin)
         Me.gbxBins.Controls.Add(Me.lbxBins)
         Me.gbxBins.Controls.Add(Me.txtAddBin)
-        Me.gbxBins.Location = New System.Drawing.Point(462, 268)
+        Me.gbxBins.Location = New System.Drawing.Point(442, 287)
         Me.gbxBins.Name = "gbxBins"
         Me.gbxBins.Size = New System.Drawing.Size(200, 255)
         Me.gbxBins.TabIndex = 7
@@ -531,7 +550,7 @@ Partial Class uclSettings
         Me.gbxConditions.Controls.Add(Me.lbxConditions)
         Me.gbxConditions.Controls.Add(Me.lnkAddCondition)
         Me.gbxConditions.Controls.Add(Me.txtAddCondition)
-        Me.gbxConditions.Location = New System.Drawing.Point(698, 84)
+        Me.gbxConditions.Location = New System.Drawing.Point(670, 67)
         Me.gbxConditions.Name = "gbxConditions"
         Me.gbxConditions.Size = New System.Drawing.Size(186, 187)
         Me.gbxConditions.TabIndex = 8
@@ -574,10 +593,179 @@ Partial Class uclSettings
         Me.txtAddCondition.Size = New System.Drawing.Size(141, 20)
         Me.txtAddCondition.TabIndex = 0
         '
+        'gbxPrograms
+        '
+        Me.gbxPrograms.Controls.Add(Me.lnkRmvProg)
+        Me.gbxPrograms.Controls.Add(Me.lbxProgs)
+        Me.gbxPrograms.Controls.Add(Me.lnkAddProg)
+        Me.gbxPrograms.Controls.Add(Me.txtAddProg)
+        Me.gbxPrograms.Location = New System.Drawing.Point(670, 287)
+        Me.gbxPrograms.Name = "gbxPrograms"
+        Me.gbxPrograms.Size = New System.Drawing.Size(186, 187)
+        Me.gbxPrograms.TabIndex = 9
+        Me.gbxPrograms.TabStop = False
+        Me.gbxPrograms.Text = "Programs"
+        '
+        'lnkRmvProg
+        '
+        Me.lnkRmvProg.AutoSize = True
+        Me.lnkRmvProg.Location = New System.Drawing.Point(3, 156)
+        Me.lnkRmvProg.Name = "lnkRmvProg"
+        Me.lnkRmvProg.Size = New System.Drawing.Size(92, 13)
+        Me.lnkRmvProg.TabIndex = 3
+        Me.lnkRmvProg.TabStop = True
+        Me.lnkRmvProg.Text = "Remove Selected"
+        '
+        'lbxProgs
+        '
+        Me.lbxProgs.FormattingEnabled = True
+        Me.lbxProgs.Location = New System.Drawing.Point(6, 45)
+        Me.lbxProgs.Name = "lbxProgs"
+        Me.lbxProgs.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.lbxProgs.Size = New System.Drawing.Size(173, 108)
+        Me.lbxProgs.TabIndex = 2
+        '
+        'lnkAddProg
+        '
+        Me.lnkAddProg.AutoSize = True
+        Me.lnkAddProg.Location = New System.Drawing.Point(153, 22)
+        Me.lnkAddProg.Name = "lnkAddProg"
+        Me.lnkAddProg.Size = New System.Drawing.Size(26, 13)
+        Me.lnkAddProg.TabIndex = 1
+        Me.lnkAddProg.TabStop = True
+        Me.lnkAddProg.Text = "Add"
+        '
+        'txtAddProg
+        '
+        Me.txtAddProg.Location = New System.Drawing.Point(6, 19)
+        Me.txtAddProg.Name = "txtAddProg"
+        Me.txtAddProg.Size = New System.Drawing.Size(141, 20)
+        Me.txtAddProg.TabIndex = 0
+        '
+        'gbxUserMaint
+        '
+        Me.gbxUserMaint.Controls.Add(Me.lblUserLN)
+        Me.gbxUserMaint.Controls.Add(Me.lblUserFN)
+        Me.gbxUserMaint.Controls.Add(Me.lblUserName)
+        Me.gbxUserMaint.Controls.Add(Me.txtUserLN)
+        Me.gbxUserMaint.Controls.Add(Me.txtUserFN)
+        Me.gbxUserMaint.Controls.Add(Me.lnkRmvUser)
+        Me.gbxUserMaint.Controls.Add(Me.lbxUserMaint)
+        Me.gbxUserMaint.Controls.Add(Me.lnkAddUser)
+        Me.gbxUserMaint.Controls.Add(Me.txtUsername)
+        Me.gbxUserMaint.Controls.Add(Me.lnkUpdateUser)
+        Me.gbxUserMaint.Controls.Add(Me.lnkResetUser)
+        Me.gbxUserMaint.Location = New System.Drawing.Point(888, 67)
+        Me.gbxUserMaint.Name = "gbxUserMaint"
+        Me.gbxUserMaint.Size = New System.Drawing.Size(186, 259)
+        Me.gbxUserMaint.TabIndex = 10
+        Me.gbxUserMaint.TabStop = False
+        Me.gbxUserMaint.Text = "User Maintenance"
+        '
+        'lblUserLN
+        '
+        Me.lblUserLN.AutoSize = True
+        Me.lblUserLN.Location = New System.Drawing.Point(7, 74)
+        Me.lblUserLN.Name = "lblUserLN"
+        Me.lblUserLN.Size = New System.Drawing.Size(61, 13)
+        Me.lblUserLN.TabIndex = 5
+        Me.lblUserLN.Text = "Last Name:"
+        '
+        'lblUserFN
+        '
+        Me.lblUserFN.AutoSize = True
+        Me.lblUserFN.Location = New System.Drawing.Point(7, 48)
+        Me.lblUserFN.Name = "lblUserFN"
+        Me.lblUserFN.Size = New System.Drawing.Size(60, 13)
+        Me.lblUserFN.TabIndex = 5
+        Me.lblUserFN.Text = "First Name:"
+        '
+        'lblUserName
+        '
+        Me.lblUserName.AutoSize = True
+        Me.lblUserName.Location = New System.Drawing.Point(7, 22)
+        Me.lblUserName.Name = "lblUserName"
+        Me.lblUserName.Size = New System.Drawing.Size(58, 13)
+        Me.lblUserName.TabIndex = 5
+        Me.lblUserName.Text = "Username:"
+        '
+        'txtUserLN
+        '
+        Me.txtUserLN.Location = New System.Drawing.Point(71, 71)
+        Me.txtUserLN.Name = "txtUserLN"
+        Me.txtUserLN.Size = New System.Drawing.Size(108, 20)
+        Me.txtUserLN.TabIndex = 4
+        '
+        'txtUserFN
+        '
+        Me.txtUserFN.Location = New System.Drawing.Point(71, 45)
+        Me.txtUserFN.Name = "txtUserFN"
+        Me.txtUserFN.Size = New System.Drawing.Size(108, 20)
+        Me.txtUserFN.TabIndex = 4
+        '
+        'lnkRmvUser
+        '
+        Me.lnkRmvUser.AutoSize = True
+        Me.lnkRmvUser.Location = New System.Drawing.Point(3, 232)
+        Me.lnkRmvUser.Name = "lnkRmvUser"
+        Me.lnkRmvUser.Size = New System.Drawing.Size(92, 13)
+        Me.lnkRmvUser.TabIndex = 3
+        Me.lnkRmvUser.TabStop = True
+        Me.lnkRmvUser.Text = "Remove Selected"
+        '
+        'lbxUserMaint
+        '
+        Me.lbxUserMaint.FormattingEnabled = True
+        Me.lbxUserMaint.Location = New System.Drawing.Point(6, 121)
+        Me.lbxUserMaint.Name = "lbxUserMaint"
+        Me.lbxUserMaint.Size = New System.Drawing.Size(173, 108)
+        Me.lbxUserMaint.TabIndex = 2
+        '
+        'lnkResetUser
+        '
+        Me.lnkResetUser.AutoSize = True
+        Me.lnkResetUser.Location = New System.Drawing.Point(146, 93)
+        Me.lnkResetUser.Name = "lnkResetUser"
+        Me.lnkResetUser.Size = New System.Drawing.Size(35, 13)
+        Me.lnkResetUser.TabIndex = 1
+        Me.lnkResetUser.TabStop = True
+        Me.lnkResetUser.Text = "Reset"
+        Me.lnkResetUser.Visible = False
+        '
+        'lnkAddUser
+        '
+        Me.lnkAddUser.AutoSize = True
+        Me.lnkAddUser.Location = New System.Drawing.Point(153, 93)
+        Me.lnkAddUser.Name = "lnkAddUser"
+        Me.lnkAddUser.Size = New System.Drawing.Size(26, 13)
+        Me.lnkAddUser.TabIndex = 1
+        Me.lnkAddUser.TabStop = True
+        Me.lnkAddUser.Text = "Add"
+        '
+        'txtUsername
+        '
+        Me.txtUsername.Location = New System.Drawing.Point(71, 19)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(108, 20)
+        Me.txtUsername.TabIndex = 0
+        '
+        'lnkUpdateUser
+        '
+        Me.lnkUpdateUser.AutoSize = True
+        Me.lnkUpdateUser.Location = New System.Drawing.Point(105, 93)
+        Me.lnkUpdateUser.Name = "lnkUpdateUser"
+        Me.lnkUpdateUser.Size = New System.Drawing.Size(42, 13)
+        Me.lnkUpdateUser.TabIndex = 6
+        Me.lnkUpdateUser.TabStop = True
+        Me.lnkUpdateUser.Text = "Update"
+        Me.lnkUpdateUser.Visible = False
+        '
         'uclSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.gbxUserMaint)
+        Me.Controls.Add(Me.gbxPrograms)
         Me.Controls.Add(Me.gbxConditions)
         Me.Controls.Add(Me.gbxBins)
         Me.Controls.Add(Me.gbxLocations)
@@ -599,6 +787,10 @@ Partial Class uclSettings
         Me.gbxBins.PerformLayout()
         Me.gbxConditions.ResumeLayout(False)
         Me.gbxConditions.PerformLayout()
+        Me.gbxPrograms.ResumeLayout(False)
+        Me.gbxPrograms.PerformLayout()
+        Me.gbxUserMaint.ResumeLayout(False)
+        Me.gbxUserMaint.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -654,4 +846,21 @@ Partial Class uclSettings
     Friend WithEvents lbxConditions As ListBox
     Friend WithEvents lnkAddCondition As LinkLabel
     Friend WithEvents txtAddCondition As TextBox
+    Friend WithEvents gbxPrograms As GroupBox
+    Friend WithEvents lnkRmvProg As LinkLabel
+    Friend WithEvents lbxProgs As ListBox
+    Friend WithEvents lnkAddProg As LinkLabel
+    Friend WithEvents txtAddProg As TextBox
+    Friend WithEvents gbxUserMaint As GroupBox
+    Friend WithEvents lblUserLN As Label
+    Friend WithEvents lblUserFN As Label
+    Friend WithEvents lblUserName As Label
+    Friend WithEvents txtUserLN As TextBox
+    Friend WithEvents txtUserFN As TextBox
+    Friend WithEvents lnkRmvUser As LinkLabel
+    Friend WithEvents lbxUserMaint As ListBox
+    Friend WithEvents lnkAddUser As LinkLabel
+    Friend WithEvents txtUsername As TextBox
+    Friend WithEvents lnkResetUser As LinkLabel
+    Friend WithEvents lnkUpdateUser As LinkLabel
 End Class

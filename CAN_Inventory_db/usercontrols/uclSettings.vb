@@ -413,8 +413,192 @@
         lbxConditions.SelectedIndex = -1
     End Sub
 
+    'Programs Group --------------------------------------------------------
+
+    '----------------Add Button---------------------------------------------
+    Private Sub lnkAddProg_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkAddProg.LinkClicked
+
+        Dim data(1) As String
+        Dim progID As Integer
 
 
+        If txtAddProg.Text <> "" Then
+            Try
+                data(0) = "program , active "
+                data(1) = "'" + txtAddProg.Text + "' , True"
+
+                progID = frmMain.dbAccess.DataPush("programs", data)
+
+                If progID = -1 Then
+                    Throw New System.Exception("Program Creation Failure")
+                End If
+
+                'Reset Form
+                txtAddProg.Clear()
+
+                ProgramListLoad(lbxProgs)
+                lbxProgs.SelectedIndex = -1
+
+            Catch ex As Exception
+                frmMain.lblStatus.Text = ex.Message()
+            End Try
+
+        End If
+    End Sub
+
+    '----------------Remove Selected Button---------------------------------------------
+    Private Sub lnkRmvProg_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkRmvProg.LinkClicked
+        Dim where(0) As String
+        Dim i As Integer = 0
+        Dim numSel As Integer
+
+        numSel = lbxProgs.SelectedItems.Count()
+        ReDim Preserve where(numSel - 1)
+
+        For Each item As DataRowView In lbxProgs.SelectedItems
+
+            frmMain.dbAccess.SetInactive("programs", item(0).ToString())
+            i += 1
+        Next
+
+        ProgramListLoad(lbxProgs)
+        lbxProgs.SelectedIndex = -1
+    End Sub
+
+    'User Maintenance Group --------------------------------------------------------
+
+    '----------------Add Button---------------------------------------------
+    Private Sub lnkAddUser_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkAddUser.LinkClicked
+
+        Dim data(1) As String
+        Dim userID As Integer
+
+
+        If txtUsername.Text <> "" Then
+            Try
+                data(0) = "username , first_name , last_name , active "
+                data(1) = "'" + txtUsername.Text +
+                    "' , '" + txtUserFN.Text +
+                    "' , '" + txtUserLN.Text +
+                    "' , True"
+
+                userID = frmMain.dbAccess.DataPush("users", data)
+
+                If userID = -1 Then
+                    Throw New System.Exception("User Creation Failure")
+                End If
+
+                'Reset Form
+                txtUsername.Clear()
+                txtUserFN.Clear()
+                txtUserLN.Clear()
+
+                UserListLoad(lbxUserMaint)
+                lbxUserMaint.SelectedIndex = -1
+
+            Catch ex As Exception
+                frmMain.lblStatus.Text = ex.Message()
+            End Try
+
+        End If
+    End Sub
+
+
+    '----------------Remove Selected Button---------------------------------------------
+    Private Sub lnkRmvUser_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkRmvUser.LinkClicked
+        Dim where(0) As String
+        Dim i As Integer = 0
+        Dim numSel As Integer
+
+        numSel = lbxUserMaint.SelectedItems.Count()
+        ReDim Preserve where(numSel - 1)
+
+        For Each item As DataRowView In lbxUserMaint.SelectedItems
+
+            frmMain.dbAccess.SetInactive("users", item(0).ToString())
+            i += 1
+        Next
+
+        UserListLoad(lbxUserMaint)
+        lbxUserMaint.SelectedIndex = -1
+    End Sub
+
+    '----------------Edit Selected User---------------------------------------------
+    Private Sub lbxUserMaint_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbxUserMaint.SelectedIndexChanged
+        If ready = True And lbxUserMaint.SelectedIndex > -1 Then
+            Dim uid As String
+            Dim dsUser As New DataSet()
+            Dim query As String
+
+            Try
+                ready = False
+                uid = lbxUserMaint.SelectedValue.ToString
+
+                query = frmMain.dbAccess.QueryBuilder("users", "*", "((users.id=" + uid + ") AND (users.active=True))")
+                dsUser = frmMain.dbAccess.DataGet(query)
+
+                txtUsername.Text = dsUser.Tables(0).Rows(0).Item("username").ToString
+                txtUserFN.Text = dsUser.Tables(0).Rows(0).Item("first_name").ToString
+                txtUserLN.Text = dsUser.Tables(0).Rows(0).Item("last_name").ToString
+
+                lnkResetUser.Visible = True
+                lnkUpdateUser.Visible = True
+                lnkAddUser.Visible = False
+            Catch ex As Exception
+                frmMain.lblStatus.Text = ex.Message()
+            End Try
+
+            ready = True
+
+        End If
+    End Sub
+
+
+    '----------------Reset User Form---------------------------------------------
+    Private Sub lnkResetUser_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkResetUser.LinkClicked
+        'Reset Form
+        txtUsername.Clear()
+        txtUserFN.Clear()
+        txtUserLN.Clear()
+
+        UserListLoad(lbxUserMaint)
+        lbxUserMaint.SelectedIndex = -1
+        lnkResetUser.Visible = False
+        lnkUpdateUser.Visible = False
+        lnkAddUser.Visible = True
+    End Sub
+
+    '----------------Update User in DB---------------------------------------------
+    Private Sub lnkUpdateUser_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkUpdateUser.LinkClicked
+        Dim query As String
+        Dim setVal As String
+        Dim uid As String
+
+        setVal = "username='" + txtUsername.Text +
+               "', first_name='" + txtUserFN.Text +
+               "', last_name='" + txtUserLN.Text + "'"
+        uid = lbxUserMaint.SelectedValue.ToString
+
+        Try
+            query = frmMain.dbAccess.QueryBuilder("users", setVal, uid, "UPDATE")
+            frmMain.dbAccess.PassUpdate(query)
+
+            'Reset Form
+            txtUsername.Clear()
+            txtUserFN.Clear()
+            txtUserLN.Clear()
+
+            UserListLoad(lbxUserMaint)
+            lbxUserMaint.SelectedIndex = -1
+            lnkResetUser.Visible = False
+            lnkUpdateUser.Visible = False
+            lnkAddUser.Visible = True
+
+        Catch ex As Exception
+            frmMain.lblStatus.Text = ex.Message()
+        End Try
+
+    End Sub
 
     '**************************  Additional Subs  ********************************************
     'Settings Panel Load Sub
@@ -443,6 +627,13 @@
         ConditionListLoad(lbxConditions)
         lbxConditions.SelectedIndex = -1
 
+        'Condtions
+        ProgramListLoad(lbxProgs)
+        lbxProgs.SelectedIndex = -1
+
+        'Users
+        UserListLoad(lbxUserMaint)
+        lbxUserMaint.SelectedIndex = -1
 
         ready = True
     End Sub
@@ -543,6 +734,8 @@
         ready = True
     End Sub
 
+
+    'Loads Bin Listbox
     Sub BinListLoad(ob As Object, Optional from As ComboBox = Nothing)
         Dim dsBins As New DataSet()
         Dim query As String
@@ -592,5 +785,48 @@
 
         ready = True
     End Sub
+
+    'Loads Conditions Listbox
+    Sub ProgramListLoad(ob As Object)
+        Dim dsProgram As New DataSet()
+        Dim query As String
+
+        Try
+            ready = False
+            query = frmMain.dbAccess.QueryBuilder("programs", "*", "(((programs.active)=True))")
+            dsProgram = frmMain.dbAccess.DataGet(query)
+
+            ob.DataSource = dsProgram.Tables(0)
+            ob.ValueMember = "id"
+            ob.DisplayMember = "program"
+
+        Catch ex As Exception
+            frmMain.lblStatus.Text = ex.Message()
+        End Try
+
+        ready = True
+    End Sub
+
+    'Loads User Maintenance Listbox
+    Sub UserListLoad(ob As Object)
+        Dim dsUser As New DataSet()
+        Dim query As String
+
+        Try
+            ready = False
+            query = frmMain.dbAccess.QueryBuilder("users", "*", "(((users.active)=True))")
+            dsUser = frmMain.dbAccess.DataGet(query)
+
+            ob.DataSource = dsUser.Tables(0)
+            ob.ValueMember = "id"
+            ob.DisplayMember = "username"
+
+        Catch ex As Exception
+            frmMain.lblStatus.Text = ex.Message()
+        End Try
+
+        ready = True
+    End Sub
+
 
 End Class

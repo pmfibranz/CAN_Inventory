@@ -1,4 +1,11 @@
-﻿5/29/16 - Update:
+﻿6/23/16 - Update:
+Programed settings panel for Programs and user maintenance. Use maintenance also allows for the modification
+of user information. Additional revision to query building function to handle different types of queries.
+
+- 2.3 hours
+------------------------------
+
+5/29/16 - Update:
 Programmed Condtions settings group to setting tab. Also resolved issue #2 regarding the Bins list box not clearing 
 when changing the facility combo box. 
 

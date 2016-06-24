@@ -147,15 +147,27 @@ Public Class DB_Access
 
 
     'Builds Query 
-    Function QueryBuilder(ByRef table As String, ByVal data As String, Optional ByVal where As String = "") As String
+    Function QueryBuilder(ByRef table As String, ByVal data As String,
+                          Optional ByVal where As String = "",
+                          Optional ByRef action As String = "SELECT") As String
         Dim query As String
         'Data Read Query
-        query = "SELECT " + data + " FROM " + table
-        If where <> "" Then
-            query += (" WHERE " + where + ";")
+        If action = "SELECT" Then
+            query = "SELECT " + data + " FROM " + table
+            If where <> "" Then
+                query += (" WHERE " + where + ";")
+            Else
+                query += ";"
+            End If
+
+        ElseIf action = "UPDATE" Then
+
+            query = "UPDATE " + table + " SET " + data +
+                " WHERE id=" + where + " ;"
         Else
-            query += ";"
+            Throw New System.Exception("Unable to build query")
         End If
+
 
         Debug.Print(query)
         Return query
@@ -189,7 +201,7 @@ Public Class DB_Access
 
             Return True
         Catch ex As Exception
-            statusLabel.Text = "Failed to remove data."
+            statusLabel.Text = "Failed to Update data."
         End Try
 
         Return False

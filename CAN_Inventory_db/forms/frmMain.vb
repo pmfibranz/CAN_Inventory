@@ -39,6 +39,19 @@ Public Class frmMain
 
         Me.tbpSettings.Controls.Add(settingsTab)
 
+
+        '-------------- Item Manager Tab ----------------
+        Dim itemTab As New uclItemMan
+        With itemTab
+            .Name = "itemTab"
+            .Location = New Point(0, 0)
+            .Width = Me.tbpItmManag.Width
+            .Height = Me.tbpItmManag.Height
+            .Anchor = AnchorStyles.Bottom Or AnchorStyles.Right Or AnchorStyles.Top Or AnchorStyles.Left
+        End With
+
+        Me.tbpItmManag.Controls.Add(itemTab)
+
     End Sub
 
     '-------------- Menu Strip ----------------
@@ -137,6 +150,12 @@ Public Class frmMain
         pnlBenefactor.Visible = False
         pnlWishlist.Visible = False
         pnlTransReport.Visible = True
+    End Sub
+
+    Private Sub AddNewBaseItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNewBaseItemToolStripMenuItem.Click
+        Dim newBaseItem As New frmNewBaseItem()
+
+        newBaseItem.Show()
     End Sub
 
 

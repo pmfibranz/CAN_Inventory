@@ -22,11 +22,6 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TreeNode31 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 1")
-        Dim TreeNode32 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Category 1", New System.Windows.Forms.TreeNode() {TreeNode31})
-        Dim TreeNode33 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 1")
-        Dim TreeNode34 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Sub-Category 2")
-        Dim TreeNode35 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Category 2", New System.Windows.Forms.TreeNode() {TreeNode33, TreeNode34})
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.menTopStrip = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,8 +37,9 @@ Partial Class frmMain
         Me.cbxUserSelect = New System.Windows.Forms.ToolStripComboBox()
         Me.stsSatusBar = New System.Windows.Forms.StatusStrip()
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.tabControls = New System.Windows.Forms.TabControl()
         Me.tbpDashboard = New System.Windows.Forms.TabPage()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -59,6 +55,7 @@ Partial Class frmMain
         Me.btnQAddContact = New System.Windows.Forms.Button()
         Me.btnQItemSearch = New System.Windows.Forms.Button()
         Me.btnQTrans = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tbpInvTrans = New System.Windows.Forms.TabPage()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.gbxTItems = New System.Windows.Forms.GroupBox()
@@ -74,11 +71,14 @@ Partial Class frmMain
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.pbxTLwQuant = New System.Windows.Forms.PictureBox()
         Me.ComboBox7 = New System.Windows.Forms.ComboBox()
         Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.ComboBox5 = New System.Windows.Forms.ComboBox()
         Me.ComboBox8 = New System.Windows.Forms.ComboBox()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.pnlTags = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -127,31 +127,6 @@ Partial Class frmMain
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.tbpItmManag = New System.Windows.Forms.TabPage()
-        Me.DataGridView5 = New System.Windows.Forms.DataGridView()
-        Me.TreeView1 = New System.Windows.Forms.TreeView()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.ComboBox14 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox12 = New System.Windows.Forms.ComboBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.ComboBox9 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox10 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox11 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox13 = New System.Windows.Forms.ComboBox()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label47 = New System.Windows.Forms.Label()
-        Me.Label54 = New System.Windows.Forms.Label()
-        Me.Label57 = New System.Windows.Forms.Label()
-        Me.Label58 = New System.Windows.Forms.Label()
-        Me.Label61 = New System.Windows.Forms.Label()
-        Me.Label62 = New System.Windows.Forms.Label()
-        Me.Label63 = New System.Windows.Forms.Label()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.tbpReports = New System.Windows.Forms.TabPage()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.Label73 = New System.Windows.Forms.Label()
@@ -304,29 +279,24 @@ Partial Class frmMain
         Me.DataGridView7 = New System.Windows.Forms.DataGridView()
         Me.DataGridView6 = New System.Windows.Forms.DataGridView()
         Me.tbpSettings = New System.Windows.Forms.TabPage()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.pbxTLwQuant = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.menTopStrip.SuspendLayout()
         Me.stsSatusBar.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.tabControls.SuspendLayout()
         Me.tbpDashboard.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpInvTrans.SuspendLayout()
         Me.gbxTItems.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTags.SuspendLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.tbpItmManag.SuspendLayout()
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpReports.SuspendLayout()
         Me.gbxReportType.SuspendLayout()
         Me.pnlBenefactor.SuspendLayout()
@@ -347,12 +317,6 @@ Partial Class frmMain
         Me.GroupBox3.SuspendLayout()
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menTopStrip
@@ -453,22 +417,22 @@ Partial Class frmMain
         Me.lblStatus.Size = New System.Drawing.Size(83, 17)
         Me.lblStatus.Text = "DB Connected"
         '
-        'TabControl1
+        'tabControls
         '
-        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.tabControls.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TabControl1.Controls.Add(Me.tbpDashboard)
-        Me.TabControl1.Controls.Add(Me.tbpInvTrans)
-        Me.TabControl1.Controls.Add(Me.tbpItmManag)
-        Me.TabControl1.Controls.Add(Me.tbpReports)
-        Me.TabControl1.Controls.Add(Me.tbpContacts)
-        Me.TabControl1.Controls.Add(Me.tbpSettings)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 30)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1097, 627)
-        Me.TabControl1.TabIndex = 2
+        Me.tabControls.Controls.Add(Me.tbpDashboard)
+        Me.tabControls.Controls.Add(Me.tbpInvTrans)
+        Me.tabControls.Controls.Add(Me.tbpItmManag)
+        Me.tabControls.Controls.Add(Me.tbpReports)
+        Me.tabControls.Controls.Add(Me.tbpContacts)
+        Me.tabControls.Controls.Add(Me.tbpSettings)
+        Me.tabControls.Location = New System.Drawing.Point(0, 30)
+        Me.tabControls.Name = "tabControls"
+        Me.tabControls.SelectedIndex = 0
+        Me.tabControls.Size = New System.Drawing.Size(1097, 627)
+        Me.tabControls.TabIndex = 2
         '
         'tbpDashboard
         '
@@ -496,6 +460,15 @@ Partial Class frmMain
         Me.tbpDashboard.TabIndex = 0
         Me.tbpDashboard.Text = "Dashboard"
         Me.tbpDashboard.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.CAN_Inventory_db.My.Resources.Resources.dash_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 15)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(243, 108)
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
         '
         'Label5
         '
@@ -641,6 +614,16 @@ Partial Class frmMain
         Me.btnQTrans.TabIndex = 0
         Me.btnQTrans.Text = "Quick Transaction"
         Me.btnQTrans.UseVisualStyleBackColor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = Global.CAN_Inventory_db.My.Resources.Resources.pinwheel_dash
+        Me.PictureBox2.Location = New System.Drawing.Point(7, 408)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(281, 187)
+        Me.PictureBox2.TabIndex = 6
+        Me.PictureBox2.TabStop = False
         '
         'tbpInvTrans
         '
@@ -847,6 +830,15 @@ Partial Class frmMain
         Me.TextBox4.Size = New System.Drawing.Size(365, 137)
         Me.TextBox4.TabIndex = 8
         '
+        'pbxTLwQuant
+        '
+        Me.pbxTLwQuant.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pbxTLwQuant.Location = New System.Drawing.Point(345, 12)
+        Me.pbxTLwQuant.Name = "pbxTLwQuant"
+        Me.pbxTLwQuant.Size = New System.Drawing.Size(26, 35)
+        Me.pbxTLwQuant.TabIndex = 7
+        Me.pbxTLwQuant.TabStop = False
+        '
         'ComboBox7
         '
         Me.ComboBox7.FormattingEnabled = True
@@ -886,6 +878,26 @@ Partial Class frmMain
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(123, 21)
         Me.ComboBox4.TabIndex = 5
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox4.Location = New System.Drawing.Point(6, 272)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(365, 6)
+        Me.PictureBox4.TabIndex = 4
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Location = New System.Drawing.Point(6, 168)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(365, 6)
+        Me.PictureBox3.TabIndex = 4
+        Me.PictureBox3.TabStop = False
         '
         'Label17
         '
@@ -1407,9 +1419,6 @@ Partial Class frmMain
         '
         'tbpItmManag
         '
-        Me.tbpItmManag.Controls.Add(Me.DataGridView5)
-        Me.tbpItmManag.Controls.Add(Me.TreeView1)
-        Me.tbpItmManag.Controls.Add(Me.GroupBox2)
         Me.tbpItmManag.Location = New System.Drawing.Point(4, 22)
         Me.tbpItmManag.Name = "tbpItmManag"
         Me.tbpItmManag.Padding = New System.Windows.Forms.Padding(3)
@@ -1417,291 +1426,6 @@ Partial Class frmMain
         Me.tbpItmManag.TabIndex = 1
         Me.tbpItmManag.Text = "Item Manager"
         Me.tbpItmManag.UseVisualStyleBackColor = True
-        '
-        'DataGridView5
-        '
-        Me.DataGridView5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView5.Location = New System.Drawing.Point(186, 23)
-        Me.DataGridView5.Name = "DataGridView5"
-        Me.DataGridView5.Size = New System.Drawing.Size(514, 569)
-        Me.DataGridView5.TabIndex = 8
-        '
-        'TreeView1
-        '
-        Me.TreeView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.TreeView1.Location = New System.Drawing.Point(3, 23)
-        Me.TreeView1.Name = "TreeView1"
-        TreeNode31.Name = "Node1"
-        TreeNode31.Text = "Sub-Category 1"
-        TreeNode32.Name = "Node0"
-        TreeNode32.Text = "Category 1"
-        TreeNode33.Name = "Node3"
-        TreeNode33.Text = "Sub-Category 1"
-        TreeNode34.Name = "Node4"
-        TreeNode34.Text = "Sub-Category 2"
-        TreeNode35.Name = "Node2"
-        TreeNode35.Text = "Category 2"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode32, TreeNode35})
-        Me.TreeView1.Size = New System.Drawing.Size(177, 569)
-        Me.TreeView1.TabIndex = 7
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown2)
-        Me.GroupBox2.Controls.Add(Me.Label39)
-        Me.GroupBox2.Controls.Add(Me.TextBox8)
-        Me.GroupBox2.Controls.Add(Me.ComboBox14)
-        Me.GroupBox2.Controls.Add(Me.ComboBox12)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
-        Me.GroupBox2.Controls.Add(Me.TextBox7)
-        Me.GroupBox2.Controls.Add(Me.ComboBox9)
-        Me.GroupBox2.Controls.Add(Me.ComboBox10)
-        Me.GroupBox2.Controls.Add(Me.ComboBox11)
-        Me.GroupBox2.Controls.Add(Me.ComboBox13)
-        Me.GroupBox2.Controls.Add(Me.PictureBox7)
-        Me.GroupBox2.Controls.Add(Me.Label44)
-        Me.GroupBox2.Controls.Add(Me.Label45)
-        Me.GroupBox2.Controls.Add(Me.Label47)
-        Me.GroupBox2.Controls.Add(Me.Label54)
-        Me.GroupBox2.Controls.Add(Me.Label57)
-        Me.GroupBox2.Controls.Add(Me.Label58)
-        Me.GroupBox2.Controls.Add(Me.Label61)
-        Me.GroupBox2.Controls.Add(Me.Label62)
-        Me.GroupBox2.Controls.Add(Me.Label63)
-        Me.GroupBox2.Controls.Add(Me.Button10)
-        Me.GroupBox2.Controls.Add(Me.Button12)
-        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.GroupBox2.Location = New System.Drawing.Point(706, 23)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(377, 569)
-        Me.GroupBox2.TabIndex = 6
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Item:"
-        '
-        'NumericUpDown2
-        '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(197, 263)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(82, 20)
-        Me.NumericUpDown2.TabIndex = 15
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label39.Location = New System.Drawing.Point(194, 246)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(85, 13)
-        Me.Label39.TabIndex = 14
-        Me.Label39.Text = "Low Qty Trigger:"
-        '
-        'TextBox8
-        '
-        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(103, 17)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(264, 26)
-        Me.TextBox8.TabIndex = 12
-        '
-        'ComboBox14
-        '
-        Me.ComboBox14.FormattingEnabled = True
-        Me.ComboBox14.Location = New System.Drawing.Point(197, 216)
-        Me.ComboBox14.Name = "ComboBox14"
-        Me.ComboBox14.Size = New System.Drawing.Size(170, 21)
-        Me.ComboBox14.TabIndex = 11
-        '
-        'ComboBox12
-        '
-        Me.ComboBox12.FormattingEnabled = True
-        Me.ComboBox12.Location = New System.Drawing.Point(11, 216)
-        Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(165, 21)
-        Me.ComboBox12.TabIndex = 10
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(11, 262)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(131, 20)
-        Me.TextBox2.TabIndex = 9
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox7.Location = New System.Drawing.Point(11, 73)
-        Me.TextBox7.Multiline = True
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(365, 111)
-        Me.TextBox7.TabIndex = 8
-        '
-        'ComboBox9
-        '
-        Me.ComboBox9.FormattingEnabled = True
-        Me.ComboBox9.Location = New System.Drawing.Point(6, 376)
-        Me.ComboBox9.Name = "ComboBox9"
-        Me.ComboBox9.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox9.TabIndex = 5
-        '
-        'ComboBox10
-        '
-        Me.ComboBox10.FormattingEnabled = True
-        Me.ComboBox10.Location = New System.Drawing.Point(280, 333)
-        Me.ComboBox10.Name = "ComboBox10"
-        Me.ComboBox10.Size = New System.Drawing.Size(91, 21)
-        Me.ComboBox10.TabIndex = 5
-        '
-        'ComboBox11
-        '
-        Me.ComboBox11.FormattingEnabled = True
-        Me.ComboBox11.Location = New System.Drawing.Point(135, 333)
-        Me.ComboBox11.Name = "ComboBox11"
-        Me.ComboBox11.Size = New System.Drawing.Size(139, 21)
-        Me.ComboBox11.TabIndex = 5
-        '
-        'ComboBox13
-        '
-        Me.ComboBox13.FormattingEnabled = True
-        Me.ComboBox13.Location = New System.Drawing.Point(6, 333)
-        Me.ComboBox13.Name = "ComboBox13"
-        Me.ComboBox13.Size = New System.Drawing.Size(123, 21)
-        Me.ComboBox13.TabIndex = 5
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label44.Location = New System.Drawing.Point(3, 360)
-        Me.Label44.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(89, 13)
-        Me.Label44.TabIndex = 1
-        Me.Label44.Text = "Default Program: "
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label45.Location = New System.Drawing.Point(277, 317)
-        Me.Label45.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(65, 13)
-        Me.Label45.TabIndex = 1
-        Me.Label45.Text = "Default Bin: "
-        '
-        'Label47
-        '
-        Me.Label47.AutoSize = True
-        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label47.Location = New System.Drawing.Point(8, 57)
-        Me.Label47.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(108, 13)
-        Me.Label47.TabIndex = 1
-        Me.Label47.Text = "Detailed Description: "
-        '
-        'Label54
-        '
-        Me.Label54.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label54.AutoSize = True
-        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label54.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label54.Location = New System.Drawing.Point(8, 246)
-        Me.Label54.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(77, 13)
-        Me.Label54.TabIndex = 1
-        Me.Label54.Text = "Default Value: "
-        '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label57.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label57.Location = New System.Drawing.Point(132, 317)
-        Me.Label57.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(91, 13)
-        Me.Label57.TabIndex = 1
-        Me.Label57.Text = "Default Location: "
-        '
-        'Label58
-        '
-        Me.Label58.AutoSize = True
-        Me.Label58.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label58.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label58.Location = New System.Drawing.Point(3, 317)
-        Me.Label58.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(82, 13)
-        Me.Label58.TabIndex = 1
-        Me.Label58.Text = "Default Facility: "
-        '
-        'Label61
-        '
-        Me.Label61.AutoSize = True
-        Me.Label61.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label61.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label61.Location = New System.Drawing.Point(194, 200)
-        Me.Label61.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(77, 13)
-        Me.Label61.TabIndex = 1
-        Me.Label61.Text = "Sub-Category: "
-        '
-        'Label62
-        '
-        Me.Label62.AutoSize = True
-        Me.Label62.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label62.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label62.Location = New System.Drawing.Point(8, 200)
-        Me.Label62.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(55, 13)
-        Me.Label62.TabIndex = 1
-        Me.Label62.Text = "Category: "
-        '
-        'Label63
-        '
-        Me.Label63.AutoSize = True
-        Me.Label63.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label63.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label63.Location = New System.Drawing.Point(7, 20)
-        Me.Label63.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(95, 20)
-        Me.Label63.TabIndex = 1
-        Me.Label63.Text = "Item Name:"
-        '
-        'Button10
-        '
-        Me.Button10.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button10.Location = New System.Drawing.Point(296, 540)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(75, 23)
-        Me.Button10.TabIndex = 0
-        Me.Button10.Text = "Reset"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button12
-        '
-        Me.Button12.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button12.Location = New System.Drawing.Point(197, 540)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(93, 23)
-        Me.Button12.TabIndex = 0
-        Me.Button12.Text = "Add Base Item"
-        Me.Button12.UseVisualStyleBackColor = True
         '
         'tbpReports
         '
@@ -3279,65 +3003,6 @@ Partial Class frmMain
         Me.tbpSettings.Text = "Settings"
         Me.tbpSettings.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.CAN_Inventory_db.My.Resources.Resources.dash_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 15)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(243, 108)
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = Global.CAN_Inventory_db.My.Resources.Resources.pinwheel_dash
-        Me.PictureBox2.Location = New System.Drawing.Point(7, 408)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(281, 187)
-        Me.PictureBox2.TabIndex = 6
-        Me.PictureBox2.TabStop = False
-        '
-        'pbxTLwQuant
-        '
-        Me.pbxTLwQuant.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pbxTLwQuant.Location = New System.Drawing.Point(345, 12)
-        Me.pbxTLwQuant.Name = "pbxTLwQuant"
-        Me.pbxTLwQuant.Size = New System.Drawing.Size(26, 35)
-        Me.pbxTLwQuant.TabIndex = 7
-        Me.pbxTLwQuant.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Location = New System.Drawing.Point(6, 272)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(365, 6)
-        Me.PictureBox4.TabIndex = 4
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Location = New System.Drawing.Point(6, 168)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(365, 6)
-        Me.PictureBox3.TabIndex = 4
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox7.BackgroundImage = Global.CAN_Inventory_db.My.Resources.Resources.horiz_divider
-        Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox7.Location = New System.Drawing.Point(6, 296)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(365, 6)
-        Me.PictureBox7.TabIndex = 4
-        Me.PictureBox7.TabStop = False
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3345,7 +3010,7 @@ Partial Class frmMain
         Me.ClientSize = New System.Drawing.Size(1097, 669)
         Me.Controls.Add(Me.stsSatusBar)
         Me.Controls.Add(Me.menTopStrip)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.tabControls)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.menTopStrip
         Me.Name = "frmMain"
@@ -3355,27 +3020,27 @@ Partial Class frmMain
         Me.menTopStrip.PerformLayout()
         Me.stsSatusBar.ResumeLayout(False)
         Me.stsSatusBar.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
+        Me.tabControls.ResumeLayout(False)
         Me.tbpDashboard.ResumeLayout(False)
         Me.tbpDashboard.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbpInvTrans.ResumeLayout(False)
         Me.tbpInvTrans.PerformLayout()
         Me.gbxTItems.ResumeLayout(False)
         Me.gbxTItems.PerformLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTags.ResumeLayout(False)
         Me.pnlTags.PerformLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.tbpItmManag.ResumeLayout(False)
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbpReports.ResumeLayout(False)
         Me.tbpReports.PerformLayout()
         Me.gbxReportType.ResumeLayout(False)
@@ -3410,12 +3075,6 @@ Partial Class frmMain
         Me.GroupBox3.PerformLayout()
         CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3431,7 +3090,7 @@ Partial Class frmMain
     Friend WithEvents cbxUserSelect As ToolStripComboBox
     Friend WithEvents stsSatusBar As StatusStrip
     Friend WithEvents lblStatus As ToolStripStatusLabel
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents tabControls As TabControl
     Friend WithEvents tbpDashboard As TabPage
     Friend WithEvents tbpItmManag As TabPage
     Friend WithEvents tbpSettings As TabPage
@@ -3516,32 +3175,6 @@ Partial Class frmMain
     Friend WithEvents Label26 As Label
     Friend WithEvents Label38 As Label
     Friend WithEvents Button2 As Button
-    Friend WithEvents TreeView1 As TreeView
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents ComboBox9 As ComboBox
-    Friend WithEvents ComboBox10 As ComboBox
-    Friend WithEvents ComboBox11 As ComboBox
-    Friend WithEvents ComboBox13 As ComboBox
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents Label44 As Label
-    Friend WithEvents Label45 As Label
-    Friend WithEvents Label47 As Label
-    Friend WithEvents Label54 As Label
-    Friend WithEvents Label57 As Label
-    Friend WithEvents Label58 As Label
-    Friend WithEvents Label61 As Label
-    Friend WithEvents Label62 As Label
-    Friend WithEvents Label63 As Label
-    Friend WithEvents Button10 As Button
-    Friend WithEvents Button12 As Button
-    Friend WithEvents DataGridView5 As DataGridView
-    Friend WithEvents ComboBox14 As ComboBox
-    Friend WithEvents ComboBox12 As ComboBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents NumericUpDown2 As NumericUpDown
-    Friend WithEvents Label39 As Label
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Button14 As Button
     Friend WithEvents Button13 As Button

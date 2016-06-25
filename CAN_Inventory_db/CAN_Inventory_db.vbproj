@@ -157,6 +157,12 @@
     <Compile Include="usercontrols\uclBaseItem.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="usercontrols\uclItemMan.Designer.vb">
+      <DependentUpon>uclItemMan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\uclItemMan.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="usercontrols\uclSettings.Designer.vb">
       <DependentUpon>uclSettings.vb</DependentUpon>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrols\uclBaseItem.resx">
       <DependentUpon>uclBaseItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\uclItemMan.resx">
+      <DependentUpon>uclItemMan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrols\uclSettings.resx">
       <DependentUpon>uclSettings.vb</DependentUpon>

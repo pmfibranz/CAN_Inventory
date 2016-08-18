@@ -1,4 +1,14 @@
-﻿6/24/16 - Update:
+﻿8/17/16 - Update:
+Fixed initial item manager uclBaseItem placement to initially place based on the windows size. 
+
+Also made the DataGridView element in the form update with the proper information based on the item node selected
+in the tree menu to the left of it. Started working on updating the uclBaseItem user control with the item information
+for editing when item selected in the DataGridView. 
+
+- 3 hours
+------------------------------
+
+6/24/16 - Update:
 Placed Base item builder in a user control and connected to a stand alone builder and Item Manager tab. Also created
 function to populate the category tree in the Item manager tab. 
 

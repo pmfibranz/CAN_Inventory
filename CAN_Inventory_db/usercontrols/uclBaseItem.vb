@@ -287,7 +287,16 @@
         End If
     End Sub
 
-    Sub FillWith(item As String)
+    Sub FillWith(baseItem As DataRowView)
+
+        txtName.Text = baseItem.Item("Item")
+        txtDescript.Text = baseItem.Item("Item Description")
+        cbxCategory.Text = baseItem.Item("Category")
+        cbxSubCat.Text = baseItem.Item("Subcategory")
+        txtDefValue.Text = baseItem.Item("Default Value")
+        'nbxLwQty.Value = baseItem.Item("Low Qty")
+
 
     End Sub
+
 End Class

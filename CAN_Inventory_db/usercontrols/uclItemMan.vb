@@ -1,6 +1,7 @@
 ﻿Public Class uclItemMan
     Private bsSelectedBranch As New BindingSource()
     Private itemPnl As New uclBaseItem
+    Private ready As Boolean = False
     Sub New()
 
         ' This call is required by the designer.
@@ -22,6 +23,8 @@
             .Name = "itemPnl"
             .Location = New Point(itmPnlX, 10)
             .Anchor = AnchorStyles.Right Or AnchorStyles.Top
+            .nbxInitQty.Visible = False
+            .lblInitQty.Visible = False
         End With
 
         Me.Controls.Add(itemPnl)
@@ -61,73 +64,71 @@
     End Sub
 
     Private Sub trvBaseItemTree_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles trvBaseItemTree.AfterSelect
-        'Debug.Print(trvBaseItemTree.SelectedNode.FullPath.ToString())
         Dim dsSelectedBranch As DataSet
         Dim query As String
+        Dim invColumn As New DataColumn()
+
+        ready = False
+        query = "SELECT " +
+                "items.id AS [ItemID]," +
+                "items.item_name AS [Item]," +
+                "items.item_desc AS [Item Description]," +
+                "categories.category AS [Category]," +
+                "sub_categories.sub_category AS [Subcategory]," +
+                "items.def_value AS [Default Value]," +
+                "facilities.facility AS [Default Facility]," +
+                "locations.location AS [Location]," +
+                "bins.bin AS [Bin]" +
+                "From programs INNER Join (bins INNER Join ((facilities INNER Join (categories INNER Join (sub_categories INNER Join items On sub_categories.id = items.sub_category_id) " +
+                "ON categories.id = sub_categories.category_id) ON facilities.id = items.def_facility_id) INNER Join locations On facilities.id = locations.facility_id) " +
+                "ON (locations.id = bins.location_id) And (bins.id = items.def_bin_id)) ON programs.id = items.def_program_id "
 
         Select Case trvBaseItemTree.SelectedNode.Level
             Case 1
-                query = "SELECT " +
-                    "items.item_name AS 'Item'," +
-                    "items.item_desc AS 'Item Description'," +
-                    "categories.category AS 'Category'," +
-                    "sub_categories.sub_category AS 'Subcategory'," +
-                    "items.def_value AS 'Default Value'," +
-                    "facilities.facility AS 'Default Facility'," +
-                    "locations.location AS 'Location'," +
-                    "bins.bin AS 'Bin'" +
-                    "From programs INNER Join (bins INNER Join ((facilities INNER Join (categories INNER Join (sub_categories INNER Join items On sub_categories.id = items.sub_category_id) " +
-                    "ON categories.id = sub_categories.category_id) ON facilities.id = items.def_facility_id) INNER Join locations On facilities.id = locations.facility_id) " +
-                    "ON (locations.id = bins.location_id) And (bins.id = items.def_bin_id)) ON programs.id = items.def_program_id Where (((categories.category) ='" +
-                    trvBaseItemTree.SelectedNode.Text + "') AND ((items.active)=True));"
-                'Debug.Print(query)
-
+                query = query + "WHERE (((categories.category) ='" + trvBaseItemTree.SelectedNode.Text + "') AND ((items.active)=True));"
             Case 2
-                query = "SELECT " +
-                    "items.item_name AS 'Item'," +
-                    "items.item_desc AS 'Item Description'," +
-                    "categories.category AS 'Category'," +
-                    "sub_categories.sub_category AS 'Subcategory'," +
-                    "items.def_value AS 'Default Value'," +
-                    "facilities.facility AS 'Default Facility'," +
-                    "locations.location AS 'Location'," +
-                    "bins.bin AS 'Bin'" +
-                    "From programs INNER Join (bins INNER Join ((facilities INNER Join (categories INNER Join (sub_categories INNER Join items On sub_categories.id = items.sub_category_id) " +
-                    "ON categories.id = sub_categories.category_id) ON facilities.id = items.def_facility_id) INNER Join locations On facilities.id = locations.facility_id) " +
-                    "ON (locations.id = bins.location_id) And (bins.id = items.def_bin_id)) ON programs.id = items.def_program_id Where (((sub_categories.sub_category) ='" +
-                    trvBaseItemTree.SelectedNode.Text + "') AND ((items.active)=True));"
+                query = query + "WHERE (((sub_categories.sub_category) ='" + trvBaseItemTree.SelectedNode.Text + "') AND ((items.active)=True));"
             Case Else
-                query = "SELECT " +
-                    "items.item_name AS 'Item'," +
-                    "items.item_desc AS 'Item Description'," +
-                    "categories.category AS 'Category'," +
-                    "sub_categories.sub_category AS 'Subcategory'," +
-                    "items.def_value AS 'Default Value'," +
-                    "facilities.facility AS 'Default Facility'," +
-                    "locations.location AS 'Location'," +
-                    "bins.bin AS 'Bin'" +
-                    "From programs INNER Join (bins INNER Join ((facilities INNER Join (categories INNER Join (sub_categories INNER Join items On sub_categories.id = items.sub_category_id) " +
-                    "ON categories.id = sub_categories.category_id) ON facilities.id = items.def_facility_id) INNER Join locations On facilities.id = locations.facility_id) " +
-                    "ON (locations.id = bins.location_id) And (bins.id = items.def_bin_id)) ON programs.id = items.def_program_id WHERE ((items.active)=True);"
+                query = query + "WHERE ((items.active)=True);"
 
         End Select
 
         dsSelectedBranch = frmMain.dbAccess.DataGet(query)
+        dsSelectedBranch.Tables(0).Columns.Add(invColumn)
+        invColumn.ColumnName = "On Hand"
+        For Each row As DataRow In dsSelectedBranch.Tables(0).Rows
+            Dim invQuery As String
+            Dim dsInvQty As DataSet
+            Dim qty As String
+            Dim itemID As String = row.Item("ItemID").ToString
+            invQuery = "SELECT SUM(inventory.quantity) AS [On Hand] FROM inventory WHERE item_id=" + itemID + ";"
+
+            dsInvQty = frmMain.dbAccess.DataGet(invQuery)
+            qty = dsInvQty.Tables(0).Rows(0).Item("On Hand")
+            row.Item(invColumn) = qty
+        Next
         bsSelectedBranch.DataSource = dsSelectedBranch.Tables(0)
+
         With dgvItems
+            .Columns.Item("ItemID").Visible = False
             .ReadOnly = True
             .SelectionMode = DataGridViewSelectionMode.FullRowSelect
             .RowHeadersVisible = False
             .DataSource = bsSelectedBranch
             .AutoResizeColumns()
-            .Columns.Item(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            .AllowUserToAddRows = False
+            .AllowUserToDeleteRows = False
+            .AllowUserToResizeRows = False
+            .Columns.Item("Item Description").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            .ClearSelection()
         End With
-
+        ready = True
     End Sub
 
     Private Sub dgvItems_SelectionChanged(sender As Object, e As EventArgs) Handles dgvItems.SelectionChanged
-        Dim itemID As String = dgvItems.SelectedRows.Item(0).Cells.Item(0).Value
+        If ready = True And dgvItems.RowCount > 0 Then
+            itemPnl.FillWith(dgvItems.CurrentRow.DataBoundItem)
+        End If
 
-        itemPnl.FillWith(itemID)
     End Sub
 End Class

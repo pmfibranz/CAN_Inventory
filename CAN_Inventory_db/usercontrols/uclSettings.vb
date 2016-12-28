@@ -53,7 +53,6 @@
         ReDim Preserve where(numSel - 1)
 
         For Each item As DataRowView In lbxCategories.SelectedItems
-
             frmMain.dbAccess.SetInactive("categories", item(0).ToString())
             i += 1
         Next

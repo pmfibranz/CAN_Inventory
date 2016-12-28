@@ -70,8 +70,6 @@ Public Class DB_Access
             lblStatus.Text = "Failure in Creating New System Info File" + ex.Message
         End Try
 
-
-
     End Sub
 
     'Verifies that the application can connect to the database
@@ -89,8 +87,8 @@ Public Class DB_Access
                 statusLabel.Text = "Failed to Connect to Database!"
                 statusLabel.Text += " Please contact the system administrator"
             End Try
-
         End Using
+
         Return False
     End Function
 
@@ -145,6 +143,31 @@ Public Class DB_Access
 
     End Function
 
+    Function DataStoredProcGet(storedQuery As String) As DataSet
+        Dim connect As OleDbConnection
+        Dim adapt As OleDbDataAdapter
+        Dim data As New DataSet
+        Dim cmd As New OleDbCommand
+
+        connect = New OleDbConnection(dBasePath)
+        Try
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = storedQuery
+            cmd.Parameters.Add("@startDate", OleDbType.Date).Value = frmMain.dtpDFromDate.Value ' From date
+            cmd.Parameters.Add("@endDate", OleDbType.Date).Value = frmMain.dtpDToDate.MaxDate ' To date
+            cmd.Connection = connect
+            connect.Open()
+            'Dim da As OleDbDataAdapter = New OleDbDataAdapter(cmd)
+            'Dim ds As DataSet = New DataSet()
+            adapt = New OleDbDataAdapter(cmd)
+            adapt.Fill(data, "Table1")
+            'DataGridView1.DataSource = data.Tables("Table1")  ' Binding to DataGridView   
+            connect.Close()
+        Catch ex As Exception
+            statusLabel.Text = "Failed to retrieve data."
+        End Try
+        Return data
+    End Function
 
     'Builds Query 
     Function QueryBuilder(ByRef table As String, ByVal data As String,
@@ -167,7 +190,6 @@ Public Class DB_Access
         Else
             Throw New System.Exception("Unable to build query")
         End If
-
 
         Debug.Print(query)
         Return query

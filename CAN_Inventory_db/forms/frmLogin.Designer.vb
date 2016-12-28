@@ -23,7 +23,7 @@ Partial Class frmLogin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
-        Me.cbxUsers = New System.Windows.Forms.ComboBox()
+        Me.cmbUsers = New System.Windows.Forms.ComboBox()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.btnAddUser = New System.Windows.Forms.Button()
@@ -31,13 +31,13 @@ Partial Class frmLogin
         Me.lblStatus = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'cbxUsers
+        'cmbUsers
         '
-        Me.cbxUsers.FormattingEnabled = True
-        Me.cbxUsers.Location = New System.Drawing.Point(82, 12)
-        Me.cbxUsers.Name = "cbxUsers"
-        Me.cbxUsers.Size = New System.Drawing.Size(121, 21)
-        Me.cbxUsers.TabIndex = 0
+        Me.cmbUsers.FormattingEnabled = True
+        Me.cmbUsers.Location = New System.Drawing.Point(82, 12)
+        Me.cmbUsers.Name = "cmbUsers"
+        Me.cmbUsers.Size = New System.Drawing.Size(121, 21)
+        Me.cmbUsers.TabIndex = 0
         '
         'lblUsername
         '
@@ -95,8 +95,11 @@ Partial Class frmLogin
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.lblUsername)
-        Me.Controls.Add(Me.cbxUsers)
+        Me.Controls.Add(Me.cmbUsers)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
@@ -106,7 +109,7 @@ Partial Class frmLogin
 
     End Sub
 
-    Friend WithEvents cbxUsers As ComboBox
+    Friend WithEvents cmbUsers As ComboBox
     Friend WithEvents lblUsername As Label
     Friend WithEvents btnLogin As Button
     Friend WithEvents btnAddUser As Button

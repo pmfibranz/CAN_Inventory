@@ -16,12 +16,6 @@ Public Class frmMain
 
         UpdateUserCombo()
 
-        ' Displays Initial Login Before allowing control of application
-        Dim login As New frmLogin()
-        login.Show()
-        Me.Enabled = False
-
-
         'Set recent donation date range
         dtpDFromDate.MaxDate = Now()
         dtpDFromDate.Value = Now.AddMonths(-1)
@@ -52,6 +46,15 @@ Public Class frmMain
 
         Me.tbpItmManag.Controls.Add(itemTab)
 
+        Call loadRecentDonations()
+
+        Me.Enabled = False
+
+        ' Displays Initial Login Before allowing control of application
+        'Dim login As New frmLogin()
+        'login.Show()
+        Me.Hide()
+        frmLogin.Show()
     End Sub
 
     '-------------- Menu Strip ----------------
@@ -63,30 +66,27 @@ Public Class frmMain
 
     End Sub
 
-    Private Sub cbxUserSelect_Leave(sender As Object, e As EventArgs) Handles cbxUserSelect.Leave
-        userHand.SetCurrentUser(cbxUserSelect.SelectedItem.ToString())
+    Private Sub cbxUserSelect_Leave(sender As Object, e As EventArgs) Handles cmbUserSelect.Leave
+        userHand.SetCurrentUser(cmbUserSelect.SelectedItem.ToString())
     End Sub
 
     Public Sub UpdateUserCombo()
         Dim users() As String
-        Dim i As Integer
 
         'Updates user list for combo box
         userHand.UpdateUserList()
         users = userHand.GetUsernames()
-        cbxUserSelect.Items.Clear()
+        cmbUserSelect.Items.Clear()
 
-        While i < userHand.GetUserCount()
-            cbxUserSelect.Items.Add(users(i))
-            i += 1
-        End While
+        For i As Integer = 0 To userHand.GetUserCount() - 1
+            cmbUserSelect.Items.Add(users(i))
+        Next
     End Sub
 
-    Private Sub TextBox3_Click(sender As Object, e As EventArgs) Handles TextBox3.Click
-        If TextBox3.Text = "Search..." Then
-            TextBox3.Text = ""
-            TextBox3.ForeColor = SystemColors.WindowText
-
+    Private Sub txtSearchTran_Click(sender As Object, e As EventArgs) Handles txtSearchTran.Click
+        If txtSearchTran.Text = "Search..." Then
+            txtSearchTran.Text = ""
+            txtSearchTran.ForeColor = SystemColors.WindowText
         End If
     End Sub
 
@@ -112,7 +112,23 @@ Public Class frmMain
 
     '-------------- Dashboard Tab ---------------
 
+    Private Sub loadRecentDonations()
 
+        Dim dsUser As New DataSet()
+
+        Try
+            dsUser = dbAccess.DataStoredProcGet("queryRecentTransactions")
+
+            'txtUsername.Text = dsUser.Tables(0).Rows(0).Item("username").ToString
+            'txtUserFN.Text = dsUser.Tables(0).Rows(0).Item("first_name").ToString
+            'txtUserLN.Text = dsUser.Tables(0).Rows(0).Item("last_name").ToString
+
+            dgvRecentDonations.DataSource = dsUser.Tables(0)
+        Catch ex As Exception
+            lblStatus.Text = ex.Message()
+        End Try
+ 
+    End Sub
 
     '-------------- Inventory Trans Tab ---------
 
@@ -124,28 +140,28 @@ Public Class frmMain
 
     '-------------- Reports Tab -----------------
 
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+    Private Sub radWishlist_CheckedChanged(sender As Object, e As EventArgs) Handles radWishlist.CheckedChanged
         pnlInventory.Visible = False
         pnlBenefactor.Visible = False
         pnlTransReport.Visible = False
         pnlWishlist.Visible = True
     End Sub
 
-    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+    Private Sub radInventory_CheckedChanged(sender As Object, e As EventArgs) Handles radInventory.CheckedChanged
         pnlBenefactor.Visible = False
         pnlWishlist.Visible = False
         pnlTransReport.Visible = False
         pnlInventory.Visible = True
     End Sub
 
-    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+    Private Sub radBenefactor_CheckedChanged(sender As Object, e As EventArgs) Handles radBenefactor.CheckedChanged
         pnlInventory.Visible = False
         pnlWishlist.Visible = False
         pnlTransReport.Visible = False
         pnlBenefactor.Visible = True
     End Sub
 
-    Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
+    Private Sub radTransactions_CheckedChanged(sender As Object, e As EventArgs) Handles radTransactions.CheckedChanged
         pnlInventory.Visible = False
         pnlBenefactor.Visible = False
         pnlWishlist.Visible = False
@@ -158,7 +174,13 @@ Public Class frmMain
         newBaseItem.Show()
     End Sub
 
+    Private Sub dtpDFromDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpDFromDate.ValueChanged
+        Call loadRecentDonations()
+    End Sub
 
+    Private Sub dtpDToDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpDToDate.ValueChanged
+        Call loadRecentDonations()
+    End Sub
 End Class
 
 

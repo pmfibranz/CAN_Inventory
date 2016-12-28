@@ -26,7 +26,7 @@ Public Class UserHandling
 
                 'Read user info to userlist and add users to main form dropdown
                 While reader.Read()
-                    ReDim Preserve users(userCount + 1)
+                    ReDim Preserve users(userCount)
                     users(userCount).id = reader(0).ToString()
                     users(userCount).username = reader(1).ToString()
                     users(userCount).firstName = reader(2).ToString()
@@ -65,12 +65,12 @@ Public Class UserHandling
     End Function
 
     Public Function GetUsernames() As String()
-        Dim i As Integer = 0
         Dim usernames(userCount) As String
-        While i < userCount
+
+        For i As Integer = 0 To userCount - 1
             usernames(i) = users(i).username
-            i += 1
-        End While
+        Next
+
         Return usernames
     End Function
 

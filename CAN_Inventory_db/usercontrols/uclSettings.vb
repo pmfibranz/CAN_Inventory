@@ -472,7 +472,6 @@
         Dim data(1) As String
         Dim userID As Integer
 
-
         If txtUsername.Text <> "" Then
             Try
                 data(0) = "username , first_name , last_name , active "

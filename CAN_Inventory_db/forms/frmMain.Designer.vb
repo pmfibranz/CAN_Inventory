@@ -841,6 +841,7 @@ Partial Class frmMain
         '
         'cmbTranProgram
         '
+        Me.cmbTranProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranProgram.FormattingEnabled = True
         Me.cmbTranProgram.Location = New System.Drawing.Point(6, 244)
         Me.cmbTranProgram.Name = "cmbTranProgram"
@@ -849,6 +850,7 @@ Partial Class frmMain
         '
         'cmbTranBin
         '
+        Me.cmbTranBin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranBin.FormattingEnabled = True
         Me.cmbTranBin.Location = New System.Drawing.Point(280, 201)
         Me.cmbTranBin.Name = "cmbTranBin"
@@ -857,6 +859,7 @@ Partial Class frmMain
         '
         'cmbTranLocation
         '
+        Me.cmbTranLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranLocation.FormattingEnabled = True
         Me.cmbTranLocation.Location = New System.Drawing.Point(135, 201)
         Me.cmbTranLocation.Name = "cmbTranLocation"
@@ -865,6 +868,7 @@ Partial Class frmMain
         '
         'cmbTranCondition
         '
+        Me.cmbTranCondition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranCondition.FormattingEnabled = True
         Me.cmbTranCondition.Location = New System.Drawing.Point(6, 309)
         Me.cmbTranCondition.Name = "cmbTranCondition"
@@ -873,6 +877,7 @@ Partial Class frmMain
         '
         'cmbTranFacility
         '
+        Me.cmbTranFacility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranFacility.FormattingEnabled = True
         Me.cmbTranFacility.Location = New System.Drawing.Point(6, 201)
         Me.cmbTranFacility.Name = "cmbTranFacility"
@@ -1101,9 +1106,9 @@ Partial Class frmMain
         Me.txtSearchTran.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSearchTran.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.txtSearchTran.Location = New System.Drawing.Point(257, 18)
+        Me.txtSearchTran.Location = New System.Drawing.Point(532, 18)
         Me.txtSearchTran.Name = "txtSearchTran"
-        Me.txtSearchTran.Size = New System.Drawing.Size(169, 20)
+        Me.txtSearchTran.Size = New System.Drawing.Size(160, 20)
         Me.txtSearchTran.TabIndex = 4
         Me.txtSearchTran.Text = "Search..."
         '
@@ -1342,6 +1347,7 @@ Partial Class frmMain
         '
         'cmbTransType
         '
+        Me.cmbTransType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTransType.FormattingEnabled = True
         Me.cmbTransType.Items.AddRange(New Object() {"In", "Out", "Transfer"})
         Me.cmbTransType.Location = New System.Drawing.Point(44, 19)
@@ -1396,26 +1402,23 @@ Partial Class frmMain
         '
         'cmbTranFilterBySubCategory
         '
-        Me.cmbTranFilterBySubCategory.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmbTranFilterBySubCategory.Enabled = False
-        Me.cmbTranFilterBySubCategory.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.cmbTranFilterBySubCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranFilterBySubCategory.ForeColor = System.Drawing.SystemColors.WindowText
         Me.cmbTranFilterBySubCategory.FormattingEnabled = True
-        Me.cmbTranFilterBySubCategory.Location = New System.Drawing.Point(566, 18)
+        Me.cmbTranFilterBySubCategory.Location = New System.Drawing.Point(400, 18)
         Me.cmbTranFilterBySubCategory.Name = "cmbTranFilterBySubCategory"
         Me.cmbTranFilterBySubCategory.Size = New System.Drawing.Size(126, 21)
         Me.cmbTranFilterBySubCategory.TabIndex = 0
-        Me.cmbTranFilterBySubCategory.Text = "Sub-Category"
         '
         'cmbTranFilterByCategory
         '
-        Me.cmbTranFilterByCategory.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmbTranFilterByCategory.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.cmbTranFilterByCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranFilterByCategory.ForeColor = System.Drawing.SystemColors.WindowFrame
         Me.cmbTranFilterByCategory.FormattingEnabled = True
-        Me.cmbTranFilterByCategory.Location = New System.Drawing.Point(432, 18)
+        Me.cmbTranFilterByCategory.Location = New System.Drawing.Point(257, 18)
         Me.cmbTranFilterByCategory.Name = "cmbTranFilterByCategory"
-        Me.cmbTranFilterByCategory.Size = New System.Drawing.Size(128, 21)
+        Me.cmbTranFilterByCategory.Size = New System.Drawing.Size(137, 21)
         Me.cmbTranFilterByCategory.TabIndex = 0
-        Me.cmbTranFilterByCategory.Text = "Category"
         '
         'tbpItmManag
         '

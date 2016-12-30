@@ -16,59 +16,66 @@
         query = frmMain.dbAccess.QueryBuilder("categories", "*", "(((categories.active)=True))")
         dsCat = frmMain.dbAccess.DataGet(query)
 
-        cbxCategory.DataSource = dsCat.Tables(0)
-        cbxCategory.ValueMember = "id"
-        cbxCategory.DisplayMember = "category"
-        cbxCategory.SelectedIndex = -1              ' Sets default selected item to empty
+        cmbCategory.DataSource = dsCat.Tables(0)
+        cmbCategory.ValueMember = "id"
+        cmbCategory.DisplayMember = "category"
+        cmbCategory.SelectedIndex = -1              ' Sets default selected item to empty
 
 
         ' Fills Facility combo box
         query = frmMain.dbAccess.QueryBuilder("facilities", "id, facility, active", "(((facilities.active)=True))")
         dsFac = frmMain.dbAccess.DataGet(query)
 
-        cbxFacility.DataSource = dsFac.Tables(0)
-        cbxFacility.ValueMember = "id"
-        cbxFacility.DisplayMember = "facility"
-        cbxFacility.SelectedIndex = -1              ' Sets default selected item to empty
+        cmbFacility.DataSource = dsFac.Tables(0)
+        cmbFacility.ValueMember = "id"
+        cmbFacility.DisplayMember = "facility"
+        cmbFacility.SelectedIndex = -1              ' Sets default selected item to empty
 
         ' Fills program combo box
         query = frmMain.dbAccess.QueryBuilder("programs", "id, program, active", "(((programs.active)=True))")
         dsProg = frmMain.dbAccess.DataGet(query)
 
-        cbxProgram.DataSource = dsProg.Tables(0)
-        cbxProgram.ValueMember = "id"
-        cbxProgram.DisplayMember = "program"
-        cbxProgram.SelectedIndex = -1              ' Sets default selected item to empty
+        cmbProgram.DataSource = dsProg.Tables(0)
+        cmbProgram.ValueMember = "id"
+        cmbProgram.DisplayMember = "program"
+        cmbProgram.SelectedIndex = -1              ' Sets default selected item to empty
+
+        ' Fills Condition combo box
+        query = frmMain.dbAccess.QueryBuilder("conditions", "id, condition, active", "(((conditions.active)=True))")
+        dsCat = frmMain.dbAccess.DataGet(query)
+
+        cmbCondition.DataSource = dsCat.Tables(0)
+        cmbCondition.ValueMember = "id"
+        cmbCondition.DisplayMember = "condition"
+        cmbCondition.SelectedIndex = 0              ' Sets default selected item to New
 
         ready = True
 
     End Sub
 
 
-
-
-    Private Sub cbxCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxCategory.SelectedIndexChanged
+    Private Sub cbxCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCategory.SelectedIndexChanged
         Try
             If ready = True Then
-                If cbxCategory.SelectedValue = -1 Then
-                    cbxSubCat.Enabled = False
+                If cmbCategory.SelectedValue = -1 Then
+                    cmbSubCat.Enabled = False
                 Else
                     Dim ds As New DataSet()
                     Dim query As String
                     Dim sqlCriteria As String
                     ready = False
 
-                    sqlCriteria = "(((sub_categories.category_id)=" + cbxCategory.SelectedValue.ToString() +
+                    sqlCriteria = "(((sub_categories.category_id)=" + cmbCategory.SelectedValue.ToString() +
                         ") AND ((sub_categories.active)=True))"
 
                     query = frmMain.dbAccess.QueryBuilder("sub_categories", "*", sqlCriteria)
 
                     ds = frmMain.dbAccess.DataGet(query)
-                    cbxSubCat.DataSource = ds.Tables(0)
-                    cbxSubCat.ValueMember = "id"
-                    cbxSubCat.DisplayMember = "sub_category"
-                    cbxSubCat.SelectedIndex = -1              ' Sets default selected item to empty
-                    cbxSubCat.Enabled = True
+                    cmbSubCat.DataSource = ds.Tables(0)
+                    cmbSubCat.ValueMember = "id"
+                    cmbSubCat.DisplayMember = "sub_category"
+                    cmbSubCat.SelectedIndex = -1              ' Sets default selected item to empty
+                    cmbSubCat.Enabled = True
                     ready = True
                 End If
             End If
@@ -79,28 +86,28 @@
         End Try
     End Sub
 
-    Private Sub cbxFacility_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxFacility.SelectedIndexChanged
+    Private Sub cbxFacility_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbFacility.SelectedIndexChanged
         Try
             If ready = True Then
-                If cbxFacility.SelectedValue = -1 Then
-                    cbxLocation.Enabled = False
+                If cmbFacility.SelectedValue = -1 Then
+                    cmbLocation.Enabled = False
                 Else
                     Dim ds As New DataSet()
                     Dim query As String
                     Dim sqlCriteria As String
                     ready = False
 
-                    sqlCriteria = "(((locations.facility_id)=" + cbxFacility.SelectedValue.ToString() +
+                    sqlCriteria = "(((locations.facility_id)=" + cmbFacility.SelectedValue.ToString() +
                         ") AND ((locations.active)=True))"
 
                     query = frmMain.dbAccess.QueryBuilder("locations", "*", sqlCriteria)
 
                     ds = frmMain.dbAccess.DataGet(query)
-                    cbxLocation.DataSource = ds.Tables(0)
-                    cbxLocation.ValueMember = "id"
-                    cbxLocation.DisplayMember = "location"
-                    cbxLocation.SelectedIndex = -1              ' Sets default selected item to empty
-                    cbxLocation.Enabled = True
+                    cmbLocation.DataSource = ds.Tables(0)
+                    cmbLocation.ValueMember = "id"
+                    cmbLocation.DisplayMember = "location"
+                    cmbLocation.SelectedIndex = -1              ' Sets default selected item to empty
+                    cmbLocation.Enabled = True
 
                     ready = True
                 End If
@@ -112,28 +119,28 @@
         End Try
     End Sub
 
-    Private Sub cbxLocation_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxLocation.SelectedIndexChanged
+    Private Sub cbxLocation_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbLocation.SelectedIndexChanged
         Try
             If ready = True Then
-                If cbxLocation.SelectedValue = -1 Then
-                    cbxBin.Enabled = False
+                If cmbLocation.SelectedValue = -1 Then
+                    cmbBin.Enabled = False
                 Else
                     Dim ds As New DataSet()
                     Dim query As String
                     Dim sqlCriteria As String
                     ready = False
 
-                    sqlCriteria = "(((bins.location_id)=" + cbxLocation.SelectedValue.ToString() +
+                    sqlCriteria = "(((bins.location_id)=" + cmbLocation.SelectedValue.ToString() +
                         ") AND ((bins.active)=True))"
 
                     query = frmMain.dbAccess.QueryBuilder("bins", "*", sqlCriteria)
 
                     ds = frmMain.dbAccess.DataGet(query)
-                    cbxBin.DataSource = ds.Tables(0)
-                    cbxBin.ValueMember = "id"
-                    cbxBin.DisplayMember = "bin"
-                    cbxBin.SelectedIndex = -1              ' Sets default selected item to empty
-                    cbxBin.Enabled = True
+                    cmbBin.DataSource = ds.Tables(0)
+                    cmbBin.ValueMember = "id"
+                    cmbBin.DisplayMember = "bin"
+                    cmbBin.SelectedIndex = -1              ' Sets default selected item to empty
+                    cmbBin.Enabled = True
 
                     ready = True
                 End If
@@ -150,17 +157,17 @@
     End Sub
 
     Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
-        If txtName.Text = "" Or cbxCategory.SelectedValue = Nothing Or cbxSubCat.SelectedValue = Nothing Then
-            ' Requires Item Name, Category, and Sub-Category
+        If txtName.Text = "" Or cmbCategory.SelectedValue = Nothing Or cmbSubCat.SelectedValue = Nothing Or cmbCondition.SelectedValue = Nothing Then
+            ' Requires Item Name, Category, Sub-Category 
             ' other fields can be added at a later time
             lblStatus.Text = "Required Information Missing!"
             If txtName.Text = "" Then
                 lblName.ForeColor = Color.Red
             End If
-            If cbxCategory.SelectedValue = Nothing Then
+            If cmbCategory.SelectedValue = Nothing Then
                 lblCategory.ForeColor = Color.Red
             End If
-            If cbxSubCat.SelectedValue = Nothing Then
+            If cmbSubCat.SelectedValue = Nothing Then
                 lblSubCat.ForeColor = Color.Red
             End If
         Else
@@ -170,18 +177,15 @@
                 Dim itemID As Integer
                 Dim transID As Integer
 
-
-
-
                 data(0) = "item_name , item_desc , sub_category_id , def_facility_id , def_location_id , " +
                     "def_bin_id , def_program_id , def_value , low_qty , times_accessed , active "
                 data(1) = "'" + txtName.Text + "' , '" +
                                 txtDescript.Text + "' , " +
-                                cbxSubCat.SelectedValue.ToString() + " , " +
-                                blankFiller(cbxFacility) + " , " +
-                                blankFiller(cbxLocation) + " , " +
-                                blankFiller(cbxBin) + " , " +
-                                blankFiller(cbxProgram) + " , " +
+                                cmbSubCat.SelectedValue.ToString() + " , " +
+                                blankFiller(cmbFacility) + " , " +
+                                blankFiller(cmbLocation) + " , " +
+                                blankFiller(cmbBin) + " , " +
+                                blankFiller(cmbProgram) + " , " +
                                 blankFiller(txtDefValue, "Money") + " , " +
                                 blankFiller(nbxLwQty) + " , 0 , True"
 
@@ -198,7 +202,7 @@
 
                     data(0) = "trans_type , donor_thanked , user_id , trans_date "
                     data(1) = "'Initial' , " +
-                              " -1 , " +
+                              " False , " +
                               Convert.ToString(frmMain.userHand.GetCurrentUsrID()) + ", '" +
                               TrDate + "'"
 
@@ -208,16 +212,15 @@
                         Throw New System.Exception("Transaction Creation Failure")
                     End If
 
-                    data(0) = "transaction_id , item_id , bin_id , program_id , quantity , comment , specific_value"
+                    data(0) = "transaction_id , item_id , condition_id, bin_id , program_id , quantity , comment , specific_value"
                     data(1) = transID.ToString() + " , " +
                               itemID.ToString() + " , " +
-                              blankFiller(cbxBin) + " , " +
-                              blankFiller(cbxProgram) + " , " +
+                              blankFiller(cmbCondition) + " , " +
+                              blankFiller(cmbBin) + " , " +
+                              blankFiller(cmbProgram) + " , " +
                               blankFiller(nbxInitQty) + " , " +
                               "'Initial Quantity of Item' , " +
                               blankFiller(txtDefValue, "Money")
-
-
 
                     If frmMain.dbAccess.DataPush("inventory", data) = -1 Then
                         Throw New System.Exception("Inventory Item Creation Failure")
@@ -232,9 +235,6 @@
             Catch ex As Exception
                 lblStatus.Text = ex.Message
             End Try
-
-
-
 
         End If
     End Sub
@@ -276,12 +276,12 @@
             txtName.Clear()
             txtDescript.Clear()
             txtDefValue.Clear()
-            cbxCategory.SelectedIndex = -1
-            cbxSubCat.SelectedIndex = -1
-            cbxFacility.SelectedIndex = -1
-            cbxLocation.SelectedIndex = -1
-            cbxBin.SelectedIndex = -1
-            cbxProgram.SelectedIndex = -1
+            cmbCategory.SelectedIndex = -1
+            cmbSubCat.SelectedIndex = -1
+            cmbFacility.SelectedIndex = -1
+            cmbLocation.SelectedIndex = -1
+            cmbBin.SelectedIndex = -1
+            cmbProgram.SelectedIndex = -1
             nbxInitQty.Value = 0
             nbxLwQty.Value = 0
         End If
@@ -291,8 +291,8 @@
 
         txtName.Text = baseItem.Item("Item")
         txtDescript.Text = baseItem.Item("Item Description")
-        cbxCategory.Text = baseItem.Item("Category")
-        cbxSubCat.Text = baseItem.Item("Subcategory")
+        cmbCategory.Text = baseItem.Item("Category")
+        cmbSubCat.Text = baseItem.Item("Subcategory")
         txtDefValue.Text = baseItem.Item("Default Value")
         'nbxLwQty.Value = baseItem.Item("Low Qty")
 

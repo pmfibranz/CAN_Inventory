@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="classes\CommonRoutines.vb" />
     <Compile Include="classes\DB_Access.vb" />
     <Compile Include="classes\ReportManager.vb" />
     <Compile Include="forms\frmAddUser.Designer.vb">
@@ -178,9 +179,11 @@
   <ItemGroup>
     <EmbeddedResource Include="forms\frmAddUser.resx">
       <DependentUpon>frmAddUser.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>

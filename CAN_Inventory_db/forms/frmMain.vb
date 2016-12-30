@@ -6,7 +6,7 @@ Public Class frmMain
     'User List
     Public dbAccess As DB_Access
     Public userHand As New UserHandling()
-
+    Public comRoutes As New CommonRoutines
     '-------------- Form General ----------------
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -44,7 +44,11 @@ Public Class frmMain
             .Anchor = AnchorStyles.Bottom Or AnchorStyles.Right Or AnchorStyles.Top Or AnchorStyles.Left
         End With
 
-        Me.tbpItmManag.Controls.Add(itemTab)
+        tbpItmManag.Controls.Add(itemTab)
+
+        ' Fills Transaction Inventory Category combo box
+        Call comRoutes.fillDropDownListBox(cmbTranFilterByCategory, "categories", "id", "category", "active=True", -1)
+        cmbTranFilterByCategory.SelectedIndex = 0 'Ensure sub-category list loaded
 
         Call loadRecentDonations()
 
@@ -127,7 +131,7 @@ Public Class frmMain
         Catch ex As Exception
             lblStatus.Text = ex.Message()
         End Try
- 
+
     End Sub
 
     '-------------- Inventory Trans Tab ---------
@@ -180,6 +184,21 @@ Public Class frmMain
 
     Private Sub dtpDToDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpDToDate.ValueChanged
         Call loadRecentDonations()
+    End Sub
+
+    Private Sub cmbTranFilterByCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTranFilterByCategory.SelectedIndexChanged
+        Dim sqlCriteria As String
+
+        'Clear or populate
+        If cmbTranFilterByCategory.SelectedIndex = -1 Then
+            cmbTranFilterBySubCategory.Items.Clear()
+        Else
+            sqlCriteria = "(((sub_categories.category_id)=" & cmbTranFilterByCategory.SelectedValue.ToString() & ") AND ((sub_categories.active)=True))"
+
+            ' Fills Transaction Inventory Sub-Category combo box
+            Call comRoutes.fillDropDownListBox(cmbTranFilterBySubCategory, "sub_categories", "id", "sub_category", sqlCriteria, 0)
+        End If
+
     End Sub
 End Class
 

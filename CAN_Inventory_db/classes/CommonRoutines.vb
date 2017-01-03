@@ -8,9 +8,9 @@
         ds = frmMain.dbAccess.DataGet(query)
 
         cmb.DataSource = ds.Tables(0)
-        cmb.ValueMember = valueMember '"id"
-        cmb.DisplayMember = displayMember '"category"
-        cmb.SelectedIndex = defaultIndex '-1              ' Sets default selected item 
+        cmb.ValueMember = valueMember 'e.g. id
+        cmb.DisplayMember = displayMember 'e.g. category
+        cmb.SelectedIndex = defaultIndex 'e.g. -1
     End Sub
         
 End Class

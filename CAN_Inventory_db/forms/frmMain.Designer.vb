@@ -118,7 +118,7 @@ Partial Class frmMain
         Me.btnSubmitTran = New System.Windows.Forms.Button()
         Me.btnCancelTran = New System.Windows.Forms.Button()
         Me.lblTransType = New System.Windows.Forms.Label()
-        Me.cmbTransType = New System.Windows.Forms.ComboBox()
+        Me.cmbTranType = New System.Windows.Forms.ComboBox()
         Me.btnTranContactEdit = New System.Windows.Forms.Button()
         Me.btnTranContactAdd = New System.Windows.Forms.Button()
         Me.lblTranContactName = New System.Windows.Forms.Label()
@@ -1155,7 +1155,7 @@ Partial Class frmMain
         Me.grpInvTransInfo.Controls.Add(Me.btnSubmitTran)
         Me.grpInvTransInfo.Controls.Add(Me.btnCancelTran)
         Me.grpInvTransInfo.Controls.Add(Me.lblTransType)
-        Me.grpInvTransInfo.Controls.Add(Me.cmbTransType)
+        Me.grpInvTransInfo.Controls.Add(Me.cmbTranType)
         Me.grpInvTransInfo.Controls.Add(Me.btnTranContactEdit)
         Me.grpInvTransInfo.Controls.Add(Me.btnTranContactAdd)
         Me.grpInvTransInfo.Controls.Add(Me.lblTranContactName)
@@ -1345,15 +1345,14 @@ Partial Class frmMain
         Me.lblTransType.TabIndex = 4
         Me.lblTransType.Text = "Type:"
         '
-        'cmbTransType
+        'cmbTranType
         '
-        Me.cmbTransType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTransType.FormattingEnabled = True
-        Me.cmbTransType.Items.AddRange(New Object() {"In", "Out", "Transfer"})
-        Me.cmbTransType.Location = New System.Drawing.Point(44, 19)
-        Me.cmbTransType.Name = "cmbTransType"
-        Me.cmbTransType.Size = New System.Drawing.Size(87, 21)
-        Me.cmbTransType.TabIndex = 3
+        Me.cmbTranType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranType.FormattingEnabled = True
+        Me.cmbTranType.Location = New System.Drawing.Point(44, 19)
+        Me.cmbTranType.Name = "cmbTranType"
+        Me.cmbTranType.Size = New System.Drawing.Size(87, 21)
+        Me.cmbTranType.TabIndex = 3
         '
         'btnTranContactEdit
         '
@@ -3132,7 +3131,7 @@ Partial Class frmMain
     Friend WithEvents lblTranContact As Label
     Friend WithEvents txtTranContact As TextBox
     Friend WithEvents lblTransType As Label
-    Friend WithEvents cmbTransType As ComboBox
+    Friend WithEvents cmbTranType As ComboBox
     Friend WithEvents pnlTags As Panel
     Friend WithEvents txtTranAddTags As TextBox
     Friend WithEvents lblTranAddTags As Label

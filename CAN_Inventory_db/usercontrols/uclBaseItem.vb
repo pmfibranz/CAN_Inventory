@@ -66,7 +66,7 @@
                     ready = False
 
                     sqlCriteria = "(((sub_categories.category_id)=" + cmbCategory.SelectedValue.ToString() +
-                        ") AND ((sub_categories.active)=True))"
+                        ") AND (sub_categories.active=True))"
 
                     query = frmMain.dbAccess.QueryBuilder("sub_categories", "*", sqlCriteria)
 
@@ -98,7 +98,7 @@
                     ready = False
 
                     sqlCriteria = "(((locations.facility_id)=" + cmbFacility.SelectedValue.ToString() +
-                        ") AND ((locations.active)=True))"
+                        ") AND (locations.active=True))"
 
                     query = frmMain.dbAccess.QueryBuilder("locations", "*", sqlCriteria)
 
@@ -131,7 +131,7 @@
                     ready = False
 
                     sqlCriteria = "(((bins.location_id)=" + cmbLocation.SelectedValue.ToString() +
-                        ") AND ((bins.active)=True))"
+                        ") AND (bins.active=True))"
 
                     query = frmMain.dbAccess.QueryBuilder("bins", "*", sqlCriteria)
 
@@ -290,7 +290,7 @@
     Sub FillWith(baseItem As DataRowView)
 
         txtName.Text = baseItem.Item("Item")
-        txtDescript.Text = baseItem.Item("Item Description")
+        txtDescript.Text = baseItem.Item("Description")
         cmbCategory.Text = baseItem.Item("Category")
         cmbSubCat.Text = baseItem.Item("Subcategory")
         txtDefValue.Text = baseItem.Item("Default Value")

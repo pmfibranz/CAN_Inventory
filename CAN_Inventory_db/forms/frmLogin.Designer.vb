@@ -33,6 +33,7 @@ Partial Class frmLogin
         '
         'cmbUsers
         '
+        Me.cmbUsers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbUsers.FormattingEnabled = True
         Me.cmbUsers.Location = New System.Drawing.Point(82, 12)
         Me.cmbUsers.Name = "cmbUsers"

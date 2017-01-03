@@ -24,15 +24,13 @@ Public Class frmMain
         dtpDToDate.MaxDate = Now()
         dtpDToDate.Value = dtpDToDate.MaxDate
 
-        '-------------- Settings Tab ----------------
-        Dim settingsTab As New uclSettings
-        With settingsTab
-            .Name = "settingsTab"
-            .Location = New Point(5, 10)
-        End With
+        '-------------- Inventory Transaction Tab ----------------
+        ' Fills Transaction Type combo box
+        Call comRoutes.fillDropDownListBox(cmbTranType, "transaction_type", "id", "description", "transaction_type.description In ('In','Out') AND transaction_type.active=True", 0)
 
-        Me.tbpSettings.Controls.Add(settingsTab)
-
+        ' Fills Category combo box
+        Call comRoutes.fillDropDownListBox(cmbTranFilterByCategory, "categories", "id", "category", "active=True", -1)
+        cmbTranFilterByCategory.SelectedIndex = 0 'Ensure sub-category list loaded
 
         '-------------- Item Manager Tab ----------------
         Dim itemTab As New uclItemMan
@@ -46,9 +44,14 @@ Public Class frmMain
 
         tbpItmManag.Controls.Add(itemTab)
 
-        ' Fills Transaction Inventory Category combo box
-        Call comRoutes.fillDropDownListBox(cmbTranFilterByCategory, "categories", "id", "category", "active=True", -1)
-        cmbTranFilterByCategory.SelectedIndex = 0 'Ensure sub-category list loaded
+        '-------------- Settings Tab ----------------
+        Dim settingsTab As New uclSettings
+        With settingsTab
+            .Name = "settingsTab"
+            .Location = New Point(5, 10)
+        End With
+
+        Me.tbpSettings.Controls.Add(settingsTab)
 
         Call loadRecentDonations()
 
@@ -121,7 +124,7 @@ Public Class frmMain
         Dim dsUser As New DataSet()
 
         Try
-            dsUser = dbAccess.DataStoredProcGet("queryRecentTransactions")
+            dsUser = dbAccess.DataStoredProcGetRecentTransactions()
 
             'txtUsername.Text = dsUser.Tables(0).Rows(0).Item("username").ToString
             'txtUserFN.Text = dsUser.Tables(0).Rows(0).Item("first_name").ToString
@@ -193,13 +196,14 @@ Public Class frmMain
         If cmbTranFilterByCategory.SelectedIndex = -1 Then
             cmbTranFilterBySubCategory.Items.Clear()
         Else
-            sqlCriteria = "(((sub_categories.category_id)=" & cmbTranFilterByCategory.SelectedValue.ToString() & ") AND ((sub_categories.active)=True))"
+            sqlCriteria = "(((sub_categories.category_id)=" & cmbTranFilterByCategory.SelectedValue.ToString() & ") AND (sub_categories.active=True))"
 
             ' Fills Transaction Inventory Sub-Category combo box
             Call comRoutes.fillDropDownListBox(cmbTranFilterBySubCategory, "sub_categories", "id", "sub_category", sqlCriteria, 0)
         End If
 
     End Sub
+
 End Class
 
 

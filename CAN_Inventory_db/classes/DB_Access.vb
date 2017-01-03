@@ -143,7 +143,8 @@ Public Class DB_Access
 
     End Function
 
-    Function DataStoredProcGet(storedQuery As String) As DataSet
+    'Recent Transactions
+    Function DataStoredProcGetRecentTransactions() As DataSet
         Dim connect As OleDbConnection
         Dim adapt As OleDbDataAdapter
         Dim data As New DataSet
@@ -152,16 +153,65 @@ Public Class DB_Access
         connect = New OleDbConnection(dBasePath)
         Try
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = storedQuery
+            cmd.CommandText = "queryRecentTransactions"
             cmd.Parameters.Add("@startDate", OleDbType.Date).Value = frmMain.dtpDFromDate.Value ' From date
             cmd.Parameters.Add("@endDate", OleDbType.Date).Value = frmMain.dtpDToDate.MaxDate ' To date
             cmd.Connection = connect
             connect.Open()
-            'Dim da As OleDbDataAdapter = New OleDbDataAdapter(cmd)
-            'Dim ds As DataSet = New DataSet()
+
             adapt = New OleDbDataAdapter(cmd)
             adapt.Fill(data, "Table1")
-            'DataGridView1.DataSource = data.Tables("Table1")  ' Binding to DataGridView   
+
+            connect.Close()
+        Catch ex As Exception
+            statusLabel.Text = "Failed to retrieve data."
+        End Try
+        Return data
+    End Function
+
+    'Determine total "in" count for given item
+    Function DataStoredProcGetQuantityIn(itemId As Integer) As DataSet
+        Dim connect As OleDbConnection
+        Dim adapt As OleDbDataAdapter
+        Dim data As New DataSet
+        Dim cmd As New OleDbCommand
+
+        connect = New OleDbConnection(dBasePath)
+        Try
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "queryCountItemIn"
+            cmd.Parameters.Add("@ItemId", OleDbType.Integer).Value = itemId
+            cmd.Connection = connect
+            connect.Open()
+
+            adapt = New OleDbDataAdapter(cmd)
+            adapt.Fill(data, "Table1")
+
+            connect.Close()
+        Catch ex As Exception
+            statusLabel.Text = "Failed to retrieve data."
+        End Try
+        Return data
+    End Function
+
+    'Determine total "out" count for given item
+    Function DataStoredProcGetQuantityOut(itemId As Integer) As DataSet
+        Dim connect As OleDbConnection
+        Dim adapt As OleDbDataAdapter
+        Dim data As New DataSet
+        Dim cmd As New OleDbCommand
+
+        connect = New OleDbConnection(dBasePath)
+        Try
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "queryCountItemOut"
+            cmd.Parameters.Add("@ItemId", OleDbType.Integer).Value = itemId
+            cmd.Connection = connect
+            connect.Open()
+
+            adapt = New OleDbDataAdapter(cmd)
+            adapt.Fill(data, "Table1")
+
             connect.Close()
         Catch ex As Exception
             statusLabel.Text = "Failed to retrieve data."

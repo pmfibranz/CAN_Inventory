@@ -16,14 +16,6 @@ Public Class frmMain
 
         UpdateUserCombo()
 
-        'Set recent donation date range
-        dtpDFromDate.MaxDate = Now()
-        dtpDFromDate.Value = Now.AddMonths(-1)
-
-
-        dtpDToDate.MaxDate = Now()
-        dtpDToDate.Value = dtpDToDate.MaxDate
-
         '-------------- Inventory Transaction Tab ----------------
         ' Fills Transaction Type combo box
         Call comRoutes.fillDropDownListBox(cmbTranType, "transaction_type", "id", "description", "transaction_type.description In ('In','Out') AND transaction_type.active=True", 0)
@@ -44,6 +36,11 @@ Public Class frmMain
 
         tbpItmManag.Controls.Add(itemTab)
 
+        '-------------- Contacts Tab ----------------
+        'Not necessary for CAN Council at this time so just hide it
+        Call tabControls.TabPages.Remove(tabControls.TabPages("tbpContacts"))
+        btnQAddContact.Visible = False
+
         '-------------- Settings Tab ----------------
         Dim settingsTab As New uclSettings
         With settingsTab
@@ -53,8 +50,31 @@ Public Class frmMain
 
         Me.tbpSettings.Controls.Add(settingsTab)
 
+        'Set Recent Donations date range
+        dtpDFromDate.MaxDate = Now()
+        dtpDFromDate.Value = Now.AddMonths(-1)
+
+        dtpDToDate.MaxDate = Now()
+        dtpDToDate.Value = dtpDToDate.MaxDate
+
+        'Make Recent Donations and Inventory Notifications grid views readonly
+        dgvInvNotifications.AllowUserToAddRows = False
+        dgvInvNotifications.AllowUserToDeleteRows = False
+        dgvInvNotifications.AllowUserToOrderColumns = True
+        dgvInvNotifications.ReadOnly = True
+        dgvInvNotifications.MultiSelect = False
+        dgvRecentDonations.AllowUserToAddRows = False
+        dgvRecentDonations.AllowUserToDeleteRows = False
+        dgvRecentDonations.AllowUserToOrderColumns = True
+        dgvRecentDonations.ReadOnly = True
+        dgvRecentDonations.MultiSelect = False
+
+        'Display recent donations
         Call loadRecentDonations()
 
+        'Display Inventory Notifications
+        Call loadInventoryNotifications()
+        
         Me.Enabled = False
 
         ' Displays Initial Login Before allowing control of application
@@ -65,7 +85,6 @@ Public Class frmMain
     End Sub
 
     '-------------- Menu Strip ----------------
-
     Private Sub tsiAddUser_Click(sender As Object, e As EventArgs) Handles tsiAddUser.Click
         Dim addU As New frmAddUser()
 
@@ -120,21 +139,27 @@ Public Class frmMain
     '-------------- Dashboard Tab ---------------
 
     Private Sub loadRecentDonations()
-
-        Dim dsUser As New DataSet()
+        Dim dsRD As New DataSet()
 
         Try
-            dsUser = dbAccess.DataStoredProcGetRecentTransactions()
+            dsRD = dbAccess.DataStoredProcGetRecentTransactions()
 
-            'txtUsername.Text = dsUser.Tables(0).Rows(0).Item("username").ToString
-            'txtUserFN.Text = dsUser.Tables(0).Rows(0).Item("first_name").ToString
-            'txtUserLN.Text = dsUser.Tables(0).Rows(0).Item("last_name").ToString
-
-            dgvRecentDonations.DataSource = dsUser.Tables(0)
+            dgvRecentDonations.DataSource = dsRD.Tables(0)
         Catch ex As Exception
             lblStatus.Text = ex.Message()
         End Try
+    End Sub
 
+    Private Sub loadInventoryNotifications()
+        Dim dsIN As New DataSet()
+
+        Try
+            dsIN = dbAccess.DataStoredProcGetInventoryNotifications()
+
+            dgvInvNotifications.DataSource = dsIN.Tables(0)
+        Catch ex As Exception
+            lblStatus.Text = ex.Message()
+        End Try
     End Sub
 
     '-------------- Inventory Trans Tab ---------
@@ -203,7 +228,6 @@ Public Class frmMain
         End If
 
     End Sub
-
 End Class
 
 

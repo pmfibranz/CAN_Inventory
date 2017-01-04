@@ -37,96 +37,64 @@ Partial Class frmMain
         Me.cmbUserSelect = New System.Windows.Forms.ToolStripComboBox()
         Me.stsSatusBar = New System.Windows.Forms.StatusStrip()
         Me.lblStatus = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.tabControls = New System.Windows.Forms.TabControl()
-        Me.tbpDashboard = New System.Windows.Forms.TabPage()
-        Me.picCAN = New System.Windows.Forms.PictureBox()
-        Me.lblNFilter = New System.Windows.Forms.Label()
-        Me.lblDFilter = New System.Windows.Forms.Label()
-        Me.lblDTo = New System.Windows.Forms.Label()
-        Me.lblRecentDonations = New System.Windows.Forms.Label()
-        Me.lblInvNotifications = New System.Windows.Forms.Label()
-        Me.dgvInvNotifications = New System.Windows.Forms.DataGridView()
-        Me.dgvRecentDonations = New System.Windows.Forms.DataGridView()
-        Me.dtpDToDate = New System.Windows.Forms.DateTimePicker()
-        Me.dtpDFromDate = New System.Windows.Forms.DateTimePicker()
-        Me.cbxNFilter = New System.Windows.Forms.ComboBox()
-        Me.cmbDFilter = New System.Windows.Forms.ComboBox()
-        Me.btnQReports = New System.Windows.Forms.Button()
-        Me.btnQAddContact = New System.Windows.Forms.Button()
-        Me.btnQItemSearch = New System.Windows.Forms.Button()
-        Me.btnQTrans = New System.Windows.Forms.Button()
-        Me.picPinWheels = New System.Windows.Forms.PictureBox()
-        Me.tbpInvTrans = New System.Windows.Forms.TabPage()
-        Me.lblTranItems = New System.Windows.Forms.Label()
-        Me.grpTranItems = New System.Windows.Forms.GroupBox()
-        Me.lblTranTotalLineValueData = New System.Windows.Forms.Label()
-        Me.lblTranTotalLineValue = New System.Windows.Forms.Label()
-        Me.lblTranOnHandData = New System.Windows.Forms.Label()
-        Me.lnkTranReset = New System.Windows.Forms.LinkLabel()
-        Me.txtTranValue = New System.Windows.Forms.TextBox()
-        Me.nudTranQty = New System.Windows.Forms.NumericUpDown()
-        Me.lblTranOnHand = New System.Windows.Forms.Label()
-        Me.lblTranValue = New System.Windows.Forms.Label()
-        Me.lblTranQty = New System.Windows.Forms.Label()
-        Me.lblSelectedItemSubCategory = New System.Windows.Forms.Label()
-        Me.lblSelectedItemCategory = New System.Windows.Forms.Label()
-        Me.txtTranItemComment = New System.Windows.Forms.TextBox()
-        Me.pbxTLwQuant = New System.Windows.Forms.PictureBox()
-        Me.cmbTranProgram = New System.Windows.Forms.ComboBox()
-        Me.cmbTranBin = New System.Windows.Forms.ComboBox()
-        Me.cmbTranLocation = New System.Windows.Forms.ComboBox()
-        Me.cmbTranCondition = New System.Windows.Forms.ComboBox()
-        Me.cmbTranFacility = New System.Windows.Forms.ComboBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.lblTranProgram = New System.Windows.Forms.Label()
-        Me.pnlTags = New System.Windows.Forms.Panel()
-        Me.btnTranTag = New System.Windows.Forms.Button()
-        Me.lblTranBin = New System.Windows.Forms.Label()
-        Me.txtTranAddTags = New System.Windows.Forms.TextBox()
-        Me.lblTranItemComment = New System.Windows.Forms.Label()
-        Me.lblTranCondition = New System.Windows.Forms.Label()
-        Me.lblTranLocation = New System.Windows.Forms.Label()
-        Me.lblTranFaclity = New System.Windows.Forms.Label()
-        Me.lblTranAddTags = New System.Windows.Forms.Label()
-        Me.lblTranTags = New System.Windows.Forms.Label()
-        Me.lblTSubCategory = New System.Windows.Forms.Label()
-        Me.lblTranCategory = New System.Windows.Forms.Label()
-        Me.lblTranItemName = New System.Windows.Forms.Label()
-        Me.btnTranItemReset = New System.Windows.Forms.Button()
-        Me.btnTranItemAddNew = New System.Windows.Forms.Button()
-        Me.btnTranItemAddToTran = New System.Windows.Forms.Button()
-        Me.txtSearchTran = New System.Windows.Forms.TextBox()
-        Me.dgvTranItems = New System.Windows.Forms.DataGridView()
-        Me.dgvTranCategories = New System.Windows.Forms.DataGridView()
-        Me.grpInvTransInfo = New System.Windows.Forms.GroupBox()
-        Me.lblTranContactNameData = New System.Windows.Forms.Label()
-        Me.lnklblTranContactEmail = New System.Windows.Forms.LinkLabel()
-        Me.lblTranContactEmail = New System.Windows.Forms.Label()
-        Me.lblTranContactPhoneData = New System.Windows.Forms.Label()
-        Me.lblTranContactPhone = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.lblTranContactAddressData = New System.Windows.Forms.Label()
-        Me.lblTranContactAddress = New System.Windows.Forms.Label()
-        Me.txtTranComment = New System.Windows.Forms.TextBox()
-        Me.lblTranComment = New System.Windows.Forms.Label()
-        Me.lblTotalValue = New System.Windows.Forms.Label()
-        Me.lblTotalValueData = New System.Windows.Forms.Label()
-        Me.lblTotalIemsData = New System.Windows.Forms.Label()
-        Me.lblTotalItems = New System.Windows.Forms.Label()
-        Me.btnSubmitTran = New System.Windows.Forms.Button()
-        Me.btnCancelTran = New System.Windows.Forms.Button()
-        Me.lblTransType = New System.Windows.Forms.Label()
-        Me.cmbTranType = New System.Windows.Forms.ComboBox()
-        Me.btnTranContactEdit = New System.Windows.Forms.Button()
-        Me.btnTranContactAdd = New System.Windows.Forms.Button()
-        Me.lblTranContactName = New System.Windows.Forms.Label()
-        Me.lblTranContact = New System.Windows.Forms.Label()
-        Me.txtTranContact = New System.Windows.Forms.TextBox()
-        Me.cmbTranFilterBySubCategory = New System.Windows.Forms.ComboBox()
-        Me.cmbTranFilterByCategory = New System.Windows.Forms.ComboBox()
-        Me.tbpItmManag = New System.Windows.Forms.TabPage()
+        Me.tbpSettings = New System.Windows.Forms.TabPage()
+        Me.tbpContacts = New System.Windows.Forms.TabPage()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.TextBox23 = New System.Windows.Forms.TextBox()
+        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TextBox26 = New System.Windows.Forms.TextBox()
+        Me.TextBox27 = New System.Windows.Forms.TextBox()
+        Me.TextBox28 = New System.Windows.Forms.TextBox()
+        Me.TextBox29 = New System.Windows.Forms.TextBox()
+        Me.TextBox30 = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.Label64 = New System.Windows.Forms.Label()
+        Me.Label65 = New System.Windows.Forms.Label()
+        Me.Label66 = New System.Windows.Forms.Label()
+        Me.Label67 = New System.Windows.Forms.Label()
+        Me.ComboBox16 = New System.Windows.Forms.ComboBox()
+        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox15 = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox21 = New System.Windows.Forms.TextBox()
+        Me.TextBox20 = New System.Windows.Forms.TextBox()
+        Me.TextBox19 = New System.Windows.Forms.TextBox()
+        Me.TextBox18 = New System.Windows.Forms.TextBox()
+        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.Label59 = New System.Windows.Forms.Label()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.DataGridView7 = New System.Windows.Forms.DataGridView()
+        Me.DataGridView6 = New System.Windows.Forms.DataGridView()
         Me.tbpReports = New System.Windows.Forms.TabPage()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.Label73 = New System.Windows.Forms.Label()
@@ -221,82 +189,103 @@ Partial Class frmMain
         Me.ComboBox18 = New System.Windows.Forms.ComboBox()
         Me.ComboBox17 = New System.Windows.Forms.ComboBox()
         Me.Label68 = New System.Windows.Forms.Label()
-        Me.tbpContacts = New System.Windows.Forms.TabPage()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
-        Me.TextBox27 = New System.Windows.Forms.TextBox()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.TextBox29 = New System.Windows.Forms.TextBox()
-        Me.TextBox30 = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label60 = New System.Windows.Forms.Label()
-        Me.Label64 = New System.Windows.Forms.Label()
-        Me.Label65 = New System.Windows.Forms.Label()
-        Me.Label66 = New System.Windows.Forms.Label()
-        Me.Label67 = New System.Windows.Forms.Label()
-        Me.ComboBox16 = New System.Windows.Forms.ComboBox()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox15 = New System.Windows.Forms.ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Label59 = New System.Windows.Forms.Label()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Label55 = New System.Windows.Forms.Label()
-        Me.Label53 = New System.Windows.Forms.Label()
-        Me.Label52 = New System.Windows.Forms.Label()
-        Me.Label51 = New System.Windows.Forms.Label()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.Label49 = New System.Windows.Forms.Label()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.DataGridView7 = New System.Windows.Forms.DataGridView()
-        Me.DataGridView6 = New System.Windows.Forms.DataGridView()
-        Me.tbpSettings = New System.Windows.Forms.TabPage()
+        Me.tbpItmManag = New System.Windows.Forms.TabPage()
+        Me.tbpInvTrans = New System.Windows.Forms.TabPage()
+        Me.lblTranItems = New System.Windows.Forms.Label()
+        Me.grpTranItems = New System.Windows.Forms.GroupBox()
+        Me.lblTranTotalLineValueData = New System.Windows.Forms.Label()
+        Me.lblTranTotalLineValue = New System.Windows.Forms.Label()
+        Me.lblTranOnHandData = New System.Windows.Forms.Label()
+        Me.lnkTranReset = New System.Windows.Forms.LinkLabel()
+        Me.txtTranValue = New System.Windows.Forms.TextBox()
+        Me.nudTranQty = New System.Windows.Forms.NumericUpDown()
+        Me.lblTranOnHand = New System.Windows.Forms.Label()
+        Me.lblTranValue = New System.Windows.Forms.Label()
+        Me.lblTranQty = New System.Windows.Forms.Label()
+        Me.lblSelectedItemSubCategory = New System.Windows.Forms.Label()
+        Me.lblSelectedItemCategory = New System.Windows.Forms.Label()
+        Me.txtTranItemComment = New System.Windows.Forms.TextBox()
+        Me.pbxTLwQuant = New System.Windows.Forms.PictureBox()
+        Me.cmbTranProgram = New System.Windows.Forms.ComboBox()
+        Me.cmbTranBin = New System.Windows.Forms.ComboBox()
+        Me.cmbTranLocation = New System.Windows.Forms.ComboBox()
+        Me.cmbTranCondition = New System.Windows.Forms.ComboBox()
+        Me.cmbTranFacility = New System.Windows.Forms.ComboBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.lblTranProgram = New System.Windows.Forms.Label()
+        Me.pnlTags = New System.Windows.Forms.Panel()
+        Me.btnTranTag = New System.Windows.Forms.Button()
+        Me.lblTranBin = New System.Windows.Forms.Label()
+        Me.txtTranAddTags = New System.Windows.Forms.TextBox()
+        Me.lblTranItemComment = New System.Windows.Forms.Label()
+        Me.lblTranCondition = New System.Windows.Forms.Label()
+        Me.lblTranLocation = New System.Windows.Forms.Label()
+        Me.lblTranFaclity = New System.Windows.Forms.Label()
+        Me.lblTranAddTags = New System.Windows.Forms.Label()
+        Me.lblTranTags = New System.Windows.Forms.Label()
+        Me.lblTSubCategory = New System.Windows.Forms.Label()
+        Me.lblTranCategory = New System.Windows.Forms.Label()
+        Me.lblTranItemName = New System.Windows.Forms.Label()
+        Me.btnTranItemReset = New System.Windows.Forms.Button()
+        Me.btnTranItemAddNew = New System.Windows.Forms.Button()
+        Me.btnTranItemAddToTran = New System.Windows.Forms.Button()
+        Me.txtSearchTran = New System.Windows.Forms.TextBox()
+        Me.dgvTranItems = New System.Windows.Forms.DataGridView()
+        Me.dgvTranCategories = New System.Windows.Forms.DataGridView()
+        Me.grpInvTransInfo = New System.Windows.Forms.GroupBox()
+        Me.lblTranContactNameData = New System.Windows.Forms.Label()
+        Me.lnklblTranContactEmail = New System.Windows.Forms.LinkLabel()
+        Me.lblTranContactEmail = New System.Windows.Forms.Label()
+        Me.lblTranContactPhoneData = New System.Windows.Forms.Label()
+        Me.lblTranContactPhone = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.lblTranContactAddressData = New System.Windows.Forms.Label()
+        Me.lblTranContactAddress = New System.Windows.Forms.Label()
+        Me.txtTranComment = New System.Windows.Forms.TextBox()
+        Me.lblTranComment = New System.Windows.Forms.Label()
+        Me.lblTotalValue = New System.Windows.Forms.Label()
+        Me.lblTotalValueData = New System.Windows.Forms.Label()
+        Me.lblTotalIemsData = New System.Windows.Forms.Label()
+        Me.lblTotalItems = New System.Windows.Forms.Label()
+        Me.btnSubmitTran = New System.Windows.Forms.Button()
+        Me.btnCancelTran = New System.Windows.Forms.Button()
+        Me.lblTransType = New System.Windows.Forms.Label()
+        Me.cmbTranType = New System.Windows.Forms.ComboBox()
+        Me.btnTranContactEdit = New System.Windows.Forms.Button()
+        Me.btnTranContactAdd = New System.Windows.Forms.Button()
+        Me.lblTranContactName = New System.Windows.Forms.Label()
+        Me.lblTranContact = New System.Windows.Forms.Label()
+        Me.txtTranContact = New System.Windows.Forms.TextBox()
+        Me.cmbTranFilterBySubCategory = New System.Windows.Forms.ComboBox()
+        Me.cmbTranFilterByCategory = New System.Windows.Forms.ComboBox()
+        Me.tbpDashboard = New System.Windows.Forms.TabPage()
+        Me.picCAN = New System.Windows.Forms.PictureBox()
+        Me.lblNFilter = New System.Windows.Forms.Label()
+        Me.lblDFilter = New System.Windows.Forms.Label()
+        Me.lblDTo = New System.Windows.Forms.Label()
+        Me.lblRecentDonations = New System.Windows.Forms.Label()
+        Me.lblInvNotifications = New System.Windows.Forms.Label()
+        Me.dgvInvNotifications = New System.Windows.Forms.DataGridView()
+        Me.dgvRecentDonations = New System.Windows.Forms.DataGridView()
+        Me.dtpDToDate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpDFromDate = New System.Windows.Forms.DateTimePicker()
+        Me.cbxNFilter = New System.Windows.Forms.ComboBox()
+        Me.cmbDFilter = New System.Windows.Forms.ComboBox()
+        Me.btnQReports = New System.Windows.Forms.Button()
+        Me.btnQAddContact = New System.Windows.Forms.Button()
+        Me.btnQItemSearch = New System.Windows.Forms.Button()
+        Me.btnQTrans = New System.Windows.Forms.Button()
+        Me.picPinWheels = New System.Windows.Forms.PictureBox()
+        Me.tabControls = New System.Windows.Forms.TabControl()
         Me.menTopStrip.SuspendLayout()
         Me.stsSatusBar.SuspendLayout()
-        Me.tabControls.SuspendLayout()
-        Me.tbpDashboard.SuspendLayout()
-        CType(Me.picCAN, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvInvNotifications, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvRecentDonations, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picPinWheels, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tbpInvTrans.SuspendLayout()
-        Me.grpTranItems.SuspendLayout()
-        CType(Me.nudTranQty, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlTags.SuspendLayout()
-        CType(Me.dgvTranItems, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvTranCategories, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grpInvTransInfo.SuspendLayout()
+        Me.tbpContacts.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpReports.SuspendLayout()
         Me.gbxReportType.SuspendLayout()
         Me.pnlBenefactor.SuspendLayout()
@@ -312,11 +301,22 @@ Partial Class frmMain
         Me.GroupBox8.SuspendLayout()
         CType(Me.DataGridView9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tbpContacts.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tbpInvTrans.SuspendLayout()
+        Me.grpTranItems.SuspendLayout()
+        CType(Me.nudTranQty, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlTags.SuspendLayout()
+        CType(Me.dgvTranItems, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvTranCategories, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpInvTransInfo.SuspendLayout()
+        Me.tbpDashboard.SuspendLayout()
+        CType(Me.picCAN, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvInvNotifications, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvRecentDonations, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picPinWheels, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabControls.SuspendLayout()
         Me.SuspendLayout()
         '
         'menTopStrip
@@ -417,1017 +417,550 @@ Partial Class frmMain
         Me.lblStatus.Size = New System.Drawing.Size(75, 17)
         Me.lblStatus.Text = "DB Connected"
         '
-        'tabControls
-        '
-        Me.tabControls.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tabControls.Controls.Add(Me.tbpDashboard)
-        Me.tabControls.Controls.Add(Me.tbpInvTrans)
-        Me.tabControls.Controls.Add(Me.tbpItmManag)
-        Me.tabControls.Controls.Add(Me.tbpReports)
-        Me.tabControls.Controls.Add(Me.tbpContacts)
-        Me.tabControls.Controls.Add(Me.tbpSettings)
-        Me.tabControls.Location = New System.Drawing.Point(0, 30)
-        Me.tabControls.Name = "tabControls"
-        Me.tabControls.SelectedIndex = 0
-        Me.tabControls.Size = New System.Drawing.Size(1097, 627)
-        Me.tabControls.TabIndex = 2
-        '
-        'tbpDashboard
-        '
-        Me.tbpDashboard.Controls.Add(Me.picCAN)
-        Me.tbpDashboard.Controls.Add(Me.lblNFilter)
-        Me.tbpDashboard.Controls.Add(Me.lblDFilter)
-        Me.tbpDashboard.Controls.Add(Me.lblDTo)
-        Me.tbpDashboard.Controls.Add(Me.lblRecentDonations)
-        Me.tbpDashboard.Controls.Add(Me.lblInvNotifications)
-        Me.tbpDashboard.Controls.Add(Me.dgvInvNotifications)
-        Me.tbpDashboard.Controls.Add(Me.dgvRecentDonations)
-        Me.tbpDashboard.Controls.Add(Me.dtpDToDate)
-        Me.tbpDashboard.Controls.Add(Me.dtpDFromDate)
-        Me.tbpDashboard.Controls.Add(Me.cbxNFilter)
-        Me.tbpDashboard.Controls.Add(Me.cmbDFilter)
-        Me.tbpDashboard.Controls.Add(Me.btnQReports)
-        Me.tbpDashboard.Controls.Add(Me.btnQAddContact)
-        Me.tbpDashboard.Controls.Add(Me.btnQItemSearch)
-        Me.tbpDashboard.Controls.Add(Me.btnQTrans)
-        Me.tbpDashboard.Controls.Add(Me.picPinWheels)
-        Me.tbpDashboard.Location = New System.Drawing.Point(4, 22)
-        Me.tbpDashboard.Name = "tbpDashboard"
-        Me.tbpDashboard.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpDashboard.Size = New System.Drawing.Size(1089, 601)
-        Me.tbpDashboard.TabIndex = 0
-        Me.tbpDashboard.Text = "Dashboard"
-        Me.tbpDashboard.UseVisualStyleBackColor = True
-        '
-        'picCAN
-        '
-        Me.picCAN.Image = Global.CAN_Inventory_db.My.Resources.Resources.dash_logo
-        Me.picCAN.Location = New System.Drawing.Point(8, 15)
-        Me.picCAN.Name = "picCAN"
-        Me.picCAN.Size = New System.Drawing.Size(243, 108)
-        Me.picCAN.TabIndex = 5
-        Me.picCAN.TabStop = False
-        '
-        'lblNFilter
-        '
-        Me.lblNFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblNFilter.AutoSize = True
-        Me.lblNFilter.Location = New System.Drawing.Point(925, 339)
-        Me.lblNFilter.Name = "lblNFilter"
-        Me.lblNFilter.Size = New System.Drawing.Size(32, 13)
-        Me.lblNFilter.TabIndex = 4
-        Me.lblNFilter.Text = "Filter:"
-        '
-        'lblDFilter
-        '
-        Me.lblDFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblDFilter.AutoSize = True
-        Me.lblDFilter.Location = New System.Drawing.Point(668, 16)
-        Me.lblDFilter.Name = "lblDFilter"
-        Me.lblDFilter.Size = New System.Drawing.Size(32, 13)
-        Me.lblDFilter.TabIndex = 4
-        Me.lblDFilter.Text = "Filter:"
-        '
-        'lblDTo
-        '
-        Me.lblDTo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblDTo.AutoSize = True
-        Me.lblDTo.Location = New System.Drawing.Point(957, 16)
-        Me.lblDTo.Name = "lblDTo"
-        Me.lblDTo.Size = New System.Drawing.Size(20, 13)
-        Me.lblDTo.TabIndex = 4
-        Me.lblDTo.Text = "To"
-        '
-        'lblRecentDonations
-        '
-        Me.lblRecentDonations.AutoSize = True
-        Me.lblRecentDonations.Location = New System.Drawing.Point(270, 15)
-        Me.lblRecentDonations.Name = "lblRecentDonations"
-        Me.lblRecentDonations.Size = New System.Drawing.Size(96, 13)
-        Me.lblRecentDonations.TabIndex = 4
-        Me.lblRecentDonations.Text = "Recent Donations:"
-        '
-        'lblInvNotifications
-        '
-        Me.lblInvNotifications.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblInvNotifications.AutoSize = True
-        Me.lblInvNotifications.Location = New System.Drawing.Point(270, 339)
-        Me.lblInvNotifications.Name = "lblInvNotifications"
-        Me.lblInvNotifications.Size = New System.Drawing.Size(115, 13)
-        Me.lblInvNotifications.TabIndex = 4
-        Me.lblInvNotifications.Text = "Inventory Notifications:"
-        '
-        'dgvInvNotifications
-        '
-        Me.dgvInvNotifications.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvInvNotifications.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dgvInvNotifications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvInvNotifications.Location = New System.Drawing.Point(270, 363)
-        Me.dgvInvNotifications.Name = "dgvInvNotifications"
-        Me.dgvInvNotifications.Size = New System.Drawing.Size(811, 224)
-        Me.dgvInvNotifications.TabIndex = 3
-        '
-        'dgvRecentDonations
-        '
-        Me.dgvRecentDonations.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvRecentDonations.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dgvRecentDonations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRecentDonations.Location = New System.Drawing.Point(270, 38)
-        Me.dgvRecentDonations.Name = "dgvRecentDonations"
-        Me.dgvRecentDonations.Size = New System.Drawing.Size(811, 285)
-        Me.dgvRecentDonations.TabIndex = 3
-        '
-        'dtpDToDate
-        '
-        Me.dtpDToDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dtpDToDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDToDate.Location = New System.Drawing.Point(985, 12)
-        Me.dtpDToDate.Name = "dtpDToDate"
-        Me.dtpDToDate.Size = New System.Drawing.Size(96, 20)
-        Me.dtpDToDate.TabIndex = 2
-        '
-        'dtpDFromDate
-        '
-        Me.dtpDFromDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dtpDFromDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDFromDate.Location = New System.Drawing.Point(853, 12)
-        Me.dtpDFromDate.Name = "dtpDFromDate"
-        Me.dtpDFromDate.Size = New System.Drawing.Size(96, 20)
-        Me.dtpDFromDate.TabIndex = 2
-        '
-        'cbxNFilter
-        '
-        Me.cbxNFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cbxNFilter.FormattingEnabled = True
-        Me.cbxNFilter.Location = New System.Drawing.Point(960, 336)
-        Me.cbxNFilter.Name = "cbxNFilter"
-        Me.cbxNFilter.Size = New System.Drawing.Size(121, 21)
-        Me.cbxNFilter.TabIndex = 1
-        '
-        'cmbDFilter
-        '
-        Me.cmbDFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmbDFilter.FormattingEnabled = True
-        Me.cmbDFilter.Items.AddRange(New Object() {"None", "Benifactor", "Contact", "Item"})
-        Me.cmbDFilter.Location = New System.Drawing.Point(702, 12)
-        Me.cmbDFilter.Name = "cmbDFilter"
-        Me.cmbDFilter.Size = New System.Drawing.Size(138, 21)
-        Me.cmbDFilter.TabIndex = 1
-        '
-        'btnQReports
-        '
-        Me.btnQReports.Location = New System.Drawing.Point(6, 348)
-        Me.btnQReports.Name = "btnQReports"
-        Me.btnQReports.Size = New System.Drawing.Size(245, 60)
-        Me.btnQReports.TabIndex = 0
-        Me.btnQReports.Text = "Reports"
-        Me.btnQReports.UseVisualStyleBackColor = True
-        '
-        'btnQAddContact
-        '
-        Me.btnQAddContact.Location = New System.Drawing.Point(6, 275)
-        Me.btnQAddContact.Name = "btnQAddContact"
-        Me.btnQAddContact.Size = New System.Drawing.Size(245, 60)
-        Me.btnQAddContact.TabIndex = 0
-        Me.btnQAddContact.Text = "Add Contact"
-        Me.btnQAddContact.UseVisualStyleBackColor = True
-        '
-        'btnQItemSearch
-        '
-        Me.btnQItemSearch.Location = New System.Drawing.Point(6, 202)
-        Me.btnQItemSearch.Name = "btnQItemSearch"
-        Me.btnQItemSearch.Size = New System.Drawing.Size(245, 60)
-        Me.btnQItemSearch.TabIndex = 0
-        Me.btnQItemSearch.Text = "Item Search"
-        Me.btnQItemSearch.UseVisualStyleBackColor = True
-        '
-        'btnQTrans
-        '
-        Me.btnQTrans.Location = New System.Drawing.Point(6, 129)
-        Me.btnQTrans.Name = "btnQTrans"
-        Me.btnQTrans.Size = New System.Drawing.Size(245, 60)
-        Me.btnQTrans.TabIndex = 0
-        Me.btnQTrans.Text = "Quick Transaction"
-        Me.btnQTrans.UseVisualStyleBackColor = True
-        '
-        'picPinWheels
-        '
-        Me.picPinWheels.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.picPinWheels.Image = Global.CAN_Inventory_db.My.Resources.Resources.pinwheel_dash
-        Me.picPinWheels.Location = New System.Drawing.Point(7, 408)
-        Me.picPinWheels.Name = "picPinWheels"
-        Me.picPinWheels.Size = New System.Drawing.Size(281, 187)
-        Me.picPinWheels.TabIndex = 6
-        Me.picPinWheels.TabStop = False
-        '
-        'tbpInvTrans
-        '
-        Me.tbpInvTrans.Controls.Add(Me.lblTranItems)
-        Me.tbpInvTrans.Controls.Add(Me.grpTranItems)
-        Me.tbpInvTrans.Controls.Add(Me.txtSearchTran)
-        Me.tbpInvTrans.Controls.Add(Me.dgvTranItems)
-        Me.tbpInvTrans.Controls.Add(Me.dgvTranCategories)
-        Me.tbpInvTrans.Controls.Add(Me.grpInvTransInfo)
-        Me.tbpInvTrans.Controls.Add(Me.cmbTranFilterBySubCategory)
-        Me.tbpInvTrans.Controls.Add(Me.cmbTranFilterByCategory)
-        Me.tbpInvTrans.Location = New System.Drawing.Point(4, 22)
-        Me.tbpInvTrans.Name = "tbpInvTrans"
-        Me.tbpInvTrans.Size = New System.Drawing.Size(1089, 601)
-        Me.tbpInvTrans.TabIndex = 3
-        Me.tbpInvTrans.Text = "Inventory Transaction"
-        Me.tbpInvTrans.UseVisualStyleBackColor = True
-        '
-        'lblTranItems
-        '
-        Me.lblTranItems.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblTranItems.AutoSize = True
-        Me.lblTranItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranItems.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranItems.Location = New System.Drawing.Point(254, 271)
-        Me.lblTranItems.Name = "lblTranItems"
-        Me.lblTranItems.Size = New System.Drawing.Size(125, 15)
-        Me.lblTranItems.TabIndex = 6
-        Me.lblTranItems.Text = "Transaction Items:"
-        '
-        'grpTranItems
-        '
-        Me.grpTranItems.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grpTranItems.Controls.Add(Me.lblTranTotalLineValueData)
-        Me.grpTranItems.Controls.Add(Me.lblTranTotalLineValue)
-        Me.grpTranItems.Controls.Add(Me.lblTranOnHandData)
-        Me.grpTranItems.Controls.Add(Me.lnkTranReset)
-        Me.grpTranItems.Controls.Add(Me.txtTranValue)
-        Me.grpTranItems.Controls.Add(Me.nudTranQty)
-        Me.grpTranItems.Controls.Add(Me.lblTranOnHand)
-        Me.grpTranItems.Controls.Add(Me.lblTranValue)
-        Me.grpTranItems.Controls.Add(Me.lblTranQty)
-        Me.grpTranItems.Controls.Add(Me.lblSelectedItemSubCategory)
-        Me.grpTranItems.Controls.Add(Me.lblSelectedItemCategory)
-        Me.grpTranItems.Controls.Add(Me.txtTranItemComment)
-        Me.grpTranItems.Controls.Add(Me.pbxTLwQuant)
-        Me.grpTranItems.Controls.Add(Me.cmbTranProgram)
-        Me.grpTranItems.Controls.Add(Me.cmbTranBin)
-        Me.grpTranItems.Controls.Add(Me.cmbTranLocation)
-        Me.grpTranItems.Controls.Add(Me.cmbTranCondition)
-        Me.grpTranItems.Controls.Add(Me.cmbTranFacility)
-        Me.grpTranItems.Controls.Add(Me.PictureBox4)
-        Me.grpTranItems.Controls.Add(Me.PictureBox3)
-        Me.grpTranItems.Controls.Add(Me.lblTranProgram)
-        Me.grpTranItems.Controls.Add(Me.pnlTags)
-        Me.grpTranItems.Controls.Add(Me.lblTranBin)
-        Me.grpTranItems.Controls.Add(Me.txtTranAddTags)
-        Me.grpTranItems.Controls.Add(Me.lblTranItemComment)
-        Me.grpTranItems.Controls.Add(Me.lblTranCondition)
-        Me.grpTranItems.Controls.Add(Me.lblTranLocation)
-        Me.grpTranItems.Controls.Add(Me.lblTranFaclity)
-        Me.grpTranItems.Controls.Add(Me.lblTranAddTags)
-        Me.grpTranItems.Controls.Add(Me.lblTranTags)
-        Me.grpTranItems.Controls.Add(Me.lblTSubCategory)
-        Me.grpTranItems.Controls.Add(Me.lblTranCategory)
-        Me.grpTranItems.Controls.Add(Me.lblTranItemName)
-        Me.grpTranItems.Controls.Add(Me.btnTranItemReset)
-        Me.grpTranItems.Controls.Add(Me.btnTranItemAddNew)
-        Me.grpTranItems.Controls.Add(Me.btnTranItemAddToTran)
-        Me.grpTranItems.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.grpTranItems.Location = New System.Drawing.Point(698, 12)
-        Me.grpTranItems.Name = "grpTranItems"
-        Me.grpTranItems.Size = New System.Drawing.Size(377, 573)
-        Me.grpTranItems.TabIndex = 5
-        Me.grpTranItems.TabStop = False
-        Me.grpTranItems.Text = "Item:"
-        '
-        'lblTranTotalLineValueData
-        '
-        Me.lblTranTotalLineValueData.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.lblTranTotalLineValueData.Location = New System.Drawing.Point(322, 374)
-        Me.lblTranTotalLineValueData.Name = "lblTranTotalLineValueData"
-        Me.lblTranTotalLineValueData.Size = New System.Drawing.Size(51, 13)
-        Me.lblTranTotalLineValueData.TabIndex = 24
-        Me.lblTranTotalLineValueData.Text = "$0.00"
-        Me.lblTranTotalLineValueData.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'lblTranTotalLineValue
-        '
-        Me.lblTranTotalLineValue.AutoSize = True
-        Me.lblTranTotalLineValue.Location = New System.Drawing.Point(237, 374)
-        Me.lblTranTotalLineValue.Name = "lblTranTotalLineValue"
-        Me.lblTranTotalLineValue.Size = New System.Drawing.Size(90, 13)
-        Me.lblTranTotalLineValue.TabIndex = 23
-        Me.lblTranTotalLineValue.Text = "Total Line Value: "
-        '
-        'lblTranOnHandData
-        '
-        Me.lblTranOnHandData.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranOnHandData.Location = New System.Drawing.Point(310, 312)
-        Me.lblTranOnHandData.Name = "lblTranOnHandData"
-        Me.lblTranOnHandData.Size = New System.Drawing.Size(62, 20)
-        Me.lblTranOnHandData.TabIndex = 22
-        Me.lblTranOnHandData.Text = "0"
-        Me.lblTranOnHandData.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'lnkTranReset
-        '
-        Me.lnkTranReset.AutoSize = True
-        Me.lnkTranReset.LinkColor = System.Drawing.Color.Blue
-        Me.lnkTranReset.Location = New System.Drawing.Point(339, 335)
-        Me.lnkTranReset.Name = "lnkTranReset"
-        Me.lnkTranReset.Size = New System.Drawing.Size(35, 13)
-        Me.lnkTranReset.TabIndex = 21
-        Me.lnkTranReset.TabStop = True
-        Me.lnkTranReset.Text = "Reset"
-        Me.lnkTranReset.VisitedLinkColor = System.Drawing.Color.Blue
-        '
-        'txtTranValue
-        '
-        Me.txtTranValue.Location = New System.Drawing.Point(240, 351)
-        Me.txtTranValue.Name = "txtTranValue"
-        Me.txtTranValue.Size = New System.Drawing.Size(131, 20)
-        Me.txtTranValue.TabIndex = 20
-        '
-        'nudTranQty
-        '
-        Me.nudTranQty.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.nudTranQty.Location = New System.Drawing.Point(240, 310)
-        Me.nudTranQty.Name = "nudTranQty"
-        Me.nudTranQty.Size = New System.Drawing.Size(52, 20)
-        Me.nudTranQty.TabIndex = 19
-        '
-        'lblTranOnHand
-        '
-        Me.lblTranOnHand.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTranOnHand.AutoSize = True
-        Me.lblTranOnHand.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranOnHand.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranOnHand.Location = New System.Drawing.Point(319, 294)
-        Me.lblTranOnHand.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranOnHand.Name = "lblTranOnHand"
-        Me.lblTranOnHand.Size = New System.Drawing.Size(56, 13)
-        Me.lblTranOnHand.TabIndex = 16
-        Me.lblTranOnHand.Text = "On Hand: "
-        '
-        'lblTranValue
-        '
-        Me.lblTranValue.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTranValue.AutoSize = True
-        Me.lblTranValue.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranValue.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranValue.Location = New System.Drawing.Point(237, 335)
-        Me.lblTranValue.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranValue.Name = "lblTranValue"
-        Me.lblTranValue.Size = New System.Drawing.Size(40, 13)
-        Me.lblTranValue.TabIndex = 17
-        Me.lblTranValue.Text = "Value: "
-        '
-        'lblTranQty
-        '
-        Me.lblTranQty.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTranQty.AutoSize = True
-        Me.lblTranQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranQty.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranQty.Location = New System.Drawing.Point(237, 294)
-        Me.lblTranQty.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranQty.Name = "lblTranQty"
-        Me.lblTranQty.Size = New System.Drawing.Size(52, 13)
-        Me.lblTranQty.TabIndex = 18
-        Me.lblTranQty.Text = "Quantity: "
-        '
-        'lblSelectedItemSubCategory
-        '
-        Me.lblSelectedItemSubCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSelectedItemSubCategory.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblSelectedItemSubCategory.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.lblSelectedItemSubCategory.Location = New System.Drawing.Point(249, 50)
-        Me.lblSelectedItemSubCategory.Name = "lblSelectedItemSubCategory"
-        Me.lblSelectedItemSubCategory.Size = New System.Drawing.Size(123, 13)
-        Me.lblSelectedItemSubCategory.TabIndex = 13
-        Me.lblSelectedItemSubCategory.Text = "Item Sub-Category"
-        '
-        'lblSelectedItemCategory
-        '
-        Me.lblSelectedItemCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSelectedItemCategory.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblSelectedItemCategory.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.lblSelectedItemCategory.Location = New System.Drawing.Point(56, 50)
-        Me.lblSelectedItemCategory.Name = "lblSelectedItemCategory"
-        Me.lblSelectedItemCategory.Size = New System.Drawing.Size(113, 13)
-        Me.lblSelectedItemCategory.TabIndex = 12
-        Me.lblSelectedItemCategory.Text = "Item Category"
-        '
-        'txtTranItemComment
-        '
-        Me.txtTranItemComment.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtTranItemComment.Location = New System.Drawing.Point(6, 401)
-        Me.txtTranItemComment.Multiline = True
-        Me.txtTranItemComment.Name = "txtTranItemComment"
-        Me.txtTranItemComment.Size = New System.Drawing.Size(365, 137)
-        Me.txtTranItemComment.TabIndex = 8
-        '
-        'pbxTLwQuant
-        '
-        Me.pbxTLwQuant.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pbxTLwQuant.Location = New System.Drawing.Point(345, 12)
-        Me.pbxTLwQuant.Name = "pbxTLwQuant"
-        Me.pbxTLwQuant.Size = New System.Drawing.Size(26, 35)
-        Me.pbxTLwQuant.TabIndex = 7
-        Me.pbxTLwQuant.TabStop = False
-        '
-        'cmbTranProgram
-        '
-        Me.cmbTranProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTranProgram.FormattingEnabled = True
-        Me.cmbTranProgram.Location = New System.Drawing.Point(6, 244)
-        Me.cmbTranProgram.Name = "cmbTranProgram"
-        Me.cmbTranProgram.Size = New System.Drawing.Size(121, 21)
-        Me.cmbTranProgram.TabIndex = 5
-        '
-        'cmbTranBin
-        '
-        Me.cmbTranBin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTranBin.FormattingEnabled = True
-        Me.cmbTranBin.Location = New System.Drawing.Point(280, 201)
-        Me.cmbTranBin.Name = "cmbTranBin"
-        Me.cmbTranBin.Size = New System.Drawing.Size(91, 21)
-        Me.cmbTranBin.TabIndex = 5
-        '
-        'cmbTranLocation
-        '
-        Me.cmbTranLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTranLocation.FormattingEnabled = True
-        Me.cmbTranLocation.Location = New System.Drawing.Point(135, 201)
-        Me.cmbTranLocation.Name = "cmbTranLocation"
-        Me.cmbTranLocation.Size = New System.Drawing.Size(139, 21)
-        Me.cmbTranLocation.TabIndex = 5
-        '
-        'cmbTranCondition
-        '
-        Me.cmbTranCondition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTranCondition.FormattingEnabled = True
-        Me.cmbTranCondition.Location = New System.Drawing.Point(6, 309)
-        Me.cmbTranCondition.Name = "cmbTranCondition"
-        Me.cmbTranCondition.Size = New System.Drawing.Size(121, 21)
-        Me.cmbTranCondition.TabIndex = 5
-        '
-        'cmbTranFacility
-        '
-        Me.cmbTranFacility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTranFacility.FormattingEnabled = True
-        Me.cmbTranFacility.Location = New System.Drawing.Point(6, 201)
-        Me.cmbTranFacility.Name = "cmbTranFacility"
-        Me.cmbTranFacility.Size = New System.Drawing.Size(123, 21)
-        Me.cmbTranFacility.TabIndex = 5
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Location = New System.Drawing.Point(6, 272)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(365, 6)
-        Me.PictureBox4.TabIndex = 4
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Location = New System.Drawing.Point(6, 168)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(365, 6)
-        Me.PictureBox3.TabIndex = 4
-        Me.PictureBox3.TabStop = False
-        '
-        'lblTranProgram
-        '
-        Me.lblTranProgram.AutoSize = True
-        Me.lblTranProgram.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranProgram.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranProgram.Location = New System.Drawing.Point(3, 228)
-        Me.lblTranProgram.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranProgram.Name = "lblTranProgram"
-        Me.lblTranProgram.Size = New System.Drawing.Size(52, 13)
-        Me.lblTranProgram.TabIndex = 1
-        Me.lblTranProgram.Text = "Program: "
-        '
-        'pnlTags
-        '
-        Me.pnlTags.Controls.Add(Me.btnTranTag)
-        Me.pnlTags.Location = New System.Drawing.Point(51, 66)
-        Me.pnlTags.Name = "pnlTags"
-        Me.pnlTags.Size = New System.Drawing.Size(320, 62)
-        Me.pnlTags.TabIndex = 3
-        '
-        'btnTranTag
-        '
-        Me.btnTranTag.AutoSize = True
-        Me.btnTranTag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnTranTag.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnTranTag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnTranTag.Cursor = System.Windows.Forms.Cursors.Default
-        Me.btnTranTag.FlatAppearance.BorderSize = 0
-        Me.btnTranTag.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTranTag.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTranTag.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnTranTag.Location = New System.Drawing.Point(3, 3)
-        Me.btnTranTag.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnTranTag.Name = "btnTranTag"
-        Me.btnTranTag.Size = New System.Drawing.Size(35, 23)
-        Me.btnTranTag.TabIndex = 17
-        Me.btnTranTag.Text = "tag"
-        Me.btnTranTag.UseVisualStyleBackColor = False
-        '
-        'lblTranBin
-        '
-        Me.lblTranBin.AutoSize = True
-        Me.lblTranBin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranBin.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranBin.Location = New System.Drawing.Point(277, 185)
-        Me.lblTranBin.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranBin.Name = "lblTranBin"
-        Me.lblTranBin.Size = New System.Drawing.Size(28, 13)
-        Me.lblTranBin.TabIndex = 1
-        Me.lblTranBin.Text = "Bin: "
-        '
-        'txtTranAddTags
-        '
-        Me.txtTranAddTags.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtTranAddTags.Location = New System.Drawing.Point(68, 137)
-        Me.txtTranAddTags.Name = "txtTranAddTags"
-        Me.txtTranAddTags.Size = New System.Drawing.Size(303, 20)
-        Me.txtTranAddTags.TabIndex = 2
-        '
-        'lblTranItemComment
-        '
-        Me.lblTranItemComment.AutoSize = True
-        Me.lblTranItemComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranItemComment.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranItemComment.Location = New System.Drawing.Point(3, 385)
-        Me.lblTranItemComment.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranItemComment.Name = "lblTranItemComment"
-        Me.lblTranItemComment.Size = New System.Drawing.Size(57, 13)
-        Me.lblTranItemComment.TabIndex = 1
-        Me.lblTranItemComment.Text = "Comment: "
-        '
-        'lblTranCondition
-        '
-        Me.lblTranCondition.AutoSize = True
-        Me.lblTranCondition.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranCondition.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranCondition.Location = New System.Drawing.Point(3, 293)
-        Me.lblTranCondition.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranCondition.Name = "lblTranCondition"
-        Me.lblTranCondition.Size = New System.Drawing.Size(57, 13)
-        Me.lblTranCondition.TabIndex = 1
-        Me.lblTranCondition.Text = "Condition: "
-        '
-        'lblTranLocation
-        '
-        Me.lblTranLocation.AutoSize = True
-        Me.lblTranLocation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranLocation.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranLocation.Location = New System.Drawing.Point(132, 185)
-        Me.lblTranLocation.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranLocation.Name = "lblTranLocation"
-        Me.lblTranLocation.Size = New System.Drawing.Size(54, 13)
-        Me.lblTranLocation.TabIndex = 1
-        Me.lblTranLocation.Text = "Location: "
-        '
-        'lblTranFaclity
-        '
-        Me.lblTranFaclity.AutoSize = True
-        Me.lblTranFaclity.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranFaclity.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranFaclity.Location = New System.Drawing.Point(3, 185)
-        Me.lblTranFaclity.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranFaclity.Name = "lblTranFaclity"
-        Me.lblTranFaclity.Size = New System.Drawing.Size(45, 13)
-        Me.lblTranFaclity.TabIndex = 1
-        Me.lblTranFaclity.Text = "Facility: "
-        '
-        'lblTranAddTags
-        '
-        Me.lblTranAddTags.AutoSize = True
-        Me.lblTranAddTags.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranAddTags.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranAddTags.Location = New System.Drawing.Point(8, 140)
-        Me.lblTranAddTags.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranAddTags.Name = "lblTranAddTags"
-        Me.lblTranAddTags.Size = New System.Drawing.Size(54, 13)
-        Me.lblTranAddTags.TabIndex = 1
-        Me.lblTranAddTags.Text = "Add Tag: "
-        '
-        'lblTranTags
-        '
-        Me.lblTranTags.AutoSize = True
-        Me.lblTranTags.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranTags.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranTags.Location = New System.Drawing.Point(8, 71)
-        Me.lblTranTags.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranTags.Name = "lblTranTags"
-        Me.lblTranTags.Size = New System.Drawing.Size(37, 13)
-        Me.lblTranTags.TabIndex = 1
-        Me.lblTranTags.Text = "Tags: "
-        '
-        'lblTSubCategory
-        '
-        Me.lblTSubCategory.AutoSize = True
-        Me.lblTSubCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTSubCategory.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTSubCategory.Location = New System.Drawing.Point(175, 50)
-        Me.lblTSubCategory.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTSubCategory.Name = "lblTSubCategory"
-        Me.lblTSubCategory.Size = New System.Drawing.Size(77, 13)
-        Me.lblTSubCategory.TabIndex = 1
-        Me.lblTSubCategory.Text = "Sub-Category: "
-        '
-        'lblTranCategory
-        '
-        Me.lblTranCategory.AutoSize = True
-        Me.lblTranCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranCategory.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranCategory.Location = New System.Drawing.Point(8, 50)
-        Me.lblTranCategory.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranCategory.Name = "lblTranCategory"
-        Me.lblTranCategory.Size = New System.Drawing.Size(55, 13)
-        Me.lblTranCategory.TabIndex = 1
-        Me.lblTranCategory.Text = "Category: "
-        '
-        'lblTranItemName
-        '
-        Me.lblTranItemName.AutoSize = True
-        Me.lblTranItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranItemName.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranItemName.Location = New System.Drawing.Point(7, 20)
-        Me.lblTranItemName.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranItemName.Name = "lblTranItemName"
-        Me.lblTranItemName.Size = New System.Drawing.Size(90, 20)
-        Me.lblTranItemName.TabIndex = 1
-        Me.lblTranItemName.Text = "Item Name"
-        '
-        'btnTranItemReset
-        '
-        Me.btnTranItemReset.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTranItemReset.Location = New System.Drawing.Point(296, 544)
-        Me.btnTranItemReset.Name = "btnTranItemReset"
-        Me.btnTranItemReset.Size = New System.Drawing.Size(75, 23)
-        Me.btnTranItemReset.TabIndex = 0
-        Me.btnTranItemReset.Text = "Reset"
-        Me.btnTranItemReset.UseVisualStyleBackColor = True
-        '
-        'btnTranItemAddNew
-        '
-        Me.btnTranItemAddNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnTranItemAddNew.Location = New System.Drawing.Point(6, 544)
-        Me.btnTranItemAddNew.Name = "btnTranItemAddNew"
-        Me.btnTranItemAddNew.Size = New System.Drawing.Size(91, 23)
-        Me.btnTranItemAddNew.TabIndex = 0
-        Me.btnTranItemAddNew.Text = "Add New Item"
-        Me.btnTranItemAddNew.UseVisualStyleBackColor = True
-        '
-        'btnTranItemAddToTran
-        '
-        Me.btnTranItemAddToTran.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTranItemAddToTran.Location = New System.Drawing.Point(178, 544)
-        Me.btnTranItemAddToTran.Name = "btnTranItemAddToTran"
-        Me.btnTranItemAddToTran.Size = New System.Drawing.Size(112, 23)
-        Me.btnTranItemAddToTran.TabIndex = 0
-        Me.btnTranItemAddToTran.Text = "Add To Transaction"
-        Me.btnTranItemAddToTran.UseVisualStyleBackColor = True
-        '
-        'txtSearchTran
-        '
-        Me.txtSearchTran.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtSearchTran.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.txtSearchTran.Location = New System.Drawing.Point(532, 18)
-        Me.txtSearchTran.Name = "txtSearchTran"
-        Me.txtSearchTran.Size = New System.Drawing.Size(160, 20)
-        Me.txtSearchTran.TabIndex = 4
-        Me.txtSearchTran.Text = "Search..."
-        '
-        'dgvTranItems
-        '
-        Me.dgvTranItems.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvTranItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTranItems.Location = New System.Drawing.Point(257, 288)
-        Me.dgvTranItems.Name = "dgvTranItems"
-        Me.dgvTranItems.Size = New System.Drawing.Size(435, 297)
-        Me.dgvTranItems.TabIndex = 3
-        '
-        'dgvTranCategories
-        '
-        Me.dgvTranCategories.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvTranCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTranCategories.Location = New System.Drawing.Point(257, 45)
-        Me.dgvTranCategories.Name = "dgvTranCategories"
-        Me.dgvTranCategories.Size = New System.Drawing.Size(435, 205)
-        Me.dgvTranCategories.TabIndex = 3
-        '
-        'grpInvTransInfo
-        '
-        Me.grpInvTransInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        'tbpSettings
+        '
+        Me.tbpSettings.Location = New System.Drawing.Point(4, 22)
+        Me.tbpSettings.Name = "tbpSettings"
+        Me.tbpSettings.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpSettings.TabIndex = 2
+        Me.tbpSettings.Text = "Settings"
+        Me.tbpSettings.UseVisualStyleBackColor = True
+        '
+        'tbpContacts
+        '
+        Me.tbpContacts.Controls.Add(Me.GroupBox4)
+        Me.tbpContacts.Controls.Add(Me.GroupBox3)
+        Me.tbpContacts.Controls.Add(Me.Label41)
+        Me.tbpContacts.Controls.Add(Me.Label40)
+        Me.tbpContacts.Controls.Add(Me.DataGridView7)
+        Me.tbpContacts.Controls.Add(Me.DataGridView6)
+        Me.tbpContacts.Location = New System.Drawing.Point(4, 22)
+        Me.tbpContacts.Name = "tbpContacts"
+        Me.tbpContacts.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpContacts.TabIndex = 5
+        Me.tbpContacts.Text = "Contacts"
+        Me.tbpContacts.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.Controls.Add(Me.TextBox23)
+        Me.GroupBox4.Controls.Add(Me.TextBox24)
+        Me.GroupBox4.Controls.Add(Me.TextBox25)
+        Me.GroupBox4.Controls.Add(Me.TextBox26)
+        Me.GroupBox4.Controls.Add(Me.TextBox27)
+        Me.GroupBox4.Controls.Add(Me.TextBox28)
+        Me.GroupBox4.Controls.Add(Me.TextBox29)
+        Me.GroupBox4.Controls.Add(Me.TextBox30)
+        Me.GroupBox4.Controls.Add(Me.Label20)
+        Me.GroupBox4.Controls.Add(Me.Label24)
+        Me.GroupBox4.Controls.Add(Me.Label60)
+        Me.GroupBox4.Controls.Add(Me.Label64)
+        Me.GroupBox4.Controls.Add(Me.Label65)
+        Me.GroupBox4.Controls.Add(Me.Label66)
+        Me.GroupBox4.Controls.Add(Me.Label67)
+        Me.GroupBox4.Controls.Add(Me.ComboBox16)
+        Me.GroupBox4.Controls.Add(Me.TextBox22)
+        Me.GroupBox4.Controls.Add(Me.Label12)
+        Me.GroupBox4.Controls.Add(Me.Label11)
+        Me.GroupBox4.Controls.Add(Me.Button14)
+        Me.GroupBox4.Controls.Add(Me.Button13)
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 297)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(447, 291)
+        Me.GroupBox4.TabIndex = 5
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "New Benefactor"
+        '
+        'TextBox23
+        '
+        Me.TextBox23.Location = New System.Drawing.Point(225, 150)
+        Me.TextBox23.Multiline = True
+        Me.TextBox23.Name = "TextBox23"
+        Me.TextBox23.Size = New System.Drawing.Size(216, 90)
+        Me.TextBox23.TabIndex = 41
+        '
+        'TextBox24
+        '
+        Me.TextBox24.Location = New System.Drawing.Point(58, 110)
+        Me.TextBox24.Name = "TextBox24"
+        Me.TextBox24.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox24.TabIndex = 40
+        '
+        'TextBox25
+        '
+        Me.TextBox25.Location = New System.Drawing.Point(125, 165)
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.Size = New System.Drawing.Size(48, 20)
+        Me.TextBox25.TabIndex = 39
+        '
+        'TextBox26
+        '
+        Me.TextBox26.Location = New System.Drawing.Point(58, 165)
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.Size = New System.Drawing.Size(26, 20)
+        Me.TextBox26.TabIndex = 38
+        '
+        'TextBox27
+        '
+        Me.TextBox27.Location = New System.Drawing.Point(58, 139)
+        Me.TextBox27.Name = "TextBox27"
+        Me.TextBox27.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox27.TabIndex = 37
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Location = New System.Drawing.Point(58, 84)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox28.TabIndex = 36
+        '
+        'TextBox29
+        '
+        Me.TextBox29.Location = New System.Drawing.Point(266, 110)
+        Me.TextBox29.Name = "TextBox29"
+        Me.TextBox29.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox29.TabIndex = 35
+        '
+        'TextBox30
+        '
+        Me.TextBox30.Location = New System.Drawing.Point(266, 84)
+        Me.TextBox30.Name = "TextBox30"
+        Me.TextBox30.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox30.TabIndex = 34
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(222, 134)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(54, 13)
+        Me.Label20.TabIndex = 33
+        Me.Label20.Text = "Comment:"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(222, 114)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(27, 13)
+        Me.Label24.TabIndex = 32
+        Me.Label24.Text = "Fax:"
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.Location = New System.Drawing.Point(100, 168)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(25, 13)
+        Me.Label60.TabIndex = 31
+        Me.Label60.Text = "Zip:"
+        '
+        'Label64
+        '
+        Me.Label64.AutoSize = True
+        Me.Label64.Location = New System.Drawing.Point(23, 168)
+        Me.Label64.Name = "Label64"
+        Me.Label64.Size = New System.Drawing.Size(35, 13)
+        Me.Label64.TabIndex = 30
+        Me.Label64.Text = "State:"
+        '
+        'Label65
+        '
+        Me.Label65.AutoSize = True
+        Me.Label65.Location = New System.Drawing.Point(30, 142)
+        Me.Label65.Name = "Label65"
+        Me.Label65.Size = New System.Drawing.Size(27, 13)
+        Me.Label65.TabIndex = 29
+        Me.Label65.Text = "City:"
+        '
+        'Label66
+        '
+        Me.Label66.AutoSize = True
+        Me.Label66.Location = New System.Drawing.Point(9, 87)
+        Me.Label66.Name = "Label66"
+        Me.Label66.Size = New System.Drawing.Size(48, 13)
+        Me.Label66.TabIndex = 28
+        Me.Label66.Text = "Address:"
+        '
+        'Label67
+        '
+        Me.Label67.AutoSize = True
+        Me.Label67.Location = New System.Drawing.Point(222, 88)
+        Me.Label67.Name = "Label67"
+        Me.Label67.Size = New System.Drawing.Size(41, 13)
+        Me.Label67.TabIndex = 27
+        Me.Label67.Text = "Phone:"
+        '
+        'ComboBox16
+        '
+        Me.ComboBox16.FormattingEnabled = True
+        Me.ComboBox16.Location = New System.Drawing.Point(315, 39)
+        Me.ComboBox16.Name = "ComboBox16"
+        Me.ComboBox16.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox16.TabIndex = 5
+        '
+        'TextBox22
+        '
+        Me.TextBox22.Location = New System.Drawing.Point(15, 40)
+        Me.TextBox22.Name = "TextBox22"
+        Me.TextBox22.Size = New System.Drawing.Size(173, 20)
+        Me.TextBox22.TabIndex = 4
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(312, 23)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(34, 13)
+        Me.Label12.TabIndex = 3
+        Me.Label12.Text = "Type:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(12, 23)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(38, 13)
+        Me.Label11.TabIndex = 2
+        Me.Label11.Text = "Name:"
+        '
+        'Button14
+        '
+        Me.Button14.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button14.Location = New System.Drawing.Point(361, 262)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(75, 23)
+        Me.Button14.TabIndex = 1
+        Me.Button14.Text = "Cancel"
+        Me.Button14.UseVisualStyleBackColor = True
+        '
+        'Button13
+        '
+        Me.Button13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button13.Location = New System.Drawing.Point(280, 262)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(75, 23)
+        Me.Button13.TabIndex = 0
+        Me.Button13.Text = "Submit"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactNameData)
-        Me.grpInvTransInfo.Controls.Add(Me.lnklblTranContactEmail)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactEmail)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactPhoneData)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactPhone)
-        Me.grpInvTransInfo.Controls.Add(Me.Label31)
-        Me.grpInvTransInfo.Controls.Add(Me.Label30)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactAddressData)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactAddress)
-        Me.grpInvTransInfo.Controls.Add(Me.txtTranComment)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTranComment)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTotalValue)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTotalValueData)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTotalIemsData)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTotalItems)
-        Me.grpInvTransInfo.Controls.Add(Me.btnSubmitTran)
-        Me.grpInvTransInfo.Controls.Add(Me.btnCancelTran)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTransType)
-        Me.grpInvTransInfo.Controls.Add(Me.cmbTranType)
-        Me.grpInvTransInfo.Controls.Add(Me.btnTranContactEdit)
-        Me.grpInvTransInfo.Controls.Add(Me.btnTranContactAdd)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactName)
-        Me.grpInvTransInfo.Controls.Add(Me.lblTranContact)
-        Me.grpInvTransInfo.Controls.Add(Me.txtTranContact)
-        Me.grpInvTransInfo.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.grpInvTransInfo.Location = New System.Drawing.Point(15, 12)
-        Me.grpInvTransInfo.Name = "grpInvTransInfo"
-        Me.grpInvTransInfo.Size = New System.Drawing.Size(225, 573)
-        Me.grpInvTransInfo.TabIndex = 2
-        Me.grpInvTransInfo.TabStop = False
-        Me.grpInvTransInfo.Text = "Transaction Info:"
+        Me.GroupBox3.Controls.Add(Me.ComboBox15)
+        Me.GroupBox3.Controls.Add(Me.Label9)
+        Me.GroupBox3.Controls.Add(Me.TextBox21)
+        Me.GroupBox3.Controls.Add(Me.TextBox20)
+        Me.GroupBox3.Controls.Add(Me.TextBox19)
+        Me.GroupBox3.Controls.Add(Me.TextBox18)
+        Me.GroupBox3.Controls.Add(Me.TextBox17)
+        Me.GroupBox3.Controls.Add(Me.TextBox16)
+        Me.GroupBox3.Controls.Add(Me.TextBox15)
+        Me.GroupBox3.Controls.Add(Me.TextBox14)
+        Me.GroupBox3.Controls.Add(Me.TextBox13)
+        Me.GroupBox3.Controls.Add(Me.TextBox12)
+        Me.GroupBox3.Controls.Add(Me.TextBox11)
+        Me.GroupBox3.Controls.Add(Me.TextBox10)
+        Me.GroupBox3.Controls.Add(Me.TextBox9)
+        Me.GroupBox3.Controls.Add(Me.Label59)
+        Me.GroupBox3.Controls.Add(Me.Label56)
+        Me.GroupBox3.Controls.Add(Me.Label55)
+        Me.GroupBox3.Controls.Add(Me.Label53)
+        Me.GroupBox3.Controls.Add(Me.Label52)
+        Me.GroupBox3.Controls.Add(Me.Label51)
+        Me.GroupBox3.Controls.Add(Me.Label50)
+        Me.GroupBox3.Controls.Add(Me.Label49)
+        Me.GroupBox3.Controls.Add(Me.Label48)
+        Me.GroupBox3.Controls.Add(Me.Label46)
+        Me.GroupBox3.Controls.Add(Me.Label43)
+        Me.GroupBox3.Controls.Add(Me.Label42)
+        Me.GroupBox3.Controls.Add(Me.Button11)
+        Me.GroupBox3.Controls.Add(Me.Button9)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 13)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(447, 278)
+        Me.GroupBox3.TabIndex = 4
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "New Contact"
         '
-        'lblTranContactNameData
+        'ComboBox15
         '
-        Me.lblTranContactNameData.AutoSize = True
-        Me.lblTranContactNameData.Location = New System.Drawing.Point(66, 166)
-        Me.lblTranContactNameData.Name = "lblTranContactNameData"
-        Me.lblTranContactNameData.Size = New System.Drawing.Size(90, 13)
-        Me.lblTranContactNameData.TabIndex = 19
-        Me.lblTranContactNameData.Text = "Benefactor Name"
+        Me.ComboBox15.FormattingEnabled = True
+        Me.ComboBox15.Location = New System.Drawing.Point(316, 33)
+        Me.ComboBox15.Name = "ComboBox15"
+        Me.ComboBox15.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox15.TabIndex = 28
         '
-        'lnklblTranContactEmail
+        'Label9
         '
-        Me.lnklblTranContactEmail.Location = New System.Drawing.Point(48, 115)
-        Me.lnklblTranContactEmail.Name = "lnklblTranContactEmail"
-        Me.lnklblTranContactEmail.Size = New System.Drawing.Size(171, 13)
-        Me.lnklblTranContactEmail.TabIndex = 18
-        Me.lnklblTranContactEmail.TabStop = True
-        Me.lnklblTranContactEmail.Text = "jake@abcinternational.com"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(313, 16)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(74, 13)
+        Me.Label9.TabIndex = 27
+        Me.Label9.Text = "Contact Type:"
         '
-        'lblTranContactEmail
+        'TextBox21
         '
-        Me.lblTranContactEmail.AutoSize = True
-        Me.lblTranContactEmail.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranContactEmail.Location = New System.Drawing.Point(7, 115)
-        Me.lblTranContactEmail.Name = "lblTranContactEmail"
-        Me.lblTranContactEmail.Size = New System.Drawing.Size(35, 13)
-        Me.lblTranContactEmail.TabIndex = 17
-        Me.lblTranContactEmail.Text = "Email:"
+        Me.TextBox21.Location = New System.Drawing.Point(225, 153)
+        Me.TextBox21.Multiline = True
+        Me.TextBox21.Name = "TextBox21"
+        Me.TextBox21.Size = New System.Drawing.Size(216, 90)
+        Me.TextBox21.TabIndex = 26
         '
-        'lblTranContactPhoneData
+        'TextBox20
         '
-        Me.lblTranContactPhoneData.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranContactPhoneData.Location = New System.Drawing.Point(54, 91)
-        Me.lblTranContactPhoneData.Name = "lblTranContactPhoneData"
-        Me.lblTranContactPhoneData.Size = New System.Drawing.Size(165, 13)
-        Me.lblTranContactPhoneData.TabIndex = 16
-        Me.lblTranContactPhoneData.Text = "(989)555-9688 x1151"
+        Me.TextBox20.Location = New System.Drawing.Point(16, 223)
+        Me.TextBox20.Name = "TextBox20"
+        Me.TextBox20.Size = New System.Drawing.Size(161, 20)
+        Me.TextBox20.TabIndex = 25
         '
-        'lblTranContactPhone
+        'TextBox19
         '
-        Me.lblTranContactPhone.AutoSize = True
-        Me.lblTranContactPhone.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranContactPhone.Location = New System.Drawing.Point(7, 91)
-        Me.lblTranContactPhone.Name = "lblTranContactPhone"
-        Me.lblTranContactPhone.Size = New System.Drawing.Size(41, 13)
-        Me.lblTranContactPhone.TabIndex = 15
-        Me.lblTranContactPhone.Text = "Phone:"
+        Me.TextBox19.Location = New System.Drawing.Point(61, 124)
+        Me.TextBox19.Name = "TextBox19"
+        Me.TextBox19.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox19.TabIndex = 24
         '
-        'Label31
+        'TextBox18
         '
-        Me.Label31.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label31.Location = New System.Drawing.Point(66, 245)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(153, 18)
-        Me.Label31.TabIndex = 14
-        Me.Label31.Text = "(989)555-9688 x1151"
+        Me.TextBox18.Location = New System.Drawing.Point(128, 179)
+        Me.TextBox18.Name = "TextBox18"
+        Me.TextBox18.Size = New System.Drawing.Size(48, 20)
+        Me.TextBox18.TabIndex = 23
         '
-        'Label30
+        'TextBox17
         '
-        Me.Label30.AutoSize = True
-        Me.Label30.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label30.Location = New System.Drawing.Point(7, 245)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(41, 13)
-        Me.Label30.TabIndex = 13
-        Me.Label30.Text = "Phone:"
+        Me.TextBox17.Location = New System.Drawing.Point(61, 179)
+        Me.TextBox17.Name = "TextBox17"
+        Me.TextBox17.Size = New System.Drawing.Size(26, 20)
+        Me.TextBox17.TabIndex = 22
         '
-        'lblTranContactAddressData
+        'TextBox16
         '
-        Me.lblTranContactAddressData.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranContactAddressData.Location = New System.Drawing.Point(66, 190)
-        Me.lblTranContactAddressData.Name = "lblTranContactAddressData"
-        Me.lblTranContactAddressData.Size = New System.Drawing.Size(153, 43)
-        Me.lblTranContactAddressData.TabIndex = 12
-        Me.lblTranContactAddressData.Text = "5555 Elm St." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Suite 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Saginaw, MI 48604"
+        Me.TextBox16.Location = New System.Drawing.Point(61, 153)
+        Me.TextBox16.Name = "TextBox16"
+        Me.TextBox16.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox16.TabIndex = 21
         '
-        'lblTranContactAddress
+        'TextBox15
         '
-        Me.lblTranContactAddress.AutoSize = True
-        Me.lblTranContactAddress.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranContactAddress.Location = New System.Drawing.Point(7, 190)
-        Me.lblTranContactAddress.Name = "lblTranContactAddress"
-        Me.lblTranContactAddress.Size = New System.Drawing.Size(48, 13)
-        Me.lblTranContactAddress.TabIndex = 11
-        Me.lblTranContactAddress.Text = "Address:"
+        Me.TextBox15.Location = New System.Drawing.Point(61, 98)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox15.TabIndex = 20
         '
-        'txtTranComment
+        'TextBox14
         '
-        Me.txtTranComment.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txtTranComment.Location = New System.Drawing.Point(6, 401)
-        Me.txtTranComment.Multiline = True
-        Me.txtTranComment.Name = "txtTranComment"
-        Me.txtTranComment.Size = New System.Drawing.Size(210, 137)
-        Me.txtTranComment.TabIndex = 10
+        Me.TextBox14.Location = New System.Drawing.Point(266, 61)
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.Size = New System.Drawing.Size(134, 20)
+        Me.TextBox14.TabIndex = 19
         '
-        'lblTranComment
+        'TextBox13
         '
-        Me.lblTranComment.AutoSize = True
-        Me.lblTranComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranComment.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranComment.Location = New System.Drawing.Point(3, 385)
-        Me.lblTranComment.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranComment.Name = "lblTranComment"
-        Me.lblTranComment.Size = New System.Drawing.Size(57, 13)
-        Me.lblTranComment.TabIndex = 9
-        Me.lblTranComment.Text = "Comment: "
+        Me.TextBox13.Location = New System.Drawing.Point(266, 113)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox13.TabIndex = 18
         '
-        'lblTotalValue
+        'TextBox12
         '
-        Me.lblTotalValue.AutoSize = True
-        Me.lblTotalValue.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTotalValue.Location = New System.Drawing.Point(71, 358)
-        Me.lblTotalValue.Name = "lblTotalValue"
-        Me.lblTotalValue.Size = New System.Drawing.Size(64, 13)
-        Me.lblTotalValue.TabIndex = 6
-        Me.lblTotalValue.Text = "Total Value:"
+        Me.TextBox12.Location = New System.Drawing.Point(266, 87)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox12.TabIndex = 17
         '
-        'lblTotalValueData
+        'TextBox11
         '
-        Me.lblTotalValueData.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTotalValueData.Location = New System.Drawing.Point(141, 358)
-        Me.lblTotalValueData.Name = "lblTotalValueData"
-        Me.lblTotalValueData.Size = New System.Drawing.Size(75, 13)
-        Me.lblTotalValueData.TabIndex = 6
-        Me.lblTotalValueData.Text = "0"
-        Me.lblTotalValueData.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.TextBox11.Location = New System.Drawing.Point(63, 65)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(72, 20)
+        Me.TextBox11.TabIndex = 16
         '
-        'lblTotalIemsData
+        'TextBox10
         '
-        Me.lblTotalIemsData.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTotalIemsData.Location = New System.Drawing.Point(141, 339)
-        Me.lblTotalIemsData.Name = "lblTotalIemsData"
-        Me.lblTotalIemsData.Size = New System.Drawing.Size(75, 13)
-        Me.lblTotalIemsData.TabIndex = 6
-        Me.lblTotalIemsData.Text = "0"
-        Me.lblTotalIemsData.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.TextBox10.Location = New System.Drawing.Point(88, 33)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox10.TabIndex = 15
         '
-        'lblTotalItems
+        'TextBox9
         '
-        Me.lblTotalItems.AutoSize = True
-        Me.lblTotalItems.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTotalItems.Location = New System.Drawing.Point(71, 339)
-        Me.lblTotalItems.Name = "lblTotalItems"
-        Me.lblTotalItems.Size = New System.Drawing.Size(62, 13)
-        Me.lblTotalItems.TabIndex = 6
-        Me.lblTotalItems.Text = "Total Items:"
+        Me.TextBox9.Location = New System.Drawing.Point(6, 33)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(76, 20)
+        Me.TextBox9.TabIndex = 14
         '
-        'btnSubmitTran
+        'Label59
         '
-        Me.btnSubmitTran.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSubmitTran.Location = New System.Drawing.Point(26, 544)
-        Me.btnSubmitTran.Name = "btnSubmitTran"
-        Me.btnSubmitTran.Size = New System.Drawing.Size(109, 23)
-        Me.btnSubmitTran.TabIndex = 5
-        Me.btnSubmitTran.Text = "Submit Transaction"
-        Me.btnSubmitTran.UseVisualStyleBackColor = True
+        Me.Label59.AutoSize = True
+        Me.Label59.Location = New System.Drawing.Point(222, 137)
+        Me.Label59.Name = "Label59"
+        Me.Label59.Size = New System.Drawing.Size(54, 13)
+        Me.Label59.TabIndex = 13
+        Me.Label59.Text = "Comment:"
         '
-        'btnCancelTran
+        'Label56
         '
-        Me.btnCancelTran.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancelTran.Location = New System.Drawing.Point(141, 544)
-        Me.btnCancelTran.Name = "btnCancelTran"
-        Me.btnCancelTran.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelTran.TabIndex = 5
-        Me.btnCancelTran.Text = "Cancel"
-        Me.btnCancelTran.UseVisualStyleBackColor = True
+        Me.Label56.AutoSize = True
+        Me.Label56.Location = New System.Drawing.Point(13, 207)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(107, 13)
+        Me.Label56.TabIndex = 12
+        Me.Label56.Text = "Benefactor Affiliation:"
         '
-        'lblTransType
+        'Label55
         '
-        Me.lblTransType.AutoSize = True
-        Me.lblTransType.Location = New System.Drawing.Point(7, 22)
-        Me.lblTransType.Name = "lblTransType"
-        Me.lblTransType.Size = New System.Drawing.Size(34, 13)
-        Me.lblTransType.TabIndex = 4
-        Me.lblTransType.Text = "Type:"
+        Me.Label55.AutoSize = True
+        Me.Label55.Location = New System.Drawing.Point(222, 117)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(27, 13)
+        Me.Label55.TabIndex = 11
+        Me.Label55.Text = "Fax:"
         '
-        'cmbTranType
+        'Label53
         '
-        Me.cmbTranType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTranType.FormattingEnabled = True
-        Me.cmbTranType.Location = New System.Drawing.Point(44, 19)
-        Me.cmbTranType.Name = "cmbTranType"
-        Me.cmbTranType.Size = New System.Drawing.Size(87, 21)
-        Me.cmbTranType.TabIndex = 3
+        Me.Label53.AutoSize = True
+        Me.Label53.Location = New System.Drawing.Point(103, 182)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(25, 13)
+        Me.Label53.TabIndex = 10
+        Me.Label53.Text = "Zip:"
         '
-        'btnTranContactEdit
+        'Label52
         '
-        Me.btnTranContactEdit.Location = New System.Drawing.Point(191, 60)
-        Me.btnTranContactEdit.Name = "btnTranContactEdit"
-        Me.btnTranContactEdit.Size = New System.Drawing.Size(28, 20)
-        Me.btnTranContactEdit.TabIndex = 2
-        Me.btnTranContactEdit.Text = "e"
-        Me.btnTranContactEdit.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnTranContactEdit.UseVisualStyleBackColor = True
+        Me.Label52.AutoSize = True
+        Me.Label52.Location = New System.Drawing.Point(26, 182)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(35, 13)
+        Me.Label52.TabIndex = 9
+        Me.Label52.Text = "State:"
         '
-        'btnTranContactAdd
+        'Label51
         '
-        Me.btnTranContactAdd.Location = New System.Drawing.Point(161, 60)
-        Me.btnTranContactAdd.Name = "btnTranContactAdd"
-        Me.btnTranContactAdd.Size = New System.Drawing.Size(28, 20)
-        Me.btnTranContactAdd.TabIndex = 2
-        Me.btnTranContactAdd.Text = "+"
-        Me.btnTranContactAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnTranContactAdd.UseVisualStyleBackColor = True
+        Me.Label51.AutoSize = True
+        Me.Label51.Location = New System.Drawing.Point(33, 156)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(27, 13)
+        Me.Label51.TabIndex = 8
+        Me.Label51.Text = "City:"
         '
-        'lblTranContactName
+        'Label50
         '
-        Me.lblTranContactName.AutoSize = True
-        Me.lblTranContactName.Location = New System.Drawing.Point(7, 166)
-        Me.lblTranContactName.Name = "lblTranContactName"
-        Me.lblTranContactName.Size = New System.Drawing.Size(62, 13)
-        Me.lblTranContactName.TabIndex = 1
-        Me.lblTranContactName.Text = "Benefactor:"
+        Me.Label50.AutoSize = True
+        Me.Label50.Location = New System.Drawing.Point(12, 101)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(48, 13)
+        Me.Label50.TabIndex = 7
+        Me.Label50.Text = "Address:"
         '
-        'lblTranContact
+        'Label49
         '
-        Me.lblTranContact.AutoSize = True
-        Me.lblTranContact.Location = New System.Drawing.Point(7, 63)
-        Me.lblTranContact.Name = "lblTranContact"
-        Me.lblTranContact.Size = New System.Drawing.Size(47, 13)
-        Me.lblTranContact.TabIndex = 1
-        Me.lblTranContact.Text = "Contact:"
+        Me.Label49.AutoSize = True
+        Me.Label49.Location = New System.Drawing.Point(222, 65)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(35, 13)
+        Me.Label49.TabIndex = 6
+        Me.Label49.Text = "Email:"
         '
-        'txtTranContact
+        'Label48
         '
-        Me.txtTranContact.Location = New System.Drawing.Point(69, 60)
-        Me.txtTranContact.Name = "txtTranContact"
-        Me.txtTranContact.Size = New System.Drawing.Size(86, 20)
-        Me.txtTranContact.TabIndex = 0
+        Me.Label48.AutoSize = True
+        Me.Label48.Location = New System.Drawing.Point(222, 91)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(41, 13)
+        Me.Label48.TabIndex = 5
+        Me.Label48.Text = "Phone:"
         '
-        'cmbTranFilterBySubCategory
+        'Label46
         '
-        Me.cmbTranFilterBySubCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTranFilterBySubCategory.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbTranFilterBySubCategory.FormattingEnabled = True
-        Me.cmbTranFilterBySubCategory.Location = New System.Drawing.Point(400, 18)
-        Me.cmbTranFilterBySubCategory.Name = "cmbTranFilterBySubCategory"
-        Me.cmbTranFilterBySubCategory.Size = New System.Drawing.Size(126, 21)
-        Me.cmbTranFilterBySubCategory.TabIndex = 0
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(13, 68)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(50, 13)
+        Me.Label46.TabIndex = 4
+        Me.Label46.Text = "Job Title:"
         '
-        'cmbTranFilterByCategory
+        'Label43
         '
-        Me.cmbTranFilterByCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTranFilterByCategory.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.cmbTranFilterByCategory.FormattingEnabled = True
-        Me.cmbTranFilterByCategory.Location = New System.Drawing.Point(257, 18)
-        Me.cmbTranFilterByCategory.Name = "cmbTranFilterByCategory"
-        Me.cmbTranFilterByCategory.Size = New System.Drawing.Size(137, 21)
-        Me.cmbTranFilterByCategory.TabIndex = 0
+        Me.Label43.AutoSize = True
+        Me.Label43.Location = New System.Drawing.Point(85, 17)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(61, 13)
+        Me.Label43.TabIndex = 3
+        Me.Label43.Text = "Last Name:"
         '
-        'tbpItmManag
+        'Label42
         '
-        Me.tbpItmManag.Location = New System.Drawing.Point(4, 22)
-        Me.tbpItmManag.Name = "tbpItmManag"
-        Me.tbpItmManag.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpItmManag.Size = New System.Drawing.Size(1089, 601)
-        Me.tbpItmManag.TabIndex = 1
-        Me.tbpItmManag.Text = "Item Manager"
-        Me.tbpItmManag.UseVisualStyleBackColor = True
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(3, 17)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(60, 13)
+        Me.Label42.TabIndex = 2
+        Me.Label42.Text = "First Name:"
+        '
+        'Button11
+        '
+        Me.Button11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button11.Location = New System.Drawing.Point(366, 249)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(75, 23)
+        Me.Button11.TabIndex = 1
+        Me.Button11.Text = "Cancel"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button9.Location = New System.Drawing.Point(285, 249)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(75, 23)
+        Me.Button9.TabIndex = 0
+        Me.Button9.Text = "Submit"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Label41
+        '
+        Me.Label41.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(458, 297)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(64, 13)
+        Me.Label41.TabIndex = 3
+        Me.Label41.Text = "Benefactors"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(458, 13)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(52, 13)
+        Me.Label40.TabIndex = 2
+        Me.Label40.Text = "Contacts:"
+        '
+        'DataGridView7
+        '
+        Me.DataGridView7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView7.Location = New System.Drawing.Point(461, 313)
+        Me.DataGridView7.Name = "DataGridView7"
+        Me.DataGridView7.Size = New System.Drawing.Size(620, 275)
+        Me.DataGridView7.TabIndex = 1
+        '
+        'DataGridView6
+        '
+        Me.DataGridView6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView6.Location = New System.Drawing.Point(461, 29)
+        Me.DataGridView6.Name = "DataGridView6"
+        Me.DataGridView6.Size = New System.Drawing.Size(620, 262)
+        Me.DataGridView6.TabIndex = 0
         '
         'tbpReports
         '
@@ -2460,550 +1993,1017 @@ Partial Class frmMain
         Me.Label68.TabIndex = 0
         Me.Label68.Text = "Wishlist Builder"
         '
-        'tbpContacts
-        '
-        Me.tbpContacts.Controls.Add(Me.GroupBox4)
-        Me.tbpContacts.Controls.Add(Me.GroupBox3)
-        Me.tbpContacts.Controls.Add(Me.Label41)
-        Me.tbpContacts.Controls.Add(Me.Label40)
-        Me.tbpContacts.Controls.Add(Me.DataGridView7)
-        Me.tbpContacts.Controls.Add(Me.DataGridView6)
-        Me.tbpContacts.Location = New System.Drawing.Point(4, 22)
-        Me.tbpContacts.Name = "tbpContacts"
-        Me.tbpContacts.Size = New System.Drawing.Size(1089, 601)
-        Me.tbpContacts.TabIndex = 5
-        Me.tbpContacts.Text = "Contacts"
-        Me.tbpContacts.UseVisualStyleBackColor = True
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox4.Controls.Add(Me.TextBox23)
-        Me.GroupBox4.Controls.Add(Me.TextBox24)
-        Me.GroupBox4.Controls.Add(Me.TextBox25)
-        Me.GroupBox4.Controls.Add(Me.TextBox26)
-        Me.GroupBox4.Controls.Add(Me.TextBox27)
-        Me.GroupBox4.Controls.Add(Me.TextBox28)
-        Me.GroupBox4.Controls.Add(Me.TextBox29)
-        Me.GroupBox4.Controls.Add(Me.TextBox30)
-        Me.GroupBox4.Controls.Add(Me.Label20)
-        Me.GroupBox4.Controls.Add(Me.Label24)
-        Me.GroupBox4.Controls.Add(Me.Label60)
-        Me.GroupBox4.Controls.Add(Me.Label64)
-        Me.GroupBox4.Controls.Add(Me.Label65)
-        Me.GroupBox4.Controls.Add(Me.Label66)
-        Me.GroupBox4.Controls.Add(Me.Label67)
-        Me.GroupBox4.Controls.Add(Me.ComboBox16)
-        Me.GroupBox4.Controls.Add(Me.TextBox22)
-        Me.GroupBox4.Controls.Add(Me.Label12)
-        Me.GroupBox4.Controls.Add(Me.Label11)
-        Me.GroupBox4.Controls.Add(Me.Button14)
-        Me.GroupBox4.Controls.Add(Me.Button13)
-        Me.GroupBox4.Location = New System.Drawing.Point(8, 297)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(447, 291)
-        Me.GroupBox4.TabIndex = 5
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "New Benefactor"
-        '
-        'TextBox23
-        '
-        Me.TextBox23.Location = New System.Drawing.Point(225, 150)
-        Me.TextBox23.Multiline = True
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.Size = New System.Drawing.Size(216, 90)
-        Me.TextBox23.TabIndex = 41
-        '
-        'TextBox24
-        '
-        Me.TextBox24.Location = New System.Drawing.Point(58, 110)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(115, 20)
-        Me.TextBox24.TabIndex = 40
-        '
-        'TextBox25
-        '
-        Me.TextBox25.Location = New System.Drawing.Point(125, 165)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(48, 20)
-        Me.TextBox25.TabIndex = 39
-        '
-        'TextBox26
-        '
-        Me.TextBox26.Location = New System.Drawing.Point(58, 165)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.Size = New System.Drawing.Size(26, 20)
-        Me.TextBox26.TabIndex = 38
-        '
-        'TextBox27
-        '
-        Me.TextBox27.Location = New System.Drawing.Point(58, 139)
-        Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.Size = New System.Drawing.Size(115, 20)
-        Me.TextBox27.TabIndex = 37
-        '
-        'TextBox28
-        '
-        Me.TextBox28.Location = New System.Drawing.Point(58, 84)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(115, 20)
-        Me.TextBox28.TabIndex = 36
-        '
-        'TextBox29
-        '
-        Me.TextBox29.Location = New System.Drawing.Point(266, 110)
-        Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox29.TabIndex = 35
-        '
-        'TextBox30
-        '
-        Me.TextBox30.Location = New System.Drawing.Point(266, 84)
-        Me.TextBox30.Name = "TextBox30"
-        Me.TextBox30.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox30.TabIndex = 34
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(222, 134)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(54, 13)
-        Me.Label20.TabIndex = 33
-        Me.Label20.Text = "Comment:"
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(222, 114)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(27, 13)
-        Me.Label24.TabIndex = 32
-        Me.Label24.Text = "Fax:"
-        '
-        'Label60
-        '
-        Me.Label60.AutoSize = True
-        Me.Label60.Location = New System.Drawing.Point(100, 168)
-        Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(25, 13)
-        Me.Label60.TabIndex = 31
-        Me.Label60.Text = "Zip:"
-        '
-        'Label64
-        '
-        Me.Label64.AutoSize = True
-        Me.Label64.Location = New System.Drawing.Point(23, 168)
-        Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(35, 13)
-        Me.Label64.TabIndex = 30
-        Me.Label64.Text = "State:"
-        '
-        'Label65
-        '
-        Me.Label65.AutoSize = True
-        Me.Label65.Location = New System.Drawing.Point(30, 142)
-        Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(27, 13)
-        Me.Label65.TabIndex = 29
-        Me.Label65.Text = "City:"
-        '
-        'Label66
-        '
-        Me.Label66.AutoSize = True
-        Me.Label66.Location = New System.Drawing.Point(9, 87)
-        Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(48, 13)
-        Me.Label66.TabIndex = 28
-        Me.Label66.Text = "Address:"
-        '
-        'Label67
-        '
-        Me.Label67.AutoSize = True
-        Me.Label67.Location = New System.Drawing.Point(222, 88)
-        Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(41, 13)
-        Me.Label67.TabIndex = 27
-        Me.Label67.Text = "Phone:"
-        '
-        'ComboBox16
-        '
-        Me.ComboBox16.FormattingEnabled = True
-        Me.ComboBox16.Location = New System.Drawing.Point(315, 39)
-        Me.ComboBox16.Name = "ComboBox16"
-        Me.ComboBox16.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox16.TabIndex = 5
-        '
-        'TextBox22
-        '
-        Me.TextBox22.Location = New System.Drawing.Point(15, 40)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(173, 20)
-        Me.TextBox22.TabIndex = 4
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(312, 23)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(34, 13)
-        Me.Label12.TabIndex = 3
-        Me.Label12.Text = "Type:"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(12, 23)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(38, 13)
-        Me.Label11.TabIndex = 2
-        Me.Label11.Text = "Name:"
-        '
-        'Button14
-        '
-        Me.Button14.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button14.Location = New System.Drawing.Point(361, 262)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(75, 23)
-        Me.Button14.TabIndex = 1
-        Me.Button14.Text = "Cancel"
-        Me.Button14.UseVisualStyleBackColor = True
-        '
-        'Button13
-        '
-        Me.Button13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button13.Location = New System.Drawing.Point(280, 262)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(75, 23)
-        Me.Button13.TabIndex = 0
-        Me.Button13.Text = "Submit"
-        Me.Button13.UseVisualStyleBackColor = True
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox3.Controls.Add(Me.ComboBox15)
-        Me.GroupBox3.Controls.Add(Me.Label9)
-        Me.GroupBox3.Controls.Add(Me.TextBox21)
-        Me.GroupBox3.Controls.Add(Me.TextBox20)
-        Me.GroupBox3.Controls.Add(Me.TextBox19)
-        Me.GroupBox3.Controls.Add(Me.TextBox18)
-        Me.GroupBox3.Controls.Add(Me.TextBox17)
-        Me.GroupBox3.Controls.Add(Me.TextBox16)
-        Me.GroupBox3.Controls.Add(Me.TextBox15)
-        Me.GroupBox3.Controls.Add(Me.TextBox14)
-        Me.GroupBox3.Controls.Add(Me.TextBox13)
-        Me.GroupBox3.Controls.Add(Me.TextBox12)
-        Me.GroupBox3.Controls.Add(Me.TextBox11)
-        Me.GroupBox3.Controls.Add(Me.TextBox10)
-        Me.GroupBox3.Controls.Add(Me.TextBox9)
-        Me.GroupBox3.Controls.Add(Me.Label59)
-        Me.GroupBox3.Controls.Add(Me.Label56)
-        Me.GroupBox3.Controls.Add(Me.Label55)
-        Me.GroupBox3.Controls.Add(Me.Label53)
-        Me.GroupBox3.Controls.Add(Me.Label52)
-        Me.GroupBox3.Controls.Add(Me.Label51)
-        Me.GroupBox3.Controls.Add(Me.Label50)
-        Me.GroupBox3.Controls.Add(Me.Label49)
-        Me.GroupBox3.Controls.Add(Me.Label48)
-        Me.GroupBox3.Controls.Add(Me.Label46)
-        Me.GroupBox3.Controls.Add(Me.Label43)
-        Me.GroupBox3.Controls.Add(Me.Label42)
-        Me.GroupBox3.Controls.Add(Me.Button11)
-        Me.GroupBox3.Controls.Add(Me.Button9)
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 13)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(447, 278)
-        Me.GroupBox3.TabIndex = 4
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "New Contact"
-        '
-        'ComboBox15
-        '
-        Me.ComboBox15.FormattingEnabled = True
-        Me.ComboBox15.Location = New System.Drawing.Point(316, 33)
-        Me.ComboBox15.Name = "ComboBox15"
-        Me.ComboBox15.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox15.TabIndex = 28
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(313, 16)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(74, 13)
-        Me.Label9.TabIndex = 27
-        Me.Label9.Text = "Contact Type:"
-        '
-        'TextBox21
-        '
-        Me.TextBox21.Location = New System.Drawing.Point(225, 153)
-        Me.TextBox21.Multiline = True
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(216, 90)
-        Me.TextBox21.TabIndex = 26
-        '
-        'TextBox20
-        '
-        Me.TextBox20.Location = New System.Drawing.Point(16, 223)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(161, 20)
-        Me.TextBox20.TabIndex = 25
-        '
-        'TextBox19
-        '
-        Me.TextBox19.Location = New System.Drawing.Point(61, 124)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(115, 20)
-        Me.TextBox19.TabIndex = 24
-        '
-        'TextBox18
-        '
-        Me.TextBox18.Location = New System.Drawing.Point(128, 179)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(48, 20)
-        Me.TextBox18.TabIndex = 23
-        '
-        'TextBox17
-        '
-        Me.TextBox17.Location = New System.Drawing.Point(61, 179)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(26, 20)
-        Me.TextBox17.TabIndex = 22
-        '
-        'TextBox16
-        '
-        Me.TextBox16.Location = New System.Drawing.Point(61, 153)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(115, 20)
-        Me.TextBox16.TabIndex = 21
-        '
-        'TextBox15
-        '
-        Me.TextBox15.Location = New System.Drawing.Point(61, 98)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(115, 20)
-        Me.TextBox15.TabIndex = 20
-        '
-        'TextBox14
-        '
-        Me.TextBox14.Location = New System.Drawing.Point(266, 61)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(134, 20)
-        Me.TextBox14.TabIndex = 19
-        '
-        'TextBox13
-        '
-        Me.TextBox13.Location = New System.Drawing.Point(266, 113)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox13.TabIndex = 18
-        '
-        'TextBox12
-        '
-        Me.TextBox12.Location = New System.Drawing.Point(266, 87)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox12.TabIndex = 17
-        '
-        'TextBox11
-        '
-        Me.TextBox11.Location = New System.Drawing.Point(63, 65)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(72, 20)
-        Me.TextBox11.TabIndex = 16
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Location = New System.Drawing.Point(88, 33)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox10.TabIndex = 15
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(6, 33)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(76, 20)
-        Me.TextBox9.TabIndex = 14
-        '
-        'Label59
-        '
-        Me.Label59.AutoSize = True
-        Me.Label59.Location = New System.Drawing.Point(222, 137)
-        Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(54, 13)
-        Me.Label59.TabIndex = 13
-        Me.Label59.Text = "Comment:"
-        '
-        'Label56
-        '
-        Me.Label56.AutoSize = True
-        Me.Label56.Location = New System.Drawing.Point(13, 207)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(107, 13)
-        Me.Label56.TabIndex = 12
-        Me.Label56.Text = "Benefactor Affiliation:"
-        '
-        'Label55
-        '
-        Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(222, 117)
-        Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(27, 13)
-        Me.Label55.TabIndex = 11
-        Me.Label55.Text = "Fax:"
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(103, 182)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(25, 13)
-        Me.Label53.TabIndex = 10
-        Me.Label53.Text = "Zip:"
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(26, 182)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(35, 13)
-        Me.Label52.TabIndex = 9
-        Me.Label52.Text = "State:"
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(33, 156)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(27, 13)
-        Me.Label51.TabIndex = 8
-        Me.Label51.Text = "City:"
-        '
-        'Label50
-        '
-        Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(12, 101)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(48, 13)
-        Me.Label50.TabIndex = 7
-        Me.Label50.Text = "Address:"
-        '
-        'Label49
-        '
-        Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(222, 65)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(35, 13)
-        Me.Label49.TabIndex = 6
-        Me.Label49.Text = "Email:"
-        '
-        'Label48
-        '
-        Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(222, 91)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(41, 13)
-        Me.Label48.TabIndex = 5
-        Me.Label48.Text = "Phone:"
-        '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(13, 68)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(50, 13)
-        Me.Label46.TabIndex = 4
-        Me.Label46.Text = "Job Title:"
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(85, 17)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(61, 13)
-        Me.Label43.TabIndex = 3
-        Me.Label43.Text = "Last Name:"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(3, 17)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(60, 13)
-        Me.Label42.TabIndex = 2
-        Me.Label42.Text = "First Name:"
-        '
-        'Button11
-        '
-        Me.Button11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button11.Location = New System.Drawing.Point(366, 249)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(75, 23)
-        Me.Button11.TabIndex = 1
-        Me.Button11.Text = "Cancel"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button9.Location = New System.Drawing.Point(285, 249)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(75, 23)
-        Me.Button9.TabIndex = 0
-        Me.Button9.Text = "Submit"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'Label41
-        '
-        Me.Label41.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(458, 297)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(64, 13)
-        Me.Label41.TabIndex = 3
-        Me.Label41.Text = "Benefactors"
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(458, 13)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(52, 13)
-        Me.Label40.TabIndex = 2
-        Me.Label40.Text = "Contacts:"
-        '
-        'DataGridView7
-        '
-        Me.DataGridView7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        'tbpItmManag
+        '
+        Me.tbpItmManag.Location = New System.Drawing.Point(4, 22)
+        Me.tbpItmManag.Name = "tbpItmManag"
+        Me.tbpItmManag.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbpItmManag.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpItmManag.TabIndex = 1
+        Me.tbpItmManag.Text = "Item Manager"
+        Me.tbpItmManag.UseVisualStyleBackColor = True
+        '
+        'tbpInvTrans
+        '
+        Me.tbpInvTrans.Controls.Add(Me.lblTranItems)
+        Me.tbpInvTrans.Controls.Add(Me.grpTranItems)
+        Me.tbpInvTrans.Controls.Add(Me.txtSearchTran)
+        Me.tbpInvTrans.Controls.Add(Me.dgvTranItems)
+        Me.tbpInvTrans.Controls.Add(Me.dgvTranCategories)
+        Me.tbpInvTrans.Controls.Add(Me.grpInvTransInfo)
+        Me.tbpInvTrans.Controls.Add(Me.cmbTranFilterBySubCategory)
+        Me.tbpInvTrans.Controls.Add(Me.cmbTranFilterByCategory)
+        Me.tbpInvTrans.Location = New System.Drawing.Point(4, 22)
+        Me.tbpInvTrans.Name = "tbpInvTrans"
+        Me.tbpInvTrans.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpInvTrans.TabIndex = 3
+        Me.tbpInvTrans.Text = "Inventory Transaction"
+        Me.tbpInvTrans.UseVisualStyleBackColor = True
+        '
+        'lblTranItems
+        '
+        Me.lblTranItems.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblTranItems.AutoSize = True
+        Me.lblTranItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranItems.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranItems.Location = New System.Drawing.Point(254, 271)
+        Me.lblTranItems.Name = "lblTranItems"
+        Me.lblTranItems.Size = New System.Drawing.Size(125, 15)
+        Me.lblTranItems.TabIndex = 6
+        Me.lblTranItems.Text = "Transaction Items:"
+        '
+        'grpTranItems
+        '
+        Me.grpTranItems.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView7.Location = New System.Drawing.Point(461, 313)
-        Me.DataGridView7.Name = "DataGridView7"
-        Me.DataGridView7.Size = New System.Drawing.Size(620, 275)
-        Me.DataGridView7.TabIndex = 1
+        Me.grpTranItems.Controls.Add(Me.lblTranTotalLineValueData)
+        Me.grpTranItems.Controls.Add(Me.lblTranTotalLineValue)
+        Me.grpTranItems.Controls.Add(Me.lblTranOnHandData)
+        Me.grpTranItems.Controls.Add(Me.lnkTranReset)
+        Me.grpTranItems.Controls.Add(Me.txtTranValue)
+        Me.grpTranItems.Controls.Add(Me.nudTranQty)
+        Me.grpTranItems.Controls.Add(Me.lblTranOnHand)
+        Me.grpTranItems.Controls.Add(Me.lblTranValue)
+        Me.grpTranItems.Controls.Add(Me.lblTranQty)
+        Me.grpTranItems.Controls.Add(Me.lblSelectedItemSubCategory)
+        Me.grpTranItems.Controls.Add(Me.lblSelectedItemCategory)
+        Me.grpTranItems.Controls.Add(Me.txtTranItemComment)
+        Me.grpTranItems.Controls.Add(Me.pbxTLwQuant)
+        Me.grpTranItems.Controls.Add(Me.cmbTranProgram)
+        Me.grpTranItems.Controls.Add(Me.cmbTranBin)
+        Me.grpTranItems.Controls.Add(Me.cmbTranLocation)
+        Me.grpTranItems.Controls.Add(Me.cmbTranCondition)
+        Me.grpTranItems.Controls.Add(Me.cmbTranFacility)
+        Me.grpTranItems.Controls.Add(Me.PictureBox4)
+        Me.grpTranItems.Controls.Add(Me.PictureBox3)
+        Me.grpTranItems.Controls.Add(Me.lblTranProgram)
+        Me.grpTranItems.Controls.Add(Me.pnlTags)
+        Me.grpTranItems.Controls.Add(Me.lblTranBin)
+        Me.grpTranItems.Controls.Add(Me.txtTranAddTags)
+        Me.grpTranItems.Controls.Add(Me.lblTranItemComment)
+        Me.grpTranItems.Controls.Add(Me.lblTranCondition)
+        Me.grpTranItems.Controls.Add(Me.lblTranLocation)
+        Me.grpTranItems.Controls.Add(Me.lblTranFaclity)
+        Me.grpTranItems.Controls.Add(Me.lblTranAddTags)
+        Me.grpTranItems.Controls.Add(Me.lblTranTags)
+        Me.grpTranItems.Controls.Add(Me.lblTSubCategory)
+        Me.grpTranItems.Controls.Add(Me.lblTranCategory)
+        Me.grpTranItems.Controls.Add(Me.lblTranItemName)
+        Me.grpTranItems.Controls.Add(Me.btnTranItemReset)
+        Me.grpTranItems.Controls.Add(Me.btnTranItemAddNew)
+        Me.grpTranItems.Controls.Add(Me.btnTranItemAddToTran)
+        Me.grpTranItems.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.grpTranItems.Location = New System.Drawing.Point(698, 12)
+        Me.grpTranItems.Name = "grpTranItems"
+        Me.grpTranItems.Size = New System.Drawing.Size(377, 573)
+        Me.grpTranItems.TabIndex = 5
+        Me.grpTranItems.TabStop = False
+        Me.grpTranItems.Text = "Item:"
         '
-        'DataGridView6
+        'lblTranTotalLineValueData
         '
-        Me.DataGridView6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.lblTranTotalLineValueData.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblTranTotalLineValueData.Location = New System.Drawing.Point(322, 374)
+        Me.lblTranTotalLineValueData.Name = "lblTranTotalLineValueData"
+        Me.lblTranTotalLineValueData.Size = New System.Drawing.Size(51, 13)
+        Me.lblTranTotalLineValueData.TabIndex = 24
+        Me.lblTranTotalLineValueData.Text = "$0.00"
+        Me.lblTranTotalLineValueData.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'lblTranTotalLineValue
+        '
+        Me.lblTranTotalLineValue.AutoSize = True
+        Me.lblTranTotalLineValue.Location = New System.Drawing.Point(237, 374)
+        Me.lblTranTotalLineValue.Name = "lblTranTotalLineValue"
+        Me.lblTranTotalLineValue.Size = New System.Drawing.Size(90, 13)
+        Me.lblTranTotalLineValue.TabIndex = 23
+        Me.lblTranTotalLineValue.Text = "Total Line Value: "
+        '
+        'lblTranOnHandData
+        '
+        Me.lblTranOnHandData.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTranOnHandData.Location = New System.Drawing.Point(310, 312)
+        Me.lblTranOnHandData.Name = "lblTranOnHandData"
+        Me.lblTranOnHandData.Size = New System.Drawing.Size(62, 20)
+        Me.lblTranOnHandData.TabIndex = 22
+        Me.lblTranOnHandData.Text = "0"
+        Me.lblTranOnHandData.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'lnkTranReset
+        '
+        Me.lnkTranReset.AutoSize = True
+        Me.lnkTranReset.LinkColor = System.Drawing.Color.Blue
+        Me.lnkTranReset.Location = New System.Drawing.Point(339, 335)
+        Me.lnkTranReset.Name = "lnkTranReset"
+        Me.lnkTranReset.Size = New System.Drawing.Size(35, 13)
+        Me.lnkTranReset.TabIndex = 21
+        Me.lnkTranReset.TabStop = True
+        Me.lnkTranReset.Text = "Reset"
+        Me.lnkTranReset.VisitedLinkColor = System.Drawing.Color.Blue
+        '
+        'txtTranValue
+        '
+        Me.txtTranValue.Location = New System.Drawing.Point(240, 351)
+        Me.txtTranValue.Name = "txtTranValue"
+        Me.txtTranValue.Size = New System.Drawing.Size(131, 20)
+        Me.txtTranValue.TabIndex = 20
+        '
+        'nudTranQty
+        '
+        Me.nudTranQty.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.nudTranQty.Location = New System.Drawing.Point(240, 310)
+        Me.nudTranQty.Name = "nudTranQty"
+        Me.nudTranQty.Size = New System.Drawing.Size(52, 20)
+        Me.nudTranQty.TabIndex = 19
+        '
+        'lblTranOnHand
+        '
+        Me.lblTranOnHand.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblTranOnHand.AutoSize = True
+        Me.lblTranOnHand.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranOnHand.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTranOnHand.Location = New System.Drawing.Point(319, 294)
+        Me.lblTranOnHand.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranOnHand.Name = "lblTranOnHand"
+        Me.lblTranOnHand.Size = New System.Drawing.Size(56, 13)
+        Me.lblTranOnHand.TabIndex = 16
+        Me.lblTranOnHand.Text = "On Hand: "
+        '
+        'lblTranValue
+        '
+        Me.lblTranValue.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblTranValue.AutoSize = True
+        Me.lblTranValue.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranValue.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranValue.Location = New System.Drawing.Point(237, 335)
+        Me.lblTranValue.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranValue.Name = "lblTranValue"
+        Me.lblTranValue.Size = New System.Drawing.Size(40, 13)
+        Me.lblTranValue.TabIndex = 17
+        Me.lblTranValue.Text = "Value: "
+        '
+        'lblTranQty
+        '
+        Me.lblTranQty.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblTranQty.AutoSize = True
+        Me.lblTranQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranQty.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranQty.Location = New System.Drawing.Point(237, 294)
+        Me.lblTranQty.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranQty.Name = "lblTranQty"
+        Me.lblTranQty.Size = New System.Drawing.Size(52, 13)
+        Me.lblTranQty.TabIndex = 18
+        Me.lblTranQty.Text = "Quantity: "
+        '
+        'lblSelectedItemSubCategory
+        '
+        Me.lblSelectedItemSubCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSelectedItemSubCategory.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblSelectedItemSubCategory.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.lblSelectedItemSubCategory.Location = New System.Drawing.Point(249, 50)
+        Me.lblSelectedItemSubCategory.Name = "lblSelectedItemSubCategory"
+        Me.lblSelectedItemSubCategory.Size = New System.Drawing.Size(123, 13)
+        Me.lblSelectedItemSubCategory.TabIndex = 13
+        Me.lblSelectedItemSubCategory.Text = "Item Sub-Category"
+        '
+        'lblSelectedItemCategory
+        '
+        Me.lblSelectedItemCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSelectedItemCategory.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblSelectedItemCategory.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.lblSelectedItemCategory.Location = New System.Drawing.Point(56, 50)
+        Me.lblSelectedItemCategory.Name = "lblSelectedItemCategory"
+        Me.lblSelectedItemCategory.Size = New System.Drawing.Size(113, 13)
+        Me.lblSelectedItemCategory.TabIndex = 12
+        Me.lblSelectedItemCategory.Text = "Item Category"
+        '
+        'txtTranItemComment
+        '
+        Me.txtTranItemComment.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView6.Location = New System.Drawing.Point(461, 29)
-        Me.DataGridView6.Name = "DataGridView6"
-        Me.DataGridView6.Size = New System.Drawing.Size(620, 262)
-        Me.DataGridView6.TabIndex = 0
+        Me.txtTranItemComment.Location = New System.Drawing.Point(6, 401)
+        Me.txtTranItemComment.Multiline = True
+        Me.txtTranItemComment.Name = "txtTranItemComment"
+        Me.txtTranItemComment.Size = New System.Drawing.Size(365, 137)
+        Me.txtTranItemComment.TabIndex = 8
         '
-        'tbpSettings
+        'pbxTLwQuant
         '
-        Me.tbpSettings.Location = New System.Drawing.Point(4, 22)
-        Me.tbpSettings.Name = "tbpSettings"
-        Me.tbpSettings.Size = New System.Drawing.Size(1089, 601)
-        Me.tbpSettings.TabIndex = 2
-        Me.tbpSettings.Text = "Settings"
-        Me.tbpSettings.UseVisualStyleBackColor = True
+        Me.pbxTLwQuant.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pbxTLwQuant.Location = New System.Drawing.Point(345, 12)
+        Me.pbxTLwQuant.Name = "pbxTLwQuant"
+        Me.pbxTLwQuant.Size = New System.Drawing.Size(26, 35)
+        Me.pbxTLwQuant.TabIndex = 7
+        Me.pbxTLwQuant.TabStop = False
+        '
+        'cmbTranProgram
+        '
+        Me.cmbTranProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranProgram.FormattingEnabled = True
+        Me.cmbTranProgram.Location = New System.Drawing.Point(6, 244)
+        Me.cmbTranProgram.Name = "cmbTranProgram"
+        Me.cmbTranProgram.Size = New System.Drawing.Size(121, 21)
+        Me.cmbTranProgram.TabIndex = 5
+        '
+        'cmbTranBin
+        '
+        Me.cmbTranBin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranBin.FormattingEnabled = True
+        Me.cmbTranBin.Location = New System.Drawing.Point(280, 201)
+        Me.cmbTranBin.Name = "cmbTranBin"
+        Me.cmbTranBin.Size = New System.Drawing.Size(91, 21)
+        Me.cmbTranBin.TabIndex = 5
+        '
+        'cmbTranLocation
+        '
+        Me.cmbTranLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranLocation.FormattingEnabled = True
+        Me.cmbTranLocation.Location = New System.Drawing.Point(135, 201)
+        Me.cmbTranLocation.Name = "cmbTranLocation"
+        Me.cmbTranLocation.Size = New System.Drawing.Size(139, 21)
+        Me.cmbTranLocation.TabIndex = 5
+        '
+        'cmbTranCondition
+        '
+        Me.cmbTranCondition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranCondition.FormattingEnabled = True
+        Me.cmbTranCondition.Location = New System.Drawing.Point(6, 309)
+        Me.cmbTranCondition.Name = "cmbTranCondition"
+        Me.cmbTranCondition.Size = New System.Drawing.Size(121, 21)
+        Me.cmbTranCondition.TabIndex = 5
+        '
+        'cmbTranFacility
+        '
+        Me.cmbTranFacility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranFacility.FormattingEnabled = True
+        Me.cmbTranFacility.Location = New System.Drawing.Point(6, 201)
+        Me.cmbTranFacility.Name = "cmbTranFacility"
+        Me.cmbTranFacility.Size = New System.Drawing.Size(123, 21)
+        Me.cmbTranFacility.TabIndex = 5
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox4.Location = New System.Drawing.Point(6, 272)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(365, 6)
+        Me.PictureBox4.TabIndex = 4
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Location = New System.Drawing.Point(6, 168)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(365, 6)
+        Me.PictureBox3.TabIndex = 4
+        Me.PictureBox3.TabStop = False
+        '
+        'lblTranProgram
+        '
+        Me.lblTranProgram.AutoSize = True
+        Me.lblTranProgram.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranProgram.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranProgram.Location = New System.Drawing.Point(3, 228)
+        Me.lblTranProgram.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranProgram.Name = "lblTranProgram"
+        Me.lblTranProgram.Size = New System.Drawing.Size(52, 13)
+        Me.lblTranProgram.TabIndex = 1
+        Me.lblTranProgram.Text = "Program: "
+        '
+        'pnlTags
+        '
+        Me.pnlTags.Controls.Add(Me.btnTranTag)
+        Me.pnlTags.Location = New System.Drawing.Point(51, 66)
+        Me.pnlTags.Name = "pnlTags"
+        Me.pnlTags.Size = New System.Drawing.Size(320, 62)
+        Me.pnlTags.TabIndex = 3
+        '
+        'btnTranTag
+        '
+        Me.btnTranTag.AutoSize = True
+        Me.btnTranTag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnTranTag.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.btnTranTag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnTranTag.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnTranTag.FlatAppearance.BorderSize = 0
+        Me.btnTranTag.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTranTag.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTranTag.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.btnTranTag.Location = New System.Drawing.Point(3, 3)
+        Me.btnTranTag.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnTranTag.Name = "btnTranTag"
+        Me.btnTranTag.Size = New System.Drawing.Size(35, 23)
+        Me.btnTranTag.TabIndex = 17
+        Me.btnTranTag.Text = "tag"
+        Me.btnTranTag.UseVisualStyleBackColor = False
+        '
+        'lblTranBin
+        '
+        Me.lblTranBin.AutoSize = True
+        Me.lblTranBin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranBin.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranBin.Location = New System.Drawing.Point(277, 185)
+        Me.lblTranBin.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranBin.Name = "lblTranBin"
+        Me.lblTranBin.Size = New System.Drawing.Size(28, 13)
+        Me.lblTranBin.TabIndex = 1
+        Me.lblTranBin.Text = "Bin: "
+        '
+        'txtTranAddTags
+        '
+        Me.txtTranAddTags.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.txtTranAddTags.Location = New System.Drawing.Point(68, 137)
+        Me.txtTranAddTags.Name = "txtTranAddTags"
+        Me.txtTranAddTags.Size = New System.Drawing.Size(303, 20)
+        Me.txtTranAddTags.TabIndex = 2
+        '
+        'lblTranItemComment
+        '
+        Me.lblTranItemComment.AutoSize = True
+        Me.lblTranItemComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranItemComment.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranItemComment.Location = New System.Drawing.Point(3, 385)
+        Me.lblTranItemComment.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranItemComment.Name = "lblTranItemComment"
+        Me.lblTranItemComment.Size = New System.Drawing.Size(57, 13)
+        Me.lblTranItemComment.TabIndex = 1
+        Me.lblTranItemComment.Text = "Comment: "
+        '
+        'lblTranCondition
+        '
+        Me.lblTranCondition.AutoSize = True
+        Me.lblTranCondition.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranCondition.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranCondition.Location = New System.Drawing.Point(3, 293)
+        Me.lblTranCondition.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranCondition.Name = "lblTranCondition"
+        Me.lblTranCondition.Size = New System.Drawing.Size(57, 13)
+        Me.lblTranCondition.TabIndex = 1
+        Me.lblTranCondition.Text = "Condition: "
+        '
+        'lblTranLocation
+        '
+        Me.lblTranLocation.AutoSize = True
+        Me.lblTranLocation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranLocation.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranLocation.Location = New System.Drawing.Point(132, 185)
+        Me.lblTranLocation.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranLocation.Name = "lblTranLocation"
+        Me.lblTranLocation.Size = New System.Drawing.Size(54, 13)
+        Me.lblTranLocation.TabIndex = 1
+        Me.lblTranLocation.Text = "Location: "
+        '
+        'lblTranFaclity
+        '
+        Me.lblTranFaclity.AutoSize = True
+        Me.lblTranFaclity.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranFaclity.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranFaclity.Location = New System.Drawing.Point(3, 185)
+        Me.lblTranFaclity.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranFaclity.Name = "lblTranFaclity"
+        Me.lblTranFaclity.Size = New System.Drawing.Size(45, 13)
+        Me.lblTranFaclity.TabIndex = 1
+        Me.lblTranFaclity.Text = "Facility: "
+        '
+        'lblTranAddTags
+        '
+        Me.lblTranAddTags.AutoSize = True
+        Me.lblTranAddTags.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranAddTags.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranAddTags.Location = New System.Drawing.Point(8, 140)
+        Me.lblTranAddTags.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranAddTags.Name = "lblTranAddTags"
+        Me.lblTranAddTags.Size = New System.Drawing.Size(54, 13)
+        Me.lblTranAddTags.TabIndex = 1
+        Me.lblTranAddTags.Text = "Add Tag: "
+        '
+        'lblTranTags
+        '
+        Me.lblTranTags.AutoSize = True
+        Me.lblTranTags.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranTags.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranTags.Location = New System.Drawing.Point(8, 71)
+        Me.lblTranTags.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranTags.Name = "lblTranTags"
+        Me.lblTranTags.Size = New System.Drawing.Size(37, 13)
+        Me.lblTranTags.TabIndex = 1
+        Me.lblTranTags.Text = "Tags: "
+        '
+        'lblTSubCategory
+        '
+        Me.lblTSubCategory.AutoSize = True
+        Me.lblTSubCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTSubCategory.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTSubCategory.Location = New System.Drawing.Point(175, 50)
+        Me.lblTSubCategory.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTSubCategory.Name = "lblTSubCategory"
+        Me.lblTSubCategory.Size = New System.Drawing.Size(77, 13)
+        Me.lblTSubCategory.TabIndex = 1
+        Me.lblTSubCategory.Text = "Sub-Category: "
+        '
+        'lblTranCategory
+        '
+        Me.lblTranCategory.AutoSize = True
+        Me.lblTranCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranCategory.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTranCategory.Location = New System.Drawing.Point(8, 50)
+        Me.lblTranCategory.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranCategory.Name = "lblTranCategory"
+        Me.lblTranCategory.Size = New System.Drawing.Size(55, 13)
+        Me.lblTranCategory.TabIndex = 1
+        Me.lblTranCategory.Text = "Category: "
+        '
+        'lblTranItemName
+        '
+        Me.lblTranItemName.AutoSize = True
+        Me.lblTranItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranItemName.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranItemName.Location = New System.Drawing.Point(7, 20)
+        Me.lblTranItemName.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranItemName.Name = "lblTranItemName"
+        Me.lblTranItemName.Size = New System.Drawing.Size(90, 20)
+        Me.lblTranItemName.TabIndex = 1
+        Me.lblTranItemName.Text = "Item Name"
+        '
+        'btnTranItemReset
+        '
+        Me.btnTranItemReset.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTranItemReset.Location = New System.Drawing.Point(296, 544)
+        Me.btnTranItemReset.Name = "btnTranItemReset"
+        Me.btnTranItemReset.Size = New System.Drawing.Size(75, 23)
+        Me.btnTranItemReset.TabIndex = 0
+        Me.btnTranItemReset.Text = "Reset"
+        Me.btnTranItemReset.UseVisualStyleBackColor = True
+        '
+        'btnTranItemAddNew
+        '
+        Me.btnTranItemAddNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnTranItemAddNew.Location = New System.Drawing.Point(6, 544)
+        Me.btnTranItemAddNew.Name = "btnTranItemAddNew"
+        Me.btnTranItemAddNew.Size = New System.Drawing.Size(91, 23)
+        Me.btnTranItemAddNew.TabIndex = 0
+        Me.btnTranItemAddNew.Text = "Add New Item"
+        Me.btnTranItemAddNew.UseVisualStyleBackColor = True
+        '
+        'btnTranItemAddToTran
+        '
+        Me.btnTranItemAddToTran.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTranItemAddToTran.Location = New System.Drawing.Point(178, 544)
+        Me.btnTranItemAddToTran.Name = "btnTranItemAddToTran"
+        Me.btnTranItemAddToTran.Size = New System.Drawing.Size(112, 23)
+        Me.btnTranItemAddToTran.TabIndex = 0
+        Me.btnTranItemAddToTran.Text = "Add To Transaction"
+        Me.btnTranItemAddToTran.UseVisualStyleBackColor = True
+        '
+        'txtSearchTran
+        '
+        Me.txtSearchTran.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtSearchTran.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.txtSearchTran.Location = New System.Drawing.Point(532, 18)
+        Me.txtSearchTran.Name = "txtSearchTran"
+        Me.txtSearchTran.Size = New System.Drawing.Size(160, 20)
+        Me.txtSearchTran.TabIndex = 4
+        Me.txtSearchTran.Text = "Search..."
+        '
+        'dgvTranItems
+        '
+        Me.dgvTranItems.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvTranItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTranItems.Location = New System.Drawing.Point(257, 288)
+        Me.dgvTranItems.Name = "dgvTranItems"
+        Me.dgvTranItems.Size = New System.Drawing.Size(435, 297)
+        Me.dgvTranItems.TabIndex = 3
+        '
+        'dgvTranCategories
+        '
+        Me.dgvTranCategories.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvTranCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTranCategories.Location = New System.Drawing.Point(257, 45)
+        Me.dgvTranCategories.Name = "dgvTranCategories"
+        Me.dgvTranCategories.Size = New System.Drawing.Size(435, 205)
+        Me.dgvTranCategories.TabIndex = 3
+        '
+        'grpInvTransInfo
+        '
+        Me.grpInvTransInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactNameData)
+        Me.grpInvTransInfo.Controls.Add(Me.lnklblTranContactEmail)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactEmail)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactPhoneData)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactPhone)
+        Me.grpInvTransInfo.Controls.Add(Me.Label31)
+        Me.grpInvTransInfo.Controls.Add(Me.Label30)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactAddressData)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactAddress)
+        Me.grpInvTransInfo.Controls.Add(Me.txtTranComment)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTranComment)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTotalValue)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTotalValueData)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTotalIemsData)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTotalItems)
+        Me.grpInvTransInfo.Controls.Add(Me.btnSubmitTran)
+        Me.grpInvTransInfo.Controls.Add(Me.btnCancelTran)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTransType)
+        Me.grpInvTransInfo.Controls.Add(Me.cmbTranType)
+        Me.grpInvTransInfo.Controls.Add(Me.btnTranContactEdit)
+        Me.grpInvTransInfo.Controls.Add(Me.btnTranContactAdd)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTranContactName)
+        Me.grpInvTransInfo.Controls.Add(Me.lblTranContact)
+        Me.grpInvTransInfo.Controls.Add(Me.txtTranContact)
+        Me.grpInvTransInfo.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.grpInvTransInfo.Location = New System.Drawing.Point(15, 12)
+        Me.grpInvTransInfo.Name = "grpInvTransInfo"
+        Me.grpInvTransInfo.Size = New System.Drawing.Size(225, 573)
+        Me.grpInvTransInfo.TabIndex = 2
+        Me.grpInvTransInfo.TabStop = False
+        Me.grpInvTransInfo.Text = "Transaction Info:"
+        '
+        'lblTranContactNameData
+        '
+        Me.lblTranContactNameData.AutoSize = True
+        Me.lblTranContactNameData.Location = New System.Drawing.Point(66, 166)
+        Me.lblTranContactNameData.Name = "lblTranContactNameData"
+        Me.lblTranContactNameData.Size = New System.Drawing.Size(90, 13)
+        Me.lblTranContactNameData.TabIndex = 19
+        Me.lblTranContactNameData.Text = "Benefactor Name"
+        '
+        'lnklblTranContactEmail
+        '
+        Me.lnklblTranContactEmail.Location = New System.Drawing.Point(48, 115)
+        Me.lnklblTranContactEmail.Name = "lnklblTranContactEmail"
+        Me.lnklblTranContactEmail.Size = New System.Drawing.Size(171, 13)
+        Me.lnklblTranContactEmail.TabIndex = 18
+        Me.lnklblTranContactEmail.TabStop = True
+        Me.lnklblTranContactEmail.Text = "jake@abcinternational.com"
+        '
+        'lblTranContactEmail
+        '
+        Me.lblTranContactEmail.AutoSize = True
+        Me.lblTranContactEmail.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTranContactEmail.Location = New System.Drawing.Point(7, 115)
+        Me.lblTranContactEmail.Name = "lblTranContactEmail"
+        Me.lblTranContactEmail.Size = New System.Drawing.Size(35, 13)
+        Me.lblTranContactEmail.TabIndex = 17
+        Me.lblTranContactEmail.Text = "Email:"
+        '
+        'lblTranContactPhoneData
+        '
+        Me.lblTranContactPhoneData.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTranContactPhoneData.Location = New System.Drawing.Point(54, 91)
+        Me.lblTranContactPhoneData.Name = "lblTranContactPhoneData"
+        Me.lblTranContactPhoneData.Size = New System.Drawing.Size(165, 13)
+        Me.lblTranContactPhoneData.TabIndex = 16
+        Me.lblTranContactPhoneData.Text = "(989)555-9688 x1151"
+        '
+        'lblTranContactPhone
+        '
+        Me.lblTranContactPhone.AutoSize = True
+        Me.lblTranContactPhone.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTranContactPhone.Location = New System.Drawing.Point(7, 91)
+        Me.lblTranContactPhone.Name = "lblTranContactPhone"
+        Me.lblTranContactPhone.Size = New System.Drawing.Size(41, 13)
+        Me.lblTranContactPhone.TabIndex = 15
+        Me.lblTranContactPhone.Text = "Phone:"
+        '
+        'Label31
+        '
+        Me.Label31.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label31.Location = New System.Drawing.Point(66, 245)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(153, 18)
+        Me.Label31.TabIndex = 14
+        Me.Label31.Text = "(989)555-9688 x1151"
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.Label30.Location = New System.Drawing.Point(7, 245)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(41, 13)
+        Me.Label30.TabIndex = 13
+        Me.Label30.Text = "Phone:"
+        '
+        'lblTranContactAddressData
+        '
+        Me.lblTranContactAddressData.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTranContactAddressData.Location = New System.Drawing.Point(66, 190)
+        Me.lblTranContactAddressData.Name = "lblTranContactAddressData"
+        Me.lblTranContactAddressData.Size = New System.Drawing.Size(153, 43)
+        Me.lblTranContactAddressData.TabIndex = 12
+        Me.lblTranContactAddressData.Text = "5555 Elm St." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Suite 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Saginaw, MI 48604"
+        '
+        'lblTranContactAddress
+        '
+        Me.lblTranContactAddress.AutoSize = True
+        Me.lblTranContactAddress.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTranContactAddress.Location = New System.Drawing.Point(7, 190)
+        Me.lblTranContactAddress.Name = "lblTranContactAddress"
+        Me.lblTranContactAddress.Size = New System.Drawing.Size(48, 13)
+        Me.lblTranContactAddress.TabIndex = 11
+        Me.lblTranContactAddress.Text = "Address:"
+        '
+        'txtTranComment
+        '
+        Me.txtTranComment.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txtTranComment.Location = New System.Drawing.Point(6, 401)
+        Me.txtTranComment.Multiline = True
+        Me.txtTranComment.Name = "txtTranComment"
+        Me.txtTranComment.Size = New System.Drawing.Size(210, 137)
+        Me.txtTranComment.TabIndex = 10
+        '
+        'lblTranComment
+        '
+        Me.lblTranComment.AutoSize = True
+        Me.lblTranComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTranComment.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.lblTranComment.Location = New System.Drawing.Point(3, 385)
+        Me.lblTranComment.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranComment.Name = "lblTranComment"
+        Me.lblTranComment.Size = New System.Drawing.Size(57, 13)
+        Me.lblTranComment.TabIndex = 9
+        Me.lblTranComment.Text = "Comment: "
+        '
+        'lblTotalValue
+        '
+        Me.lblTotalValue.AutoSize = True
+        Me.lblTotalValue.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTotalValue.Location = New System.Drawing.Point(71, 358)
+        Me.lblTotalValue.Name = "lblTotalValue"
+        Me.lblTotalValue.Size = New System.Drawing.Size(64, 13)
+        Me.lblTotalValue.TabIndex = 6
+        Me.lblTotalValue.Text = "Total Value:"
+        '
+        'lblTotalValueData
+        '
+        Me.lblTotalValueData.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTotalValueData.Location = New System.Drawing.Point(141, 358)
+        Me.lblTotalValueData.Name = "lblTotalValueData"
+        Me.lblTotalValueData.Size = New System.Drawing.Size(75, 13)
+        Me.lblTotalValueData.TabIndex = 6
+        Me.lblTotalValueData.Text = "0"
+        Me.lblTotalValueData.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'lblTotalIemsData
+        '
+        Me.lblTotalIemsData.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTotalIemsData.Location = New System.Drawing.Point(141, 339)
+        Me.lblTotalIemsData.Name = "lblTotalIemsData"
+        Me.lblTotalIemsData.Size = New System.Drawing.Size(75, 13)
+        Me.lblTotalIemsData.TabIndex = 6
+        Me.lblTotalIemsData.Text = "0"
+        Me.lblTotalIemsData.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'lblTotalItems
+        '
+        Me.lblTotalItems.AutoSize = True
+        Me.lblTotalItems.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.lblTotalItems.Location = New System.Drawing.Point(71, 339)
+        Me.lblTotalItems.Name = "lblTotalItems"
+        Me.lblTotalItems.Size = New System.Drawing.Size(62, 13)
+        Me.lblTotalItems.TabIndex = 6
+        Me.lblTotalItems.Text = "Total Items:"
+        '
+        'btnSubmitTran
+        '
+        Me.btnSubmitTran.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSubmitTran.Location = New System.Drawing.Point(26, 544)
+        Me.btnSubmitTran.Name = "btnSubmitTran"
+        Me.btnSubmitTran.Size = New System.Drawing.Size(109, 23)
+        Me.btnSubmitTran.TabIndex = 5
+        Me.btnSubmitTran.Text = "Submit Transaction"
+        Me.btnSubmitTran.UseVisualStyleBackColor = True
+        '
+        'btnCancelTran
+        '
+        Me.btnCancelTran.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancelTran.Location = New System.Drawing.Point(141, 544)
+        Me.btnCancelTran.Name = "btnCancelTran"
+        Me.btnCancelTran.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelTran.TabIndex = 5
+        Me.btnCancelTran.Text = "Cancel"
+        Me.btnCancelTran.UseVisualStyleBackColor = True
+        '
+        'lblTransType
+        '
+        Me.lblTransType.AutoSize = True
+        Me.lblTransType.Location = New System.Drawing.Point(7, 22)
+        Me.lblTransType.Name = "lblTransType"
+        Me.lblTransType.Size = New System.Drawing.Size(34, 13)
+        Me.lblTransType.TabIndex = 4
+        Me.lblTransType.Text = "Type:"
+        '
+        'cmbTranType
+        '
+        Me.cmbTranType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranType.FormattingEnabled = True
+        Me.cmbTranType.Location = New System.Drawing.Point(44, 19)
+        Me.cmbTranType.Name = "cmbTranType"
+        Me.cmbTranType.Size = New System.Drawing.Size(87, 21)
+        Me.cmbTranType.TabIndex = 3
+        '
+        'btnTranContactEdit
+        '
+        Me.btnTranContactEdit.Location = New System.Drawing.Point(191, 60)
+        Me.btnTranContactEdit.Name = "btnTranContactEdit"
+        Me.btnTranContactEdit.Size = New System.Drawing.Size(28, 20)
+        Me.btnTranContactEdit.TabIndex = 2
+        Me.btnTranContactEdit.Text = "e"
+        Me.btnTranContactEdit.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnTranContactEdit.UseVisualStyleBackColor = True
+        '
+        'btnTranContactAdd
+        '
+        Me.btnTranContactAdd.Location = New System.Drawing.Point(161, 60)
+        Me.btnTranContactAdd.Name = "btnTranContactAdd"
+        Me.btnTranContactAdd.Size = New System.Drawing.Size(28, 20)
+        Me.btnTranContactAdd.TabIndex = 2
+        Me.btnTranContactAdd.Text = "+"
+        Me.btnTranContactAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnTranContactAdd.UseVisualStyleBackColor = True
+        '
+        'lblTranContactName
+        '
+        Me.lblTranContactName.AutoSize = True
+        Me.lblTranContactName.Location = New System.Drawing.Point(7, 166)
+        Me.lblTranContactName.Name = "lblTranContactName"
+        Me.lblTranContactName.Size = New System.Drawing.Size(62, 13)
+        Me.lblTranContactName.TabIndex = 1
+        Me.lblTranContactName.Text = "Benefactor:"
+        '
+        'lblTranContact
+        '
+        Me.lblTranContact.AutoSize = True
+        Me.lblTranContact.Location = New System.Drawing.Point(7, 63)
+        Me.lblTranContact.Name = "lblTranContact"
+        Me.lblTranContact.Size = New System.Drawing.Size(47, 13)
+        Me.lblTranContact.TabIndex = 1
+        Me.lblTranContact.Text = "Contact:"
+        '
+        'txtTranContact
+        '
+        Me.txtTranContact.Location = New System.Drawing.Point(69, 60)
+        Me.txtTranContact.Name = "txtTranContact"
+        Me.txtTranContact.Size = New System.Drawing.Size(86, 20)
+        Me.txtTranContact.TabIndex = 0
+        '
+        'cmbTranFilterBySubCategory
+        '
+        Me.cmbTranFilterBySubCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranFilterBySubCategory.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.cmbTranFilterBySubCategory.FormattingEnabled = True
+        Me.cmbTranFilterBySubCategory.Location = New System.Drawing.Point(400, 18)
+        Me.cmbTranFilterBySubCategory.Name = "cmbTranFilterBySubCategory"
+        Me.cmbTranFilterBySubCategory.Size = New System.Drawing.Size(126, 21)
+        Me.cmbTranFilterBySubCategory.TabIndex = 0
+        '
+        'cmbTranFilterByCategory
+        '
+        Me.cmbTranFilterByCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTranFilterByCategory.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.cmbTranFilterByCategory.FormattingEnabled = True
+        Me.cmbTranFilterByCategory.Location = New System.Drawing.Point(257, 18)
+        Me.cmbTranFilterByCategory.Name = "cmbTranFilterByCategory"
+        Me.cmbTranFilterByCategory.Size = New System.Drawing.Size(137, 21)
+        Me.cmbTranFilterByCategory.TabIndex = 0
+        '
+        'tbpDashboard
+        '
+        Me.tbpDashboard.Controls.Add(Me.picCAN)
+        Me.tbpDashboard.Controls.Add(Me.lblNFilter)
+        Me.tbpDashboard.Controls.Add(Me.lblDFilter)
+        Me.tbpDashboard.Controls.Add(Me.lblDTo)
+        Me.tbpDashboard.Controls.Add(Me.lblRecentDonations)
+        Me.tbpDashboard.Controls.Add(Me.lblInvNotifications)
+        Me.tbpDashboard.Controls.Add(Me.dgvInvNotifications)
+        Me.tbpDashboard.Controls.Add(Me.dgvRecentDonations)
+        Me.tbpDashboard.Controls.Add(Me.dtpDToDate)
+        Me.tbpDashboard.Controls.Add(Me.dtpDFromDate)
+        Me.tbpDashboard.Controls.Add(Me.cbxNFilter)
+        Me.tbpDashboard.Controls.Add(Me.cmbDFilter)
+        Me.tbpDashboard.Controls.Add(Me.btnQReports)
+        Me.tbpDashboard.Controls.Add(Me.btnQAddContact)
+        Me.tbpDashboard.Controls.Add(Me.btnQItemSearch)
+        Me.tbpDashboard.Controls.Add(Me.btnQTrans)
+        Me.tbpDashboard.Controls.Add(Me.picPinWheels)
+        Me.tbpDashboard.Location = New System.Drawing.Point(4, 22)
+        Me.tbpDashboard.Name = "tbpDashboard"
+        Me.tbpDashboard.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbpDashboard.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpDashboard.TabIndex = 0
+        Me.tbpDashboard.Text = "Dashboard"
+        Me.tbpDashboard.UseVisualStyleBackColor = True
+        '
+        'picCAN
+        '
+        Me.picCAN.Image = Global.CAN_Inventory_db.My.Resources.Resources.dash_logo
+        Me.picCAN.Location = New System.Drawing.Point(8, 15)
+        Me.picCAN.Name = "picCAN"
+        Me.picCAN.Size = New System.Drawing.Size(280, 108)
+        Me.picCAN.TabIndex = 5
+        Me.picCAN.TabStop = False
+        '
+        'lblNFilter
+        '
+        Me.lblNFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblNFilter.AutoSize = True
+        Me.lblNFilter.Location = New System.Drawing.Point(925, 339)
+        Me.lblNFilter.Name = "lblNFilter"
+        Me.lblNFilter.Size = New System.Drawing.Size(32, 13)
+        Me.lblNFilter.TabIndex = 4
+        Me.lblNFilter.Text = "Filter:"
+        '
+        'lblDFilter
+        '
+        Me.lblDFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDFilter.AutoSize = True
+        Me.lblDFilter.Location = New System.Drawing.Point(668, 16)
+        Me.lblDFilter.Name = "lblDFilter"
+        Me.lblDFilter.Size = New System.Drawing.Size(32, 13)
+        Me.lblDFilter.TabIndex = 4
+        Me.lblDFilter.Text = "Filter:"
+        '
+        'lblDTo
+        '
+        Me.lblDTo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDTo.AutoSize = True
+        Me.lblDTo.Location = New System.Drawing.Point(957, 16)
+        Me.lblDTo.Name = "lblDTo"
+        Me.lblDTo.Size = New System.Drawing.Size(20, 13)
+        Me.lblDTo.TabIndex = 4
+        Me.lblDTo.Text = "To"
+        '
+        'lblRecentDonations
+        '
+        Me.lblRecentDonations.AutoSize = True
+        Me.lblRecentDonations.Location = New System.Drawing.Point(291, 18)
+        Me.lblRecentDonations.Name = "lblRecentDonations"
+        Me.lblRecentDonations.Size = New System.Drawing.Size(96, 13)
+        Me.lblRecentDonations.TabIndex = 4
+        Me.lblRecentDonations.Text = "Recent Donations:"
+        '
+        'lblInvNotifications
+        '
+        Me.lblInvNotifications.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblInvNotifications.AutoSize = True
+        Me.lblInvNotifications.Location = New System.Drawing.Point(291, 344)
+        Me.lblInvNotifications.Name = "lblInvNotifications"
+        Me.lblInvNotifications.Size = New System.Drawing.Size(115, 13)
+        Me.lblInvNotifications.TabIndex = 4
+        Me.lblInvNotifications.Text = "Inventory Notifications:"
+        '
+        'dgvInvNotifications
+        '
+        Me.dgvInvNotifications.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvInvNotifications.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgvInvNotifications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvInvNotifications.Location = New System.Drawing.Point(294, 363)
+        Me.dgvInvNotifications.Name = "dgvInvNotifications"
+        Me.dgvInvNotifications.Size = New System.Drawing.Size(787, 224)
+        Me.dgvInvNotifications.TabIndex = 3
+        '
+        'dgvRecentDonations
+        '
+        Me.dgvRecentDonations.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvRecentDonations.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgvRecentDonations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRecentDonations.Location = New System.Drawing.Point(294, 38)
+        Me.dgvRecentDonations.Name = "dgvRecentDonations"
+        Me.dgvRecentDonations.Size = New System.Drawing.Size(787, 285)
+        Me.dgvRecentDonations.TabIndex = 3
+        '
+        'dtpDToDate
+        '
+        Me.dtpDToDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtpDToDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDToDate.Location = New System.Drawing.Point(985, 12)
+        Me.dtpDToDate.Name = "dtpDToDate"
+        Me.dtpDToDate.Size = New System.Drawing.Size(96, 20)
+        Me.dtpDToDate.TabIndex = 2
+        '
+        'dtpDFromDate
+        '
+        Me.dtpDFromDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dtpDFromDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDFromDate.Location = New System.Drawing.Point(853, 12)
+        Me.dtpDFromDate.Name = "dtpDFromDate"
+        Me.dtpDFromDate.Size = New System.Drawing.Size(96, 20)
+        Me.dtpDFromDate.TabIndex = 2
+        '
+        'cbxNFilter
+        '
+        Me.cbxNFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbxNFilter.FormattingEnabled = True
+        Me.cbxNFilter.Location = New System.Drawing.Point(960, 336)
+        Me.cbxNFilter.Name = "cbxNFilter"
+        Me.cbxNFilter.Size = New System.Drawing.Size(121, 21)
+        Me.cbxNFilter.TabIndex = 1
+        '
+        'cmbDFilter
+        '
+        Me.cmbDFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmbDFilter.FormattingEnabled = True
+        Me.cmbDFilter.Items.AddRange(New Object() {"None", "Benifactor", "Contact", "Item"})
+        Me.cmbDFilter.Location = New System.Drawing.Point(702, 12)
+        Me.cmbDFilter.Name = "cmbDFilter"
+        Me.cmbDFilter.Size = New System.Drawing.Size(138, 21)
+        Me.cmbDFilter.TabIndex = 1
+        '
+        'btnQReports
+        '
+        Me.btnQReports.Location = New System.Drawing.Point(7, 273)
+        Me.btnQReports.Name = "btnQReports"
+        Me.btnQReports.Size = New System.Drawing.Size(281, 60)
+        Me.btnQReports.TabIndex = 0
+        Me.btnQReports.Text = "Reports"
+        Me.btnQReports.UseVisualStyleBackColor = True
+        '
+        'btnQAddContact
+        '
+        Me.btnQAddContact.Location = New System.Drawing.Point(3, 339)
+        Me.btnQAddContact.Name = "btnQAddContact"
+        Me.btnQAddContact.Size = New System.Drawing.Size(282, 60)
+        Me.btnQAddContact.TabIndex = 0
+        Me.btnQAddContact.Text = "Add Contact"
+        Me.btnQAddContact.UseVisualStyleBackColor = True
+        '
+        'btnQItemSearch
+        '
+        Me.btnQItemSearch.Location = New System.Drawing.Point(6, 202)
+        Me.btnQItemSearch.Name = "btnQItemSearch"
+        Me.btnQItemSearch.Size = New System.Drawing.Size(282, 60)
+        Me.btnQItemSearch.TabIndex = 0
+        Me.btnQItemSearch.Text = "Item Search"
+        Me.btnQItemSearch.UseVisualStyleBackColor = True
+        '
+        'btnQTrans
+        '
+        Me.btnQTrans.Location = New System.Drawing.Point(6, 129)
+        Me.btnQTrans.Name = "btnQTrans"
+        Me.btnQTrans.Size = New System.Drawing.Size(282, 60)
+        Me.btnQTrans.TabIndex = 0
+        Me.btnQTrans.Text = "Quick Transaction"
+        Me.btnQTrans.UseVisualStyleBackColor = True
+        '
+        'picPinWheels
+        '
+        Me.picPinWheels.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.picPinWheels.Image = Global.CAN_Inventory_db.My.Resources.Resources.pinwheel_dash
+        Me.picPinWheels.Location = New System.Drawing.Point(7, 363)
+        Me.picPinWheels.Name = "picPinWheels"
+        Me.picPinWheels.Size = New System.Drawing.Size(281, 232)
+        Me.picPinWheels.TabIndex = 6
+        Me.picPinWheels.TabStop = False
+        '
+        'tabControls
+        '
+        Me.tabControls.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tabControls.Controls.Add(Me.tbpDashboard)
+        Me.tabControls.Controls.Add(Me.tbpInvTrans)
+        Me.tabControls.Controls.Add(Me.tbpItmManag)
+        Me.tabControls.Controls.Add(Me.tbpReports)
+        Me.tabControls.Controls.Add(Me.tbpContacts)
+        Me.tabControls.Controls.Add(Me.tbpSettings)
+        Me.tabControls.Location = New System.Drawing.Point(0, 30)
+        Me.tabControls.Name = "tabControls"
+        Me.tabControls.SelectedIndex = 0
+        Me.tabControls.Size = New System.Drawing.Size(1097, 627)
+        Me.tabControls.TabIndex = 2
         '
         'frmMain
         '
@@ -3022,27 +3022,14 @@ Partial Class frmMain
         Me.menTopStrip.PerformLayout()
         Me.stsSatusBar.ResumeLayout(False)
         Me.stsSatusBar.PerformLayout()
-        Me.tabControls.ResumeLayout(False)
-        Me.tbpDashboard.ResumeLayout(False)
-        Me.tbpDashboard.PerformLayout()
-        CType(Me.picCAN, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvInvNotifications, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvRecentDonations, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picPinWheels, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tbpInvTrans.ResumeLayout(False)
-        Me.tbpInvTrans.PerformLayout()
-        Me.grpTranItems.ResumeLayout(False)
-        Me.grpTranItems.PerformLayout()
-        CType(Me.nudTranQty, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlTags.ResumeLayout(False)
-        Me.pnlTags.PerformLayout()
-        CType(Me.dgvTranItems, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvTranCategories, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.grpInvTransInfo.ResumeLayout(False)
-        Me.grpInvTransInfo.PerformLayout()
+        Me.tbpContacts.ResumeLayout(False)
+        Me.tbpContacts.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbpReports.ResumeLayout(False)
         Me.tbpReports.PerformLayout()
         Me.gbxReportType.ResumeLayout(False)
@@ -3069,14 +3056,27 @@ Partial Class frmMain
         Me.GroupBox8.PerformLayout()
         CType(Me.DataGridView9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView8, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tbpContacts.ResumeLayout(False)
-        Me.tbpContacts.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        CType(Me.DataGridView7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tbpInvTrans.ResumeLayout(False)
+        Me.tbpInvTrans.PerformLayout()
+        Me.grpTranItems.ResumeLayout(False)
+        Me.grpTranItems.PerformLayout()
+        CType(Me.nudTranQty, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlTags.ResumeLayout(False)
+        Me.pnlTags.PerformLayout()
+        CType(Me.dgvTranItems, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvTranCategories, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpInvTransInfo.ResumeLayout(False)
+        Me.grpInvTransInfo.PerformLayout()
+        Me.tbpDashboard.ResumeLayout(False)
+        Me.tbpDashboard.PerformLayout()
+        CType(Me.picCAN, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvInvNotifications, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvRecentDonations, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picPinWheels, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabControls.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3092,250 +3092,250 @@ Partial Class frmMain
     Friend WithEvents cmbUserSelect As ToolStripComboBox
     Friend WithEvents stsSatusBar As StatusStrip
     Friend WithEvents lblStatus As ToolStripStatusLabel
-    Friend WithEvents tabControls As TabControl
-    Friend WithEvents tbpDashboard As TabPage
-    Friend WithEvents tbpItmManag As TabPage
-    Friend WithEvents tbpSettings As TabPage
     Friend WithEvents AddNewBaseItemToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents tbpInvTrans As TabPage
-    Friend WithEvents tbpReports As TabPage
-    Friend WithEvents tbpContacts As TabPage
-    Friend WithEvents dtpDFromDate As DateTimePicker
-    Friend WithEvents cmbDFilter As ComboBox
-    Friend WithEvents btnQReports As Button
-    Friend WithEvents btnQAddContact As Button
-    Friend WithEvents btnQItemSearch As Button
-    Friend WithEvents btnQTrans As Button
-    Friend WithEvents dgvRecentDonations As DataGridView
-    Friend WithEvents dtpDToDate As DateTimePicker
-    Friend WithEvents lblRecentDonations As Label
-    Friend WithEvents lblInvNotifications As Label
-    Friend WithEvents dgvInvNotifications As DataGridView
-    Friend WithEvents cbxNFilter As ComboBox
-    Friend WithEvents picCAN As PictureBox
-    Friend WithEvents picPinWheels As PictureBox
-    Friend WithEvents lblDFilter As Label
-    Friend WithEvents lblDTo As Label
-    Friend WithEvents lblNFilter As Label
-    Friend WithEvents txtSearchTran As TextBox
-    Friend WithEvents dgvTranCategories As DataGridView
-    Friend WithEvents cmbTranFilterBySubCategory As ComboBox
-    Friend WithEvents cmbTranFilterByCategory As ComboBox
-    Friend WithEvents grpTranItems As GroupBox
-    Friend WithEvents btnTranItemReset As Button
-    Friend WithEvents btnTranItemAddToTran As Button
-    Friend WithEvents dgvTranItems As DataGridView
-    Friend WithEvents grpInvTransInfo As GroupBox
-    Friend WithEvents btnTranContactAdd As Button
-    Friend WithEvents lblTranContactName As Label
-    Friend WithEvents lblTranContact As Label
-    Friend WithEvents txtTranContact As TextBox
-    Friend WithEvents lblTransType As Label
-    Friend WithEvents cmbTranType As ComboBox
-    Friend WithEvents pnlTags As Panel
-    Friend WithEvents txtTranAddTags As TextBox
-    Friend WithEvents lblTranAddTags As Label
-    Friend WithEvents lblTranTags As Label
-    Friend WithEvents lblTSubCategory As Label
-    Friend WithEvents lblTranCategory As Label
-    Friend WithEvents lblTranItemName As Label
-    Friend WithEvents btnSubmitTran As Button
-    Friend WithEvents btnCancelTran As Button
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents lblTranItems As Label
-    Friend WithEvents cmbTranBin As ComboBox
-    Friend WithEvents cmbTranLocation As ComboBox
-    Friend WithEvents cmbTranFacility As ComboBox
-    Friend WithEvents lblTranBin As Label
-    Friend WithEvents lblTranLocation As Label
-    Friend WithEvents lblTranFaclity As Label
-    Friend WithEvents cmbTranProgram As ComboBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents lblTranProgram As Label
-    Friend WithEvents cmbTranCondition As ComboBox
-    Friend WithEvents lblTranCondition As Label
-    Friend WithEvents pbxTLwQuant As PictureBox
-    Friend WithEvents txtTranItemComment As TextBox
-    Friend WithEvents lblTranItemComment As Label
-    Friend WithEvents btnTranItemAddNew As Button
-    Friend WithEvents lblTotalValue As Label
-    Friend WithEvents lblTotalValueData As Label
-    Friend WithEvents lblTotalIemsData As Label
-    Friend WithEvents lblTotalItems As Label
-    Friend WithEvents txtTranComment As TextBox
-    Friend WithEvents lblTranComment As Label
-    Friend WithEvents btnTranContactEdit As Button
-    Friend WithEvents lnklblTranContactEmail As LinkLabel
-    Friend WithEvents lblTranContactEmail As Label
-    Friend WithEvents lblTranContactPhoneData As Label
-    Friend WithEvents lblTranContactPhone As Label
-    Friend WithEvents Label31 As Label
-    Friend WithEvents Label30 As Label
-    Friend WithEvents lblTranContactAddressData As Label
-    Friend WithEvents lblTranContactAddress As Label
-    Friend WithEvents lblSelectedItemSubCategory As Label
-    Friend WithEvents lblSelectedItemCategory As Label
-    Friend WithEvents lblTranContactNameData As Label
-    Friend WithEvents btnTranTag As Button
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents Button14 As Button
-    Friend WithEvents Button13 As Button
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Label41 As Label
-    Friend WithEvents Label40 As Label
-    Friend WithEvents DataGridView7 As DataGridView
-    Friend WithEvents DataGridView6 As DataGridView
-    Friend WithEvents lblTranTotalLineValueData As Label
-    Friend WithEvents lblTranTotalLineValue As Label
-    Friend WithEvents lblTranOnHandData As Label
-    Friend WithEvents lnkTranReset As LinkLabel
-    Friend WithEvents txtTranValue As TextBox
-    Friend WithEvents nudTranQty As NumericUpDown
-    Friend WithEvents lblTranOnHand As Label
-    Friend WithEvents lblTranValue As Label
-    Friend WithEvents lblTranQty As Label
-    Friend WithEvents Label59 As Label
-    Friend WithEvents Label56 As Label
-    Friend WithEvents Label55 As Label
-    Friend WithEvents Label53 As Label
-    Friend WithEvents Label52 As Label
-    Friend WithEvents Label51 As Label
-    Friend WithEvents Label50 As Label
-    Friend WithEvents Label49 As Label
-    Friend WithEvents Label48 As Label
-    Friend WithEvents Label46 As Label
-    Friend WithEvents Label43 As Label
-    Friend WithEvents Label42 As Label
-    Friend WithEvents TextBox20 As TextBox
-    Friend WithEvents TextBox19 As TextBox
-    Friend WithEvents TextBox18 As TextBox
-    Friend WithEvents TextBox17 As TextBox
-    Friend WithEvents TextBox16 As TextBox
-    Friend WithEvents TextBox15 As TextBox
-    Friend WithEvents TextBox14 As TextBox
-    Friend WithEvents TextBox13 As TextBox
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox21 As TextBox
-    Friend WithEvents ComboBox15 As ComboBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox23 As TextBox
-    Friend WithEvents TextBox24 As TextBox
-    Friend WithEvents TextBox25 As TextBox
-    Friend WithEvents TextBox26 As TextBox
-    Friend WithEvents TextBox27 As TextBox
-    Friend WithEvents TextBox28 As TextBox
-    Friend WithEvents TextBox29 As TextBox
-    Friend WithEvents TextBox30 As TextBox
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Label24 As Label
-    Friend WithEvents Label60 As Label
-    Friend WithEvents Label64 As Label
-    Friend WithEvents Label65 As Label
-    Friend WithEvents Label66 As Label
-    Friend WithEvents Label67 As Label
-    Friend WithEvents ComboBox16 As ComboBox
-    Friend WithEvents TextBox22 As TextBox
-    Friend WithEvents Label12 As Label
     Friend WithEvents AddContactToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tsiAddDonor As ToolStripMenuItem
     Friend WithEvents AddBaseItemToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents gbxReportType As GroupBox
-    Friend WithEvents radBenefactor As RadioButton
-    Friend WithEvents radWishlist As RadioButton
-    Friend WithEvents radInventory As RadioButton
-    Friend WithEvents pnlWishlist As Panel
-    Friend WithEvents DataGridView9 As DataGridView
-    Friend WithEvents DataGridView8 As DataGridView
-    Friend WithEvents Label70 As Label
-    Friend WithEvents Label69 As Label
-    Friend WithEvents ComboBox18 As ComboBox
-    Friend WithEvents ComboBox17 As ComboBox
-    Friend WithEvents Label68 As Label
-    Friend WithEvents Label72 As Label
-    Friend WithEvents ComboBox19 As ComboBox
-    Friend WithEvents Label71 As Label
-    Friend WithEvents Button17 As Button
-    Friend WithEvents Button16 As Button
-    Friend WithEvents Button15 As Button
-    Friend WithEvents Label73 As Label
-    Friend WithEvents lstSavedReports As ListBox
-    Friend WithEvents Button18 As Button
-    Friend WithEvents Label74 As Label
-    Friend WithEvents TextBox31 As TextBox
-    Friend WithEvents pnlBenefactor As Panel
-    Friend WithEvents Label76 As Label
-    Friend WithEvents pnlInventory As Panel
-    Friend WithEvents Label75 As Label
-    Friend WithEvents Label79 As Label
-    Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents ListBox4 As ListBox
-    Friend WithEvents Button22 As Button
-    Friend WithEvents Button21 As Button
-    Friend WithEvents Button20 As Button
-    Friend WithEvents Button19 As Button
-    Friend WithEvents Label78 As Label
-    Friend WithEvents ListBox3 As ListBox
-    Friend WithEvents Label77 As Label
-    Friend WithEvents ListBox2 As ListBox
-    Friend WithEvents radTransactions As RadioButton
-    Friend WithEvents Button25 As Button
-    Friend WithEvents Button24 As Button
-    Friend WithEvents Button23 As Button
-    Friend WithEvents pnlTransReport As Panel
-    Friend WithEvents Label82 As Label
-    Friend WithEvents TextBox32 As TextBox
-    Friend WithEvents Label83 As Label
-    Friend WithEvents Label81 As Label
-    Friend WithEvents Label80 As Label
-    Friend WithEvents DateTimePicker2 As DateTimePicker
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents CheckBox7 As CheckBox
-    Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents CheckBox12 As CheckBox
-    Friend WithEvents CheckBox11 As CheckBox
-    Friend WithEvents CheckBox10 As CheckBox
-    Friend WithEvents CheckBox9 As CheckBox
-    Friend WithEvents GroupBox8 As GroupBox
-    Friend WithEvents CheckBox13 As CheckBox
-    Friend WithEvents CheckBox14 As CheckBox
-    Friend WithEvents CheckBox15 As CheckBox
-    Friend WithEvents CheckBox16 As CheckBox
-    Friend WithEvents Label84 As Label
-    Friend WithEvents ComboBox20 As ComboBox
-    Friend WithEvents Label85 As Label
-    Friend WithEvents Label86 As Label
-    Friend WithEvents DateTimePicker3 As DateTimePicker
-    Friend WithEvents DateTimePicker4 As DateTimePicker
-    Friend WithEvents Label87 As Label
-    Friend WithEvents ComboBox21 As ComboBox
-    Friend WithEvents Button28 As Button
-    Friend WithEvents Button27 As Button
-    Friend WithEvents Button26 As Button
-    Friend WithEvents Label89 As Label
-    Friend WithEvents TextBox34 As TextBox
-    Friend WithEvents TextBox33 As TextBox
-    Friend WithEvents DataGridView10 As DataGridView
-    Friend WithEvents Label88 As Label
-    Friend WithEvents GroupBox9 As GroupBox
-    Friend WithEvents CheckBox18 As CheckBox
-    Friend WithEvents CheckBox17 As CheckBox
-    Friend WithEvents CheckedListBox1 As CheckedListBox
-    Friend WithEvents CheckedListBox2 As CheckedListBox
-    Friend WithEvents TextBox35 As TextBox
-    Friend WithEvents Label90 As Label
-    Friend WithEvents DataGridView11 As DataGridView
+    Friend WithEvents tbpSettings As System.Windows.Forms.TabPage
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents TextBox23 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox24 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox25 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox27 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox28 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox29 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox30 As System.Windows.Forms.TextBox
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents Label60 As System.Windows.Forms.Label
+    Friend WithEvents Label64 As System.Windows.Forms.Label
+    Friend WithEvents Label65 As System.Windows.Forms.Label
+    Friend WithEvents Label66 As System.Windows.Forms.Label
+    Friend WithEvents Label67 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox16 As System.Windows.Forms.ComboBox
+    Friend WithEvents TextBox22 As System.Windows.Forms.TextBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Button14 As System.Windows.Forms.Button
+    Friend WithEvents Button13 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents ComboBox15 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents Label59 As System.Windows.Forms.Label
+    Friend WithEvents Label56 As System.Windows.Forms.Label
+    Friend WithEvents Label55 As System.Windows.Forms.Label
+    Friend WithEvents Label53 As System.Windows.Forms.Label
+    Friend WithEvents Label52 As System.Windows.Forms.Label
+    Friend WithEvents Label51 As System.Windows.Forms.Label
+    Friend WithEvents Label50 As System.Windows.Forms.Label
+    Friend WithEvents Label49 As System.Windows.Forms.Label
+    Friend WithEvents Label48 As System.Windows.Forms.Label
+    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents Label43 As System.Windows.Forms.Label
+    Friend WithEvents Label42 As System.Windows.Forms.Label
+    Friend WithEvents Button11 As System.Windows.Forms.Button
+    Friend WithEvents Button9 As System.Windows.Forms.Button
+    Friend WithEvents Label41 As System.Windows.Forms.Label
+    Friend WithEvents Label40 As System.Windows.Forms.Label
+    Friend WithEvents DataGridView7 As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridView6 As System.Windows.Forms.DataGridView
+    Friend WithEvents tbpReports As System.Windows.Forms.TabPage
+    Friend WithEvents Button18 As System.Windows.Forms.Button
+    Friend WithEvents Label73 As System.Windows.Forms.Label
+    Friend WithEvents lstSavedReports As System.Windows.Forms.ListBox
+    Friend WithEvents gbxReportType As System.Windows.Forms.GroupBox
+    Friend WithEvents radTransactions As System.Windows.Forms.RadioButton
+    Friend WithEvents radBenefactor As System.Windows.Forms.RadioButton
+    Friend WithEvents radWishlist As System.Windows.Forms.RadioButton
+    Friend WithEvents radInventory As System.Windows.Forms.RadioButton
+    Friend WithEvents pnlBenefactor As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckedListBox2 As System.Windows.Forms.CheckedListBox
+    Friend WithEvents CheckedListBox1 As System.Windows.Forms.CheckedListBox
+    Friend WithEvents CheckBox18 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox17 As System.Windows.Forms.CheckBox
+    Friend WithEvents Label89 As System.Windows.Forms.Label
+    Friend WithEvents TextBox34 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox33 As System.Windows.Forms.TextBox
+    Friend WithEvents DataGridView10 As System.Windows.Forms.DataGridView
+    Friend WithEvents Button28 As System.Windows.Forms.Button
+    Friend WithEvents Button27 As System.Windows.Forms.Button
+    Friend WithEvents Button26 As System.Windows.Forms.Button
+    Friend WithEvents Label87 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox21 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label85 As System.Windows.Forms.Label
+    Friend WithEvents Label86 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateTimePicker4 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label84 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox20 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label76 As System.Windows.Forms.Label
+    Friend WithEvents Label88 As System.Windows.Forms.Label
+    Friend WithEvents pnlTransReport As System.Windows.Forms.Panel
+    Friend WithEvents TextBox35 As System.Windows.Forms.TextBox
+    Friend WithEvents Label90 As System.Windows.Forms.Label
+    Friend WithEvents DataGridView11 As System.Windows.Forms.DataGridView
+    Friend WithEvents Label81 As System.Windows.Forms.Label
+    Friend WithEvents Label80 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label82 As System.Windows.Forms.Label
+    Friend WithEvents pnlInventory As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckBox12 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox11 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox10 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox9 As System.Windows.Forms.CheckBox
+    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckBox7 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox6 As System.Windows.Forms.CheckBox
+    Friend WithEvents TextBox32 As System.Windows.Forms.TextBox
+    Friend WithEvents Label83 As System.Windows.Forms.Label
+    Friend WithEvents Button25 As System.Windows.Forms.Button
+    Friend WithEvents Button24 As System.Windows.Forms.Button
+    Friend WithEvents Button23 As System.Windows.Forms.Button
+    Friend WithEvents Label79 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckBox8 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents ListBox4 As System.Windows.Forms.ListBox
+    Friend WithEvents Button22 As System.Windows.Forms.Button
+    Friend WithEvents Button21 As System.Windows.Forms.Button
+    Friend WithEvents Button20 As System.Windows.Forms.Button
+    Friend WithEvents Button19 As System.Windows.Forms.Button
+    Friend WithEvents Label78 As System.Windows.Forms.Label
+    Friend WithEvents ListBox3 As System.Windows.Forms.ListBox
+    Friend WithEvents Label77 As System.Windows.Forms.Label
+    Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
+    Friend WithEvents Label75 As System.Windows.Forms.Label
+    Friend WithEvents pnlWishlist As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckBox13 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox14 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox15 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox16 As System.Windows.Forms.CheckBox
+    Friend WithEvents Label74 As System.Windows.Forms.Label
+    Friend WithEvents TextBox31 As System.Windows.Forms.TextBox
+    Friend WithEvents Button17 As System.Windows.Forms.Button
+    Friend WithEvents Button16 As System.Windows.Forms.Button
+    Friend WithEvents Button15 As System.Windows.Forms.Button
+    Friend WithEvents Label72 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox19 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label71 As System.Windows.Forms.Label
+    Friend WithEvents DataGridView9 As System.Windows.Forms.DataGridView
+    Friend WithEvents DataGridView8 As System.Windows.Forms.DataGridView
+    Friend WithEvents Label70 As System.Windows.Forms.Label
+    Friend WithEvents Label69 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox18 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox17 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label68 As System.Windows.Forms.Label
+    Friend WithEvents tbpItmManag As System.Windows.Forms.TabPage
+    Friend WithEvents tbpInvTrans As System.Windows.Forms.TabPage
+    Friend WithEvents lblTranItems As System.Windows.Forms.Label
+    Friend WithEvents grpTranItems As System.Windows.Forms.GroupBox
+    Friend WithEvents lblTranTotalLineValueData As System.Windows.Forms.Label
+    Friend WithEvents lblTranTotalLineValue As System.Windows.Forms.Label
+    Friend WithEvents lblTranOnHandData As System.Windows.Forms.Label
+    Friend WithEvents lnkTranReset As System.Windows.Forms.LinkLabel
+    Friend WithEvents txtTranValue As System.Windows.Forms.TextBox
+    Friend WithEvents nudTranQty As System.Windows.Forms.NumericUpDown
+    Friend WithEvents lblTranOnHand As System.Windows.Forms.Label
+    Friend WithEvents lblTranValue As System.Windows.Forms.Label
+    Friend WithEvents lblTranQty As System.Windows.Forms.Label
+    Friend WithEvents lblSelectedItemSubCategory As System.Windows.Forms.Label
+    Friend WithEvents lblSelectedItemCategory As System.Windows.Forms.Label
+    Friend WithEvents txtTranItemComment As System.Windows.Forms.TextBox
+    Friend WithEvents pbxTLwQuant As System.Windows.Forms.PictureBox
+    Friend WithEvents cmbTranProgram As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbTranBin As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbTranLocation As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbTranCondition As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbTranFacility As System.Windows.Forms.ComboBox
+    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents lblTranProgram As System.Windows.Forms.Label
+    Friend WithEvents pnlTags As System.Windows.Forms.Panel
+    Friend WithEvents btnTranTag As System.Windows.Forms.Button
+    Friend WithEvents lblTranBin As System.Windows.Forms.Label
+    Friend WithEvents txtTranAddTags As System.Windows.Forms.TextBox
+    Friend WithEvents lblTranItemComment As System.Windows.Forms.Label
+    Friend WithEvents lblTranCondition As System.Windows.Forms.Label
+    Friend WithEvents lblTranLocation As System.Windows.Forms.Label
+    Friend WithEvents lblTranFaclity As System.Windows.Forms.Label
+    Friend WithEvents lblTranAddTags As System.Windows.Forms.Label
+    Friend WithEvents lblTranTags As System.Windows.Forms.Label
+    Friend WithEvents lblTSubCategory As System.Windows.Forms.Label
+    Friend WithEvents lblTranCategory As System.Windows.Forms.Label
+    Friend WithEvents lblTranItemName As System.Windows.Forms.Label
+    Friend WithEvents btnTranItemReset As System.Windows.Forms.Button
+    Friend WithEvents btnTranItemAddNew As System.Windows.Forms.Button
+    Friend WithEvents btnTranItemAddToTran As System.Windows.Forms.Button
+    Friend WithEvents txtSearchTran As System.Windows.Forms.TextBox
+    Friend WithEvents dgvTranItems As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvTranCategories As System.Windows.Forms.DataGridView
+    Friend WithEvents grpInvTransInfo As System.Windows.Forms.GroupBox
+    Friend WithEvents lblTranContactNameData As System.Windows.Forms.Label
+    Friend WithEvents lnklblTranContactEmail As System.Windows.Forms.LinkLabel
+    Friend WithEvents lblTranContactEmail As System.Windows.Forms.Label
+    Friend WithEvents lblTranContactPhoneData As System.Windows.Forms.Label
+    Friend WithEvents lblTranContactPhone As System.Windows.Forms.Label
+    Friend WithEvents Label31 As System.Windows.Forms.Label
+    Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents lblTranContactAddressData As System.Windows.Forms.Label
+    Friend WithEvents lblTranContactAddress As System.Windows.Forms.Label
+    Friend WithEvents txtTranComment As System.Windows.Forms.TextBox
+    Friend WithEvents lblTranComment As System.Windows.Forms.Label
+    Friend WithEvents lblTotalValue As System.Windows.Forms.Label
+    Friend WithEvents lblTotalValueData As System.Windows.Forms.Label
+    Friend WithEvents lblTotalIemsData As System.Windows.Forms.Label
+    Friend WithEvents lblTotalItems As System.Windows.Forms.Label
+    Friend WithEvents btnSubmitTran As System.Windows.Forms.Button
+    Friend WithEvents btnCancelTran As System.Windows.Forms.Button
+    Friend WithEvents lblTransType As System.Windows.Forms.Label
+    Friend WithEvents cmbTranType As System.Windows.Forms.ComboBox
+    Friend WithEvents btnTranContactEdit As System.Windows.Forms.Button
+    Friend WithEvents btnTranContactAdd As System.Windows.Forms.Button
+    Friend WithEvents lblTranContactName As System.Windows.Forms.Label
+    Friend WithEvents lblTranContact As System.Windows.Forms.Label
+    Friend WithEvents txtTranContact As System.Windows.Forms.TextBox
+    Friend WithEvents cmbTranFilterBySubCategory As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbTranFilterByCategory As System.Windows.Forms.ComboBox
+    Friend WithEvents tbpDashboard As System.Windows.Forms.TabPage
+    Friend WithEvents picCAN As System.Windows.Forms.PictureBox
+    Friend WithEvents lblNFilter As System.Windows.Forms.Label
+    Friend WithEvents lblDFilter As System.Windows.Forms.Label
+    Friend WithEvents lblDTo As System.Windows.Forms.Label
+    Friend WithEvents lblRecentDonations As System.Windows.Forms.Label
+    Friend WithEvents lblInvNotifications As System.Windows.Forms.Label
+    Friend WithEvents dgvInvNotifications As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvRecentDonations As System.Windows.Forms.DataGridView
+    Friend WithEvents dtpDToDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpDFromDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents cbxNFilter As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbDFilter As System.Windows.Forms.ComboBox
+    Friend WithEvents btnQReports As System.Windows.Forms.Button
+    Friend WithEvents btnQAddContact As System.Windows.Forms.Button
+    Friend WithEvents btnQItemSearch As System.Windows.Forms.Button
+    Friend WithEvents btnQTrans As System.Windows.Forms.Button
+    Friend WithEvents picPinWheels As System.Windows.Forms.PictureBox
+    Friend WithEvents tabControls As System.Windows.Forms.TabControl
+    Friend WithEvents tbpContacts As System.Windows.Forms.TabPage
 End Class

@@ -169,6 +169,30 @@ Public Class DB_Access
         Return data
     End Function
 
+    'Inventory Notifications
+    Function DataStoredProcGetInventoryNotifications() As DataSet
+        Dim connect As OleDbConnection
+        Dim adapt As OleDbDataAdapter
+        Dim data As New DataSet
+        Dim cmd As New OleDbCommand
+
+        connect = New OleDbConnection(dBasePath)
+        Try
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "queryItemLowInventory"
+            cmd.Connection = connect
+            connect.Open()
+
+            adapt = New OleDbDataAdapter(cmd)
+            adapt.Fill(data, "Table1")
+
+            connect.Close()
+        Catch ex As Exception
+            statusLabel.Text = "Failed to retrieve data."
+        End Try
+        Return data
+    End Function
+
     'Determine total "in" count for given item
     Function DataStoredProcGetQuantityIn(itemId As Integer) As DataSet
         Dim connect As OleDbConnection

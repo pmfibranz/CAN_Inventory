@@ -26,6 +26,7 @@ Partial Class frmMain
         Me.menTopStrip = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddNewBaseItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsiAddUser = New System.Windows.Forms.ToolStripMenuItem()
@@ -193,6 +194,8 @@ Partial Class frmMain
         Me.tbpInvTrans = New System.Windows.Forms.TabPage()
         Me.lblTranItems = New System.Windows.Forms.Label()
         Me.grpTranItems = New System.Windows.Forms.GroupBox()
+        Me.btnTranAddTag = New System.Windows.Forms.Button()
+        Me.flpTranItemTags = New System.Windows.Forms.FlowLayoutPanel()
         Me.lblTranTotalLineValueData = New System.Windows.Forms.Label()
         Me.lblTranTotalLineValue = New System.Windows.Forms.Label()
         Me.lblTranOnHandData = New System.Windows.Forms.Label()
@@ -214,15 +217,12 @@ Partial Class frmMain
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.lblTranProgram = New System.Windows.Forms.Label()
-        Me.pnlTags = New System.Windows.Forms.Panel()
-        Me.btnTranTag = New System.Windows.Forms.Button()
         Me.lblTranBin = New System.Windows.Forms.Label()
         Me.txtTranAddTags = New System.Windows.Forms.TextBox()
         Me.lblTranItemComment = New System.Windows.Forms.Label()
         Me.lblTranCondition = New System.Windows.Forms.Label()
         Me.lblTranLocation = New System.Windows.Forms.Label()
         Me.lblTranFaclity = New System.Windows.Forms.Label()
-        Me.lblTranAddTags = New System.Windows.Forms.Label()
         Me.lblTranTags = New System.Windows.Forms.Label()
         Me.lblTSubCategory = New System.Windows.Forms.Label()
         Me.lblTranCategory = New System.Windows.Forms.Label()
@@ -231,8 +231,8 @@ Partial Class frmMain
         Me.btnTranItemAddNew = New System.Windows.Forms.Button()
         Me.btnTranItemAddToTran = New System.Windows.Forms.Button()
         Me.txtSearchTran = New System.Windows.Forms.TextBox()
-        Me.dgvTranItems = New System.Windows.Forms.DataGridView()
-        Me.dgvTranCategories = New System.Windows.Forms.DataGridView()
+        Me.dgvTranSelectedItems = New System.Windows.Forms.DataGridView()
+        Me.dgvTranAvailableItems = New System.Windows.Forms.DataGridView()
         Me.grpInvTransInfo = New System.Windows.Forms.GroupBox()
         Me.lblTranContactNameData = New System.Windows.Forms.Label()
         Me.lnklblTranContactEmail = New System.Windows.Forms.LinkLabel()
@@ -307,9 +307,8 @@ Partial Class frmMain
         CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlTags.SuspendLayout()
-        CType(Me.dgvTranItems, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvTranCategories, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvTranSelectedItems, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvTranAvailableItems, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpInvTransInfo.SuspendLayout()
         Me.tbpDashboard.SuspendLayout()
         CType(Me.picCAN, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -321,74 +320,82 @@ Partial Class frmMain
         '
         'menTopStrip
         '
+        Me.menTopStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.menTopStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ToolStripMenuItem4, Me.ToolStripMenuItem3, Me.cmbUserSelect})
         Me.menTopStrip.Location = New System.Drawing.Point(0, 0)
         Me.menTopStrip.Name = "menTopStrip"
-        Me.menTopStrip.Size = New System.Drawing.Size(1097, 25)
+        Me.menTopStrip.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.menTopStrip.Size = New System.Drawing.Size(1463, 32)
         Me.menTopStrip.TabIndex = 0
         Me.menTopStrip.Text = "MenuStrip1"
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewBaseItemToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewBaseItemToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(35, 21)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(44, 28)
         Me.ToolStripMenuItem1.Text = "&File"
         '
         'AddNewBaseItemToolStripMenuItem
         '
         Me.AddNewBaseItemToolStripMenuItem.Name = "AddNewBaseItemToolStripMenuItem"
-        Me.AddNewBaseItemToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
-        Me.AddNewBaseItemToolStripMenuItem.Text = "Add New Base Item"
+        Me.AddNewBaseItemToolStripMenuItem.Size = New System.Drawing.Size(215, 26)
+        Me.AddNewBaseItemToolStripMenuItem.Text = "Add &New Base Item"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(215, 26)
+        Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(41, 21)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(53, 28)
         Me.ToolStripMenuItem2.Text = "&View"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsiAddUser, Me.AddContactToolStripMenuItem, Me.tsiAddDonor, Me.AddBaseItemToolStripMenuItem})
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(44, 21)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(57, 28)
         Me.ToolStripMenuItem4.Text = "&Tools"
         '
         'tsiAddUser
         '
         Me.tsiAddUser.Name = "tsiAddUser"
-        Me.tsiAddUser.Size = New System.Drawing.Size(144, 22)
+        Me.tsiAddUser.Size = New System.Drawing.Size(181, 26)
         Me.tsiAddUser.Text = "Add &User"
         '
         'AddContactToolStripMenuItem
         '
         Me.AddContactToolStripMenuItem.Name = "AddContactToolStripMenuItem"
-        Me.AddContactToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.AddContactToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.AddContactToolStripMenuItem.Text = "Add &Contact"
         '
         'tsiAddDonor
         '
         Me.tsiAddDonor.Name = "tsiAddDonor"
-        Me.tsiAddDonor.Size = New System.Drawing.Size(144, 22)
+        Me.tsiAddDonor.Size = New System.Drawing.Size(181, 26)
         Me.tsiAddDonor.Text = "Add &Donor"
         '
         'AddBaseItemToolStripMenuItem
         '
         Me.AddBaseItemToolStripMenuItem.Name = "AddBaseItemToolStripMenuItem"
-        Me.AddBaseItemToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.AddBaseItemToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.AddBaseItemToolStripMenuItem.Text = "Add Base &Item"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem})
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(40, 21)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(53, 28)
         Me.ToolStripMenuItem3.Text = "&Help"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(95, 22)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(116, 26)
         Me.HelpToolStripMenuItem.Text = "&Help"
         '
         'cmbUserSelect
@@ -397,16 +404,18 @@ Partial Class frmMain
         Me.cmbUserSelect.ForeColor = System.Drawing.SystemColors.WindowText
         Me.cmbUserSelect.Margin = New System.Windows.Forms.Padding(1, 0, 5, 0)
         Me.cmbUserSelect.Name = "cmbUserSelect"
-        Me.cmbUserSelect.Size = New System.Drawing.Size(121, 21)
+        Me.cmbUserSelect.Size = New System.Drawing.Size(160, 28)
         Me.cmbUserSelect.Text = "User"
         '
         'stsSatusBar
         '
         Me.stsSatusBar.BackColor = System.Drawing.Color.Silver
+        Me.stsSatusBar.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.stsSatusBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblStatus})
-        Me.stsSatusBar.Location = New System.Drawing.Point(0, 647)
+        Me.stsSatusBar.Location = New System.Drawing.Point(0, 798)
         Me.stsSatusBar.Name = "stsSatusBar"
-        Me.stsSatusBar.Size = New System.Drawing.Size(1097, 22)
+        Me.stsSatusBar.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
+        Me.stsSatusBar.Size = New System.Drawing.Size(1463, 25)
         Me.stsSatusBar.TabIndex = 1
         Me.stsSatusBar.Text = "StatusStrip1"
         '
@@ -414,14 +423,15 @@ Partial Class frmMain
         '
         Me.lblStatus.ForeColor = System.Drawing.Color.DimGray
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(75, 17)
+        Me.lblStatus.Size = New System.Drawing.Size(104, 20)
         Me.lblStatus.Text = "DB Connected"
         '
         'tbpSettings
         '
-        Me.tbpSettings.Location = New System.Drawing.Point(4, 22)
+        Me.tbpSettings.Location = New System.Drawing.Point(4, 25)
+        Me.tbpSettings.Margin = New System.Windows.Forms.Padding(4)
         Me.tbpSettings.Name = "tbpSettings"
-        Me.tbpSettings.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpSettings.Size = New System.Drawing.Size(1455, 743)
         Me.tbpSettings.TabIndex = 2
         Me.tbpSettings.Text = "Settings"
         Me.tbpSettings.UseVisualStyleBackColor = True
@@ -434,9 +444,10 @@ Partial Class frmMain
         Me.tbpContacts.Controls.Add(Me.Label40)
         Me.tbpContacts.Controls.Add(Me.DataGridView7)
         Me.tbpContacts.Controls.Add(Me.DataGridView6)
-        Me.tbpContacts.Location = New System.Drawing.Point(4, 22)
+        Me.tbpContacts.Location = New System.Drawing.Point(4, 25)
+        Me.tbpContacts.Margin = New System.Windows.Forms.Padding(4)
         Me.tbpContacts.Name = "tbpContacts"
-        Me.tbpContacts.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpContacts.Size = New System.Drawing.Size(1455, 743)
         Me.tbpContacts.TabIndex = 5
         Me.tbpContacts.Text = "Contacts"
         Me.tbpContacts.UseVisualStyleBackColor = True
@@ -465,172 +476,194 @@ Partial Class frmMain
         Me.GroupBox4.Controls.Add(Me.Label11)
         Me.GroupBox4.Controls.Add(Me.Button14)
         Me.GroupBox4.Controls.Add(Me.Button13)
-        Me.GroupBox4.Location = New System.Drawing.Point(8, 297)
+        Me.GroupBox4.Location = New System.Drawing.Point(11, 366)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(447, 291)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox4.Size = New System.Drawing.Size(596, 358)
         Me.GroupBox4.TabIndex = 5
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "New Benefactor"
         '
         'TextBox23
         '
-        Me.TextBox23.Location = New System.Drawing.Point(225, 150)
+        Me.TextBox23.Location = New System.Drawing.Point(300, 185)
+        Me.TextBox23.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox23.Multiline = True
         Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.Size = New System.Drawing.Size(216, 90)
+        Me.TextBox23.Size = New System.Drawing.Size(287, 110)
         Me.TextBox23.TabIndex = 41
         '
         'TextBox24
         '
-        Me.TextBox24.Location = New System.Drawing.Point(58, 110)
+        Me.TextBox24.Location = New System.Drawing.Point(77, 135)
+        Me.TextBox24.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox24.Size = New System.Drawing.Size(152, 22)
         Me.TextBox24.TabIndex = 40
         '
         'TextBox25
         '
-        Me.TextBox25.Location = New System.Drawing.Point(125, 165)
+        Me.TextBox25.Location = New System.Drawing.Point(167, 203)
+        Me.TextBox25.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(48, 20)
+        Me.TextBox25.Size = New System.Drawing.Size(63, 22)
         Me.TextBox25.TabIndex = 39
         '
         'TextBox26
         '
-        Me.TextBox26.Location = New System.Drawing.Point(58, 165)
+        Me.TextBox26.Location = New System.Drawing.Point(77, 203)
+        Me.TextBox26.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.Size = New System.Drawing.Size(26, 20)
+        Me.TextBox26.Size = New System.Drawing.Size(33, 22)
         Me.TextBox26.TabIndex = 38
         '
         'TextBox27
         '
-        Me.TextBox27.Location = New System.Drawing.Point(58, 139)
+        Me.TextBox27.Location = New System.Drawing.Point(77, 171)
+        Me.TextBox27.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox27.Size = New System.Drawing.Size(152, 22)
         Me.TextBox27.TabIndex = 37
         '
         'TextBox28
         '
-        Me.TextBox28.Location = New System.Drawing.Point(58, 84)
+        Me.TextBox28.Location = New System.Drawing.Point(77, 103)
+        Me.TextBox28.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox28.Size = New System.Drawing.Size(152, 22)
         Me.TextBox28.TabIndex = 36
         '
         'TextBox29
         '
-        Me.TextBox29.Location = New System.Drawing.Point(266, 110)
+        Me.TextBox29.Location = New System.Drawing.Point(355, 135)
+        Me.TextBox29.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox29.Size = New System.Drawing.Size(132, 22)
         Me.TextBox29.TabIndex = 35
         '
         'TextBox30
         '
-        Me.TextBox30.Location = New System.Drawing.Point(266, 84)
+        Me.TextBox30.Location = New System.Drawing.Point(355, 103)
+        Me.TextBox30.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox30.Name = "TextBox30"
-        Me.TextBox30.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox30.Size = New System.Drawing.Size(132, 22)
         Me.TextBox30.TabIndex = 34
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(222, 134)
+        Me.Label20.Location = New System.Drawing.Point(296, 165)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(54, 13)
+        Me.Label20.Size = New System.Drawing.Size(71, 17)
         Me.Label20.TabIndex = 33
         Me.Label20.Text = "Comment:"
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(222, 114)
+        Me.Label24.Location = New System.Drawing.Point(296, 140)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(27, 13)
+        Me.Label24.Size = New System.Drawing.Size(34, 17)
         Me.Label24.TabIndex = 32
         Me.Label24.Text = "Fax:"
         '
         'Label60
         '
         Me.Label60.AutoSize = True
-        Me.Label60.Location = New System.Drawing.Point(100, 168)
+        Me.Label60.Location = New System.Drawing.Point(133, 207)
+        Me.Label60.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(25, 13)
+        Me.Label60.Size = New System.Drawing.Size(32, 17)
         Me.Label60.TabIndex = 31
         Me.Label60.Text = "Zip:"
         '
         'Label64
         '
         Me.Label64.AutoSize = True
-        Me.Label64.Location = New System.Drawing.Point(23, 168)
+        Me.Label64.Location = New System.Drawing.Point(31, 207)
+        Me.Label64.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(35, 13)
+        Me.Label64.Size = New System.Drawing.Size(45, 17)
         Me.Label64.TabIndex = 30
         Me.Label64.Text = "State:"
         '
         'Label65
         '
         Me.Label65.AutoSize = True
-        Me.Label65.Location = New System.Drawing.Point(30, 142)
+        Me.Label65.Location = New System.Drawing.Point(40, 175)
+        Me.Label65.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(27, 13)
+        Me.Label65.Size = New System.Drawing.Size(35, 17)
         Me.Label65.TabIndex = 29
         Me.Label65.Text = "City:"
         '
         'Label66
         '
         Me.Label66.AutoSize = True
-        Me.Label66.Location = New System.Drawing.Point(9, 87)
+        Me.Label66.Location = New System.Drawing.Point(12, 107)
+        Me.Label66.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(48, 13)
+        Me.Label66.Size = New System.Drawing.Size(64, 17)
         Me.Label66.TabIndex = 28
         Me.Label66.Text = "Address:"
         '
         'Label67
         '
         Me.Label67.AutoSize = True
-        Me.Label67.Location = New System.Drawing.Point(222, 88)
+        Me.Label67.Location = New System.Drawing.Point(296, 108)
+        Me.Label67.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(41, 13)
+        Me.Label67.Size = New System.Drawing.Size(53, 17)
         Me.Label67.TabIndex = 27
         Me.Label67.Text = "Phone:"
         '
         'ComboBox16
         '
         Me.ComboBox16.FormattingEnabled = True
-        Me.ComboBox16.Location = New System.Drawing.Point(315, 39)
+        Me.ComboBox16.Location = New System.Drawing.Point(420, 48)
+        Me.ComboBox16.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox16.Name = "ComboBox16"
-        Me.ComboBox16.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox16.Size = New System.Drawing.Size(160, 24)
         Me.ComboBox16.TabIndex = 5
         '
         'TextBox22
         '
-        Me.TextBox22.Location = New System.Drawing.Point(15, 40)
+        Me.TextBox22.Location = New System.Drawing.Point(20, 49)
+        Me.TextBox22.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(173, 20)
+        Me.TextBox22.Size = New System.Drawing.Size(229, 22)
         Me.TextBox22.TabIndex = 4
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(312, 23)
+        Me.Label12.Location = New System.Drawing.Point(416, 28)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(34, 13)
+        Me.Label12.Size = New System.Drawing.Size(44, 17)
         Me.Label12.TabIndex = 3
         Me.Label12.Text = "Type:"
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(12, 23)
+        Me.Label11.Location = New System.Drawing.Point(16, 28)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(38, 13)
+        Me.Label11.Size = New System.Drawing.Size(49, 17)
         Me.Label11.TabIndex = 2
         Me.Label11.Text = "Name:"
         '
         'Button14
         '
         Me.Button14.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button14.Location = New System.Drawing.Point(361, 262)
+        Me.Button14.Location = New System.Drawing.Point(481, 322)
+        Me.Button14.Margin = New System.Windows.Forms.Padding(4)
         Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(75, 23)
+        Me.Button14.Size = New System.Drawing.Size(100, 28)
         Me.Button14.TabIndex = 1
         Me.Button14.Text = "Cancel"
         Me.Button14.UseVisualStyleBackColor = True
@@ -638,9 +671,10 @@ Partial Class frmMain
         'Button13
         '
         Me.Button13.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button13.Location = New System.Drawing.Point(280, 262)
+        Me.Button13.Location = New System.Drawing.Point(373, 322)
+        Me.Button13.Margin = New System.Windows.Forms.Padding(4)
         Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(75, 23)
+        Me.Button13.Size = New System.Drawing.Size(100, 28)
         Me.Button13.TabIndex = 0
         Me.Button13.Text = "Submit"
         Me.Button13.UseVisualStyleBackColor = True
@@ -678,9 +712,11 @@ Partial Class frmMain
         Me.GroupBox3.Controls.Add(Me.Label42)
         Me.GroupBox3.Controls.Add(Me.Button11)
         Me.GroupBox3.Controls.Add(Me.Button9)
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 13)
+        Me.GroupBox3.Location = New System.Drawing.Point(11, 16)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(447, 278)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox3.Size = New System.Drawing.Size(596, 342)
         Me.GroupBox3.TabIndex = 4
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "New Contact"
@@ -688,226 +724,254 @@ Partial Class frmMain
         'ComboBox15
         '
         Me.ComboBox15.FormattingEnabled = True
-        Me.ComboBox15.Location = New System.Drawing.Point(316, 33)
+        Me.ComboBox15.Location = New System.Drawing.Point(421, 41)
+        Me.ComboBox15.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox15.Name = "ComboBox15"
-        Me.ComboBox15.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox15.Size = New System.Drawing.Size(160, 24)
         Me.ComboBox15.TabIndex = 28
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(313, 16)
+        Me.Label9.Location = New System.Drawing.Point(417, 20)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(74, 13)
+        Me.Label9.Size = New System.Drawing.Size(96, 17)
         Me.Label9.TabIndex = 27
         Me.Label9.Text = "Contact Type:"
         '
         'TextBox21
         '
-        Me.TextBox21.Location = New System.Drawing.Point(225, 153)
+        Me.TextBox21.Location = New System.Drawing.Point(300, 188)
+        Me.TextBox21.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox21.Multiline = True
         Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(216, 90)
+        Me.TextBox21.Size = New System.Drawing.Size(287, 110)
         Me.TextBox21.TabIndex = 26
         '
         'TextBox20
         '
-        Me.TextBox20.Location = New System.Drawing.Point(16, 223)
+        Me.TextBox20.Location = New System.Drawing.Point(21, 274)
+        Me.TextBox20.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(161, 20)
+        Me.TextBox20.Size = New System.Drawing.Size(213, 22)
         Me.TextBox20.TabIndex = 25
         '
         'TextBox19
         '
-        Me.TextBox19.Location = New System.Drawing.Point(61, 124)
+        Me.TextBox19.Location = New System.Drawing.Point(81, 153)
+        Me.TextBox19.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox19.Size = New System.Drawing.Size(152, 22)
         Me.TextBox19.TabIndex = 24
         '
         'TextBox18
         '
-        Me.TextBox18.Location = New System.Drawing.Point(128, 179)
+        Me.TextBox18.Location = New System.Drawing.Point(171, 220)
+        Me.TextBox18.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(48, 20)
+        Me.TextBox18.Size = New System.Drawing.Size(63, 22)
         Me.TextBox18.TabIndex = 23
         '
         'TextBox17
         '
-        Me.TextBox17.Location = New System.Drawing.Point(61, 179)
+        Me.TextBox17.Location = New System.Drawing.Point(81, 220)
+        Me.TextBox17.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(26, 20)
+        Me.TextBox17.Size = New System.Drawing.Size(33, 22)
         Me.TextBox17.TabIndex = 22
         '
         'TextBox16
         '
-        Me.TextBox16.Location = New System.Drawing.Point(61, 153)
+        Me.TextBox16.Location = New System.Drawing.Point(81, 188)
+        Me.TextBox16.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox16.Size = New System.Drawing.Size(152, 22)
         Me.TextBox16.TabIndex = 21
         '
         'TextBox15
         '
-        Me.TextBox15.Location = New System.Drawing.Point(61, 98)
+        Me.TextBox15.Location = New System.Drawing.Point(81, 121)
+        Me.TextBox15.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(115, 20)
+        Me.TextBox15.Size = New System.Drawing.Size(152, 22)
         Me.TextBox15.TabIndex = 20
         '
         'TextBox14
         '
-        Me.TextBox14.Location = New System.Drawing.Point(266, 61)
+        Me.TextBox14.Location = New System.Drawing.Point(355, 75)
+        Me.TextBox14.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(134, 20)
+        Me.TextBox14.Size = New System.Drawing.Size(177, 22)
         Me.TextBox14.TabIndex = 19
         '
         'TextBox13
         '
-        Me.TextBox13.Location = New System.Drawing.Point(266, 113)
+        Me.TextBox13.Location = New System.Drawing.Point(355, 139)
+        Me.TextBox13.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox13.Size = New System.Drawing.Size(132, 22)
         Me.TextBox13.TabIndex = 18
         '
         'TextBox12
         '
-        Me.TextBox12.Location = New System.Drawing.Point(266, 87)
+        Me.TextBox12.Location = New System.Drawing.Point(355, 107)
+        Me.TextBox12.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox12.Size = New System.Drawing.Size(132, 22)
         Me.TextBox12.TabIndex = 17
         '
         'TextBox11
         '
-        Me.TextBox11.Location = New System.Drawing.Point(63, 65)
+        Me.TextBox11.Location = New System.Drawing.Point(84, 80)
+        Me.TextBox11.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(72, 20)
+        Me.TextBox11.Size = New System.Drawing.Size(95, 22)
         Me.TextBox11.TabIndex = 16
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(88, 33)
+        Me.TextBox10.Location = New System.Drawing.Point(117, 41)
+        Me.TextBox10.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox10.Size = New System.Drawing.Size(132, 22)
         Me.TextBox10.TabIndex = 15
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(6, 33)
+        Me.TextBox9.Location = New System.Drawing.Point(8, 41)
+        Me.TextBox9.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(76, 20)
+        Me.TextBox9.Size = New System.Drawing.Size(100, 22)
         Me.TextBox9.TabIndex = 14
         '
         'Label59
         '
         Me.Label59.AutoSize = True
-        Me.Label59.Location = New System.Drawing.Point(222, 137)
+        Me.Label59.Location = New System.Drawing.Point(296, 169)
+        Me.Label59.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(54, 13)
+        Me.Label59.Size = New System.Drawing.Size(71, 17)
         Me.Label59.TabIndex = 13
         Me.Label59.Text = "Comment:"
         '
         'Label56
         '
         Me.Label56.AutoSize = True
-        Me.Label56.Location = New System.Drawing.Point(13, 207)
+        Me.Label56.Location = New System.Drawing.Point(17, 255)
+        Me.Label56.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(107, 13)
+        Me.Label56.Size = New System.Drawing.Size(142, 17)
         Me.Label56.TabIndex = 12
         Me.Label56.Text = "Benefactor Affiliation:"
         '
         'Label55
         '
         Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(222, 117)
+        Me.Label55.Location = New System.Drawing.Point(296, 144)
+        Me.Label55.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(27, 13)
+        Me.Label55.Size = New System.Drawing.Size(34, 17)
         Me.Label55.TabIndex = 11
         Me.Label55.Text = "Fax:"
         '
         'Label53
         '
         Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(103, 182)
+        Me.Label53.Location = New System.Drawing.Point(137, 224)
+        Me.Label53.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(25, 13)
+        Me.Label53.Size = New System.Drawing.Size(32, 17)
         Me.Label53.TabIndex = 10
         Me.Label53.Text = "Zip:"
         '
         'Label52
         '
         Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(26, 182)
+        Me.Label52.Location = New System.Drawing.Point(35, 224)
+        Me.Label52.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(35, 13)
+        Me.Label52.Size = New System.Drawing.Size(45, 17)
         Me.Label52.TabIndex = 9
         Me.Label52.Text = "State:"
         '
         'Label51
         '
         Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(33, 156)
+        Me.Label51.Location = New System.Drawing.Point(44, 192)
+        Me.Label51.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(27, 13)
+        Me.Label51.Size = New System.Drawing.Size(35, 17)
         Me.Label51.TabIndex = 8
         Me.Label51.Text = "City:"
         '
         'Label50
         '
         Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(12, 101)
+        Me.Label50.Location = New System.Drawing.Point(16, 124)
+        Me.Label50.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(48, 13)
+        Me.Label50.Size = New System.Drawing.Size(64, 17)
         Me.Label50.TabIndex = 7
         Me.Label50.Text = "Address:"
         '
         'Label49
         '
         Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(222, 65)
+        Me.Label49.Location = New System.Drawing.Point(296, 80)
+        Me.Label49.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(35, 13)
+        Me.Label49.Size = New System.Drawing.Size(46, 17)
         Me.Label49.TabIndex = 6
         Me.Label49.Text = "Email:"
         '
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(222, 91)
+        Me.Label48.Location = New System.Drawing.Point(296, 112)
+        Me.Label48.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(41, 13)
+        Me.Label48.Size = New System.Drawing.Size(53, 17)
         Me.Label48.TabIndex = 5
         Me.Label48.Text = "Phone:"
         '
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(13, 68)
+        Me.Label46.Location = New System.Drawing.Point(17, 84)
+        Me.Label46.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(50, 13)
+        Me.Label46.Size = New System.Drawing.Size(66, 17)
         Me.Label46.TabIndex = 4
         Me.Label46.Text = "Job Title:"
         '
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(85, 17)
+        Me.Label43.Location = New System.Drawing.Point(113, 21)
+        Me.Label43.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(61, 13)
+        Me.Label43.Size = New System.Drawing.Size(80, 17)
         Me.Label43.TabIndex = 3
         Me.Label43.Text = "Last Name:"
         '
         'Label42
         '
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(3, 17)
+        Me.Label42.Location = New System.Drawing.Point(4, 21)
+        Me.Label42.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(60, 13)
+        Me.Label42.Size = New System.Drawing.Size(80, 17)
         Me.Label42.TabIndex = 2
         Me.Label42.Text = "First Name:"
         '
         'Button11
         '
         Me.Button11.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button11.Location = New System.Drawing.Point(366, 249)
+        Me.Button11.Location = New System.Drawing.Point(488, 306)
+        Me.Button11.Margin = New System.Windows.Forms.Padding(4)
         Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(75, 23)
+        Me.Button11.Size = New System.Drawing.Size(100, 28)
         Me.Button11.TabIndex = 1
         Me.Button11.Text = "Cancel"
         Me.Button11.UseVisualStyleBackColor = True
@@ -915,9 +979,10 @@ Partial Class frmMain
         'Button9
         '
         Me.Button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button9.Location = New System.Drawing.Point(285, 249)
+        Me.Button9.Location = New System.Drawing.Point(380, 306)
+        Me.Button9.Margin = New System.Windows.Forms.Padding(4)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(75, 23)
+        Me.Button9.Size = New System.Drawing.Size(100, 28)
         Me.Button9.TabIndex = 0
         Me.Button9.Text = "Submit"
         Me.Button9.UseVisualStyleBackColor = True
@@ -926,18 +991,20 @@ Partial Class frmMain
         '
         Me.Label41.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(458, 297)
+        Me.Label41.Location = New System.Drawing.Point(611, 366)
+        Me.Label41.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(64, 13)
+        Me.Label41.Size = New System.Drawing.Size(84, 17)
         Me.Label41.TabIndex = 3
         Me.Label41.Text = "Benefactors"
         '
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(458, 13)
+        Me.Label40.Location = New System.Drawing.Point(611, 16)
+        Me.Label40.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(52, 13)
+        Me.Label40.Size = New System.Drawing.Size(67, 17)
         Me.Label40.TabIndex = 2
         Me.Label40.Text = "Contacts:"
         '
@@ -946,9 +1013,10 @@ Partial Class frmMain
         Me.DataGridView7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView7.Location = New System.Drawing.Point(461, 313)
+        Me.DataGridView7.Location = New System.Drawing.Point(615, 385)
+        Me.DataGridView7.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView7.Name = "DataGridView7"
-        Me.DataGridView7.Size = New System.Drawing.Size(620, 275)
+        Me.DataGridView7.Size = New System.Drawing.Size(827, 338)
         Me.DataGridView7.TabIndex = 1
         '
         'DataGridView6
@@ -957,9 +1025,10 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView6.Location = New System.Drawing.Point(461, 29)
+        Me.DataGridView6.Location = New System.Drawing.Point(615, 36)
+        Me.DataGridView6.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView6.Name = "DataGridView6"
-        Me.DataGridView6.Size = New System.Drawing.Size(620, 262)
+        Me.DataGridView6.Size = New System.Drawing.Size(827, 322)
         Me.DataGridView6.TabIndex = 0
         '
         'tbpReports
@@ -972,18 +1041,20 @@ Partial Class frmMain
         Me.tbpReports.Controls.Add(Me.pnlTransReport)
         Me.tbpReports.Controls.Add(Me.pnlInventory)
         Me.tbpReports.Controls.Add(Me.pnlWishlist)
-        Me.tbpReports.Location = New System.Drawing.Point(4, 22)
+        Me.tbpReports.Location = New System.Drawing.Point(4, 25)
+        Me.tbpReports.Margin = New System.Windows.Forms.Padding(4)
         Me.tbpReports.Name = "tbpReports"
-        Me.tbpReports.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpReports.Size = New System.Drawing.Size(1455, 743)
         Me.tbpReports.TabIndex = 4
         Me.tbpReports.Text = "Reports"
         Me.tbpReports.UseVisualStyleBackColor = True
         '
         'Button18
         '
-        Me.Button18.Location = New System.Drawing.Point(99, 568)
+        Me.Button18.Location = New System.Drawing.Point(132, 699)
+        Me.Button18.Margin = New System.Windows.Forms.Padding(4)
         Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(94, 23)
+        Me.Button18.Size = New System.Drawing.Size(125, 28)
         Me.Button18.TabIndex = 4
         Me.Button18.Text = "Delete Selected"
         Me.Button18.UseVisualStyleBackColor = True
@@ -991,18 +1062,21 @@ Partial Class frmMain
         'Label73
         '
         Me.Label73.AutoSize = True
-        Me.Label73.Location = New System.Drawing.Point(5, 152)
+        Me.Label73.Location = New System.Drawing.Point(7, 187)
+        Me.Label73.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(81, 13)
+        Me.Label73.Size = New System.Drawing.Size(106, 17)
         Me.Label73.TabIndex = 3
         Me.Label73.Text = "Saved Reports:"
         '
         'lstSavedReports
         '
         Me.lstSavedReports.FormattingEnabled = True
-        Me.lstSavedReports.Location = New System.Drawing.Point(8, 168)
+        Me.lstSavedReports.ItemHeight = 16
+        Me.lstSavedReports.Location = New System.Drawing.Point(11, 207)
+        Me.lstSavedReports.Margin = New System.Windows.Forms.Padding(4)
         Me.lstSavedReports.Name = "lstSavedReports"
-        Me.lstSavedReports.Size = New System.Drawing.Size(185, 394)
+        Me.lstSavedReports.Size = New System.Drawing.Size(245, 484)
         Me.lstSavedReports.TabIndex = 2
         '
         'gbxReportType
@@ -1011,9 +1085,11 @@ Partial Class frmMain
         Me.gbxReportType.Controls.Add(Me.radBenefactor)
         Me.gbxReportType.Controls.Add(Me.radWishlist)
         Me.gbxReportType.Controls.Add(Me.radInventory)
-        Me.gbxReportType.Location = New System.Drawing.Point(8, 12)
+        Me.gbxReportType.Location = New System.Drawing.Point(11, 15)
+        Me.gbxReportType.Margin = New System.Windows.Forms.Padding(4)
         Me.gbxReportType.Name = "gbxReportType"
-        Me.gbxReportType.Size = New System.Drawing.Size(185, 121)
+        Me.gbxReportType.Padding = New System.Windows.Forms.Padding(4)
+        Me.gbxReportType.Size = New System.Drawing.Size(247, 149)
         Me.gbxReportType.TabIndex = 0
         Me.gbxReportType.TabStop = False
         Me.gbxReportType.Text = "Report Type"
@@ -1021,9 +1097,10 @@ Partial Class frmMain
         'radTransactions
         '
         Me.radTransactions.AutoSize = True
-        Me.radTransactions.Location = New System.Drawing.Point(7, 94)
+        Me.radTransactions.Location = New System.Drawing.Point(9, 116)
+        Me.radTransactions.Margin = New System.Windows.Forms.Padding(4)
         Me.radTransactions.Name = "radTransactions"
-        Me.radTransactions.Size = New System.Drawing.Size(86, 17)
+        Me.radTransactions.Size = New System.Drawing.Size(111, 21)
         Me.radTransactions.TabIndex = 3
         Me.radTransactions.TabStop = True
         Me.radTransactions.Text = "Transactions"
@@ -1032,9 +1109,10 @@ Partial Class frmMain
         'radBenefactor
         '
         Me.radBenefactor.AutoSize = True
-        Me.radBenefactor.Location = New System.Drawing.Point(7, 68)
+        Me.radBenefactor.Location = New System.Drawing.Point(9, 84)
+        Me.radBenefactor.Margin = New System.Windows.Forms.Padding(4)
         Me.radBenefactor.Name = "radBenefactor"
-        Me.radBenefactor.Size = New System.Drawing.Size(77, 17)
+        Me.radBenefactor.Size = New System.Drawing.Size(98, 21)
         Me.radBenefactor.TabIndex = 2
         Me.radBenefactor.Text = "Benefactor"
         Me.radBenefactor.UseVisualStyleBackColor = True
@@ -1042,9 +1120,10 @@ Partial Class frmMain
         'radWishlist
         '
         Me.radWishlist.AutoSize = True
-        Me.radWishlist.Location = New System.Drawing.Point(7, 44)
+        Me.radWishlist.Location = New System.Drawing.Point(9, 54)
+        Me.radWishlist.Margin = New System.Windows.Forms.Padding(4)
         Me.radWishlist.Name = "radWishlist"
-        Me.radWishlist.Size = New System.Drawing.Size(61, 17)
+        Me.radWishlist.Size = New System.Drawing.Size(77, 21)
         Me.radWishlist.TabIndex = 1
         Me.radWishlist.Text = "Wishlist"
         Me.radWishlist.UseVisualStyleBackColor = True
@@ -1053,9 +1132,10 @@ Partial Class frmMain
         '
         Me.radInventory.AutoSize = True
         Me.radInventory.Checked = True
-        Me.radInventory.Location = New System.Drawing.Point(7, 20)
+        Me.radInventory.Location = New System.Drawing.Point(9, 25)
+        Me.radInventory.Margin = New System.Windows.Forms.Padding(4)
         Me.radInventory.Name = "radInventory"
-        Me.radInventory.Size = New System.Drawing.Size(69, 17)
+        Me.radInventory.Size = New System.Drawing.Size(87, 21)
         Me.radInventory.TabIndex = 0
         Me.radInventory.TabStop = True
         Me.radInventory.Text = "Inventory"
@@ -1084,9 +1164,10 @@ Partial Class frmMain
         Me.pnlBenefactor.Controls.Add(Me.ComboBox20)
         Me.pnlBenefactor.Controls.Add(Me.Label76)
         Me.pnlBenefactor.Controls.Add(Me.Label88)
-        Me.pnlBenefactor.Location = New System.Drawing.Point(199, 12)
+        Me.pnlBenefactor.Location = New System.Drawing.Point(265, 15)
+        Me.pnlBenefactor.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlBenefactor.Name = "pnlBenefactor"
-        Me.pnlBenefactor.Size = New System.Drawing.Size(882, 580)
+        Me.pnlBenefactor.Size = New System.Drawing.Size(1176, 714)
         Me.pnlBenefactor.TabIndex = 6
         Me.pnlBenefactor.Visible = False
         '
@@ -1097,9 +1178,11 @@ Partial Class frmMain
         Me.GroupBox9.Controls.Add(Me.CheckedListBox1)
         Me.GroupBox9.Controls.Add(Me.CheckBox18)
         Me.GroupBox9.Controls.Add(Me.CheckBox17)
-        Me.GroupBox9.Location = New System.Drawing.Point(639, 286)
+        Me.GroupBox9.Location = New System.Drawing.Point(852, 352)
+        Me.GroupBox9.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(230, 248)
+        Me.GroupBox9.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox9.Size = New System.Drawing.Size(307, 305)
         Me.GroupBox9.TabIndex = 31
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Show Info:"
@@ -1109,9 +1192,10 @@ Partial Class frmMain
         Me.CheckedListBox2.Enabled = False
         Me.CheckedListBox2.FormattingEnabled = True
         Me.CheckedListBox2.Items.AddRange(New Object() {"Date", "Item Count", "Value"})
-        Me.CheckedListBox2.Location = New System.Drawing.Point(36, 148)
+        Me.CheckedListBox2.Location = New System.Drawing.Point(48, 182)
+        Me.CheckedListBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckedListBox2.Name = "CheckedListBox2"
-        Me.CheckedListBox2.Size = New System.Drawing.Size(149, 79)
+        Me.CheckedListBox2.Size = New System.Drawing.Size(197, 89)
         Me.CheckedListBox2.TabIndex = 3
         '
         'CheckedListBox1
@@ -1119,17 +1203,19 @@ Partial Class frmMain
         Me.CheckedListBox1.Enabled = False
         Me.CheckedListBox1.FormattingEnabled = True
         Me.CheckedListBox1.Items.AddRange(New Object() {"Contact Name", "Address", "City", "State", "Zipcode", "Phone Number", "Fax Number", "Email"})
-        Me.CheckedListBox1.Location = New System.Drawing.Point(36, 42)
+        Me.CheckedListBox1.Location = New System.Drawing.Point(48, 52)
+        Me.CheckedListBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckedListBox1.Name = "CheckedListBox1"
-        Me.CheckedListBox1.Size = New System.Drawing.Size(149, 64)
+        Me.CheckedListBox1.Size = New System.Drawing.Size(197, 72)
         Me.CheckedListBox1.TabIndex = 2
         '
         'CheckBox18
         '
         Me.CheckBox18.AutoSize = True
-        Me.CheckBox18.Location = New System.Drawing.Point(10, 127)
+        Me.CheckBox18.Location = New System.Drawing.Point(13, 156)
+        Me.CheckBox18.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox18.Name = "CheckBox18"
-        Me.CheckBox18.Size = New System.Drawing.Size(104, 17)
+        Me.CheckBox18.Size = New System.Drawing.Size(134, 21)
         Me.CheckBox18.TabIndex = 1
         Me.CheckBox18.Text = "Donation Details"
         Me.CheckBox18.UseVisualStyleBackColor = True
@@ -1137,9 +1223,10 @@ Partial Class frmMain
         'CheckBox17
         '
         Me.CheckBox17.AutoSize = True
-        Me.CheckBox17.Location = New System.Drawing.Point(10, 19)
+        Me.CheckBox17.Location = New System.Drawing.Point(13, 23)
+        Me.CheckBox17.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox17.Name = "CheckBox17"
-        Me.CheckBox17.Size = New System.Drawing.Size(118, 17)
+        Me.CheckBox17.Size = New System.Drawing.Size(152, 21)
         Me.CheckBox17.TabIndex = 0
         Me.CheckBox17.Text = "Contact Information"
         Me.CheckBox17.UseVisualStyleBackColor = True
@@ -1148,26 +1235,29 @@ Partial Class frmMain
         '
         Me.Label89.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label89.AutoSize = True
-        Me.Label89.Location = New System.Drawing.Point(636, 238)
+        Me.Label89.Location = New System.Drawing.Point(848, 293)
+        Me.Label89.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label89.Name = "Label89"
-        Me.Label89.Size = New System.Drawing.Size(100, 13)
+        Me.Label89.Size = New System.Drawing.Size(130, 17)
         Me.Label89.TabIndex = 30
         Me.Label89.Text = "Include Benefactor:"
         '
         'TextBox34
         '
         Me.TextBox34.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox34.Location = New System.Drawing.Point(742, 235)
+        Me.TextBox34.Location = New System.Drawing.Point(989, 289)
+        Me.TextBox34.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox34.Name = "TextBox34"
-        Me.TextBox34.Size = New System.Drawing.Size(127, 20)
+        Me.TextBox34.Size = New System.Drawing.Size(168, 22)
         Me.TextBox34.TabIndex = 29
         '
         'TextBox33
         '
         Me.TextBox33.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox33.Location = New System.Drawing.Point(669, 45)
+        Me.TextBox33.Location = New System.Drawing.Point(892, 55)
+        Me.TextBox33.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox33.Name = "TextBox33"
-        Me.TextBox33.Size = New System.Drawing.Size(200, 20)
+        Me.TextBox33.Size = New System.Drawing.Size(265, 22)
         Me.TextBox33.TabIndex = 27
         '
         'DataGridView10
@@ -1176,17 +1266,19 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView10.Location = New System.Drawing.Point(23, 46)
+        Me.DataGridView10.Location = New System.Drawing.Point(31, 57)
+        Me.DataGridView10.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView10.Name = "DataGridView10"
-        Me.DataGridView10.Size = New System.Drawing.Size(600, 523)
+        Me.DataGridView10.Size = New System.Drawing.Size(800, 644)
         Me.DataGridView10.TabIndex = 26
         '
         'Button28
         '
         Me.Button28.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button28.Location = New System.Drawing.Point(794, 546)
+        Me.Button28.Location = New System.Drawing.Point(1059, 672)
+        Me.Button28.Margin = New System.Windows.Forms.Padding(4)
         Me.Button28.Name = "Button28"
-        Me.Button28.Size = New System.Drawing.Size(75, 23)
+        Me.Button28.Size = New System.Drawing.Size(100, 28)
         Me.Button28.TabIndex = 25
         Me.Button28.Text = "Cancel"
         Me.Button28.UseVisualStyleBackColor = True
@@ -1194,9 +1286,10 @@ Partial Class frmMain
         'Button27
         '
         Me.Button27.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button27.Location = New System.Drawing.Point(712, 546)
+        Me.Button27.Location = New System.Drawing.Point(949, 672)
+        Me.Button27.Margin = New System.Windows.Forms.Padding(4)
         Me.Button27.Name = "Button27"
-        Me.Button27.Size = New System.Drawing.Size(75, 23)
+        Me.Button27.Size = New System.Drawing.Size(100, 28)
         Me.Button27.TabIndex = 24
         Me.Button27.Text = "Save"
         Me.Button27.UseVisualStyleBackColor = True
@@ -1204,9 +1297,10 @@ Partial Class frmMain
         'Button26
         '
         Me.Button26.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button26.Location = New System.Drawing.Point(630, 546)
+        Me.Button26.Location = New System.Drawing.Point(840, 672)
+        Me.Button26.Margin = New System.Windows.Forms.Padding(4)
         Me.Button26.Name = "Button26"
-        Me.Button26.Size = New System.Drawing.Size(75, 23)
+        Me.Button26.Size = New System.Drawing.Size(100, 28)
         Me.Button26.TabIndex = 23
         Me.Button26.Text = "Print"
         Me.Button26.UseVisualStyleBackColor = True
@@ -1215,9 +1309,10 @@ Partial Class frmMain
         '
         Me.Label87.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label87.AutoSize = True
-        Me.Label87.Location = New System.Drawing.Point(636, 147)
+        Me.Label87.Location = New System.Drawing.Point(848, 181)
+        Me.Label87.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(32, 13)
+        Me.Label87.Size = New System.Drawing.Size(43, 17)
         Me.Label87.TabIndex = 22
         Me.Label87.Text = "Filter:"
         '
@@ -1226,9 +1321,10 @@ Partial Class frmMain
         Me.ComboBox21.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox21.FormattingEnabled = True
         Me.ComboBox21.Items.AddRange(New Object() {"None", """Thank You"" not sent", "Donations Between Dates"})
-        Me.ComboBox21.Location = New System.Drawing.Point(678, 144)
+        Me.ComboBox21.Location = New System.Drawing.Point(904, 177)
+        Me.ComboBox21.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox21.Name = "ComboBox21"
-        Me.ComboBox21.Size = New System.Drawing.Size(191, 21)
+        Me.ComboBox21.Size = New System.Drawing.Size(253, 24)
         Me.ComboBox21.TabIndex = 21
         Me.ComboBox21.Text = "None"
         '
@@ -1236,9 +1332,10 @@ Partial Class frmMain
         '
         Me.Label85.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label85.AutoSize = True
-        Me.Label85.Location = New System.Drawing.Point(762, 171)
+        Me.Label85.Location = New System.Drawing.Point(1016, 210)
+        Me.Label85.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label85.Name = "Label85"
-        Me.Label85.Size = New System.Drawing.Size(23, 13)
+        Me.Label85.Size = New System.Drawing.Size(29, 17)
         Me.Label85.TabIndex = 20
         Me.Label85.Text = "To:"
         '
@@ -1246,9 +1343,10 @@ Partial Class frmMain
         '
         Me.Label86.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label86.AutoSize = True
-        Me.Label86.Location = New System.Drawing.Point(636, 171)
+        Me.Label86.Location = New System.Drawing.Point(848, 210)
+        Me.Label86.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label86.Name = "Label86"
-        Me.Label86.Size = New System.Drawing.Size(33, 13)
+        Me.Label86.Size = New System.Drawing.Size(44, 17)
         Me.Label86.TabIndex = 19
         Me.Label86.Text = "From:"
         '
@@ -1258,10 +1356,11 @@ Partial Class frmMain
         Me.DateTimePicker3.CustomFormat = ""
         Me.DateTimePicker3.Enabled = False
         Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker3.Location = New System.Drawing.Point(765, 186)
+        Me.DateTimePicker3.Location = New System.Drawing.Point(1020, 229)
+        Me.DateTimePicker3.Margin = New System.Windows.Forms.Padding(4)
         Me.DateTimePicker3.MinDate = New Date(1960, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(104, 20)
+        Me.DateTimePicker3.Size = New System.Drawing.Size(137, 22)
         Me.DateTimePicker3.TabIndex = 17
         '
         'DateTimePicker4
@@ -1270,19 +1369,21 @@ Partial Class frmMain
         Me.DateTimePicker4.CustomFormat = ""
         Me.DateTimePicker4.Enabled = False
         Me.DateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker4.Location = New System.Drawing.Point(639, 186)
+        Me.DateTimePicker4.Location = New System.Drawing.Point(852, 229)
+        Me.DateTimePicker4.Margin = New System.Windows.Forms.Padding(4)
         Me.DateTimePicker4.MinDate = New Date(1960, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker4.Name = "DateTimePicker4"
-        Me.DateTimePicker4.Size = New System.Drawing.Size(104, 20)
+        Me.DateTimePicker4.Size = New System.Drawing.Size(137, 22)
         Me.DateTimePicker4.TabIndex = 18
         '
         'Label84
         '
         Me.Label84.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label84.AutoSize = True
-        Me.Label84.Location = New System.Drawing.Point(633, 106)
+        Me.Label84.Location = New System.Drawing.Point(844, 130)
+        Me.Label84.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label84.Name = "Label84"
-        Me.Label84.Size = New System.Drawing.Size(44, 13)
+        Me.Label84.Size = New System.Drawing.Size(58, 17)
         Me.Label84.TabIndex = 2
         Me.Label84.Text = "Sort By:"
         '
@@ -1291,9 +1392,10 @@ Partial Class frmMain
         Me.ComboBox20.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox20.FormattingEnabled = True
         Me.ComboBox20.Items.AddRange(New Object() {"A to Z", "Z to A", "Total Items Donated", "Total Value Donated", "Donation (Most Recent First)", "Donation (Most Recent Last)"})
-        Me.ComboBox20.Location = New System.Drawing.Point(678, 103)
+        Me.ComboBox20.Location = New System.Drawing.Point(904, 127)
+        Me.ComboBox20.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox20.Name = "ComboBox20"
-        Me.ComboBox20.Size = New System.Drawing.Size(191, 21)
+        Me.ComboBox20.Size = New System.Drawing.Size(253, 24)
         Me.ComboBox20.TabIndex = 1
         Me.ComboBox20.Text = "A to Z"
         '
@@ -1301,9 +1403,10 @@ Partial Class frmMain
         '
         Me.Label76.AutoSize = True
         Me.Label76.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label76.Location = New System.Drawing.Point(18, 13)
+        Me.Label76.Location = New System.Drawing.Point(24, 16)
+        Me.Label76.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(174, 25)
+        Me.Label76.Size = New System.Drawing.Size(224, 29)
         Me.Label76.TabIndex = 0
         Me.Label76.Text = "Benefactor Report:"
         '
@@ -1311,9 +1414,10 @@ Partial Class frmMain
         '
         Me.Label88.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label88.AutoSize = True
-        Me.Label88.Location = New System.Drawing.Point(633, 48)
+        Me.Label88.Location = New System.Drawing.Point(844, 59)
+        Me.Label88.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(30, 13)
+        Me.Label88.Size = New System.Drawing.Size(39, 17)
         Me.Label88.TabIndex = 28
         Me.Label88.Text = "Title:"
         '
@@ -1330,27 +1434,30 @@ Partial Class frmMain
         Me.pnlTransReport.Controls.Add(Me.DateTimePicker2)
         Me.pnlTransReport.Controls.Add(Me.DateTimePicker1)
         Me.pnlTransReport.Controls.Add(Me.Label82)
-        Me.pnlTransReport.Location = New System.Drawing.Point(199, 12)
+        Me.pnlTransReport.Location = New System.Drawing.Point(265, 15)
+        Me.pnlTransReport.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlTransReport.Name = "pnlTransReport"
-        Me.pnlTransReport.Size = New System.Drawing.Size(882, 580)
+        Me.pnlTransReport.Size = New System.Drawing.Size(1176, 714)
         Me.pnlTransReport.TabIndex = 8
         Me.pnlTransReport.Visible = False
         '
         'TextBox35
         '
         Me.TextBox35.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox35.Location = New System.Drawing.Point(666, 49)
+        Me.TextBox35.Location = New System.Drawing.Point(888, 60)
+        Me.TextBox35.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox35.Name = "TextBox35"
-        Me.TextBox35.Size = New System.Drawing.Size(203, 20)
+        Me.TextBox35.Size = New System.Drawing.Size(269, 22)
         Me.TextBox35.TabIndex = 19
         '
         'Label90
         '
         Me.Label90.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label90.AutoSize = True
-        Me.Label90.Location = New System.Drawing.Point(633, 51)
+        Me.Label90.Location = New System.Drawing.Point(844, 63)
+        Me.Label90.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label90.Name = "Label90"
-        Me.Label90.Size = New System.Drawing.Size(30, 13)
+        Me.Label90.Size = New System.Drawing.Size(39, 17)
         Me.Label90.TabIndex = 18
         Me.Label90.Text = "Title:"
         '
@@ -1360,18 +1467,20 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView11.Location = New System.Drawing.Point(18, 44)
+        Me.DataGridView11.Location = New System.Drawing.Point(24, 54)
+        Me.DataGridView11.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView11.Name = "DataGridView11"
-        Me.DataGridView11.Size = New System.Drawing.Size(600, 523)
+        Me.DataGridView11.Size = New System.Drawing.Size(800, 644)
         Me.DataGridView11.TabIndex = 17
         '
         'Label81
         '
         Me.Label81.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label81.AutoSize = True
-        Me.Label81.Location = New System.Drawing.Point(762, 103)
+        Me.Label81.Location = New System.Drawing.Point(1016, 127)
+        Me.Label81.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label81.Name = "Label81"
-        Me.Label81.Size = New System.Drawing.Size(23, 13)
+        Me.Label81.Size = New System.Drawing.Size(29, 17)
         Me.Label81.TabIndex = 16
         Me.Label81.Text = "To:"
         '
@@ -1379,9 +1488,10 @@ Partial Class frmMain
         '
         Me.Label80.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label80.AutoSize = True
-        Me.Label80.Location = New System.Drawing.Point(633, 103)
+        Me.Label80.Location = New System.Drawing.Point(844, 127)
+        Me.Label80.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label80.Name = "Label80"
-        Me.Label80.Size = New System.Drawing.Size(33, 13)
+        Me.Label80.Size = New System.Drawing.Size(44, 17)
         Me.Label80.TabIndex = 15
         Me.Label80.Text = "From:"
         '
@@ -1390,10 +1500,11 @@ Partial Class frmMain
         Me.DateTimePicker2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DateTimePicker2.CustomFormat = ""
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(765, 118)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(1020, 145)
+        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(4)
         Me.DateTimePicker2.MinDate = New Date(1960, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(104, 20)
+        Me.DateTimePicker2.Size = New System.Drawing.Size(137, 22)
         Me.DateTimePicker2.TabIndex = 13
         '
         'DateTimePicker1
@@ -1401,19 +1512,21 @@ Partial Class frmMain
         Me.DateTimePicker1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DateTimePicker1.CustomFormat = ""
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(636, 118)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(848, 145)
+        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4)
         Me.DateTimePicker1.MinDate = New Date(1960, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(104, 20)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(137, 22)
         Me.DateTimePicker1.TabIndex = 14
         '
         'Label82
         '
         Me.Label82.AutoSize = True
         Me.Label82.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label82.Location = New System.Drawing.Point(13, 12)
+        Me.Label82.Location = New System.Drawing.Point(17, 15)
+        Me.Label82.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(183, 25)
+        Me.Label82.Size = New System.Drawing.Size(234, 29)
         Me.Label82.TabIndex = 0
         Me.Label82.Text = "Transaction Report:"
         '
@@ -1442,9 +1555,10 @@ Partial Class frmMain
         Me.pnlInventory.Controls.Add(Me.Label77)
         Me.pnlInventory.Controls.Add(Me.ListBox2)
         Me.pnlInventory.Controls.Add(Me.Label75)
-        Me.pnlInventory.Location = New System.Drawing.Point(199, 12)
+        Me.pnlInventory.Location = New System.Drawing.Point(265, 15)
+        Me.pnlInventory.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlInventory.Name = "pnlInventory"
-        Me.pnlInventory.Size = New System.Drawing.Size(882, 580)
+        Me.pnlInventory.Size = New System.Drawing.Size(1176, 714)
         Me.pnlInventory.TabIndex = 5
         '
         'GroupBox7
@@ -1454,9 +1568,11 @@ Partial Class frmMain
         Me.GroupBox7.Controls.Add(Me.CheckBox11)
         Me.GroupBox7.Controls.Add(Me.CheckBox10)
         Me.GroupBox7.Controls.Add(Me.CheckBox9)
-        Me.GroupBox7.Location = New System.Drawing.Point(600, 110)
+        Me.GroupBox7.Location = New System.Drawing.Point(800, 135)
+        Me.GroupBox7.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(269, 132)
+        Me.GroupBox7.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox7.Size = New System.Drawing.Size(359, 162)
         Me.GroupBox7.TabIndex = 19
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Organize By:"
@@ -1464,9 +1580,10 @@ Partial Class frmMain
         'CheckBox12
         '
         Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.Location = New System.Drawing.Point(16, 98)
+        Me.CheckBox12.Location = New System.Drawing.Point(21, 121)
+        Me.CheckBox12.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(65, 17)
+        Me.CheckBox12.Size = New System.Drawing.Size(84, 21)
         Me.CheckBox12.TabIndex = 9
         Me.CheckBox12.Text = "Program"
         Me.CheckBox12.UseVisualStyleBackColor = True
@@ -1474,9 +1591,10 @@ Partial Class frmMain
         'CheckBox11
         '
         Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Location = New System.Drawing.Point(16, 74)
+        Me.CheckBox11.Location = New System.Drawing.Point(21, 91)
+        Me.CheckBox11.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(50, 17)
+        Me.CheckBox11.Size = New System.Drawing.Size(62, 21)
         Me.CheckBox11.TabIndex = 8
         Me.CheckBox11.Text = "Tags"
         Me.CheckBox11.UseVisualStyleBackColor = True
@@ -1484,9 +1602,10 @@ Partial Class frmMain
         'CheckBox10
         '
         Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(16, 50)
+        Me.CheckBox10.Location = New System.Drawing.Point(21, 62)
+        Me.CheckBox10.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(90, 17)
+        Me.CheckBox10.Size = New System.Drawing.Size(117, 21)
         Me.CheckBox10.TabIndex = 7
         Me.CheckBox10.Text = "Sub-Category"
         Me.CheckBox10.UseVisualStyleBackColor = True
@@ -1494,9 +1613,10 @@ Partial Class frmMain
         'CheckBox9
         '
         Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(16, 26)
+        Me.CheckBox9.Location = New System.Drawing.Point(21, 32)
+        Me.CheckBox9.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(68, 17)
+        Me.CheckBox9.Size = New System.Drawing.Size(87, 21)
         Me.CheckBox9.TabIndex = 6
         Me.CheckBox9.Text = "Category"
         Me.CheckBox9.UseVisualStyleBackColor = True
@@ -1506,9 +1626,11 @@ Partial Class frmMain
         Me.GroupBox6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox6.Controls.Add(Me.CheckBox7)
         Me.GroupBox6.Controls.Add(Me.CheckBox6)
-        Me.GroupBox6.Location = New System.Drawing.Point(600, 426)
+        Me.GroupBox6.Location = New System.Drawing.Point(800, 524)
+        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(269, 80)
+        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox6.Size = New System.Drawing.Size(359, 98)
         Me.GroupBox6.TabIndex = 18
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Report Totals:"
@@ -1518,9 +1640,10 @@ Partial Class frmMain
         Me.CheckBox7.AutoSize = True
         Me.CheckBox7.Checked = True
         Me.CheckBox7.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox7.Location = New System.Drawing.Point(16, 51)
+        Me.CheckBox7.Location = New System.Drawing.Point(21, 63)
+        Me.CheckBox7.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(115, 17)
+        Me.CheckBox7.Size = New System.Drawing.Size(149, 21)
         Me.CheckBox7.TabIndex = 8
         Me.CheckBox7.Text = "Total Report Value"
         Me.CheckBox7.UseVisualStyleBackColor = True
@@ -1530,9 +1653,10 @@ Partial Class frmMain
         Me.CheckBox6.AutoSize = True
         Me.CheckBox6.Checked = True
         Me.CheckBox6.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox6.Location = New System.Drawing.Point(16, 28)
+        Me.CheckBox6.Location = New System.Drawing.Point(21, 34)
+        Me.CheckBox6.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox6.Size = New System.Drawing.Size(103, 21)
         Me.CheckBox6.TabIndex = 7
         Me.CheckBox6.Text = "Total Count"
         Me.CheckBox6.UseVisualStyleBackColor = True
@@ -1540,27 +1664,30 @@ Partial Class frmMain
         'TextBox32
         '
         Me.TextBox32.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox32.Location = New System.Drawing.Point(629, 69)
+        Me.TextBox32.Location = New System.Drawing.Point(839, 85)
+        Me.TextBox32.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox32.Name = "TextBox32"
-        Me.TextBox32.Size = New System.Drawing.Size(221, 20)
+        Me.TextBox32.Size = New System.Drawing.Size(293, 22)
         Me.TextBox32.TabIndex = 17
         '
         'Label83
         '
         Me.Label83.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label83.AutoSize = True
-        Me.Label83.Location = New System.Drawing.Point(597, 72)
+        Me.Label83.Location = New System.Drawing.Point(796, 89)
+        Me.Label83.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(30, 13)
+        Me.Label83.Size = New System.Drawing.Size(39, 17)
         Me.Label83.TabIndex = 16
         Me.Label83.Text = "Title:"
         '
         'Button25
         '
         Me.Button25.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button25.Location = New System.Drawing.Point(794, 540)
+        Me.Button25.Location = New System.Drawing.Point(1059, 665)
+        Me.Button25.Margin = New System.Windows.Forms.Padding(4)
         Me.Button25.Name = "Button25"
-        Me.Button25.Size = New System.Drawing.Size(75, 23)
+        Me.Button25.Size = New System.Drawing.Size(100, 28)
         Me.Button25.TabIndex = 15
         Me.Button25.Text = "Cancel"
         Me.Button25.UseVisualStyleBackColor = True
@@ -1568,9 +1695,10 @@ Partial Class frmMain
         'Button24
         '
         Me.Button24.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button24.Location = New System.Drawing.Point(713, 540)
+        Me.Button24.Location = New System.Drawing.Point(951, 665)
+        Me.Button24.Margin = New System.Windows.Forms.Padding(4)
         Me.Button24.Name = "Button24"
-        Me.Button24.Size = New System.Drawing.Size(75, 23)
+        Me.Button24.Size = New System.Drawing.Size(100, 28)
         Me.Button24.TabIndex = 14
         Me.Button24.Text = "Save"
         Me.Button24.UseVisualStyleBackColor = True
@@ -1578,9 +1706,10 @@ Partial Class frmMain
         'Button23
         '
         Me.Button23.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button23.Location = New System.Drawing.Point(631, 540)
+        Me.Button23.Location = New System.Drawing.Point(841, 665)
+        Me.Button23.Margin = New System.Windows.Forms.Padding(4)
         Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(75, 23)
+        Me.Button23.Size = New System.Drawing.Size(100, 28)
         Me.Button23.TabIndex = 13
         Me.Button23.Text = "Print"
         Me.Button23.UseVisualStyleBackColor = True
@@ -1588,9 +1717,10 @@ Partial Class frmMain
         'Label79
         '
         Me.Label79.AutoSize = True
-        Me.Label79.Location = New System.Drawing.Point(272, 52)
+        Me.Label79.Location = New System.Drawing.Point(363, 64)
+        Me.Label79.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(217, 13)
+        Me.Label79.Size = New System.Drawing.Size(292, 17)
         Me.Label79.TabIndex = 9
         Me.Label79.Text = "Report Contents: (Hold Ctrl to select multiple)"
         '
@@ -1603,9 +1733,11 @@ Partial Class frmMain
         Me.GroupBox5.Controls.Add(Me.CheckBox3)
         Me.GroupBox5.Controls.Add(Me.CheckBox2)
         Me.GroupBox5.Controls.Add(Me.CheckBox1)
-        Me.GroupBox5.Location = New System.Drawing.Point(600, 248)
+        Me.GroupBox5.Location = New System.Drawing.Point(800, 305)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(269, 168)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox5.Size = New System.Drawing.Size(359, 207)
         Me.GroupBox5.TabIndex = 8
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Fields To Include:"
@@ -1615,9 +1747,10 @@ Partial Class frmMain
         Me.CheckBox8.AutoSize = True
         Me.CheckBox8.Checked = True
         Me.CheckBox8.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox8.Location = New System.Drawing.Point(16, 121)
+        Me.CheckBox8.Location = New System.Drawing.Point(21, 149)
+        Me.CheckBox8.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(103, 17)
+        Me.CheckBox8.Size = New System.Drawing.Size(132, 21)
         Me.CheckBox8.TabIndex = 5
         Me.CheckBox8.Text = "Item Total Value"
         Me.CheckBox8.UseVisualStyleBackColor = True
@@ -1625,9 +1758,10 @@ Partial Class frmMain
         'CheckBox5
         '
         Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(16, 142)
+        Me.CheckBox5.Location = New System.Drawing.Point(21, 175)
+        Me.CheckBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(129, 17)
+        Me.CheckBox5.Size = New System.Drawing.Size(167, 21)
         Me.CheckBox5.TabIndex = 4
         Me.CheckBox5.Text = "Low Inventory Trigger"
         Me.CheckBox5.UseVisualStyleBackColor = True
@@ -1637,9 +1771,10 @@ Partial Class frmMain
         Me.CheckBox4.AutoSize = True
         Me.CheckBox4.Checked = True
         Me.CheckBox4.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox4.Location = New System.Drawing.Point(16, 98)
+        Me.CheckBox4.Location = New System.Drawing.Point(21, 121)
+        Me.CheckBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(76, 17)
+        Me.CheckBox4.Size = New System.Drawing.Size(96, 21)
         Me.CheckBox4.TabIndex = 3
         Me.CheckBox4.Text = "Unit Count"
         Me.CheckBox4.UseVisualStyleBackColor = True
@@ -1649,9 +1784,10 @@ Partial Class frmMain
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Checked = True
         Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox3.Location = New System.Drawing.Point(16, 74)
+        Me.CheckBox3.Location = New System.Drawing.Point(21, 91)
+        Me.CheckBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(53, 17)
+        Me.CheckBox3.Size = New System.Drawing.Size(66, 21)
         Me.CheckBox3.TabIndex = 2
         Me.CheckBox3.Text = "Value"
         Me.CheckBox3.UseVisualStyleBackColor = True
@@ -1659,9 +1795,10 @@ Partial Class frmMain
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(16, 50)
+        Me.CheckBox2.Location = New System.Drawing.Point(21, 62)
+        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(79, 17)
+        Me.CheckBox2.Size = New System.Drawing.Size(101, 21)
         Me.CheckBox2.TabIndex = 1
         Me.CheckBox2.Text = "Description"
         Me.CheckBox2.UseVisualStyleBackColor = True
@@ -1672,9 +1809,10 @@ Partial Class frmMain
         Me.CheckBox1.Checked = True
         Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox1.Enabled = False
-        Me.CheckBox1.Location = New System.Drawing.Point(16, 26)
+        Me.CheckBox1.Location = New System.Drawing.Point(21, 32)
+        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(77, 17)
+        Me.CheckBox1.Size = New System.Drawing.Size(97, 21)
         Me.CheckBox1.TabIndex = 0
         Me.CheckBox1.Text = "Item Name"
         Me.CheckBox1.UseVisualStyleBackColor = True
@@ -1685,43 +1823,49 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Location = New System.Drawing.Point(275, 68)
+        Me.ListBox4.ItemHeight = 16
+        Me.ListBox4.Location = New System.Drawing.Point(367, 84)
+        Me.ListBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.ListBox4.Name = "ListBox4"
-        Me.ListBox4.Size = New System.Drawing.Size(303, 498)
+        Me.ListBox4.Size = New System.Drawing.Size(403, 612)
         Me.ListBox4.TabIndex = 7
         '
         'Button22
         '
-        Me.Button22.Location = New System.Drawing.Point(240, 347)
+        Me.Button22.Location = New System.Drawing.Point(320, 427)
+        Me.Button22.Margin = New System.Windows.Forms.Padding(4)
         Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(29, 23)
+        Me.Button22.Size = New System.Drawing.Size(39, 28)
         Me.Button22.TabIndex = 6
         Me.Button22.Text = "<<"
         Me.Button22.UseVisualStyleBackColor = True
         '
         'Button21
         '
-        Me.Button21.Location = New System.Drawing.Point(240, 318)
+        Me.Button21.Location = New System.Drawing.Point(320, 391)
+        Me.Button21.Margin = New System.Windows.Forms.Padding(4)
         Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(29, 23)
+        Me.Button21.Size = New System.Drawing.Size(39, 28)
         Me.Button21.TabIndex = 5
         Me.Button21.Text = ">>"
         Me.Button21.UseVisualStyleBackColor = True
         '
         'Button20
         '
-        Me.Button20.Location = New System.Drawing.Point(240, 98)
+        Me.Button20.Location = New System.Drawing.Point(320, 121)
+        Me.Button20.Margin = New System.Windows.Forms.Padding(4)
         Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(29, 23)
+        Me.Button20.Size = New System.Drawing.Size(39, 28)
         Me.Button20.TabIndex = 6
         Me.Button20.Text = "<<"
         Me.Button20.UseVisualStyleBackColor = True
         '
         'Button19
         '
-        Me.Button19.Location = New System.Drawing.Point(240, 68)
+        Me.Button19.Location = New System.Drawing.Point(320, 84)
+        Me.Button19.Margin = New System.Windows.Forms.Padding(4)
         Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(29, 23)
+        Me.Button19.Size = New System.Drawing.Size(39, 28)
         Me.Button19.TabIndex = 5
         Me.Button19.Text = ">>"
         Me.Button19.UseVisualStyleBackColor = True
@@ -1729,44 +1873,51 @@ Partial Class frmMain
         'Label78
         '
         Me.Label78.AutoSize = True
-        Me.Label78.Location = New System.Drawing.Point(15, 302)
+        Me.Label78.Location = New System.Drawing.Point(20, 372)
+        Me.Label78.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(204, 13)
+        Me.Label78.Size = New System.Drawing.Size(276, 17)
         Me.Label78.TabIndex = 4
         Me.Label78.Text = "Sub-Category: (Hold Ctrl to select multiple)"
         '
         'ListBox3
         '
         Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(18, 318)
+        Me.ListBox3.ItemHeight = 16
+        Me.ListBox3.Location = New System.Drawing.Point(24, 391)
+        Me.ListBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(216, 251)
+        Me.ListBox3.Size = New System.Drawing.Size(287, 308)
         Me.ListBox3.TabIndex = 3
         '
         'Label77
         '
         Me.Label77.AutoSize = True
-        Me.Label77.Location = New System.Drawing.Point(15, 52)
+        Me.Label77.Location = New System.Drawing.Point(20, 64)
+        Me.Label77.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(182, 13)
+        Me.Label77.Size = New System.Drawing.Size(246, 17)
         Me.Label77.TabIndex = 2
         Me.Label77.Text = "Category: (Hold Ctrl to select multiple)"
         '
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(18, 68)
+        Me.ListBox2.ItemHeight = 16
+        Me.ListBox2.Location = New System.Drawing.Point(24, 84)
+        Me.ListBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(216, 225)
+        Me.ListBox2.Size = New System.Drawing.Size(287, 276)
         Me.ListBox2.TabIndex = 1
         '
         'Label75
         '
         Me.Label75.AutoSize = True
         Me.Label75.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label75.Location = New System.Drawing.Point(13, 13)
+        Me.Label75.Location = New System.Drawing.Point(17, 16)
+        Me.Label75.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(160, 25)
+        Me.Label75.Size = New System.Drawing.Size(205, 29)
         Me.Label75.TabIndex = 0
         Me.Label75.Text = "Inventory Report:"
         '
@@ -1791,9 +1942,10 @@ Partial Class frmMain
         Me.pnlWishlist.Controls.Add(Me.ComboBox18)
         Me.pnlWishlist.Controls.Add(Me.ComboBox17)
         Me.pnlWishlist.Controls.Add(Me.Label68)
-        Me.pnlWishlist.Location = New System.Drawing.Point(199, 12)
+        Me.pnlWishlist.Location = New System.Drawing.Point(265, 15)
+        Me.pnlWishlist.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlWishlist.Name = "pnlWishlist"
-        Me.pnlWishlist.Size = New System.Drawing.Size(882, 580)
+        Me.pnlWishlist.Size = New System.Drawing.Size(1176, 714)
         Me.pnlWishlist.TabIndex = 1
         Me.pnlWishlist.Visible = False
         '
@@ -1804,9 +1956,11 @@ Partial Class frmMain
         Me.GroupBox8.Controls.Add(Me.CheckBox14)
         Me.GroupBox8.Controls.Add(Me.CheckBox15)
         Me.GroupBox8.Controls.Add(Me.CheckBox16)
-        Me.GroupBox8.Location = New System.Drawing.Point(645, 129)
+        Me.GroupBox8.Location = New System.Drawing.Point(860, 159)
+        Me.GroupBox8.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(224, 132)
+        Me.GroupBox8.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox8.Size = New System.Drawing.Size(299, 162)
         Me.GroupBox8.TabIndex = 20
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Organize By:"
@@ -1814,9 +1968,10 @@ Partial Class frmMain
         'CheckBox13
         '
         Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.Location = New System.Drawing.Point(16, 98)
+        Me.CheckBox13.Location = New System.Drawing.Point(21, 121)
+        Me.CheckBox13.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(65, 17)
+        Me.CheckBox13.Size = New System.Drawing.Size(84, 21)
         Me.CheckBox13.TabIndex = 9
         Me.CheckBox13.Text = "Program"
         Me.CheckBox13.UseVisualStyleBackColor = True
@@ -1824,9 +1979,10 @@ Partial Class frmMain
         'CheckBox14
         '
         Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.Location = New System.Drawing.Point(16, 74)
+        Me.CheckBox14.Location = New System.Drawing.Point(21, 91)
+        Me.CheckBox14.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(50, 17)
+        Me.CheckBox14.Size = New System.Drawing.Size(62, 21)
         Me.CheckBox14.TabIndex = 8
         Me.CheckBox14.Text = "Tags"
         Me.CheckBox14.UseVisualStyleBackColor = True
@@ -1834,9 +1990,10 @@ Partial Class frmMain
         'CheckBox15
         '
         Me.CheckBox15.AutoSize = True
-        Me.CheckBox15.Location = New System.Drawing.Point(16, 50)
+        Me.CheckBox15.Location = New System.Drawing.Point(21, 62)
+        Me.CheckBox15.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox15.Name = "CheckBox15"
-        Me.CheckBox15.Size = New System.Drawing.Size(90, 17)
+        Me.CheckBox15.Size = New System.Drawing.Size(117, 21)
         Me.CheckBox15.TabIndex = 7
         Me.CheckBox15.Text = "Sub-Category"
         Me.CheckBox15.UseVisualStyleBackColor = True
@@ -1844,9 +2001,10 @@ Partial Class frmMain
         'CheckBox16
         '
         Me.CheckBox16.AutoSize = True
-        Me.CheckBox16.Location = New System.Drawing.Point(16, 26)
+        Me.CheckBox16.Location = New System.Drawing.Point(21, 32)
+        Me.CheckBox16.Margin = New System.Windows.Forms.Padding(4)
         Me.CheckBox16.Name = "CheckBox16"
-        Me.CheckBox16.Size = New System.Drawing.Size(68, 17)
+        Me.CheckBox16.Size = New System.Drawing.Size(87, 21)
         Me.CheckBox16.TabIndex = 6
         Me.CheckBox16.Text = "Category"
         Me.CheckBox16.UseVisualStyleBackColor = True
@@ -1855,26 +2013,29 @@ Partial Class frmMain
         '
         Me.Label74.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label74.AutoSize = True
-        Me.Label74.Location = New System.Drawing.Point(642, 94)
+        Me.Label74.Location = New System.Drawing.Point(856, 116)
+        Me.Label74.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(30, 13)
+        Me.Label74.Size = New System.Drawing.Size(39, 17)
         Me.Label74.TabIndex = 16
         Me.Label74.Text = "Title:"
         '
         'TextBox31
         '
         Me.TextBox31.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox31.Location = New System.Drawing.Point(678, 92)
+        Me.TextBox31.Location = New System.Drawing.Point(904, 113)
+        Me.TextBox31.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox31.Name = "TextBox31"
-        Me.TextBox31.Size = New System.Drawing.Size(191, 20)
+        Me.TextBox31.Size = New System.Drawing.Size(253, 22)
         Me.TextBox31.TabIndex = 15
         '
         'Button17
         '
         Me.Button17.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button17.Location = New System.Drawing.Point(713, 539)
+        Me.Button17.Location = New System.Drawing.Point(951, 663)
+        Me.Button17.Margin = New System.Windows.Forms.Padding(4)
         Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(75, 23)
+        Me.Button17.Size = New System.Drawing.Size(100, 28)
         Me.Button17.TabIndex = 14
         Me.Button17.Text = "Save"
         Me.Button17.UseVisualStyleBackColor = True
@@ -1882,9 +2043,10 @@ Partial Class frmMain
         'Button16
         '
         Me.Button16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button16.Location = New System.Drawing.Point(794, 539)
+        Me.Button16.Location = New System.Drawing.Point(1059, 663)
+        Me.Button16.Margin = New System.Windows.Forms.Padding(4)
         Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(75, 23)
+        Me.Button16.Size = New System.Drawing.Size(100, 28)
         Me.Button16.TabIndex = 13
         Me.Button16.Text = "Cancel"
         Me.Button16.UseVisualStyleBackColor = True
@@ -1892,9 +2054,10 @@ Partial Class frmMain
         'Button15
         '
         Me.Button15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button15.Location = New System.Drawing.Point(632, 540)
+        Me.Button15.Location = New System.Drawing.Point(843, 665)
+        Me.Button15.Margin = New System.Windows.Forms.Padding(4)
         Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(75, 23)
+        Me.Button15.Size = New System.Drawing.Size(100, 28)
         Me.Button15.TabIndex = 12
         Me.Button15.Text = "Print"
         Me.Button15.UseVisualStyleBackColor = True
@@ -1903,9 +2066,10 @@ Partial Class frmMain
         '
         Me.Label72.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label72.AutoSize = True
-        Me.Label72.Location = New System.Drawing.Point(502, 51)
+        Me.Label72.Location = New System.Drawing.Point(669, 63)
+        Me.Label72.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(32, 13)
+        Me.Label72.Size = New System.Drawing.Size(43, 17)
         Me.Label72.TabIndex = 11
         Me.Label72.Text = "Filter:"
         '
@@ -1914,17 +2078,19 @@ Partial Class frmMain
         Me.ComboBox19.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox19.FormattingEnabled = True
         Me.ComboBox19.Items.AddRange(New Object() {"Low Inventory"})
-        Me.ComboBox19.Location = New System.Drawing.Point(505, 67)
+        Me.ComboBox19.Location = New System.Drawing.Point(673, 82)
+        Me.ComboBox19.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox19.Name = "ComboBox19"
-        Me.ComboBox19.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox19.Size = New System.Drawing.Size(160, 24)
         Me.ComboBox19.TabIndex = 10
         '
         'Label71
         '
         Me.Label71.AutoSize = True
-        Me.Label71.Location = New System.Drawing.Point(15, 267)
+        Me.Label71.Location = New System.Drawing.Point(20, 329)
+        Me.Label71.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label71.Name = "Label71"
-        Me.Label71.Size = New System.Drawing.Size(74, 13)
+        Me.Label71.Size = New System.Drawing.Size(97, 17)
         Me.Label71.TabIndex = 9
         Me.Label71.Text = "Wishlist Items:"
         '
@@ -1934,9 +2100,10 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView9.Location = New System.Drawing.Point(18, 283)
+        Me.DataGridView9.Location = New System.Drawing.Point(24, 348)
+        Me.DataGridView9.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView9.Name = "DataGridView9"
-        Me.DataGridView9.Size = New System.Drawing.Size(608, 280)
+        Me.DataGridView9.Size = New System.Drawing.Size(811, 345)
         Me.DataGridView9.TabIndex = 8
         '
         'DataGridView8
@@ -1944,61 +2111,68 @@ Partial Class frmMain
         Me.DataGridView8.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView8.Location = New System.Drawing.Point(18, 92)
+        Me.DataGridView8.Location = New System.Drawing.Point(24, 113)
+        Me.DataGridView8.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView8.Name = "DataGridView8"
-        Me.DataGridView8.Size = New System.Drawing.Size(608, 150)
+        Me.DataGridView8.Size = New System.Drawing.Size(811, 185)
         Me.DataGridView8.TabIndex = 7
         '
         'Label70
         '
         Me.Label70.AutoSize = True
-        Me.Label70.Location = New System.Drawing.Point(160, 48)
+        Me.Label70.Location = New System.Drawing.Point(213, 59)
+        Me.Label70.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(74, 13)
+        Me.Label70.Size = New System.Drawing.Size(99, 17)
         Me.Label70.TabIndex = 6
         Me.Label70.Text = "Sub-Category:"
         '
         'Label69
         '
         Me.Label69.AutoSize = True
-        Me.Label69.Location = New System.Drawing.Point(15, 48)
+        Me.Label69.Location = New System.Drawing.Point(20, 59)
+        Me.Label69.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(52, 13)
+        Me.Label69.Size = New System.Drawing.Size(69, 17)
         Me.Label69.TabIndex = 5
         Me.Label69.Text = "Category:"
         '
         'ComboBox18
         '
         Me.ComboBox18.FormattingEnabled = True
-        Me.ComboBox18.Location = New System.Drawing.Point(163, 64)
+        Me.ComboBox18.Location = New System.Drawing.Point(217, 79)
+        Me.ComboBox18.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox18.Name = "ComboBox18"
-        Me.ComboBox18.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox18.Size = New System.Drawing.Size(160, 24)
         Me.ComboBox18.TabIndex = 2
         '
         'ComboBox17
         '
         Me.ComboBox17.FormattingEnabled = True
-        Me.ComboBox17.Location = New System.Drawing.Point(18, 64)
+        Me.ComboBox17.Location = New System.Drawing.Point(24, 79)
+        Me.ComboBox17.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox17.Name = "ComboBox17"
-        Me.ComboBox17.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox17.Size = New System.Drawing.Size(160, 24)
         Me.ComboBox17.TabIndex = 1
         '
         'Label68
         '
         Me.Label68.AutoSize = True
         Me.Label68.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label68.Location = New System.Drawing.Point(13, 13)
+        Me.Label68.Location = New System.Drawing.Point(17, 16)
+        Me.Label68.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(145, 25)
+        Me.Label68.Size = New System.Drawing.Size(188, 29)
         Me.Label68.TabIndex = 0
         Me.Label68.Text = "Wishlist Builder"
         '
         'tbpItmManag
         '
-        Me.tbpItmManag.Location = New System.Drawing.Point(4, 22)
+        Me.tbpItmManag.Location = New System.Drawing.Point(4, 25)
+        Me.tbpItmManag.Margin = New System.Windows.Forms.Padding(4)
         Me.tbpItmManag.Name = "tbpItmManag"
-        Me.tbpItmManag.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpItmManag.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpItmManag.Padding = New System.Windows.Forms.Padding(4)
+        Me.tbpItmManag.Size = New System.Drawing.Size(1455, 743)
         Me.tbpItmManag.TabIndex = 1
         Me.tbpItmManag.Text = "Item Manager"
         Me.tbpItmManag.UseVisualStyleBackColor = True
@@ -2008,14 +2182,15 @@ Partial Class frmMain
         Me.tbpInvTrans.Controls.Add(Me.lblTranItems)
         Me.tbpInvTrans.Controls.Add(Me.grpTranItems)
         Me.tbpInvTrans.Controls.Add(Me.txtSearchTran)
-        Me.tbpInvTrans.Controls.Add(Me.dgvTranItems)
-        Me.tbpInvTrans.Controls.Add(Me.dgvTranCategories)
+        Me.tbpInvTrans.Controls.Add(Me.dgvTranSelectedItems)
+        Me.tbpInvTrans.Controls.Add(Me.dgvTranAvailableItems)
         Me.tbpInvTrans.Controls.Add(Me.grpInvTransInfo)
         Me.tbpInvTrans.Controls.Add(Me.cmbTranFilterBySubCategory)
         Me.tbpInvTrans.Controls.Add(Me.cmbTranFilterByCategory)
-        Me.tbpInvTrans.Location = New System.Drawing.Point(4, 22)
+        Me.tbpInvTrans.Location = New System.Drawing.Point(4, 25)
+        Me.tbpInvTrans.Margin = New System.Windows.Forms.Padding(4)
         Me.tbpInvTrans.Name = "tbpInvTrans"
-        Me.tbpInvTrans.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpInvTrans.Size = New System.Drawing.Size(1455, 743)
         Me.tbpInvTrans.TabIndex = 3
         Me.tbpInvTrans.Text = "Inventory Transaction"
         Me.tbpInvTrans.UseVisualStyleBackColor = True
@@ -2026,9 +2201,10 @@ Partial Class frmMain
         Me.lblTranItems.AutoSize = True
         Me.lblTranItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranItems.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranItems.Location = New System.Drawing.Point(254, 271)
+        Me.lblTranItems.Location = New System.Drawing.Point(339, 334)
+        Me.lblTranItems.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranItems.Name = "lblTranItems"
-        Me.lblTranItems.Size = New System.Drawing.Size(125, 15)
+        Me.lblTranItems.Size = New System.Drawing.Size(148, 18)
         Me.lblTranItems.TabIndex = 6
         Me.lblTranItems.Text = "Transaction Items:"
         '
@@ -2036,6 +2212,8 @@ Partial Class frmMain
         '
         Me.grpTranItems.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grpTranItems.Controls.Add(Me.btnTranAddTag)
+        Me.grpTranItems.Controls.Add(Me.flpTranItemTags)
         Me.grpTranItems.Controls.Add(Me.lblTranTotalLineValueData)
         Me.grpTranItems.Controls.Add(Me.lblTranTotalLineValue)
         Me.grpTranItems.Controls.Add(Me.lblTranOnHandData)
@@ -2057,14 +2235,12 @@ Partial Class frmMain
         Me.grpTranItems.Controls.Add(Me.PictureBox4)
         Me.grpTranItems.Controls.Add(Me.PictureBox3)
         Me.grpTranItems.Controls.Add(Me.lblTranProgram)
-        Me.grpTranItems.Controls.Add(Me.pnlTags)
         Me.grpTranItems.Controls.Add(Me.lblTranBin)
         Me.grpTranItems.Controls.Add(Me.txtTranAddTags)
         Me.grpTranItems.Controls.Add(Me.lblTranItemComment)
         Me.grpTranItems.Controls.Add(Me.lblTranCondition)
         Me.grpTranItems.Controls.Add(Me.lblTranLocation)
         Me.grpTranItems.Controls.Add(Me.lblTranFaclity)
-        Me.grpTranItems.Controls.Add(Me.lblTranAddTags)
         Me.grpTranItems.Controls.Add(Me.lblTranTags)
         Me.grpTranItems.Controls.Add(Me.lblTSubCategory)
         Me.grpTranItems.Controls.Add(Me.lblTranCategory)
@@ -2073,19 +2249,40 @@ Partial Class frmMain
         Me.grpTranItems.Controls.Add(Me.btnTranItemAddNew)
         Me.grpTranItems.Controls.Add(Me.btnTranItemAddToTran)
         Me.grpTranItems.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.grpTranItems.Location = New System.Drawing.Point(698, 12)
+        Me.grpTranItems.Location = New System.Drawing.Point(931, 15)
+        Me.grpTranItems.Margin = New System.Windows.Forms.Padding(4)
         Me.grpTranItems.Name = "grpTranItems"
-        Me.grpTranItems.Size = New System.Drawing.Size(377, 573)
+        Me.grpTranItems.Padding = New System.Windows.Forms.Padding(4)
+        Me.grpTranItems.Size = New System.Drawing.Size(503, 705)
         Me.grpTranItems.TabIndex = 5
         Me.grpTranItems.TabStop = False
         Me.grpTranItems.Text = "Item:"
         '
+        'btnTranAddTag
+        '
+        Me.btnTranAddTag.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnTranAddTag.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTranAddTag.Location = New System.Drawing.Point(438, 164)
+        Me.btnTranAddTag.Name = "btnTranAddTag"
+        Me.btnTranAddTag.Size = New System.Drawing.Size(57, 23)
+        Me.btnTranAddTag.TabIndex = 3
+        Me.btnTranAddTag.Text = "Add Tag"
+        Me.btnTranAddTag.UseVisualStyleBackColor = True
+        '
+        'flpTranItemTags
+        '
+        Me.flpTranItemTags.Location = New System.Drawing.Point(53, 87)
+        Me.flpTranItemTags.Name = "flpTranItemTags"
+        Me.flpTranItemTags.Size = New System.Drawing.Size(440, 72)
+        Me.flpTranItemTags.TabIndex = 26
+        '
         'lblTranTotalLineValueData
         '
         Me.lblTranTotalLineValueData.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.lblTranTotalLineValueData.Location = New System.Drawing.Point(322, 374)
+        Me.lblTranTotalLineValueData.Location = New System.Drawing.Point(429, 460)
+        Me.lblTranTotalLineValueData.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranTotalLineValueData.Name = "lblTranTotalLineValueData"
-        Me.lblTranTotalLineValueData.Size = New System.Drawing.Size(51, 13)
+        Me.lblTranTotalLineValueData.Size = New System.Drawing.Size(68, 16)
         Me.lblTranTotalLineValueData.TabIndex = 24
         Me.lblTranTotalLineValueData.Text = "$0.00"
         Me.lblTranTotalLineValueData.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -2093,18 +2290,20 @@ Partial Class frmMain
         'lblTranTotalLineValue
         '
         Me.lblTranTotalLineValue.AutoSize = True
-        Me.lblTranTotalLineValue.Location = New System.Drawing.Point(237, 374)
+        Me.lblTranTotalLineValue.Location = New System.Drawing.Point(316, 460)
+        Me.lblTranTotalLineValue.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranTotalLineValue.Name = "lblTranTotalLineValue"
-        Me.lblTranTotalLineValue.Size = New System.Drawing.Size(90, 13)
+        Me.lblTranTotalLineValue.Size = New System.Drawing.Size(119, 17)
         Me.lblTranTotalLineValue.TabIndex = 23
         Me.lblTranTotalLineValue.Text = "Total Line Value: "
         '
         'lblTranOnHandData
         '
         Me.lblTranOnHandData.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranOnHandData.Location = New System.Drawing.Point(310, 312)
+        Me.lblTranOnHandData.Location = New System.Drawing.Point(413, 384)
+        Me.lblTranOnHandData.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranOnHandData.Name = "lblTranOnHandData"
-        Me.lblTranOnHandData.Size = New System.Drawing.Size(62, 20)
+        Me.lblTranOnHandData.Size = New System.Drawing.Size(83, 25)
         Me.lblTranOnHandData.TabIndex = 22
         Me.lblTranOnHandData.Text = "0"
         Me.lblTranOnHandData.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -2113,9 +2312,10 @@ Partial Class frmMain
         '
         Me.lnkTranReset.AutoSize = True
         Me.lnkTranReset.LinkColor = System.Drawing.Color.Blue
-        Me.lnkTranReset.Location = New System.Drawing.Point(339, 335)
+        Me.lnkTranReset.Location = New System.Drawing.Point(452, 412)
+        Me.lnkTranReset.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lnkTranReset.Name = "lnkTranReset"
-        Me.lnkTranReset.Size = New System.Drawing.Size(35, 13)
+        Me.lnkTranReset.Size = New System.Drawing.Size(45, 17)
         Me.lnkTranReset.TabIndex = 21
         Me.lnkTranReset.TabStop = True
         Me.lnkTranReset.Text = "Reset"
@@ -2123,17 +2323,19 @@ Partial Class frmMain
         '
         'txtTranValue
         '
-        Me.txtTranValue.Location = New System.Drawing.Point(240, 351)
+        Me.txtTranValue.Location = New System.Drawing.Point(320, 432)
+        Me.txtTranValue.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTranValue.Name = "txtTranValue"
-        Me.txtTranValue.Size = New System.Drawing.Size(131, 20)
+        Me.txtTranValue.Size = New System.Drawing.Size(173, 22)
         Me.txtTranValue.TabIndex = 20
         '
         'nudTranQty
         '
         Me.nudTranQty.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.nudTranQty.Location = New System.Drawing.Point(240, 310)
+        Me.nudTranQty.Location = New System.Drawing.Point(320, 382)
+        Me.nudTranQty.Margin = New System.Windows.Forms.Padding(4)
         Me.nudTranQty.Name = "nudTranQty"
-        Me.nudTranQty.Size = New System.Drawing.Size(52, 20)
+        Me.nudTranQty.Size = New System.Drawing.Size(68, 22)
         Me.nudTranQty.TabIndex = 19
         '
         'lblTranOnHand
@@ -2142,10 +2344,11 @@ Partial Class frmMain
         Me.lblTranOnHand.AutoSize = True
         Me.lblTranOnHand.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranOnHand.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranOnHand.Location = New System.Drawing.Point(319, 294)
-        Me.lblTranOnHand.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranOnHand.Location = New System.Drawing.Point(425, 362)
+        Me.lblTranOnHand.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranOnHand.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranOnHand.Name = "lblTranOnHand"
-        Me.lblTranOnHand.Size = New System.Drawing.Size(56, 13)
+        Me.lblTranOnHand.Size = New System.Drawing.Size(73, 17)
         Me.lblTranOnHand.TabIndex = 16
         Me.lblTranOnHand.Text = "On Hand: "
         '
@@ -2155,10 +2358,11 @@ Partial Class frmMain
         Me.lblTranValue.AutoSize = True
         Me.lblTranValue.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranValue.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranValue.Location = New System.Drawing.Point(237, 335)
-        Me.lblTranValue.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranValue.Location = New System.Drawing.Point(316, 412)
+        Me.lblTranValue.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranValue.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranValue.Name = "lblTranValue"
-        Me.lblTranValue.Size = New System.Drawing.Size(40, 13)
+        Me.lblTranValue.Size = New System.Drawing.Size(52, 17)
         Me.lblTranValue.TabIndex = 17
         Me.lblTranValue.Text = "Value: "
         '
@@ -2168,10 +2372,11 @@ Partial Class frmMain
         Me.lblTranQty.AutoSize = True
         Me.lblTranQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranQty.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranQty.Location = New System.Drawing.Point(237, 294)
-        Me.lblTranQty.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranQty.Location = New System.Drawing.Point(316, 362)
+        Me.lblTranQty.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranQty.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranQty.Name = "lblTranQty"
-        Me.lblTranQty.Size = New System.Drawing.Size(52, 13)
+        Me.lblTranQty.Size = New System.Drawing.Size(69, 17)
         Me.lblTranQty.TabIndex = 18
         Me.lblTranQty.Text = "Quantity: "
         '
@@ -2180,9 +2385,10 @@ Partial Class frmMain
         Me.lblSelectedItemSubCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSelectedItemSubCategory.ForeColor = System.Drawing.SystemColors.GrayText
         Me.lblSelectedItemSubCategory.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.lblSelectedItemSubCategory.Location = New System.Drawing.Point(249, 50)
+        Me.lblSelectedItemSubCategory.Location = New System.Drawing.Point(332, 56)
+        Me.lblSelectedItemSubCategory.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSelectedItemSubCategory.Name = "lblSelectedItemSubCategory"
-        Me.lblSelectedItemSubCategory.Size = New System.Drawing.Size(123, 13)
+        Me.lblSelectedItemSubCategory.Size = New System.Drawing.Size(164, 21)
         Me.lblSelectedItemSubCategory.TabIndex = 13
         Me.lblSelectedItemSubCategory.Text = "Item Sub-Category"
         '
@@ -2191,9 +2397,10 @@ Partial Class frmMain
         Me.lblSelectedItemCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSelectedItemCategory.ForeColor = System.Drawing.SystemColors.GrayText
         Me.lblSelectedItemCategory.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.lblSelectedItemCategory.Location = New System.Drawing.Point(56, 50)
+        Me.lblSelectedItemCategory.Location = New System.Drawing.Point(75, 56)
+        Me.lblSelectedItemCategory.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSelectedItemCategory.Name = "lblSelectedItemCategory"
-        Me.lblSelectedItemCategory.Size = New System.Drawing.Size(113, 13)
+        Me.lblSelectedItemCategory.Size = New System.Drawing.Size(151, 21)
         Me.lblSelectedItemCategory.TabIndex = 12
         Me.lblSelectedItemCategory.Text = "Item Category"
         '
@@ -2202,18 +2409,20 @@ Partial Class frmMain
         Me.txtTranItemComment.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtTranItemComment.Location = New System.Drawing.Point(6, 401)
+        Me.txtTranItemComment.Location = New System.Drawing.Point(8, 494)
+        Me.txtTranItemComment.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTranItemComment.Multiline = True
         Me.txtTranItemComment.Name = "txtTranItemComment"
-        Me.txtTranItemComment.Size = New System.Drawing.Size(365, 137)
+        Me.txtTranItemComment.Size = New System.Drawing.Size(485, 168)
         Me.txtTranItemComment.TabIndex = 8
         '
         'pbxTLwQuant
         '
         Me.pbxTLwQuant.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pbxTLwQuant.Location = New System.Drawing.Point(345, 12)
+        Me.pbxTLwQuant.Location = New System.Drawing.Point(460, 15)
+        Me.pbxTLwQuant.Margin = New System.Windows.Forms.Padding(4)
         Me.pbxTLwQuant.Name = "pbxTLwQuant"
-        Me.pbxTLwQuant.Size = New System.Drawing.Size(26, 35)
+        Me.pbxTLwQuant.Size = New System.Drawing.Size(35, 43)
         Me.pbxTLwQuant.TabIndex = 7
         Me.pbxTLwQuant.TabStop = False
         '
@@ -2221,54 +2430,60 @@ Partial Class frmMain
         '
         Me.cmbTranProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranProgram.FormattingEnabled = True
-        Me.cmbTranProgram.Location = New System.Drawing.Point(6, 244)
+        Me.cmbTranProgram.Location = New System.Drawing.Point(8, 300)
+        Me.cmbTranProgram.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbTranProgram.Name = "cmbTranProgram"
-        Me.cmbTranProgram.Size = New System.Drawing.Size(121, 21)
+        Me.cmbTranProgram.Size = New System.Drawing.Size(160, 24)
         Me.cmbTranProgram.TabIndex = 5
         '
         'cmbTranBin
         '
         Me.cmbTranBin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranBin.FormattingEnabled = True
-        Me.cmbTranBin.Location = New System.Drawing.Point(280, 201)
+        Me.cmbTranBin.Location = New System.Drawing.Point(373, 247)
+        Me.cmbTranBin.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbTranBin.Name = "cmbTranBin"
-        Me.cmbTranBin.Size = New System.Drawing.Size(91, 21)
+        Me.cmbTranBin.Size = New System.Drawing.Size(120, 24)
         Me.cmbTranBin.TabIndex = 5
         '
         'cmbTranLocation
         '
         Me.cmbTranLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranLocation.FormattingEnabled = True
-        Me.cmbTranLocation.Location = New System.Drawing.Point(135, 201)
+        Me.cmbTranLocation.Location = New System.Drawing.Point(180, 247)
+        Me.cmbTranLocation.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbTranLocation.Name = "cmbTranLocation"
-        Me.cmbTranLocation.Size = New System.Drawing.Size(139, 21)
+        Me.cmbTranLocation.Size = New System.Drawing.Size(184, 24)
         Me.cmbTranLocation.TabIndex = 5
         '
         'cmbTranCondition
         '
         Me.cmbTranCondition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranCondition.FormattingEnabled = True
-        Me.cmbTranCondition.Location = New System.Drawing.Point(6, 309)
+        Me.cmbTranCondition.Location = New System.Drawing.Point(8, 380)
+        Me.cmbTranCondition.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbTranCondition.Name = "cmbTranCondition"
-        Me.cmbTranCondition.Size = New System.Drawing.Size(121, 21)
+        Me.cmbTranCondition.Size = New System.Drawing.Size(160, 24)
         Me.cmbTranCondition.TabIndex = 5
         '
         'cmbTranFacility
         '
         Me.cmbTranFacility.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranFacility.FormattingEnabled = True
-        Me.cmbTranFacility.Location = New System.Drawing.Point(6, 201)
+        Me.cmbTranFacility.Location = New System.Drawing.Point(8, 247)
+        Me.cmbTranFacility.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbTranFacility.Name = "cmbTranFacility"
-        Me.cmbTranFacility.Size = New System.Drawing.Size(123, 21)
+        Me.cmbTranFacility.Size = New System.Drawing.Size(163, 24)
         Me.cmbTranFacility.TabIndex = 5
         '
         'PictureBox4
         '
         Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Location = New System.Drawing.Point(6, 272)
+        Me.PictureBox4.Location = New System.Drawing.Point(8, 335)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(365, 6)
+        Me.PictureBox4.Size = New System.Drawing.Size(487, 7)
         Me.PictureBox4.TabIndex = 4
         Me.PictureBox4.TabStop = False
         '
@@ -2276,9 +2491,10 @@ Partial Class frmMain
         '
         Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Location = New System.Drawing.Point(6, 168)
+        Me.PictureBox3.Location = New System.Drawing.Point(8, 207)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(365, 6)
+        Me.PictureBox3.Size = New System.Drawing.Size(487, 7)
         Me.PictureBox3.TabIndex = 4
         Me.PictureBox3.TabStop = False
         '
@@ -2287,58 +2503,34 @@ Partial Class frmMain
         Me.lblTranProgram.AutoSize = True
         Me.lblTranProgram.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranProgram.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranProgram.Location = New System.Drawing.Point(3, 228)
-        Me.lblTranProgram.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranProgram.Location = New System.Drawing.Point(4, 281)
+        Me.lblTranProgram.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranProgram.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranProgram.Name = "lblTranProgram"
-        Me.lblTranProgram.Size = New System.Drawing.Size(52, 13)
+        Me.lblTranProgram.Size = New System.Drawing.Size(70, 17)
         Me.lblTranProgram.TabIndex = 1
         Me.lblTranProgram.Text = "Program: "
-        '
-        'pnlTags
-        '
-        Me.pnlTags.Controls.Add(Me.btnTranTag)
-        Me.pnlTags.Location = New System.Drawing.Point(51, 66)
-        Me.pnlTags.Name = "pnlTags"
-        Me.pnlTags.Size = New System.Drawing.Size(320, 62)
-        Me.pnlTags.TabIndex = 3
-        '
-        'btnTranTag
-        '
-        Me.btnTranTag.AutoSize = True
-        Me.btnTranTag.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnTranTag.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnTranTag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.btnTranTag.Cursor = System.Windows.Forms.Cursors.Default
-        Me.btnTranTag.FlatAppearance.BorderSize = 0
-        Me.btnTranTag.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTranTag.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTranTag.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnTranTag.Location = New System.Drawing.Point(3, 3)
-        Me.btnTranTag.Margin = New System.Windows.Forms.Padding(0)
-        Me.btnTranTag.Name = "btnTranTag"
-        Me.btnTranTag.Size = New System.Drawing.Size(35, 23)
-        Me.btnTranTag.TabIndex = 17
-        Me.btnTranTag.Text = "tag"
-        Me.btnTranTag.UseVisualStyleBackColor = False
         '
         'lblTranBin
         '
         Me.lblTranBin.AutoSize = True
         Me.lblTranBin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranBin.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranBin.Location = New System.Drawing.Point(277, 185)
-        Me.lblTranBin.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranBin.Location = New System.Drawing.Point(369, 228)
+        Me.lblTranBin.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranBin.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranBin.Name = "lblTranBin"
-        Me.lblTranBin.Size = New System.Drawing.Size(28, 13)
+        Me.lblTranBin.Size = New System.Drawing.Size(36, 17)
         Me.lblTranBin.TabIndex = 1
         Me.lblTranBin.Text = "Bin: "
         '
         'txtTranAddTags
         '
         Me.txtTranAddTags.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtTranAddTags.Location = New System.Drawing.Point(68, 137)
+        Me.txtTranAddTags.Location = New System.Drawing.Point(53, 165)
+        Me.txtTranAddTags.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTranAddTags.Name = "txtTranAddTags"
-        Me.txtTranAddTags.Size = New System.Drawing.Size(303, 20)
+        Me.txtTranAddTags.Size = New System.Drawing.Size(378, 22)
         Me.txtTranAddTags.TabIndex = 2
         '
         'lblTranItemComment
@@ -2346,10 +2538,11 @@ Partial Class frmMain
         Me.lblTranItemComment.AutoSize = True
         Me.lblTranItemComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranItemComment.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranItemComment.Location = New System.Drawing.Point(3, 385)
-        Me.lblTranItemComment.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranItemComment.Location = New System.Drawing.Point(4, 474)
+        Me.lblTranItemComment.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranItemComment.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranItemComment.Name = "lblTranItemComment"
-        Me.lblTranItemComment.Size = New System.Drawing.Size(57, 13)
+        Me.lblTranItemComment.Size = New System.Drawing.Size(75, 17)
         Me.lblTranItemComment.TabIndex = 1
         Me.lblTranItemComment.Text = "Comment: "
         '
@@ -2358,10 +2551,11 @@ Partial Class frmMain
         Me.lblTranCondition.AutoSize = True
         Me.lblTranCondition.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranCondition.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranCondition.Location = New System.Drawing.Point(3, 293)
-        Me.lblTranCondition.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranCondition.Location = New System.Drawing.Point(4, 361)
+        Me.lblTranCondition.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranCondition.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranCondition.Name = "lblTranCondition"
-        Me.lblTranCondition.Size = New System.Drawing.Size(57, 13)
+        Me.lblTranCondition.Size = New System.Drawing.Size(75, 17)
         Me.lblTranCondition.TabIndex = 1
         Me.lblTranCondition.Text = "Condition: "
         '
@@ -2370,10 +2564,11 @@ Partial Class frmMain
         Me.lblTranLocation.AutoSize = True
         Me.lblTranLocation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranLocation.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranLocation.Location = New System.Drawing.Point(132, 185)
-        Me.lblTranLocation.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranLocation.Location = New System.Drawing.Point(176, 228)
+        Me.lblTranLocation.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranLocation.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranLocation.Name = "lblTranLocation"
-        Me.lblTranLocation.Size = New System.Drawing.Size(54, 13)
+        Me.lblTranLocation.Size = New System.Drawing.Size(70, 17)
         Me.lblTranLocation.TabIndex = 1
         Me.lblTranLocation.Text = "Location: "
         '
@@ -2382,34 +2577,24 @@ Partial Class frmMain
         Me.lblTranFaclity.AutoSize = True
         Me.lblTranFaclity.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranFaclity.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranFaclity.Location = New System.Drawing.Point(3, 185)
-        Me.lblTranFaclity.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranFaclity.Location = New System.Drawing.Point(4, 228)
+        Me.lblTranFaclity.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranFaclity.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranFaclity.Name = "lblTranFaclity"
-        Me.lblTranFaclity.Size = New System.Drawing.Size(45, 13)
-        Me.lblTranFaclity.TabIndex = 1
+        Me.lblTranFaclity.Size = New System.Drawing.Size(59, 17)
+        Me.lblTranFaclity.TabIndex = 4
         Me.lblTranFaclity.Text = "Facility: "
-        '
-        'lblTranAddTags
-        '
-        Me.lblTranAddTags.AutoSize = True
-        Me.lblTranAddTags.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTranAddTags.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranAddTags.Location = New System.Drawing.Point(8, 140)
-        Me.lblTranAddTags.MaximumSize = New System.Drawing.Size(250, 0)
-        Me.lblTranAddTags.Name = "lblTranAddTags"
-        Me.lblTranAddTags.Size = New System.Drawing.Size(54, 13)
-        Me.lblTranAddTags.TabIndex = 1
-        Me.lblTranAddTags.Text = "Add Tag: "
         '
         'lblTranTags
         '
         Me.lblTranTags.AutoSize = True
         Me.lblTranTags.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranTags.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranTags.Location = New System.Drawing.Point(8, 71)
-        Me.lblTranTags.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranTags.Location = New System.Drawing.Point(11, 87)
+        Me.lblTranTags.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranTags.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranTags.Name = "lblTranTags"
-        Me.lblTranTags.Size = New System.Drawing.Size(37, 13)
+        Me.lblTranTags.Size = New System.Drawing.Size(48, 17)
         Me.lblTranTags.TabIndex = 1
         Me.lblTranTags.Text = "Tags: "
         '
@@ -2418,10 +2603,11 @@ Partial Class frmMain
         Me.lblTSubCategory.AutoSize = True
         Me.lblTSubCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTSubCategory.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTSubCategory.Location = New System.Drawing.Point(175, 50)
-        Me.lblTSubCategory.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTSubCategory.Location = New System.Drawing.Point(233, 56)
+        Me.lblTSubCategory.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTSubCategory.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTSubCategory.Name = "lblTSubCategory"
-        Me.lblTSubCategory.Size = New System.Drawing.Size(77, 13)
+        Me.lblTSubCategory.Size = New System.Drawing.Size(103, 17)
         Me.lblTSubCategory.TabIndex = 1
         Me.lblTSubCategory.Text = "Sub-Category: "
         '
@@ -2430,10 +2616,11 @@ Partial Class frmMain
         Me.lblTranCategory.AutoSize = True
         Me.lblTranCategory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranCategory.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranCategory.Location = New System.Drawing.Point(8, 50)
-        Me.lblTranCategory.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranCategory.Location = New System.Drawing.Point(11, 56)
+        Me.lblTranCategory.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranCategory.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranCategory.Name = "lblTranCategory"
-        Me.lblTranCategory.Size = New System.Drawing.Size(55, 13)
+        Me.lblTranCategory.Size = New System.Drawing.Size(73, 17)
         Me.lblTranCategory.TabIndex = 1
         Me.lblTranCategory.Text = "Category: "
         '
@@ -2442,19 +2629,21 @@ Partial Class frmMain
         Me.lblTranItemName.AutoSize = True
         Me.lblTranItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranItemName.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranItemName.Location = New System.Drawing.Point(7, 20)
-        Me.lblTranItemName.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranItemName.Location = New System.Drawing.Point(9, 25)
+        Me.lblTranItemName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranItemName.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranItemName.Name = "lblTranItemName"
-        Me.lblTranItemName.Size = New System.Drawing.Size(90, 20)
+        Me.lblTranItemName.Size = New System.Drawing.Size(114, 25)
         Me.lblTranItemName.TabIndex = 1
         Me.lblTranItemName.Text = "Item Name"
         '
         'btnTranItemReset
         '
         Me.btnTranItemReset.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTranItemReset.Location = New System.Drawing.Point(296, 544)
+        Me.btnTranItemReset.Location = New System.Drawing.Point(395, 670)
+        Me.btnTranItemReset.Margin = New System.Windows.Forms.Padding(4)
         Me.btnTranItemReset.Name = "btnTranItemReset"
-        Me.btnTranItemReset.Size = New System.Drawing.Size(75, 23)
+        Me.btnTranItemReset.Size = New System.Drawing.Size(100, 28)
         Me.btnTranItemReset.TabIndex = 0
         Me.btnTranItemReset.Text = "Reset"
         Me.btnTranItemReset.UseVisualStyleBackColor = True
@@ -2462,9 +2651,10 @@ Partial Class frmMain
         'btnTranItemAddNew
         '
         Me.btnTranItemAddNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnTranItemAddNew.Location = New System.Drawing.Point(6, 544)
+        Me.btnTranItemAddNew.Location = New System.Drawing.Point(8, 670)
+        Me.btnTranItemAddNew.Margin = New System.Windows.Forms.Padding(4)
         Me.btnTranItemAddNew.Name = "btnTranItemAddNew"
-        Me.btnTranItemAddNew.Size = New System.Drawing.Size(91, 23)
+        Me.btnTranItemAddNew.Size = New System.Drawing.Size(121, 28)
         Me.btnTranItemAddNew.TabIndex = 0
         Me.btnTranItemAddNew.Text = "Add New Item"
         Me.btnTranItemAddNew.UseVisualStyleBackColor = True
@@ -2472,9 +2662,10 @@ Partial Class frmMain
         'btnTranItemAddToTran
         '
         Me.btnTranItemAddToTran.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTranItemAddToTran.Location = New System.Drawing.Point(178, 544)
+        Me.btnTranItemAddToTran.Location = New System.Drawing.Point(237, 670)
+        Me.btnTranItemAddToTran.Margin = New System.Windows.Forms.Padding(4)
         Me.btnTranItemAddToTran.Name = "btnTranItemAddToTran"
-        Me.btnTranItemAddToTran.Size = New System.Drawing.Size(112, 23)
+        Me.btnTranItemAddToTran.Size = New System.Drawing.Size(149, 28)
         Me.btnTranItemAddToTran.TabIndex = 0
         Me.btnTranItemAddToTran.Text = "Add To Transaction"
         Me.btnTranItemAddToTran.UseVisualStyleBackColor = True
@@ -2484,32 +2675,35 @@ Partial Class frmMain
         Me.txtSearchTran.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSearchTran.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.txtSearchTran.Location = New System.Drawing.Point(532, 18)
+        Me.txtSearchTran.Location = New System.Drawing.Point(709, 22)
+        Me.txtSearchTran.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSearchTran.Name = "txtSearchTran"
-        Me.txtSearchTran.Size = New System.Drawing.Size(160, 20)
+        Me.txtSearchTran.Size = New System.Drawing.Size(212, 22)
         Me.txtSearchTran.TabIndex = 4
         Me.txtSearchTran.Text = "Search..."
         '
-        'dgvTranItems
+        'dgvTranSelectedItems
         '
-        Me.dgvTranItems.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.dgvTranSelectedItems.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvTranItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTranItems.Location = New System.Drawing.Point(257, 288)
-        Me.dgvTranItems.Name = "dgvTranItems"
-        Me.dgvTranItems.Size = New System.Drawing.Size(435, 297)
-        Me.dgvTranItems.TabIndex = 3
+        Me.dgvTranSelectedItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTranSelectedItems.Location = New System.Drawing.Point(343, 354)
+        Me.dgvTranSelectedItems.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvTranSelectedItems.Name = "dgvTranSelectedItems"
+        Me.dgvTranSelectedItems.Size = New System.Drawing.Size(580, 366)
+        Me.dgvTranSelectedItems.TabIndex = 3
         '
-        'dgvTranCategories
+        'dgvTranAvailableItems
         '
-        Me.dgvTranCategories.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.dgvTranAvailableItems.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvTranCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTranCategories.Location = New System.Drawing.Point(257, 45)
-        Me.dgvTranCategories.Name = "dgvTranCategories"
-        Me.dgvTranCategories.Size = New System.Drawing.Size(435, 205)
-        Me.dgvTranCategories.TabIndex = 3
+        Me.dgvTranAvailableItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTranAvailableItems.Location = New System.Drawing.Point(343, 55)
+        Me.dgvTranAvailableItems.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvTranAvailableItems.Name = "dgvTranAvailableItems"
+        Me.dgvTranAvailableItems.Size = New System.Drawing.Size(580, 252)
+        Me.dgvTranAvailableItems.TabIndex = 3
         '
         'grpInvTransInfo
         '
@@ -2540,9 +2734,11 @@ Partial Class frmMain
         Me.grpInvTransInfo.Controls.Add(Me.lblTranContact)
         Me.grpInvTransInfo.Controls.Add(Me.txtTranContact)
         Me.grpInvTransInfo.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.grpInvTransInfo.Location = New System.Drawing.Point(15, 12)
+        Me.grpInvTransInfo.Location = New System.Drawing.Point(20, 15)
+        Me.grpInvTransInfo.Margin = New System.Windows.Forms.Padding(4)
         Me.grpInvTransInfo.Name = "grpInvTransInfo"
-        Me.grpInvTransInfo.Size = New System.Drawing.Size(225, 573)
+        Me.grpInvTransInfo.Padding = New System.Windows.Forms.Padding(4)
+        Me.grpInvTransInfo.Size = New System.Drawing.Size(300, 705)
         Me.grpInvTransInfo.TabIndex = 2
         Me.grpInvTransInfo.TabStop = False
         Me.grpInvTransInfo.Text = "Transaction Info:"
@@ -2550,17 +2746,19 @@ Partial Class frmMain
         'lblTranContactNameData
         '
         Me.lblTranContactNameData.AutoSize = True
-        Me.lblTranContactNameData.Location = New System.Drawing.Point(66, 166)
+        Me.lblTranContactNameData.Location = New System.Drawing.Point(88, 204)
+        Me.lblTranContactNameData.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranContactNameData.Name = "lblTranContactNameData"
-        Me.lblTranContactNameData.Size = New System.Drawing.Size(90, 13)
+        Me.lblTranContactNameData.Size = New System.Drawing.Size(118, 17)
         Me.lblTranContactNameData.TabIndex = 19
         Me.lblTranContactNameData.Text = "Benefactor Name"
         '
         'lnklblTranContactEmail
         '
-        Me.lnklblTranContactEmail.Location = New System.Drawing.Point(48, 115)
+        Me.lnklblTranContactEmail.Location = New System.Drawing.Point(64, 142)
+        Me.lnklblTranContactEmail.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lnklblTranContactEmail.Name = "lnklblTranContactEmail"
-        Me.lnklblTranContactEmail.Size = New System.Drawing.Size(171, 13)
+        Me.lnklblTranContactEmail.Size = New System.Drawing.Size(228, 16)
         Me.lnklblTranContactEmail.TabIndex = 18
         Me.lnklblTranContactEmail.TabStop = True
         Me.lnklblTranContactEmail.Text = "jake@abcinternational.com"
@@ -2569,18 +2767,20 @@ Partial Class frmMain
         '
         Me.lblTranContactEmail.AutoSize = True
         Me.lblTranContactEmail.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranContactEmail.Location = New System.Drawing.Point(7, 115)
+        Me.lblTranContactEmail.Location = New System.Drawing.Point(9, 142)
+        Me.lblTranContactEmail.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranContactEmail.Name = "lblTranContactEmail"
-        Me.lblTranContactEmail.Size = New System.Drawing.Size(35, 13)
+        Me.lblTranContactEmail.Size = New System.Drawing.Size(46, 17)
         Me.lblTranContactEmail.TabIndex = 17
         Me.lblTranContactEmail.Text = "Email:"
         '
         'lblTranContactPhoneData
         '
         Me.lblTranContactPhoneData.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranContactPhoneData.Location = New System.Drawing.Point(54, 91)
+        Me.lblTranContactPhoneData.Location = New System.Drawing.Point(72, 112)
+        Me.lblTranContactPhoneData.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranContactPhoneData.Name = "lblTranContactPhoneData"
-        Me.lblTranContactPhoneData.Size = New System.Drawing.Size(165, 13)
+        Me.lblTranContactPhoneData.Size = New System.Drawing.Size(220, 16)
         Me.lblTranContactPhoneData.TabIndex = 16
         Me.lblTranContactPhoneData.Text = "(989)555-9688 x1151"
         '
@@ -2588,18 +2788,20 @@ Partial Class frmMain
         '
         Me.lblTranContactPhone.AutoSize = True
         Me.lblTranContactPhone.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranContactPhone.Location = New System.Drawing.Point(7, 91)
+        Me.lblTranContactPhone.Location = New System.Drawing.Point(9, 112)
+        Me.lblTranContactPhone.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranContactPhone.Name = "lblTranContactPhone"
-        Me.lblTranContactPhone.Size = New System.Drawing.Size(41, 13)
+        Me.lblTranContactPhone.Size = New System.Drawing.Size(53, 17)
         Me.lblTranContactPhone.TabIndex = 15
         Me.lblTranContactPhone.Text = "Phone:"
         '
         'Label31
         '
         Me.Label31.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label31.Location = New System.Drawing.Point(66, 245)
+        Me.Label31.Location = New System.Drawing.Point(88, 302)
+        Me.Label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(153, 18)
+        Me.Label31.Size = New System.Drawing.Size(204, 22)
         Me.Label31.TabIndex = 14
         Me.Label31.Text = "(989)555-9688 x1151"
         '
@@ -2607,18 +2809,20 @@ Partial Class frmMain
         '
         Me.Label30.AutoSize = True
         Me.Label30.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.Label30.Location = New System.Drawing.Point(7, 245)
+        Me.Label30.Location = New System.Drawing.Point(9, 302)
+        Me.Label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(41, 13)
+        Me.Label30.Size = New System.Drawing.Size(53, 17)
         Me.Label30.TabIndex = 13
         Me.Label30.Text = "Phone:"
         '
         'lblTranContactAddressData
         '
         Me.lblTranContactAddressData.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranContactAddressData.Location = New System.Drawing.Point(66, 190)
+        Me.lblTranContactAddressData.Location = New System.Drawing.Point(88, 234)
+        Me.lblTranContactAddressData.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranContactAddressData.Name = "lblTranContactAddressData"
-        Me.lblTranContactAddressData.Size = New System.Drawing.Size(153, 43)
+        Me.lblTranContactAddressData.Size = New System.Drawing.Size(204, 53)
         Me.lblTranContactAddressData.TabIndex = 12
         Me.lblTranContactAddressData.Text = "5555 Elm St." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Suite 4" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Saginaw, MI 48604"
         '
@@ -2626,9 +2830,10 @@ Partial Class frmMain
         '
         Me.lblTranContactAddress.AutoSize = True
         Me.lblTranContactAddress.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTranContactAddress.Location = New System.Drawing.Point(7, 190)
+        Me.lblTranContactAddress.Location = New System.Drawing.Point(9, 234)
+        Me.lblTranContactAddress.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranContactAddress.Name = "lblTranContactAddress"
-        Me.lblTranContactAddress.Size = New System.Drawing.Size(48, 13)
+        Me.lblTranContactAddress.Size = New System.Drawing.Size(64, 17)
         Me.lblTranContactAddress.TabIndex = 11
         Me.lblTranContactAddress.Text = "Address:"
         '
@@ -2636,10 +2841,11 @@ Partial Class frmMain
         '
         Me.txtTranComment.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txtTranComment.Location = New System.Drawing.Point(6, 401)
+        Me.txtTranComment.Location = New System.Drawing.Point(8, 494)
+        Me.txtTranComment.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTranComment.Multiline = True
         Me.txtTranComment.Name = "txtTranComment"
-        Me.txtTranComment.Size = New System.Drawing.Size(210, 137)
+        Me.txtTranComment.Size = New System.Drawing.Size(279, 168)
         Me.txtTranComment.TabIndex = 10
         '
         'lblTranComment
@@ -2647,10 +2853,11 @@ Partial Class frmMain
         Me.lblTranComment.AutoSize = True
         Me.lblTranComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTranComment.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lblTranComment.Location = New System.Drawing.Point(3, 385)
-        Me.lblTranComment.MaximumSize = New System.Drawing.Size(250, 0)
+        Me.lblTranComment.Location = New System.Drawing.Point(4, 474)
+        Me.lblTranComment.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTranComment.MaximumSize = New System.Drawing.Size(333, 0)
         Me.lblTranComment.Name = "lblTranComment"
-        Me.lblTranComment.Size = New System.Drawing.Size(57, 13)
+        Me.lblTranComment.Size = New System.Drawing.Size(75, 17)
         Me.lblTranComment.TabIndex = 9
         Me.lblTranComment.Text = "Comment: "
         '
@@ -2658,18 +2865,20 @@ Partial Class frmMain
         '
         Me.lblTotalValue.AutoSize = True
         Me.lblTotalValue.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTotalValue.Location = New System.Drawing.Point(71, 358)
+        Me.lblTotalValue.Location = New System.Drawing.Point(95, 441)
+        Me.lblTotalValue.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalValue.Name = "lblTotalValue"
-        Me.lblTotalValue.Size = New System.Drawing.Size(64, 13)
+        Me.lblTotalValue.Size = New System.Drawing.Size(84, 17)
         Me.lblTotalValue.TabIndex = 6
         Me.lblTotalValue.Text = "Total Value:"
         '
         'lblTotalValueData
         '
         Me.lblTotalValueData.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTotalValueData.Location = New System.Drawing.Point(141, 358)
+        Me.lblTotalValueData.Location = New System.Drawing.Point(188, 441)
+        Me.lblTotalValueData.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalValueData.Name = "lblTotalValueData"
-        Me.lblTotalValueData.Size = New System.Drawing.Size(75, 13)
+        Me.lblTotalValueData.Size = New System.Drawing.Size(100, 16)
         Me.lblTotalValueData.TabIndex = 6
         Me.lblTotalValueData.Text = "0"
         Me.lblTotalValueData.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -2677,9 +2886,10 @@ Partial Class frmMain
         'lblTotalIemsData
         '
         Me.lblTotalIemsData.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTotalIemsData.Location = New System.Drawing.Point(141, 339)
+        Me.lblTotalIemsData.Location = New System.Drawing.Point(188, 417)
+        Me.lblTotalIemsData.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalIemsData.Name = "lblTotalIemsData"
-        Me.lblTotalIemsData.Size = New System.Drawing.Size(75, 13)
+        Me.lblTotalIemsData.Size = New System.Drawing.Size(100, 16)
         Me.lblTotalIemsData.TabIndex = 6
         Me.lblTotalIemsData.Text = "0"
         Me.lblTotalIemsData.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -2688,18 +2898,20 @@ Partial Class frmMain
         '
         Me.lblTotalItems.AutoSize = True
         Me.lblTotalItems.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.lblTotalItems.Location = New System.Drawing.Point(71, 339)
+        Me.lblTotalItems.Location = New System.Drawing.Point(95, 417)
+        Me.lblTotalItems.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalItems.Name = "lblTotalItems"
-        Me.lblTotalItems.Size = New System.Drawing.Size(62, 13)
+        Me.lblTotalItems.Size = New System.Drawing.Size(81, 17)
         Me.lblTotalItems.TabIndex = 6
         Me.lblTotalItems.Text = "Total Items:"
         '
         'btnSubmitTran
         '
         Me.btnSubmitTran.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSubmitTran.Location = New System.Drawing.Point(26, 544)
+        Me.btnSubmitTran.Location = New System.Drawing.Point(35, 670)
+        Me.btnSubmitTran.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSubmitTran.Name = "btnSubmitTran"
-        Me.btnSubmitTran.Size = New System.Drawing.Size(109, 23)
+        Me.btnSubmitTran.Size = New System.Drawing.Size(145, 28)
         Me.btnSubmitTran.TabIndex = 5
         Me.btnSubmitTran.Text = "Submit Transaction"
         Me.btnSubmitTran.UseVisualStyleBackColor = True
@@ -2707,9 +2919,10 @@ Partial Class frmMain
         'btnCancelTran
         '
         Me.btnCancelTran.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCancelTran.Location = New System.Drawing.Point(141, 544)
+        Me.btnCancelTran.Location = New System.Drawing.Point(188, 670)
+        Me.btnCancelTran.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelTran.Name = "btnCancelTran"
-        Me.btnCancelTran.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelTran.Size = New System.Drawing.Size(100, 28)
         Me.btnCancelTran.TabIndex = 5
         Me.btnCancelTran.Text = "Cancel"
         Me.btnCancelTran.UseVisualStyleBackColor = True
@@ -2717,9 +2930,10 @@ Partial Class frmMain
         'lblTransType
         '
         Me.lblTransType.AutoSize = True
-        Me.lblTransType.Location = New System.Drawing.Point(7, 22)
+        Me.lblTransType.Location = New System.Drawing.Point(9, 27)
+        Me.lblTransType.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTransType.Name = "lblTransType"
-        Me.lblTransType.Size = New System.Drawing.Size(34, 13)
+        Me.lblTransType.Size = New System.Drawing.Size(44, 17)
         Me.lblTransType.TabIndex = 4
         Me.lblTransType.Text = "Type:"
         '
@@ -2727,16 +2941,18 @@ Partial Class frmMain
         '
         Me.cmbTranType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranType.FormattingEnabled = True
-        Me.cmbTranType.Location = New System.Drawing.Point(44, 19)
+        Me.cmbTranType.Location = New System.Drawing.Point(59, 23)
+        Me.cmbTranType.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbTranType.Name = "cmbTranType"
-        Me.cmbTranType.Size = New System.Drawing.Size(87, 21)
-        Me.cmbTranType.TabIndex = 3
+        Me.cmbTranType.Size = New System.Drawing.Size(115, 24)
+        Me.cmbTranType.TabIndex = 1
         '
         'btnTranContactEdit
         '
-        Me.btnTranContactEdit.Location = New System.Drawing.Point(191, 60)
+        Me.btnTranContactEdit.Location = New System.Drawing.Point(255, 74)
+        Me.btnTranContactEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnTranContactEdit.Name = "btnTranContactEdit"
-        Me.btnTranContactEdit.Size = New System.Drawing.Size(28, 20)
+        Me.btnTranContactEdit.Size = New System.Drawing.Size(37, 25)
         Me.btnTranContactEdit.TabIndex = 2
         Me.btnTranContactEdit.Text = "e"
         Me.btnTranContactEdit.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -2744,9 +2960,10 @@ Partial Class frmMain
         '
         'btnTranContactAdd
         '
-        Me.btnTranContactAdd.Location = New System.Drawing.Point(161, 60)
+        Me.btnTranContactAdd.Location = New System.Drawing.Point(215, 74)
+        Me.btnTranContactAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnTranContactAdd.Name = "btnTranContactAdd"
-        Me.btnTranContactAdd.Size = New System.Drawing.Size(28, 20)
+        Me.btnTranContactAdd.Size = New System.Drawing.Size(37, 25)
         Me.btnTranContactAdd.TabIndex = 2
         Me.btnTranContactAdd.Text = "+"
         Me.btnTranContactAdd.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -2755,26 +2972,29 @@ Partial Class frmMain
         'lblTranContactName
         '
         Me.lblTranContactName.AutoSize = True
-        Me.lblTranContactName.Location = New System.Drawing.Point(7, 166)
+        Me.lblTranContactName.Location = New System.Drawing.Point(9, 204)
+        Me.lblTranContactName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranContactName.Name = "lblTranContactName"
-        Me.lblTranContactName.Size = New System.Drawing.Size(62, 13)
+        Me.lblTranContactName.Size = New System.Drawing.Size(81, 17)
         Me.lblTranContactName.TabIndex = 1
         Me.lblTranContactName.Text = "Benefactor:"
         '
         'lblTranContact
         '
         Me.lblTranContact.AutoSize = True
-        Me.lblTranContact.Location = New System.Drawing.Point(7, 63)
+        Me.lblTranContact.Location = New System.Drawing.Point(9, 78)
+        Me.lblTranContact.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTranContact.Name = "lblTranContact"
-        Me.lblTranContact.Size = New System.Drawing.Size(47, 13)
+        Me.lblTranContact.Size = New System.Drawing.Size(60, 17)
         Me.lblTranContact.TabIndex = 1
         Me.lblTranContact.Text = "Contact:"
         '
         'txtTranContact
         '
-        Me.txtTranContact.Location = New System.Drawing.Point(69, 60)
+        Me.txtTranContact.Location = New System.Drawing.Point(92, 74)
+        Me.txtTranContact.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTranContact.Name = "txtTranContact"
-        Me.txtTranContact.Size = New System.Drawing.Size(86, 20)
+        Me.txtTranContact.Size = New System.Drawing.Size(113, 22)
         Me.txtTranContact.TabIndex = 0
         '
         'cmbTranFilterBySubCategory
@@ -2782,19 +3002,21 @@ Partial Class frmMain
         Me.cmbTranFilterBySubCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTranFilterBySubCategory.ForeColor = System.Drawing.SystemColors.WindowText
         Me.cmbTranFilterBySubCategory.FormattingEnabled = True
-        Me.cmbTranFilterBySubCategory.Location = New System.Drawing.Point(400, 18)
+        Me.cmbTranFilterBySubCategory.Location = New System.Drawing.Point(533, 22)
+        Me.cmbTranFilterBySubCategory.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbTranFilterBySubCategory.Name = "cmbTranFilterBySubCategory"
-        Me.cmbTranFilterBySubCategory.Size = New System.Drawing.Size(126, 21)
+        Me.cmbTranFilterBySubCategory.Size = New System.Drawing.Size(167, 24)
         Me.cmbTranFilterBySubCategory.TabIndex = 0
         '
         'cmbTranFilterByCategory
         '
         Me.cmbTranFilterByCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTranFilterByCategory.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.cmbTranFilterByCategory.ForeColor = System.Drawing.SystemColors.WindowText
         Me.cmbTranFilterByCategory.FormattingEnabled = True
-        Me.cmbTranFilterByCategory.Location = New System.Drawing.Point(257, 18)
+        Me.cmbTranFilterByCategory.Location = New System.Drawing.Point(343, 22)
+        Me.cmbTranFilterByCategory.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbTranFilterByCategory.Name = "cmbTranFilterByCategory"
-        Me.cmbTranFilterByCategory.Size = New System.Drawing.Size(137, 21)
+        Me.cmbTranFilterByCategory.Size = New System.Drawing.Size(181, 24)
         Me.cmbTranFilterByCategory.TabIndex = 0
         '
         'tbpDashboard
@@ -2816,10 +3038,11 @@ Partial Class frmMain
         Me.tbpDashboard.Controls.Add(Me.btnQItemSearch)
         Me.tbpDashboard.Controls.Add(Me.btnQTrans)
         Me.tbpDashboard.Controls.Add(Me.picPinWheels)
-        Me.tbpDashboard.Location = New System.Drawing.Point(4, 22)
+        Me.tbpDashboard.Location = New System.Drawing.Point(4, 25)
+        Me.tbpDashboard.Margin = New System.Windows.Forms.Padding(4)
         Me.tbpDashboard.Name = "tbpDashboard"
-        Me.tbpDashboard.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpDashboard.Size = New System.Drawing.Size(1089, 601)
+        Me.tbpDashboard.Padding = New System.Windows.Forms.Padding(4)
+        Me.tbpDashboard.Size = New System.Drawing.Size(1455, 743)
         Me.tbpDashboard.TabIndex = 0
         Me.tbpDashboard.Text = "Dashboard"
         Me.tbpDashboard.UseVisualStyleBackColor = True
@@ -2827,9 +3050,10 @@ Partial Class frmMain
         'picCAN
         '
         Me.picCAN.Image = Global.CAN_Inventory_db.My.Resources.Resources.dash_logo
-        Me.picCAN.Location = New System.Drawing.Point(8, 15)
+        Me.picCAN.Location = New System.Drawing.Point(11, 18)
+        Me.picCAN.Margin = New System.Windows.Forms.Padding(4)
         Me.picCAN.Name = "picCAN"
-        Me.picCAN.Size = New System.Drawing.Size(280, 108)
+        Me.picCAN.Size = New System.Drawing.Size(373, 133)
         Me.picCAN.TabIndex = 5
         Me.picCAN.TabStop = False
         '
@@ -2837,9 +3061,10 @@ Partial Class frmMain
         '
         Me.lblNFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblNFilter.AutoSize = True
-        Me.lblNFilter.Location = New System.Drawing.Point(925, 339)
+        Me.lblNFilter.Location = New System.Drawing.Point(1233, 417)
+        Me.lblNFilter.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblNFilter.Name = "lblNFilter"
-        Me.lblNFilter.Size = New System.Drawing.Size(32, 13)
+        Me.lblNFilter.Size = New System.Drawing.Size(43, 17)
         Me.lblNFilter.TabIndex = 4
         Me.lblNFilter.Text = "Filter:"
         '
@@ -2847,9 +3072,10 @@ Partial Class frmMain
         '
         Me.lblDFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblDFilter.AutoSize = True
-        Me.lblDFilter.Location = New System.Drawing.Point(668, 16)
+        Me.lblDFilter.Location = New System.Drawing.Point(891, 20)
+        Me.lblDFilter.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDFilter.Name = "lblDFilter"
-        Me.lblDFilter.Size = New System.Drawing.Size(32, 13)
+        Me.lblDFilter.Size = New System.Drawing.Size(43, 17)
         Me.lblDFilter.TabIndex = 4
         Me.lblDFilter.Text = "Filter:"
         '
@@ -2857,18 +3083,20 @@ Partial Class frmMain
         '
         Me.lblDTo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblDTo.AutoSize = True
-        Me.lblDTo.Location = New System.Drawing.Point(957, 16)
+        Me.lblDTo.Location = New System.Drawing.Point(1276, 20)
+        Me.lblDTo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDTo.Name = "lblDTo"
-        Me.lblDTo.Size = New System.Drawing.Size(20, 13)
+        Me.lblDTo.Size = New System.Drawing.Size(25, 17)
         Me.lblDTo.TabIndex = 4
         Me.lblDTo.Text = "To"
         '
         'lblRecentDonations
         '
         Me.lblRecentDonations.AutoSize = True
-        Me.lblRecentDonations.Location = New System.Drawing.Point(291, 18)
+        Me.lblRecentDonations.Location = New System.Drawing.Point(388, 22)
+        Me.lblRecentDonations.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblRecentDonations.Name = "lblRecentDonations"
-        Me.lblRecentDonations.Size = New System.Drawing.Size(96, 13)
+        Me.lblRecentDonations.Size = New System.Drawing.Size(125, 17)
         Me.lblRecentDonations.TabIndex = 4
         Me.lblRecentDonations.Text = "Recent Donations:"
         '
@@ -2876,9 +3104,10 @@ Partial Class frmMain
         '
         Me.lblInvNotifications.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblInvNotifications.AutoSize = True
-        Me.lblInvNotifications.Location = New System.Drawing.Point(291, 344)
+        Me.lblInvNotifications.Location = New System.Drawing.Point(388, 423)
+        Me.lblInvNotifications.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblInvNotifications.Name = "lblInvNotifications"
-        Me.lblInvNotifications.Size = New System.Drawing.Size(115, 13)
+        Me.lblInvNotifications.Size = New System.Drawing.Size(151, 17)
         Me.lblInvNotifications.TabIndex = 4
         Me.lblInvNotifications.Text = "Inventory Notifications:"
         '
@@ -2888,9 +3117,10 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvInvNotifications.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvInvNotifications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvInvNotifications.Location = New System.Drawing.Point(294, 363)
+        Me.dgvInvNotifications.Location = New System.Drawing.Point(392, 447)
+        Me.dgvInvNotifications.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvInvNotifications.Name = "dgvInvNotifications"
-        Me.dgvInvNotifications.Size = New System.Drawing.Size(787, 224)
+        Me.dgvInvNotifications.Size = New System.Drawing.Size(1049, 276)
         Me.dgvInvNotifications.TabIndex = 3
         '
         'dgvRecentDonations
@@ -2900,36 +3130,40 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvRecentDonations.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvRecentDonations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRecentDonations.Location = New System.Drawing.Point(294, 38)
+        Me.dgvRecentDonations.Location = New System.Drawing.Point(392, 47)
+        Me.dgvRecentDonations.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvRecentDonations.Name = "dgvRecentDonations"
-        Me.dgvRecentDonations.Size = New System.Drawing.Size(787, 285)
+        Me.dgvRecentDonations.Size = New System.Drawing.Size(1049, 351)
         Me.dgvRecentDonations.TabIndex = 3
         '
         'dtpDToDate
         '
         Me.dtpDToDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpDToDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDToDate.Location = New System.Drawing.Point(985, 12)
+        Me.dtpDToDate.Location = New System.Drawing.Point(1313, 15)
+        Me.dtpDToDate.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpDToDate.Name = "dtpDToDate"
-        Me.dtpDToDate.Size = New System.Drawing.Size(96, 20)
+        Me.dtpDToDate.Size = New System.Drawing.Size(127, 22)
         Me.dtpDToDate.TabIndex = 2
         '
         'dtpDFromDate
         '
         Me.dtpDFromDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dtpDFromDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDFromDate.Location = New System.Drawing.Point(853, 12)
+        Me.dtpDFromDate.Location = New System.Drawing.Point(1137, 15)
+        Me.dtpDFromDate.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpDFromDate.Name = "dtpDFromDate"
-        Me.dtpDFromDate.Size = New System.Drawing.Size(96, 20)
+        Me.dtpDFromDate.Size = New System.Drawing.Size(127, 22)
         Me.dtpDFromDate.TabIndex = 2
         '
         'cbxNFilter
         '
         Me.cbxNFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cbxNFilter.FormattingEnabled = True
-        Me.cbxNFilter.Location = New System.Drawing.Point(960, 336)
+        Me.cbxNFilter.Location = New System.Drawing.Point(1280, 414)
+        Me.cbxNFilter.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxNFilter.Name = "cbxNFilter"
-        Me.cbxNFilter.Size = New System.Drawing.Size(121, 21)
+        Me.cbxNFilter.Size = New System.Drawing.Size(160, 24)
         Me.cbxNFilter.TabIndex = 1
         '
         'cmbDFilter
@@ -2937,43 +3171,48 @@ Partial Class frmMain
         Me.cmbDFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbDFilter.FormattingEnabled = True
         Me.cmbDFilter.Items.AddRange(New Object() {"None", "Benifactor", "Contact", "Item"})
-        Me.cmbDFilter.Location = New System.Drawing.Point(702, 12)
+        Me.cmbDFilter.Location = New System.Drawing.Point(936, 15)
+        Me.cmbDFilter.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbDFilter.Name = "cmbDFilter"
-        Me.cmbDFilter.Size = New System.Drawing.Size(138, 21)
+        Me.cmbDFilter.Size = New System.Drawing.Size(183, 24)
         Me.cmbDFilter.TabIndex = 1
         '
         'btnQReports
         '
-        Me.btnQReports.Location = New System.Drawing.Point(7, 273)
+        Me.btnQReports.Location = New System.Drawing.Point(9, 336)
+        Me.btnQReports.Margin = New System.Windows.Forms.Padding(4)
         Me.btnQReports.Name = "btnQReports"
-        Me.btnQReports.Size = New System.Drawing.Size(281, 60)
+        Me.btnQReports.Size = New System.Drawing.Size(375, 74)
         Me.btnQReports.TabIndex = 0
         Me.btnQReports.Text = "Reports"
         Me.btnQReports.UseVisualStyleBackColor = True
         '
         'btnQAddContact
         '
-        Me.btnQAddContact.Location = New System.Drawing.Point(3, 339)
+        Me.btnQAddContact.Location = New System.Drawing.Point(4, 417)
+        Me.btnQAddContact.Margin = New System.Windows.Forms.Padding(4)
         Me.btnQAddContact.Name = "btnQAddContact"
-        Me.btnQAddContact.Size = New System.Drawing.Size(282, 60)
+        Me.btnQAddContact.Size = New System.Drawing.Size(376, 74)
         Me.btnQAddContact.TabIndex = 0
         Me.btnQAddContact.Text = "Add Contact"
         Me.btnQAddContact.UseVisualStyleBackColor = True
         '
         'btnQItemSearch
         '
-        Me.btnQItemSearch.Location = New System.Drawing.Point(6, 202)
+        Me.btnQItemSearch.Location = New System.Drawing.Point(8, 249)
+        Me.btnQItemSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.btnQItemSearch.Name = "btnQItemSearch"
-        Me.btnQItemSearch.Size = New System.Drawing.Size(282, 60)
+        Me.btnQItemSearch.Size = New System.Drawing.Size(376, 74)
         Me.btnQItemSearch.TabIndex = 0
         Me.btnQItemSearch.Text = "Item Search"
         Me.btnQItemSearch.UseVisualStyleBackColor = True
         '
         'btnQTrans
         '
-        Me.btnQTrans.Location = New System.Drawing.Point(6, 129)
+        Me.btnQTrans.Location = New System.Drawing.Point(8, 159)
+        Me.btnQTrans.Margin = New System.Windows.Forms.Padding(4)
         Me.btnQTrans.Name = "btnQTrans"
-        Me.btnQTrans.Size = New System.Drawing.Size(282, 60)
+        Me.btnQTrans.Size = New System.Drawing.Size(376, 74)
         Me.btnQTrans.TabIndex = 0
         Me.btnQTrans.Text = "Quick Transaction"
         Me.btnQTrans.UseVisualStyleBackColor = True
@@ -2982,9 +3221,10 @@ Partial Class frmMain
         '
         Me.picPinWheels.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.picPinWheels.Image = Global.CAN_Inventory_db.My.Resources.Resources.pinwheel_dash
-        Me.picPinWheels.Location = New System.Drawing.Point(7, 363)
+        Me.picPinWheels.Location = New System.Drawing.Point(9, 447)
+        Me.picPinWheels.Margin = New System.Windows.Forms.Padding(4)
         Me.picPinWheels.Name = "picPinWheels"
-        Me.picPinWheels.Size = New System.Drawing.Size(281, 232)
+        Me.picPinWheels.Size = New System.Drawing.Size(375, 286)
         Me.picPinWheels.TabIndex = 6
         Me.picPinWheels.TabStop = False
         '
@@ -2995,26 +3235,28 @@ Partial Class frmMain
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabControls.Controls.Add(Me.tbpDashboard)
         Me.tabControls.Controls.Add(Me.tbpInvTrans)
-        Me.tabControls.Controls.Add(Me.tbpItmManag)
         Me.tabControls.Controls.Add(Me.tbpReports)
-        Me.tabControls.Controls.Add(Me.tbpContacts)
+        Me.tabControls.Controls.Add(Me.tbpItmManag)
         Me.tabControls.Controls.Add(Me.tbpSettings)
-        Me.tabControls.Location = New System.Drawing.Point(0, 30)
+        Me.tabControls.Controls.Add(Me.tbpContacts)
+        Me.tabControls.Location = New System.Drawing.Point(0, 36)
+        Me.tabControls.Margin = New System.Windows.Forms.Padding(4)
         Me.tabControls.Name = "tabControls"
         Me.tabControls.SelectedIndex = 0
-        Me.tabControls.Size = New System.Drawing.Size(1097, 627)
+        Me.tabControls.Size = New System.Drawing.Size(1463, 772)
         Me.tabControls.TabIndex = 2
         '
         'frmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1097, 669)
+        Me.ClientSize = New System.Drawing.Size(1463, 823)
         Me.Controls.Add(Me.stsSatusBar)
         Me.Controls.Add(Me.menTopStrip)
         Me.Controls.Add(Me.tabControls)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.menTopStrip
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmMain"
         Me.Text = "CAN Council Inventory System"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -3064,10 +3306,8 @@ Partial Class frmMain
         CType(Me.pbxTLwQuant, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlTags.ResumeLayout(False)
-        Me.pnlTags.PerformLayout()
-        CType(Me.dgvTranItems, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvTranCategories, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvTranSelectedItems, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvTranAvailableItems, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpInvTransInfo.ResumeLayout(False)
         Me.grpInvTransInfo.PerformLayout()
         Me.tbpDashboard.ResumeLayout(False)
@@ -3272,15 +3512,12 @@ Partial Class frmMain
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents lblTranProgram As System.Windows.Forms.Label
-    Friend WithEvents pnlTags As System.Windows.Forms.Panel
-    Friend WithEvents btnTranTag As System.Windows.Forms.Button
     Friend WithEvents lblTranBin As System.Windows.Forms.Label
     Friend WithEvents txtTranAddTags As System.Windows.Forms.TextBox
     Friend WithEvents lblTranItemComment As System.Windows.Forms.Label
     Friend WithEvents lblTranCondition As System.Windows.Forms.Label
     Friend WithEvents lblTranLocation As System.Windows.Forms.Label
     Friend WithEvents lblTranFaclity As System.Windows.Forms.Label
-    Friend WithEvents lblTranAddTags As System.Windows.Forms.Label
     Friend WithEvents lblTranTags As System.Windows.Forms.Label
     Friend WithEvents lblTSubCategory As System.Windows.Forms.Label
     Friend WithEvents lblTranCategory As System.Windows.Forms.Label
@@ -3289,8 +3526,8 @@ Partial Class frmMain
     Friend WithEvents btnTranItemAddNew As System.Windows.Forms.Button
     Friend WithEvents btnTranItemAddToTran As System.Windows.Forms.Button
     Friend WithEvents txtSearchTran As System.Windows.Forms.TextBox
-    Friend WithEvents dgvTranItems As System.Windows.Forms.DataGridView
-    Friend WithEvents dgvTranCategories As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvTranSelectedItems As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvTranAvailableItems As System.Windows.Forms.DataGridView
     Friend WithEvents grpInvTransInfo As System.Windows.Forms.GroupBox
     Friend WithEvents lblTranContactNameData As System.Windows.Forms.Label
     Friend WithEvents lnklblTranContactEmail As System.Windows.Forms.LinkLabel
@@ -3338,4 +3575,7 @@ Partial Class frmMain
     Friend WithEvents picPinWheels As System.Windows.Forms.PictureBox
     Friend WithEvents tabControls As System.Windows.Forms.TabControl
     Friend WithEvents tbpContacts As System.Windows.Forms.TabPage
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnTranAddTag As Button
+    Friend WithEvents flpTranItemTags As FlowLayoutPanel
 End Class

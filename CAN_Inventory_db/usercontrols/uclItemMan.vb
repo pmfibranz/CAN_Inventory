@@ -11,6 +11,7 @@
 
         AddHandler uclBaseItem.RefreshItemDisp, AddressOf FillCategoryTree
         AddHandler uclBaseItem.RefreshExistingItemGrid, AddressOf fillExistingItemGrid
+        AddHandler frmMain.RefreshItemDisp, AddressOf FillCategoryTree
     End Sub
     Private Sub uclItemMan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim itmPnlX As Double = dgvItems.Location.X + dgvItems.Size.Width - 5
@@ -36,6 +37,9 @@
         Dim dsCat As New DataSet()
         Dim dsSubCat As New DataSet()
         Dim where As String
+
+        'Remove all nodes
+        trvBaseItemTree.Nodes.Item(0).Nodes.Clear()
 
         query = frmMain.dbAccess.QueryBuilder("categories", "*", "categories.active=True", "SELECT")
         dsCat = frmMain.dbAccess.DataGet(query)
@@ -94,7 +98,6 @@
                     query = query + "WHERE sub_categories.sub_category ='" + trvBaseItemTree.SelectedNode.Text + "' AND items.active=True;"
                 Case Else
                     query = query + "WHERE items.active=True;"
-
             End Select
 
             dsSelectedBranch = frmMain.dbAccess.DataGet(query)

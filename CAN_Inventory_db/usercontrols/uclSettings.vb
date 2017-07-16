@@ -1036,7 +1036,6 @@
         'Categories
         CategoryListLoad(lbxCategories)
         lbxCategories.SelectedIndex = -1
-
         CategoryListLoad(cbxCat4Sub)
         cbxCat4Sub.SelectedIndex = -1
 
@@ -1075,7 +1074,7 @@
         ready = False
 
         'Categories
-        query = frmMain.dbAccess.QueryBuilder("categories", "*", "(((categories.active)=True))")
+        query = frmMain.dbAccess.QueryBuilder("categories", "*", "categories.active=True")
         dsCat = frmMain.dbAccess.DataGet(query)
 
         ob.DataSource = dsCat.Tables(0)
@@ -1147,7 +1146,6 @@
                             " AND locations.active=True"
             End If
 
-
             query = frmMain.dbAccess.QueryBuilder("locations", "*", sqlCriteria)
             dsLocation = frmMain.dbAccess.DataGet(query)
 
@@ -1176,7 +1174,6 @@
                 sqlCriteria = "bins.location_id=" + from.SelectedValue.ToString() +
                             " AND bins.active=True"
             End If
-
 
             query = frmMain.dbAccess.QueryBuilder("bins", "*", sqlCriteria)
             dsBins = frmMain.dbAccess.DataGet(query)

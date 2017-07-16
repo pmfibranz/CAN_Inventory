@@ -3,51 +3,18 @@
     Friend Shared Event RefreshItemDisp()
     Friend Shared Event RefreshExistingItemGrid()
 
+    Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        AddHandler frmMain.ClearItemDetails, AddressOf theCloser
+        AddHandler frmMain.InitializeItemDetailControls, AddressOf initializeItemDetailControls
+    End Sub
     Private Sub uclBaseItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dsCat As New DataSet()
-        Dim dsFac As New DataSet()
-        Dim dsProg As New DataSet()
-        Dim query As String
 
-        ready = False
+        initializeItemDetailControls()
 
-        ' Fills Category combo box
-        query = frmMain.dbAccess.QueryBuilder("categories", "*", "categories.active=True")
-        dsCat = frmMain.dbAccess.DataGet(query)
-
-        cmbCategory.DataSource = dsCat.Tables(0)
-        cmbCategory.ValueMember = "id"
-        cmbCategory.DisplayMember = "category"
-        cmbCategory.SelectedIndex = -1              ' Sets default selected item to empty
-
-        ' Fills Facility combo box
-        query = frmMain.dbAccess.QueryBuilder("facilities", "id, facility, active", "facilities.active=True")
-        dsFac = frmMain.dbAccess.DataGet(query)
-
-        cmbFacility.DataSource = dsFac.Tables(0)
-        cmbFacility.ValueMember = "id"
-        cmbFacility.DisplayMember = "facility"
-        cmbFacility.SelectedIndex = -1              ' Sets default selected item to empty
-
-        ' Fills program combo box
-        query = frmMain.dbAccess.QueryBuilder("programs", "id, program, active", "programs.active=True")
-        dsProg = frmMain.dbAccess.DataGet(query)
-
-        cmbProgram.DataSource = dsProg.Tables(0)
-        cmbProgram.ValueMember = "id"
-        cmbProgram.DisplayMember = "program"
-        cmbProgram.SelectedIndex = -1              ' Sets default selected item to empty
-
-        ' Fills Condition combo box
-        query = frmMain.dbAccess.QueryBuilder("conditions", "id, condition, active", "conditions.active=True")
-        dsCat = frmMain.dbAccess.DataGet(query)
-
-        cmbCondition.DataSource = dsCat.Tables(0)
-        cmbCondition.ValueMember = "id"
-        cmbCondition.DisplayMember = "condition"
-        cmbCondition.SelectedIndex = 0              ' Sets default selected item to New
-
-        ready = True
     End Sub
 
     Private Sub cmbCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCategory.SelectedIndexChanged
@@ -232,6 +199,10 @@
         End If
     End Sub
 
+    Private Sub btnUpdateItem_Click(sender As Object, e As EventArgs) Handles btnUpdateItem.Click
+        'LEFT OFF HERE
+    End Sub
+
     Function blankFiller(field As Object, Optional format As String = "") As String
         Dim t As Type = field.GetType()
 
@@ -262,6 +233,9 @@
     End Function
 
     Sub theCloser()
+
+        ready = False
+
         If ParentForm.ToString <> frmMain.ToString Then
             ParentForm.Close()
         Else
@@ -276,7 +250,10 @@
             cmbProgram.SelectedIndex = -1
             nbxInitQty.Value = 0
             nbxLwQty.Value = 0
+            rdoItemModeAdd.Checked = True
         End If
+
+        ready = True
     End Sub
 
     Sub FillWith(baseItem As DataRowView)
@@ -287,11 +264,9 @@
         txtDefValue.Text = baseItem.Item("Default Value")
         'Select Facility then initiate event to populate Location
         cmbFacility.SelectedIndex = cmbFacility.FindStringExact(baseItem.Item("Facility"))
-        'Me.cmbFacility_SelectedIndexChanged(Me.cmbFacility, e)
 
         'Select Location then initiate event to populate Bin
         cmbLocation.SelectedIndex = cmbLocation.FindStringExact(baseItem.Item("Location"))
-        'Me.cmbTranLocation_SelectionChangeCommitted(Me.cmbTranLocation, e)
 
         'Select Bin
         cmbBin.SelectedIndex = cmbBin.FindStringExact(baseItem.Item("Bin"))
@@ -299,5 +274,68 @@
         'Select Program
         cmbProgram.SelectedIndex = cmbProgram.FindStringExact(baseItem.Item("Program"))
         'nbxLwQty.Value = baseItem.Item("Low Qty")
+
+        'Default mode to Add
+        rdoItemModeAdd.Checked = True
+    End Sub
+
+    Private Sub rdoItemModeAdd_CheckedChanged(sender As Object, e As EventArgs) Handles rdoItemModeAdd.CheckedChanged
+        btnAddItem.Visible = True
+        btnUpdateItem.Visible = False
+    End Sub
+
+    Private Sub rdoItemModeEdit_CheckedChanged(sender As Object, e As EventArgs) Handles rdoItemModeEdit.CheckedChanged
+        btnAddItem.Visible = False
+        btnUpdateItem.Visible = True
+    End Sub
+
+    Private Sub initializeItemDetailControls()
+        Dim dsCat As New DataSet()
+        Dim dsFac As New DataSet()
+        Dim dsProg As New DataSet()
+        Dim query As String
+
+        ready = False
+
+        ' Fills Category combo box
+        query = frmMain.dbAccess.QueryBuilder("categories", "*", "categories.active=True")
+        dsCat = frmMain.dbAccess.DataGet(query)
+
+        cmbCategory.DataSource = dsCat.Tables(0)
+        cmbCategory.ValueMember = "id"
+        cmbCategory.DisplayMember = "category"
+        cmbCategory.SelectedIndex = -1              ' Sets default selected item to empty
+
+        ' Fills Facility combo box
+        query = frmMain.dbAccess.QueryBuilder("facilities", "id, facility, active", "facilities.active=True")
+        dsFac = frmMain.dbAccess.DataGet(query)
+
+        cmbFacility.DataSource = dsFac.Tables(0)
+        cmbFacility.ValueMember = "id"
+        cmbFacility.DisplayMember = "facility"
+        cmbFacility.SelectedIndex = -1              ' Sets default selected item to empty
+
+        ' Fills program combo box
+        query = frmMain.dbAccess.QueryBuilder("programs", "id, program, active", "programs.active=True")
+        dsProg = frmMain.dbAccess.DataGet(query)
+
+        cmbProgram.DataSource = dsProg.Tables(0)
+        cmbProgram.ValueMember = "id"
+        cmbProgram.DisplayMember = "program"
+        cmbProgram.SelectedIndex = -1              ' Sets default selected item to empty
+
+        ' Fills Condition combo box
+        query = frmMain.dbAccess.QueryBuilder("conditions", "id, condition, active", "conditions.active=True")
+        dsCat = frmMain.dbAccess.DataGet(query)
+
+        cmbCondition.DataSource = dsCat.Tables(0)
+        cmbCondition.ValueMember = "id"
+        cmbCondition.DisplayMember = "condition"
+        cmbCondition.SelectedIndex = 0              ' Sets default selected item to New
+
+        ' Set mode
+        rdoItemModeAdd.Checked = True
+
+        ready = True
     End Sub
 End Class

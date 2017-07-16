@@ -40,8 +40,8 @@ Public Class DB_Access
                 End If
             End If
 
-            dataSrc = "Data Source='" + path(0) + "'"
-            dBasePath = provider + dataSrc
+            dataSrc = "Data Source='" & path(0) & "'"
+            dBasePath = provider & dataSrc
 
             'Updates File with new path if old path fails to open
             While DBValidate() = False
@@ -52,8 +52,8 @@ Public Class DB_Access
                     File.WriteAllText(SYS_PATH, pmtFindDB.FileName())
                     path(0) = pmtFindDB.FileName()
 
-                    dataSrc = "Data Source='" + path(0) + "'"
-                    dBasePath = provider + dataSrc
+                    dataSrc = "Data Source='" & path(0) & "'"
+                    dBasePath = provider & dataSrc
 
                 ElseIf dr = DialogResult.Cancel Then
                     Application.Exit()
@@ -102,7 +102,7 @@ Public Class DB_Access
             Dim newId As Integer
 
             Try
-                query = "INSERT INTO " + table + " (" + data(0) + ") VALUES(" + data(1) + "); "
+                query = "INSERT INTO " & table & " (" & data(0) & ") VALUES (" & data(1) & "); "
                 query2 = "SELECT @@Identity;"
                 Debug.Print(query)
                 db.Open()
@@ -286,17 +286,14 @@ Public Class DB_Access
         Dim query As String
         'Data Read Query
         If action = "SELECT" Then
-            query = "SELECT " + data + " FROM " + table
+            query = "SELECT " & data & " FROM " & table
             If where <> "" Then
-                query += (" WHERE " + where + ";")
-            Else
-                query += ";"
+                query += " WHERE " & where
             End If
-
+            query &= ";"
         ElseIf action = "UPDATE" Then
-
-            query = "UPDATE " + table + " SET " + data +
-                " WHERE id=" + where + " ;"
+            query = "UPDATE " & table & " SET " & data &
+                " WHERE id=" & where & " ;"
         Else
             Throw New System.Exception("Unable to build query")
         End If
@@ -308,7 +305,7 @@ Public Class DB_Access
     Function SetInactive(ByRef table As String, ByVal where As String) As Boolean
         Dim query As String
 
-        query = "UPDATE " + table + " SET active=False  WHERE id=" + where + " ;"
+        query = "UPDATE " & table & " SET active=False WHERE id=" & where & ";"
 
         Debug.Print(query)
 

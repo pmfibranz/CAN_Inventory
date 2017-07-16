@@ -6,7 +6,6 @@ Public Class DB_Access
     Private Shared statusLabel As Object
 
     Sub New()
-
     End Sub
 
     'Constructor that creates and/or verifies path to database
@@ -27,9 +26,7 @@ Public Class DB_Access
         Try
             'Creates bin file with path to database if one does not exist
             If My.Computer.FileSystem.FileExists(SYS_PATH) Then
-
                 path = IO.File.ReadAllLines(SYS_PATH)
-
             Else
                 dr = pmtFindDB.ShowDialog()
                 ' Creates bin file
@@ -81,11 +78,15 @@ Public Class DB_Access
                 statusLabel.Text = ""
                 statusLabel.Text += "The Database is Connected: "
                 statusLabel.Text += db.DataSource
-                db.Close()
                 Return True
             Catch ex As Exception
                 statusLabel.Text = "Failed to Connect to Database!"
                 statusLabel.Text += " Please contact the system administrator"
+                Return False
+            Finally
+                If db.State = ConnectionState.Open Then
+                    db.Close()
+                End If
             End Try
         End Using
 
@@ -109,16 +110,17 @@ Public Class DB_Access
                 cmd.ExecuteNonQuery()
                 cmd.CommandText = query2
                 newId = cmd.ExecuteScalar()
-                db.Close()
+
                 Return newId
             Catch ex As Exception
+                Return -1
+            Finally
                 If db.State = ConnectionState.Open Then
                     db.Close()
                 End If
-                Return -1
             End Try
-
         End Using
+
         Return True
     End Function
 
@@ -133,16 +135,44 @@ Public Class DB_Access
             connect.Open()
             adapt = New OleDbDataAdapter(query, connect)
             adapt.Fill(data)
-            adapt.Dispose()
-            connect.Close()
-
         Catch ex As Exception
             statusLabel.Text = "Failed to retrieve data."
+        Finally
+            connect.Close()
+            connect = Nothing
         End Try
+
         Return data
 
     End Function
 
+    'Item information
+    Function DataStoredProcGetItemInformation(categoryID As String, subcategoryID As String) As DataSet
+        Dim connect As OleDbConnection
+        Dim adapt As OleDbDataAdapter
+        Dim data As New DataSet
+        Dim cmd As New OleDbCommand
+
+        connect = New OleDbConnection(dBasePath)
+        Try
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "queryItemInfo"
+            cmd.Parameters.Add("@categoryID", OleDbType.Integer).Value = CInt(categoryID)
+            cmd.Parameters.Add("@subcategoryID", OleDbType.Integer).Value = CInt(subcategoryID)
+            cmd.Connection = connect
+            connect.Open()
+
+            adapt = New OleDbDataAdapter(cmd)
+            adapt.Fill(data, "Table1")
+
+        Catch ex As Exception
+            statusLabel.Text = "Failed to retrieve data."
+        Finally
+            connect.Close()
+            connect = Nothing
+        End Try
+        Return data
+    End Function
     'Recent Transactions
     Function DataStoredProcGetRecentTransactions() As DataSet
         Dim connect As OleDbConnection
@@ -162,9 +192,11 @@ Public Class DB_Access
             adapt = New OleDbDataAdapter(cmd)
             adapt.Fill(data, "Table1")
 
-            connect.Close()
         Catch ex As Exception
             statusLabel.Text = "Failed to retrieve data."
+        Finally
+            connect.Close()
+            connect = Nothing
         End Try
         Return data
     End Function
@@ -186,15 +218,17 @@ Public Class DB_Access
             adapt = New OleDbDataAdapter(cmd)
             adapt.Fill(data, "Table1")
 
-            connect.Close()
         Catch ex As Exception
             statusLabel.Text = "Failed to retrieve data."
+        Finally
+            connect.Close()
+            connect = Nothing
         End Try
         Return data
     End Function
 
     'Determine total "in" count for given item
-    Function DataStoredProcGetQuantityIn(itemId As Integer) As DataSet
+    Function DataStoredProcGetQuantityIn(itemId As Long) As DataSet
         Dim connect As OleDbConnection
         Dim adapt As OleDbDataAdapter
         Dim data As New DataSet
@@ -204,16 +238,17 @@ Public Class DB_Access
         Try
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "queryCountItemIn"
-            cmd.Parameters.Add("@ItemId", OleDbType.Integer).Value = itemId
+            cmd.Parameters.Add("@ItemId", OleDbType.BigInt).Value = itemId
             cmd.Connection = connect
             connect.Open()
 
             adapt = New OleDbDataAdapter(cmd)
             adapt.Fill(data, "Table1")
-
-            connect.Close()
         Catch ex As Exception
             statusLabel.Text = "Failed to retrieve data."
+        Finally
+            connect.Close()
+            connect = Nothing
         End Try
         Return data
     End Function
@@ -229,16 +264,17 @@ Public Class DB_Access
         Try
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "queryCountItemOut"
-            cmd.Parameters.Add("@ItemId", OleDbType.Integer).Value = itemId
+            cmd.Parameters.Add("@ItemId", OleDbType.BigInt).Value = itemId
             cmd.Connection = connect
             connect.Open()
 
             adapt = New OleDbDataAdapter(cmd)
             adapt.Fill(data, "Table1")
-
-            connect.Close()
         Catch ex As Exception
             statusLabel.Text = "Failed to retrieve data."
+        Finally
+            connect.Close()
+            connect = Nothing
         End Try
         Return data
     End Function
@@ -293,15 +329,16 @@ Public Class DB_Access
             connect.Open()
             cmd = New OleDbCommand(query, connect)
             cmd.ExecuteNonQuery()
-            connect.Close()
 
             Return True
         Catch ex As Exception
             statusLabel.Text = "Failed to Update data."
+        Finally
+            connect.Close()
+            connect = Nothing
         End Try
 
         Return False
     End Function
-
 End Class
 

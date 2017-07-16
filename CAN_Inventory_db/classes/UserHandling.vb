@@ -16,7 +16,7 @@ Public Class UserHandling
             Dim reader As OleDbDataReader
 
             'Construct Query
-            query = frmMain.dbAccess.QueryBuilder("users", "*", "(((users.active)=True))")
+            query = frmMain.dbAccess.QueryBuilder("users", "*", "users.active=True")
 
             Try
                 userCount = 0
@@ -35,16 +35,14 @@ Public Class UserHandling
 
                     'frmMain.cbxUserSelect.Items.Add(users(userCount).username)
                     userCount += 1
-
                 End While
-                db.Close()
-
             Catch ex As Exception
+                frmMain.lblStatus.Text = "Failed to update user list: " + ex.Message
+                Return False
+            Finally
                 If db.State = ConnectionState.Open Then
                     db.Close()
                 End If
-                frmMain.lblStatus.Text = "Failed to update user list: " + ex.Message
-                Return False
             End Try
         End Using
 
@@ -57,10 +55,12 @@ Public Class UserHandling
         While users(i).username.ToString() <> currUsr
             i += 1
         End While
+
         currentUser.id = users(i).id
         currentUser.username = users(i).username
         currentUser.firstName = users(i).firstName
         currentUser.lastName = users(i).lastName
+
         Return True
     End Function
 

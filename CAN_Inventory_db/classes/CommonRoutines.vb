@@ -12,5 +12,4 @@
         cmb.DisplayMember = displayMember 'e.g. category
         cmb.SelectedIndex = defaultIndex 'e.g. -1
     End Sub
-        
 End Class

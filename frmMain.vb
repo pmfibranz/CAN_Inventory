@@ -26,6 +26,9 @@ Public Class frmMain
         ' Fills Facility combo box
         Call comRoutes.fillDropDownListBox(cmbTranFacility, "facilities", "id", "facility", "active=True", -1)
 
+        ' Fills Program combo box
+        Call comRoutes.fillDropDownListBox(cmbTranProgram, "programs", "id", "program", "active=True", -1)
+
         'Make Available and Selected Items grid views readonly
         dgvTranAvailableItems.AllowUserToAddRows = False
         dgvTranAvailableItems.AllowUserToDeleteRows = False
@@ -150,7 +153,6 @@ Public Class frmMain
         newBaseItem.Show()
     End Sub
 
-
     '-------------- Dashboard Tab ---------------
 
     Private Sub loadRecentDonations()
@@ -189,6 +191,7 @@ Public Class frmMain
             If dsItemInfo.Tables.Count > 0 Then
                 dgvTranAvailableItems.DataSource = dsItemInfo.Tables(0)
                 dgvTranAvailableItems.Columns("ItemId").Visible = False 'Hide ItemId
+                dgvTranAvailableItems.Columns("Program").Visible = False 'Hide Program
             Else
                 dgvTranAvailableItems.DataSource = Nothing
             End If
@@ -249,14 +252,15 @@ Public Class frmMain
         Dim sqlCriteria As String
 
         If cmbTranFilterByCategory.SelectedIndex >= 0 Then
-            sqlCriteria = "(((sub_categories.category_id)=" & cmbTranFilterByCategory.SelectedValue.ToString() & ") AND (sub_categories.active=True))"
+            sqlCriteria = "sub_categories.category_id=" & cmbTranFilterByCategory.SelectedValue.ToString() & " AND sub_categories.active=True"
 
             ' Fills Transaction Inventory Sub-Category combo box
             Call comRoutes.fillDropDownListBox(cmbTranFilterBySubCategory, "sub_categories", "id", "sub_category", sqlCriteria, 0)
+            Me.cmbTranFilterBySubCategory_SelectionChangeCommitted(Me.cmbTranFilterBySubCategory, e)
         End If
     End Sub
 
-    Private Sub cmbTranFilterBySubCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTranFilterBySubCategory.SelectedIndexChanged
+    Private Sub cmbTranFilterBySubCategory_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cmbTranFilterBySubCategory.SelectionChangeCommitted
         ' Fills Available Item List
         Call loadAvailableItemInfo(cmbTranFilterByCategory.SelectedValue.ToString(), cmbTranFilterBySubCategory.SelectedValue.ToString())
     End Sub
@@ -265,7 +269,7 @@ Public Class frmMain
         Dim sqlCriteria As String
 
         If cmbTranFacility.SelectedIndex >= 0 Then
-            sqlCriteria = "(((facility_id)=" & cmbTranFacility.SelectedValue.ToString() & ") AND (active=True))"
+            sqlCriteria = "facility_id=" & cmbTranFacility.SelectedValue.ToString() & " AND active=True"
 
             ' Fills Transaction Inventory Location combo box
             Call comRoutes.fillDropDownListBox(cmbTranLocation, "locations", "id", "location", sqlCriteria, 0)
@@ -276,10 +280,10 @@ Public Class frmMain
         Dim sqlCriteria As String
 
         If cmbTranLocation.SelectedIndex >= 0 Then
-            sqlCriteria = "(((location_id)=" & cmbTranLocation.SelectedValue.ToString() & ") AND (active=True))"
+            sqlCriteria = "location_id=" & cmbTranLocation.SelectedValue.ToString() & " AND active=True"
 
             ' Fills Transaction Inventory Bin combo box
-            Call comRoutes.fillDropDownListBox(cmbTranBin, "locations", "id", "bin", sqlCriteria, 0)
+            Call comRoutes.fillDropDownListBox(cmbTranBin, "bins", "id", "bin", sqlCriteria, 0)
         End If
     End Sub
 
@@ -296,10 +300,29 @@ Public Class frmMain
                 lblTranItemName.Text = dgvTranAvailableItems.SelectedRows(0).Cells("Item").Value.ToString
                 lblSelectedItemCategory.Text = cmbTranFilterByCategory.Text
                 lblSelectedItemSubCategory.Text = cmbTranFilterBySubCategory.Text
+
+                'Select Facility then initiate event to populate Location
+                cmbTranFacility.SelectedIndex = cmbTranFacility.FindStringExact(dgvTranAvailableItems.SelectedRows(0).Cells("Facility").Value.ToString)
+                Me.cmbTranFacility_SelectionChangeCommitted(Me.cmbTranFacility, e)
+
+                'Select Location then initiate event to populate Bin
+                cmbTranLocation.SelectedIndex = cmbTranLocation.FindStringExact(dgvTranAvailableItems.SelectedRows(0).Cells("Location").Value.ToString)
+                Me.cmbTranLocation_SelectionChangeCommitted(Me.cmbTranLocation, e)
+
+                'Select Bin
+                cmbTranBin.SelectedIndex = cmbTranBin.FindStringExact(dgvTranAvailableItems.SelectedRows(0).Cells("Bin").Value.ToString)
+
+                'Select Program
+                cmbTranProgram.SelectedIndex = cmbTranProgram.FindStringExact(dgvTranAvailableItems.SelectedRows(0).Cells("Program").Value.ToString)
             Else
                 lblTranItemName.Text = "Item Name"
                 lblSelectedItemCategory.Text = "Item Category"
                 lblSelectedItemSubCategory.Text = "Item Sub() - Category"
+                cmbTranBin.DataSource = Nothing
+                cmbTranBin.Items.Clear()
+                cmbTranLocation.DataSource = Nothing
+                cmbTranLocation.Items.Clear()
+                cmbTranFacility.SelectedIndex = -1
             End If
         End If
     End Sub
@@ -336,6 +359,17 @@ Public Class frmMain
 
         txtTranAddTags.Text = ""
         txtTranAddTags.Focus()
+    End Sub
+
+    Private Sub dgvTranAvailableItems_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles dgvTranAvailableItems.RowsRemoved
+        lblTranItemName.Text = "Item Name"
+        lblSelectedItemCategory.Text = "Item Category"
+        lblSelectedItemSubCategory.Text = "Item Sub() - Category"
+        cmbTranBin.DataSource = Nothing
+        cmbTranBin.Items.Clear()
+        cmbTranLocation.DataSource = Nothing
+        cmbTranLocation.Items.Clear()
+        cmbTranFacility.SelectedIndex = -1
     End Sub
 End Class
 

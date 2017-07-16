@@ -194,6 +194,8 @@ Partial Class frmMain
         Me.tbpInvTrans = New System.Windows.Forms.TabPage()
         Me.lblTranItems = New System.Windows.Forms.Label()
         Me.grpTranItems = New System.Windows.Forms.GroupBox()
+        Me.btnTranAddTag = New System.Windows.Forms.Button()
+        Me.flpTranItemTags = New System.Windows.Forms.FlowLayoutPanel()
         Me.lblTranTotalLineValueData = New System.Windows.Forms.Label()
         Me.lblTranTotalLineValue = New System.Windows.Forms.Label()
         Me.lblTranOnHandData = New System.Windows.Forms.Label()
@@ -277,8 +279,6 @@ Partial Class frmMain
         Me.btnQTrans = New System.Windows.Forms.Button()
         Me.picPinWheels = New System.Windows.Forms.PictureBox()
         Me.tabControls = New System.Windows.Forms.TabControl()
-        Me.btnTranAddTag = New System.Windows.Forms.Button()
-        Me.flpTranItemTags = New System.Windows.Forms.FlowLayoutPanel()
         Me.menTopStrip.SuspendLayout()
         Me.stsSatusBar.SuspendLayout()
         Me.tbpContacts.SuspendLayout()
@@ -2258,6 +2258,24 @@ Partial Class frmMain
         Me.grpTranItems.TabStop = False
         Me.grpTranItems.Text = "Item:"
         '
+        'btnTranAddTag
+        '
+        Me.btnTranAddTag.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnTranAddTag.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTranAddTag.Location = New System.Drawing.Point(438, 164)
+        Me.btnTranAddTag.Name = "btnTranAddTag"
+        Me.btnTranAddTag.Size = New System.Drawing.Size(57, 23)
+        Me.btnTranAddTag.TabIndex = 3
+        Me.btnTranAddTag.Text = "Add Tag"
+        Me.btnTranAddTag.UseVisualStyleBackColor = True
+        '
+        'flpTranItemTags
+        '
+        Me.flpTranItemTags.Location = New System.Drawing.Point(53, 87)
+        Me.flpTranItemTags.Name = "flpTranItemTags"
+        Me.flpTranItemTags.Size = New System.Drawing.Size(440, 72)
+        Me.flpTranItemTags.TabIndex = 26
+        '
         'lblTranTotalLineValueData
         '
         Me.lblTranTotalLineValueData.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -3227,24 +3245,6 @@ Partial Class frmMain
         Me.tabControls.SelectedIndex = 0
         Me.tabControls.Size = New System.Drawing.Size(1463, 772)
         Me.tabControls.TabIndex = 2
-        '
-        'btnTranAddTag
-        '
-        Me.btnTranAddTag.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnTranAddTag.Font = New System.Drawing.Font("Arial", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTranAddTag.Location = New System.Drawing.Point(438, 164)
-        Me.btnTranAddTag.Name = "btnTranAddTag"
-        Me.btnTranAddTag.Size = New System.Drawing.Size(57, 23)
-        Me.btnTranAddTag.TabIndex = 3
-        Me.btnTranAddTag.Text = "Add Tag"
-        Me.btnTranAddTag.UseVisualStyleBackColor = True
-        '
-        'flpTranItemTags
-        '
-        Me.flpTranItemTags.Location = New System.Drawing.Point(53, 87)
-        Me.flpTranItemTags.Name = "flpTranItemTags"
-        Me.flpTranItemTags.Size = New System.Drawing.Size(440, 72)
-        Me.flpTranItemTags.TabIndex = 26
         '
         'frmMain
         '

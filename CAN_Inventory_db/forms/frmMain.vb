@@ -2,11 +2,16 @@
 Imports System.IO
 Imports System.Text
 Public Class frmMain
+    Friend Shared Event RefreshItemDisp()
+    Friend Shared Event ClearItemDetails()
+    Friend Shared Event InitializeItemDetailControls()
 
     'User List
     Public dbAccess As DB_Access
     Public userHand As New UserHandling()
     Public comRoutes As New CommonRoutines
+
+    Private firstVisitToItemManager As Boolean = True
     '-------------- Form General ----------------
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -370,6 +375,20 @@ Public Class frmMain
         cmbTranLocation.DataSource = Nothing
         cmbTranLocation.Items.Clear()
         cmbTranFacility.SelectedIndex = -1
+    End Sub
+
+    Private Sub tabControls_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tabControls.SelectedIndexChanged
+        If tabControls.SelectedTab.Name = "tbpItmManag" Then
+            If firstVisitToItemManager Then
+                'First visit to Item Manager should not trigger the refresh actions
+                firstVisitToItemManager = False
+            Else
+                'Refresh Item Mangager controls
+                RaiseEvent RefreshItemDisp()
+                RaiseEvent ClearItemDetails()
+                RaiseEvent InitializeItemDetailControls()
+            End If
+        End If
     End Sub
 End Class
 
